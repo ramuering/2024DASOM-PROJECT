@@ -1,5 +1,6 @@
 .video-wrapper {
-  position: absolute;
+  order: 1;
+  position: relative;
   display: block;
   height: 1080px;
   background-color: #050505;
@@ -7,9 +8,62 @@
   text-align: center;
 }
 .video {
-  position: absolute;
+  position: relative;
   top: 193px;
   display: block;
   width: 100%;
   height: 100%;
+}
+.main-title {
+  position: absolute;
+  top: 100%;
+  margin-top: 549px;
+  display: block;
+  font-size: 40px;
+  width: 100%;
+}
+.main-title-info-wrapper {
+  position: absolute;
+  justify-content: center;
+  height: 100px;
+  background-color: green;
+  top: 100%;
+  width: 100%;
+  margin-top: 761px;
+  display: flex;
+}
+.main-title-info {
+  position: absolute;
+  top: 100%;
+  margin-top: 761px;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.main-title-info-title {
+  width: 100%;
+  font-size: 24px;
+}
+.main-title-info-content {
+  width: 100%;
+  font-size: 40px;
+}
+.foundation {
+  position: absolute;
+  display: block;
+  margin-right: 50%;
+}
+.member {
+  position: absolute;
+  margin-right: 15%;
+}
+.operating {
+  position: absolute;
+  margin-left: 20%;
+}
+.expo {
+  position: absolute;
+  margin-left: 55%;
 }
