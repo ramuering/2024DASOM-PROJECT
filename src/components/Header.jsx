@@ -17,21 +17,21 @@ const Header = () => {
       </Logo>
       <NavBar>
         <span className='nav-about'>
-          <Link to="/about">ABOUT</Link>
+          <CustomLink to="/about">ABOUT</CustomLink>
         </span>
         <span className='nav-project'>
-          <Link to="/project">PROJECT</Link>
+          <CustomLink to="/project">PROJECT</CustomLink>
         </span>
         <span className='nav-recruit'>
-          <Link to="/recruit">RECRUIT</Link>
+          <CustomLink to="/recruit">RECRUIT</CustomLink>
         </span>
         <span className='nav-admin'>
-          <Link to="/admin">ADMIN</Link>
+          <CustomLink to="/admin">ADMIN</CustomLink>
         </span>
         <span className='nav-mypage'>
-          <Link to="mypage">
+          <CustomLink to="mypage">
             MY PAGE
-          </Link>
+          </CustomLink>
         </span>
       </NavBar>
     </NavWrapper>
@@ -39,6 +39,12 @@ const Header = () => {
 }
 
 export default Header
+
+const CustomLink = styled(Link)`
+  &:hover{
+    color: #54Ecc4;
+  }
+`;
 
 const NavWrapper = styled.nav`
   position: fixed;

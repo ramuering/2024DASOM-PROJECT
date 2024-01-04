@@ -17,18 +17,18 @@ const LimitHeader = () => {
       </Logo>
       <NavBar>
         <span className='nav-about-limit'>
-          <Link to="/about">ABOUT</Link>
+          <CustomLink to="/about">ABOUT</CustomLink>
         </span>
         <span className='nav-project-limit'>
-          <Link to="/project">PROJECT</Link>
+          <CustomLink to="/project">PROJECT</CustomLink>
         </span>
         <span className='nav-recruit-limit'>
-          <Link to="/recruit">RECRUIT</Link>
+          <CustomLink to="/recruit">RECRUIT</CustomLink>
         </span>
         <span className='nav-login-limit'>
-          <Link to="/login">
+          <CustomLink to="/login">
             LOGIN
-          </Link>
+          </CustomLink>
         </span>
       </NavBar>
     </NavWrapper>
@@ -36,6 +36,12 @@ const LimitHeader = () => {
 }
 
 export default LimitHeader
+
+const CustomLink = styled(Link)`
+  &:hover{
+    color: #54Ecc4;
+  }
+`;
 
 const NavWrapper = styled.nav`
   position: fixed;

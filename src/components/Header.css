@@ -1,9 +1,6 @@
 span {
   cursor: pointer;
 }
-span:hover {
-  color: #54ecc4;
-}
 
 .nav-about {
   position: absolute;
