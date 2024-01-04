@@ -1,23 +1,37 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { Outlet, Route, Routes } from "react-router-dom";
+import Main from "./pages/MainPage/Main";
+import About from "./pages/AboutPage/About";
+import Project from "./pages/ProjectPage/Project";
+import NewMember from "./pages/ApplyPage/NewMember";
+import ManMain from "./pages/ManagerPage/ManMain";
+import MyPage from "./pages/MyPage/MyPage";
+import LimitHeader from "./components/LimitHeader";
+import Login from "./pages/LoginPage/Login";
+
+const Layout = () => {
+  return (
+    <div>
+      <LimitHeader />
+      <Outlet />
+    </div>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="main" element={<Main />} />
+          <Route path="about" element={<About />} />
+          <Route path="project" element={<Project />} />
+          <Route path="recruit" element={<NewMember />} />
+          <Route path="admin" element={<ManMain />} />
+          <Route path="mypage" element={<MyPage />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

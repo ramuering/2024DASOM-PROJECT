@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import "./Header.css"
 import { Link } from 'react-router-dom'
 
-const Header = () => {
+const LimitHeader = () => {
   const [show, setShow] = useState(false)
 
   return (
@@ -16,21 +16,18 @@ const Header = () => {
         />
       </Logo>
       <NavBar>
-        <span className='nav-about'>
+        <span className='nav-about-limit'>
           <Link to="/about">ABOUT</Link>
         </span>
-        <span className='nav-project'>
+        <span className='nav-project-limit'>
           <Link to="/project">PROJECT</Link>
         </span>
-        <span className='nav-recruit'>
+        <span className='nav-recruit-limit'>
           <Link to="/recruit">RECRUIT</Link>
         </span>
-        <span className='nav-admin'>
-          <Link to="/admin">ADMIN</Link>
-        </span>
-        <span className='nav-mypage'>
-          <Link to="mypage">
-            MY PAGE
+        <span className='nav-login-limit'>
+          <Link to="/login">
+            LOGIN
           </Link>
         </span>
       </NavBar>
@@ -38,7 +35,7 @@ const Header = () => {
   )
 }
 
-export default Header
+export default LimitHeader
 
 const NavWrapper = styled.nav`
   position: fixed;
