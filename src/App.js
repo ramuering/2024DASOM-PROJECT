@@ -10,6 +10,8 @@ import LimitHeader from "./components/LimitHeader";
 import Login from "./pages/LoginPage/Login";
 import SignUp1 from "./pages/SignUpPage/SignUp1";
 import SignUp2 from "./pages/SignUpPage/SignUp2";
+import Apply1 from "./pages/ApplyPage/Apply1";
+import Apply2 from "./pages/ApplyPage/Apply2";
 
 const Layout = () => {
   return (
@@ -34,6 +36,8 @@ function App() {
           <Route path="mypage" element={<MyPage />} />
           <Route path="signup01" element={<SignUp1 />} />
           <Route path="signup02" element={<SignUp2 />} />
+          <Route path="apply01" element={<Apply1 />} />
+          <Route path="apply02" element={<Apply2 />} />
         </Route>
       </Routes>
     </div>
