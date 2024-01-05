@@ -44,7 +44,7 @@ const Main = () =>{
         <div className='part-title'>DASOM은 총 4개의 파트로 나뉘어져 있어요</div>
         <div className='box-container'>
           <div className="box">
-            <div className='part-info-title'>Design</div>
+            <div className='part-info-title'>기획</div>
             <p className='part-info-content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, distinctio deleniti optio, odio aperiam voluptates mollitia, quis alias iusto maxime ducimus sapiente sed saepe aliquid unde consequatur facilis similique at.</p>
           </div>
           <div className="box">
