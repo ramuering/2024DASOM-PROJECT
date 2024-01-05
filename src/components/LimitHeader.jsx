@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import "./Header.css"
 import { Link } from 'react-router-dom'
 
-const Header = () => {
+const LimitHeader = () => {
   const [show, setShow] = useState(false)
 
   return (
@@ -16,21 +16,18 @@ const Header = () => {
         />
       </Logo>
       <NavBar>
-        <span className='nav-about'>
+        <span className='nav-about-limit'>
           <CustomLink to="/about">ABOUT</CustomLink>
         </span>
-        <span className='nav-project'>
+        <span className='nav-project-limit'>
           <CustomLink to="/project">PROJECT</CustomLink>
         </span>
-        <span className='nav-recruit'>
+        <span className='nav-recruit-limit'>
           <CustomLink to="/recruit">RECRUIT</CustomLink>
         </span>
-        <span className='nav-admin'>
-          <CustomLink to="/admin">ADMIN</CustomLink>
-        </span>
-        <span className='nav-mypage'>
-          <CustomLink to="mypage">
-            MY PAGE
+        <span className='nav-login-limit'>
+          <CustomLink to="/login">
+            LOGIN
           </CustomLink>
         </span>
       </NavBar>
@@ -38,7 +35,7 @@ const Header = () => {
   )
 }
 
-export default Header
+export default LimitHeader
 
 const CustomLink = styled(Link)`
   &:hover{

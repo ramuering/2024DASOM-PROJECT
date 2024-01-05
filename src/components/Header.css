@@ -1,0 +1,52 @@
+span {
+  cursor: pointer;
+}
+
+.nav-about {
+  position: absolute;
+  display: block;
+  left: 960px;
+}
+.nav-project {
+  position: absolute;
+  display: block;
+  left: 1091px;
+}
+.nav-recruit {
+  position: absolute;
+  display: block;
+  left: 1239px;
+}
+.nav-admin {
+  position: absolute;
+  display: block;
+  left: 1382px;
+}
+.nav-mypage {
+  position: absolute;
+  display: block;
+  left: 1510px;
+}
+
+/* limit header */
+
+.nav-about-limit {
+  position: absolute;
+  display: block;
+  left: 1088px;
+}
+.nav-project-limit {
+  position: absolute;
+  display: block;
+  left: 1219px;
+}
+.nav-recruit-limit {
+  position: absolute;
+  display: block;
+  left: 1367px;
+}
+.nav-login-limit {
+  position: absolute;
+  display: block;
+  left: 1510px;
+}
