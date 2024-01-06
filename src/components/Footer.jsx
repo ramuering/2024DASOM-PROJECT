@@ -36,8 +36,12 @@ const Footer = () => {
 
       <div className='sns'>
         <p>DASOM 채널 바로가기</p>
-        <img className='img-github' src='./images/github.PNG' alt='깃허브로고'></img>
-        <img className='img-instagram' src='./images/instagram.PNG' alt='인스타로고'></img>
+        <a href='https://github.com/DASOM-GitHub'>
+          <img className='img-github' src='./images/github.PNG' alt='깃허브로고'></img>
+        </a>
+        <a href='https://instagram.com/das_om31'>
+          <img className='img-instagram' src='./images/instagram.PNG' alt='인스타로고'></img>
+        </a>
       </div>
 
     </div>
