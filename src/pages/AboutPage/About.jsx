@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import "./About.css"
 
 function About() {
+
+  const [currentPage, setCurrentPage] = useState('Lead');
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+
   return (
     <div>
       <Header />
@@ -65,14 +73,63 @@ function About() {
               <p className='explanation'>부원들 간의 상호 멘토십을 통해<br />
               지식을 전수하고 배우는 공간입니다.<br />
               함께 성장하는 커뮤니티를 형성합니다.</p>
-
             </div>
           </div>
+          <div className='members'>
+            <p>다솜 활동 멤버</p>
+            <Menu currentPage={currentPage} onPageChange={handlePageChange} />
+            {currentPage === 'Lead' && <Lead />}
+            {currentPage === 'CoreMember' && <CoreMember />}
+            {currentPage === 'Member' && <Member />}
+          </div>
+
         </div>
       </div>
       <Footer />
     </div>
   )
 }
+
+const Menu = ({ currentPage, onPageChange }) => {
+  return (
+    <div>
+      <button className={currentPage === 'Lead' ? 'active' : '' }
+              onClick={() => onPageChange('Lead')}>LEAD</button>
+      <button className={currentPage === 'CoreMember' ? 'active' : '' }
+              onClick={() => onPageChange('CoreMember')}>CORE MEMBER</button>
+      <button className={currentPage === 'Member' ? 'active' : '' }
+              onClick={() => onPageChange('Member')}>MEMBER</button>
+    </div>
+  );
+};
+
+const Lead = () => {
+  return (
+    <div className='mem-list'>
+      <h2>lead</h2>
+      {/* 내용 추가 */}
+    </div>
+  );
+};
+
+const CoreMember = () => {
+  return (
+    <div className='mem-list'>
+      <h2>core</h2>
+      {/* 내용 추가 */}
+    </div>
+  );
+};
+
+const Member = () => {
+  return (
+    <div className='mem-list'>
+      <h2>member</h2>
+      {/* 내용 추가 */}
+    </div>
+  );
+};
+
+
 
 export default About

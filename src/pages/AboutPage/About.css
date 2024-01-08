@@ -115,3 +115,39 @@
     margin-top: 20px;
     line-height: 1.7;
 }
+
+.members {
+    position: absolute;
+    top: 1197px;
+}
+.members > p {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+}
+.mem-list {
+    position: absolute;
+    top: 286px;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0 0 5px 0;
+    margin-top: 110px;
+    margin-right: 110px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #B6B6B6;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+button:hover {
+    color: #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+button.active {
+    color: #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
