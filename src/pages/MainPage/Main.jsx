@@ -40,6 +40,7 @@ const Main = () =>{
           <div className='main-title-info-content'>2+</div>
         </div>
       </div>
+
       <div className='part'>
         <div className='part-title'>DASOM은 총 4개의 파트로 나뉘어져 있어요</div>
         <div className='box-container'>
@@ -60,7 +61,42 @@ const Main = () =>{
             <p className='part-info-content'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam sequi ipsum quas placeat magnam, in consequuntur eos voluptas accusamus. Cum hic eos vero doloribus illo maxime! Iste sequi sit iure.</p>
           </div>
         </div>
-    </div>
+      </div>
+      <div className="activity">
+        <div className='activity-title'>DASOM은 이런 활동을 하고 있어요</div>
+        <div className="activity-box-container">
+          <div className="activity-box">
+            <div className="image-box">
+              STUDY
+            </div>
+            <div className="content-box">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis ad autem, non consequatur tenetur voluptate iste. Consequuntur, quaerat! Natus recusandae rem corrupti quisquam neque consequuntur quod, minus magnam ipsa quia.
+            </div>
+          </div>
+          <div className="activity-box">
+            <div className="image-box">
+              PROJECT
+            </div>
+            <div className="content-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, laudantium. Impedit, maiores molestiae quis a mollitia accusamus veritatis molestias? Optio libero totam minima. Officiis ipsa deleniti architecto fugiat rem illo.</div>
+          </div>
+          <div className="activity-box">
+            <div className="image-box">
+              MT
+            </div>
+            <div className="content-box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non nihil, et eligendi reiciendis vero id sit quidem cumque harum at sunt impedit voluptatem, voluptatibus consectetur culpa distinctio, expedita dolores sed.</div>
+          </div>
+          <div className="activity-box">
+            <div className="image-box">
+              TUTORING
+            </div>
+            <div className="content-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam mollitia libero ut quis iure necessitatibus, quae saepe! Vero quaerat voluptas incidunt odio commodi possimus, nostrum temporibus ex eligendi eius!</div>
+          </div>
+        </div>
+      </div>
+      <div className="slider">
+        <div className="slider-title">활동 사진</div>
+        
+      </div>
     </Container>
   )
 }
