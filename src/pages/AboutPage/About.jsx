@@ -82,7 +82,6 @@ function About() {
             {currentPage === 'CoreMember' && <CoreMember />}
             {currentPage === 'Member' && <Member />}
           </div>
-
         </div>
       </div>
       <Footer />
@@ -106,8 +105,15 @@ const Menu = ({ currentPage, onPageChange }) => {
 const Lead = () => {
   return (
     <div className='mem-list'>
-      <h2>lead</h2>
-      {/* 내용 추가 */}
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
     </div>
   );
 };
@@ -115,8 +121,12 @@ const Lead = () => {
 const CoreMember = () => {
   return (
     <div className='mem-list'>
-      <h2>core</h2>
-      {/* 내용 추가 */}
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
     </div>
   );
 };
@@ -124,12 +134,29 @@ const CoreMember = () => {
 const Member = () => {
   return (
     <div className='mem-list'>
-      <h2>member</h2>
-      {/* 내용 추가 */}
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+    </div>
+  );
+};
+
+const MemBox = ({ imageUrl, name, year }) => {
+  return (
+    <div className='membox'>
+      <div className='picture'>
+        <img src={imageUrl} alt='프로필사진'></img>
+      </div>
+      <p className='mem-name'>
+        {name}
+      </p>
+      <p className='mem-year'>
+        {year}
+      </p>
     </div>
   );
 };
 
 
-
-export default About
+export default About;

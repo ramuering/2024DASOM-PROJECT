@@ -98,7 +98,7 @@
 }
 .initial {
     font-size: 40px;
-    font-weight: 700;
+    font-weigt: 700;
     display: inline-block;
 }
 .title {
@@ -128,6 +128,46 @@
 .mem-list {
     position: absolute;
     top: 286px;
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.membox {
+    width: 269.43px;
+    height: 403.56px;
+    background-color: #323232;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 120px;
+    margin-bottom: 116.44px;
+}
+.picture {
+    width: 182.37px;
+    height: 182.37px;
+    background-color: black;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 43.53px;
+}
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mem-name {
+    margin-top: 40.1px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.mem-year {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #D9D9D9;
 }
 
 button {
