@@ -49,6 +49,7 @@
 }
 .mail {
     cursor: pointer;
+    text-decoration: underline;
 }
 .icon-text-container {
     display: flex;
