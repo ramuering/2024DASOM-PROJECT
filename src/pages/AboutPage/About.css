@@ -136,6 +136,7 @@
 .about-members {
     position: absolute;
     top: 1197px;
+    width: 1080px;
 }
 .about-members > p {
     font-size: 40px;
