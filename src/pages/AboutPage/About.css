@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+.about {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: 5320px;
+    background-color: #131313;
+    font-family: 'Inter', sans-serif;
+}
+
+.main {
+    width: 100%;
+    height: 1080px;
+    background-color: black;
+}
+.main-text-box {
+    position: absolute;
+    width: 208px;
+    height: 183px;
+    top: 371px;
+    left: 856px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.main-text1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+}
+.main-text2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #B6B6B6;
+    margin: 0;
+    position: absolute;
+    top: 67px;
+}
+.main-text3 {
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    top: 133px;
+}
+
+.middle {
+    position: absolute;
+    left: 360px;
+    margin-top: 593px;
+}
+.middle-text > p {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+.middle .DASOM {
+    display: flex;
+    position: absolute;
+    top: 216px;
+}
+.D {
+    position: absolute;
+    left: 0px;
+    width: 257px;
+}
+.A {
+    position: absolute;
+    left: 280px;
+    color: #B6B6B6;
+}
+.S {
+    position: absolute;
+    left: 464px;
+    width: 257px;
+}
+.O {
+    position: absolute;
+    left: 743px;
+    color: #B6B6B6;
+}
+.M {
+    position: absolute;
+    left: 928px;
+    width: 257px;
+}
+.circle {
+    width: 120px;
+    height: 120px;
+    background-color: #54ECC4;
+    color: black;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+}
+.initial {
+    font-size: 40px;
+    font-weight: 700;
+    display: inline-block;
+}
+.title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+.explanation {
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #D9D9D9;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+.members {
+    position: absolute;
+    top: 1197px;
+}
+.members > p {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+}
+.mem-list {
+    position: absolute;
+    top: 286px;
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.membox {
+    width: 269.43px;
+    height: 403.56px;
+    background-color: #323232;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 120px;
+    margin-bottom: 116.44px;
+}
+.picture {
+    width: 182.37px;
+    height: 182.37px;
+    background-color: black;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 43.53px;
+}
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mem-name {
+    margin-top: 40.1px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.mem-year {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #D9D9D9;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0 0 5px 0;
+    margin-top: 110px;
+    margin-right: 110px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #B6B6B6;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+button:hover {
+    color: #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+button.active {
+    color: #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}

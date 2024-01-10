@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [show, setShow] = useState(false)
-
   return (
     <NavWrapper show={show}>s
         <Logo>

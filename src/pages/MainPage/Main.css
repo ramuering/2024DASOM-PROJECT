@@ -180,8 +180,8 @@
   justify-content: center;
 }
 
-/* about */
-.about {
+/* main-about */
+.main-about {
   position: relative;
   top: 5900px;
   height: auto;
@@ -192,7 +192,7 @@
   align-items: center;
   margin: 0 auto;
 }
-.about-title {
+.main-about-title {
   top: 100%;
   font-size: 40px;
   width: 100%;
@@ -200,21 +200,21 @@
   display: flex;
   justify-content: center;
 }
-.about-box-container {
+.main-about-box-container {
   position: absolute;
   display: flex;
   top: 216px;
 }
-.about-box {
+.main-about-box {
   margin: 82px;
 }
-.about-img {
+.main-about-img {
   width: 277px;
   height: 260px;
   background-image: url("../../../public/images/study-sample.jpeg");
   border-radius: 25px 25px 0 0;
 }
-.about-link {
+.main-about-link {
   width: 277px;
   height: 95px;
   border-radius: 0 0 25px 25px;
@@ -226,7 +226,7 @@
   box-sizing: border-box;
   padding-top: 26px;
 }
-.about-link-tag {
+.main-about-link-tag {
   width: 277px !important;
   height: 95px;
   border-radius: 0 0 25px 25px;
@@ -237,4 +237,11 @@
   padding-left: 24px;
   box-sizing: border-box;
   padding-top: 26px;
+}
+
+/* footer */
+.main-footer {
+  position: absolute;
+  top: 100%;
+  margin-top: 6850px;
 }
