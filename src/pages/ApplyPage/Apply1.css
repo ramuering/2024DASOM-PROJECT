@@ -1,7 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
 
 #Ap1_main{
     width: 100vw;
@@ -26,7 +23,7 @@
     display: flex; /* flex 컨테이너로 설정 */
     justify-content: center; /* 자식 요소들 사이의 간격을 최대로 설정 */
     align-items: center; /* 세로 방향에서 중앙 정렬 */
-    height: 3500px;
+    height: 3000px;
     border-top: 1px solid white;
     width: 100vw;
 }
@@ -79,6 +76,8 @@ fieldset{
     border-right: 0;
     font-size: 16px;
     padding-top: 65px;
+    margin: 0;
+    padding: 0;
 }
 .Ap1_div_box{
     display: flex; /* flex 컨테이너로 설정 */

@@ -1,16 +1,22 @@
-*{
-    margin: 0;
-    padding: 0;
-    -ms-overflow-style: none;
+
+#NMB_MAIN_BOX{
+  -ms-overflow-style: none;
+}
+
+.NMB_Style_Reset {
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-scrollbar { /*스크롤 바 지우기(기능 유지)*/
     display: none;
-  }
+}
 #NMB_club_join{
     width: 100vw;
     height: 100vh;
 }
+
+
   #NMB_text_box{
     width: 850px;
     height: 700px;
@@ -55,7 +61,7 @@
     line-height: 80px;
     vertical-align: middle;
     text-align: left;
-    margin-left: 30px;
+    margin:0 0 0 30px;
     font-size: 24px;
     font-weight: bold;
   }
@@ -64,7 +70,7 @@
     line-height: 30px;
     vertical-align: middle;
     text-align: left;
-    margin-left: 30px;
+    margin:0 0 0 30px;
     font-size: 16px;
   }
 
@@ -86,6 +92,7 @@
     text-align: left;
     font-size: 25px;
     font-weight: bold;
+    margin: 0;
   }
 
   .NMB_sub_texts{
@@ -93,6 +100,7 @@
     vertical-align: middle;
     text-align: left;
     font-size: 16px;
+    margin: 0;
   }
 
   #NMB_center_button {

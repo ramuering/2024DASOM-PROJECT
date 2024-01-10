@@ -93,8 +93,9 @@ function NewMember() {
     window.scrollTo(0, 0);
   }, [])
 
+
   return (
-    <div>
+    <div id="NMB_MAIN_BOX">
 
       <NMB_VideoDiv>
         <NMB_VideoTag>
