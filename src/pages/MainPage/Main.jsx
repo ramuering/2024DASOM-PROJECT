@@ -1,10 +1,30 @@
 import React from 'react'
 import Header from "../../components/Header"
 import styled from "styled-components"
+// import Slide from "../../components/Slider"
 import "./Main.css"
+import { Link } from 'react-router-dom'
 
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-const Main = () =>{
+// import swiper style
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";
+import "swiper/css/pagination";
+import Slider from '../../components/Slider';
+
+const Main = () => {
+
+  const images = [
+    '/images/dasom-logo.png',
+    '/images/dasom-logo.png',
+    '/images/dasom-logo.png',
+    '/images/dasom-logo.png',
+    '/images/dasom-logo.png',
+    '/images/dasom-logo.png',
+  ]
   return (
     <Container>
       <Header />
@@ -95,7 +115,24 @@ const Main = () =>{
       </div>
       <div className="slider">
         <div className="slider-title">활동 사진</div>
-        
+      </div>
+      <div className="about">
+        <div className="about-title">DASOM 둘러보기</div>
+        <div className="about-box-container">
+          <div className="about-box">
+            <div className="about-img"></div>
+            <div to="/about" className="about-link-tag">ABOUT &gt;</div>
+          </div>
+          <div className="about-box">
+            <div className="about-img"></div>
+            <div className="about-link">FAQ &gt;</div>
+          </div>
+          <div className="about-box">
+            <div className="about-img"></div>
+            <div className="about-link">GitHub &gt;</div>
+          </div>
+        </div>
+      
       </div>
     </Container>
   )
@@ -111,7 +148,3 @@ const Container = styled.main`
   flex-direction: column;
   text-align: center;
 `;
-
-
-
-
