@@ -79,36 +79,41 @@
     display: flex;
     justify-content: space-between;
 }
+
 .about-D {
     position: absolute;
     left: 0px;
     width: 257px;
+    color: #B6B6B6;
 }
 .about-A {
     position: absolute;
     left: 280px;
     color: #B6B6B6;
+    transition: color 0.3s ease;
 }
 .about-S {
     position: absolute;
     left: 464px;
     width: 257px;
+    color: #B6B6B6;
 }
 .about-O {
     position: absolute;
     left: 743px;
     color: #B6B6B6;
+    transition: color 0.3s ease;
 }
 .about-M {
     position: absolute;
     left: 928px;
     width: 257px;
+    color: #B6B6B6;
 }
 .about-circle {
     width: 120px;
     height: 120px;
-    background-color: #54ECC4;
-    color: black;
+    background-color: #131313;
     border-radius: 50%;
     text-align: center;
     justify-content: center;
@@ -123,6 +128,8 @@
     font-weight: 500;
     margin-top: 35px;
     margin-bottom: 0;
+    color: #FFFFFF;
+    opacity: 0;
 }
 .about-explanation {
     font-size: 16px;
@@ -131,7 +138,23 @@
     color: #D9D9D9;
     margin-top: 20px;
     line-height: 1.7;
+    opacity: 0;
 }
+/*hover*/
+.about-circle:hover {
+    background-color: #54ECC4;
+    transition: background-color 0.3s ease;
+}
+.about-circle:hover .about-initial {
+    color: black;
+    transition: color 0.3s ease;
+}
+.about-circle:hover + .about-title, 
+.about-circle:hover + .about-title + .about-explanation {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
 
 .about-members {
     position: absolute;
