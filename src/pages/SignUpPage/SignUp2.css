@@ -1,0 +1,459 @@
+.SignUp2b4 {
+    top: 26px;
+    left: 230px;
+    color: #54ecc4;
+    text-align: left;
+  }
+  
+  .SignUp2b4,
+  .SignUp2b5,
+  .SignUp2button2 {
+    position: absolute;
+    color: #54ecc4;
+  }
+  
+  .SignUp2button2 {
+    cursor: pointer;
+    border: 2px solid;
+    border-color: #54ecc4;
+    padding: 0;
+    background-color: #131313;
+    color: white;
+    top: 1925px;
+    left: 667px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    width: 585px;
+    height: 71px;
+    transition: color 0.3s; 
+  }
+  
+  .SignUp2button2:hover {
+    background-color: #54ecc4;
+    color: #131313;
+  }
+  
+  .SignUp2b5 {
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 24px;
+  
+  }
+  .SignUp2frame-inner {
+    top: 14px;
+    left: 120px;
+    border-top: 2px solid var(--color-darkslategray);
+    box-sizing: border-box;
+    width: 466px;
+    height: 2px;
+  }
+  .SignUp2div5,
+  .SignUp2frame-inner,
+  .SignUp2parent {
+    position: absolute;
+  }
+  .SignUp2parent {
+    top: 0;
+    left: 0;
+    width: 585px;
+    height: 29px;
+  }
+  .SignUp2div5 {
+    top: 2px;
+    left: 32px;
+    font-weight: 500;
+    color: white;
+  
+  }
+  .SignUp2group,
+  .SignUp2checkbox {
+    left: 0;
+    height: 16px;
+    width: 16px;
+  }
+  
+  .SignUp2checkbox {
+  cursor: pointer;
+  border-radius: 2px;
+  border: 2px solid;
+  appearance: none;
+  border-radius: 2px;
+  border-color: white;
+  background-color: #131313;
+  }
+  
+  .SignUp2checkbox:hover {
+    border-color: #54ecc4;
+  }
+  
+  .SignUp2checkbox:checked {
+    border-color: #54ecc4;
+    background-color: #54ecc4;
+  }
+  .SignUp2group {
+    top: 85px;
+    width: 223px;
+    color: white;
+  }
+  .SignUp2b6,
+  .SignUp2container,
+  .SignUp2group {
+    position: absolute;
+  }
+  .SignUp2container {
+    top: 227px;
+    left: 0;
+    width: 354px;
+    height: 24px;
+    color: white;
+  
+  }
+  .SignUp2b6 {
+    top: 2px;
+    left: 32px;
+    color: white;
+  }
+  .SignUp2child,
+  .SignUp2frame-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 128px;
+    height: 24px;
+  }
+  .SignUp2child {
+    top: 4px;
+    left: 4px;
+    border-radius: 2px;
+    border: 2px solid var(--color-white);
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+  }
+  .SignUp2div7,
+  .SignUp2frame-group,
+  .SignUp2parent1,
+  .SignUp2parent2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+  }
+  .SignUp2frame-group,
+  .SignUp2parent1,
+  .SignUp2parent2 {
+    width: 272px;
+  }
+  .SignUp2frame-group,
+  .SignUp2parent1 {
+    top: 156px;
+  }
+  .SignUp2frame-group {
+    top: 90px;
+    width: 354px;
+    height: 251px;
+    font-size: var(--font-size-base);
+  }
+  .SignUp2div4 {
+    top: 1342px;
+    left: 668px;
+    width: 585px;
+    height: 341px;
+    font-size: var(--font-size-5xl);
+  }
+  .SignUp2b7,
+  .SignUp2div4,
+  .SignUp2item {
+    position: absolute;
+  }
+  .SignUp2b7 {
+    top: 896px;
+    left: 668px;
+    font-size: 24px;
+  
+    color: white;
+  }
+  .SignUp2item {
+    top: 910px;
+    left: 739px;
+    border-top: 2px solid var(--color-darkslategray);
+    box-sizing: border-box;
+    width: 515px;
+    height: 2px;
+  }
+  .SignUp2b8 {
+    top: 521px;
+    left: 668px;
+    font-size: 24px;
+    color: white;
+  }
+  .SignUp2b8,
+  .SignUp2div9,
+  .SignUp2inner {
+    position: absolute;
+  }
+  .SignUp2inner {
+    top: 535px;
+    left: 739px;
+    border-top: 2px solid var(--color-darkslategray);
+    box-sizing: border-box;
+    width: 515px;
+    height: 2px;
+  }
+  .SignUp2div9 {
+    top: 0;
+    left: 0;
+    font-weight: 500;
+    color: #B6B6B6;
+  }
+  .SignUp2button3,
+  .SignUp2parent3 {
+    position: absolute;
+    text-align: center;
+  }
+  .SignUp2button3 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: 26px;
+    left: 27px;
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    font-family: var(--font-inter);
+    color: #54ecc4;
+    display: inline-block;
+  }
+  .SignUp2parent3 {
+    top: 319px;
+    left: 894px;
+    width: 131px;
+    height: 45px;
+    color: var(--color-silver);
+  }
+  .SignUp2dasom1 {
+    position: absolute;
+    top: 0;
+    left: 217px;
+    font-size: 40px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+  
+  }
+  .SignUp2subtract-icon1 {
+    position: relative;
+    width: 489px;
+    height: 3px;
+    object-fit: cover;
+  }
+  .SignUp2ellipse-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: #B6B6B6;
+    width: 48px;
+    height: 48px;
+  }
+  .SignUp2b9 {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+  .SignUp2ellipse-group,
+  .SignUp2subtract-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+  }
+  .SignUp2subtract-group {
+    top: 14px;
+    width: 537px;
+    font-size: var(--font-size-base);
+  }
+  .SignUp2dasom-group {
+    top: 0;
+    width: 537px;
+    height: 62px;
+  }
+  .SignUp2b10,
+  .SignUp2dasom-group,
+  .SignUp2frame-container {
+    position: absolute;
+    left: 0;
+    color: white;
+  }
+  .SignUp2b10 {
+    top: 77px;
+    font-size: var(--font-size-xs);
+    margin-left: -1%;
+  }
+  .SignUp2frame-container {
+    top: 0;
+    width: 537px;
+    height: 92px;
+  }
+  .SignUp2b11 {
+    position: absolute;
+    top: 77px;
+    left: 500px;
+    margin-right: 0;
+    font-size: var(--font-size-xs);
+    color: white;  
+  }
+  
+  .SignUp2div11,
+  .SignUp2frame-child1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 597px;
+    height: 92px;
+  }
+  .SignUp2frame-child1 {
+    border-radius: 50%;
+    background: linear-gradient(180deg, #54ecc4, #14b98d);
+    width: 48px;
+    height: 48px;
+  }
+  .SignUp2b12,
+  .SignUp2ellipse-container {
+    position: absolute;
+    top: 14px;
+  }
+  .SignUp2b12 {
+    left: calc(50% - 5px);
+  }
+  .SignUp2ellipse-container {
+    left: 537px;
+    width: 48px;
+    height: 48px;
+  }
+  .SignUp2div10,
+  .SignUp2div12 {
+    position: absolute;
+  }
+  .SignUp2div10 {
+    top: 233px;
+    left: 667px;
+    width: 597px;
+    height: 92px;
+    font-size: var(--font-size-21xl);
+  }
+  .SignUp2div12 {
+    top: 0;
+    left: 28px;
+    font-weight: 500;
+    color: white;
+  }
+  .SignUp2ellipse-input {
+    appearance: none;
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    border-radius: 50%;
+    border: 2px solid;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    border-color: white;
+  }
+  .SignUp2ellipse-input:checked {
+    background-color: #54ecc4;
+    border-color: #54ecc4;
+  }
+  .SignUp2ellipse-input:hover {
+    border-color: #54ecc4;
+  }
+  
+  .SignUp2parent4 {
+    position: absolute;
+    top: 613px;
+    left: 672px;
+    width: 65px;
+    height: 19px;
+  }
+  .SignUp2ellipse-formcontrollabel {
+    position: absolute;
+    appearance: none;
+    cursor: pointer;
+    top: -1px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-color: white;
+    border-radius: 50%;
+    background-color: #131313;
+  }
+  .SignUp2ellipse-formcontrollabel:checked {
+    background-color: #54ecc4;
+    border-color: #54ecc4;
+  }
+  
+  .SignUp2ellipse-formcontrollabel:hover {
+    border-color: #54ecc4;
+  }
+  .SignUp2parent5,
+  .SignUp2parent6,
+  .SignUp2parent7,
+  .SignUp2parent8,
+  .SignUp2parent9 {
+    position: absolute;
+    top: 988px;
+    left: 672px;
+    width: 190px;
+    height: 19px;
+    color: white;
+  }
+  .SignUp2parent6,
+  .SignUp2parent7,
+  .SignUp2parent8,
+  .SignUp2parent9 {
+    left: 1048px;
+    width: 205px;
+  }
+  
+  .SignUp2arent7,
+  .SignUp2parent8,
+  .SignUp2parent9 {
+    top: 1059px;
+    left: 672px;
+    width: 146px;
+  }
+  .SignUp2parent8,
+  .SignUp2parent9 {
+    top: 613px;
+    left: 927px;
+    width: 68px;
+  }
+  .SignUp2parent9 {
+    left: 1181px;
+  }
+  
+  .SignUp2div3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: 100%;
+      height: 5320px;
+      background-color: #131313;
+      font-family: 'Inter', sans-serif;
+    }
+    
+  
+  
+  
+  
+  
