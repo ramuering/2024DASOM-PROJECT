@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar { /*스크롤 바 지우기(기능 유지)*/
+    display: none;
+  }
+#club_join{
+    width: 100vw;
+    height: 100vh;
+}
+  #text_box{
+    width: 850px;
+    height: 700px;
+    margin: 0 auto;
+    padding-top: 15vh;
+  }
+.big_box{
+    width: 850px;
+    height: 300px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+#bgstyle{
+    width: 850px;
+    height: 250px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: #323232;
+}
+  .small_box{
+    width: 410px;
+    height: 300px;
+    background-color: #323232;
+    border-radius: 15px;
+    float: left;
+  }
+  #null_box2{
+    width: 30px;
+    height: 300px;
+    float: left;
+  }
+
+  #Main_text{
+    text-align: center;
+    font-size: 54px;
+    font-weight: bold;
+    margin-bottom: 15vh;
+  }
+
+  .text_title{
+    line-height: 80px;
+    vertical-align: middle;
+    text-align: left;
+    margin-left: 30px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .sub_text{
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: left;
+    margin-left: 30px;
+    font-size: 16px;
+  }
+
+  .align_box{
+    float: left;
+  }
+  .align_box > img{
+    margin: 0 50px;
+  }
+
+  #center_box{
+    width: 750px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+  .text_titles{
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .sub_texts{
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  #center_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+
+  button{
+    width: 235px;
+    height: 95px;
+    background: none;
+    border: 2px solid #54ECC4;
+    border-radius: 25px;
+    color: #54ECC4;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .linkButton{
+    color: #54ECC4;
+    font-weight: bold;
+  }
+
+  button:hover{
+    background:#54ECC4 ;
+    color: white;
+  }
+
+  .linkButton:hover{
+    color: black;
+    font-weight: bold;
+  }
+
+  #ques{
+    width: 100vw;
+    height: 1000px;
+    display: flex; /* flex 컨테이너로 설정 */
+    justify-content: center; /* 자식 요소들 사이의 간격을 최대로 설정 */
+    align-items: center; /* 세로 방향에서 중앙 정렬 */
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #ques_title{
+    margin-bottom: 50px;
+  }
+  #ques_text{
+    text-align: center;
+    font-size: 54px;
+    font-weight: bold;
+  }
+  .ques_text{
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  #footer_box{
+    width: 100vw;
+    height: 680px;
+    display: flex; /* flex 컨테이너로 설정 */
+    justify-content: center; /* 자식 요소들 사이의 간격을 최대로 설정 */
+    align-items: center; /* 세로 방향에서 중앙 정렬 */
+    margin: 0 auto;
+    text-align: center;
+  }
