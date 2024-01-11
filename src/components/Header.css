@@ -1,62 +1,47 @@
 span {
   cursor: pointer;
 }
-
-.nav-about {
+.nav-admin {
   position: absolute;
   display: block;
   right: 1165px;
 }
-.nav-study {
+.nav-about {
   position: absolute;
   display: block;
   right: 1036px;
 }
-.nav-notice {
+.nav-study {
   position: absolute;
   display: block;
   right: 903px;
 }
-.nav-project {
+.nav-notice {
   position: absolute;
   display: block;
-  right: 755px;
+  right: 765px;
 }
-.nav-recruit {
+.nav-project {
   position: absolute;
   display: block;
   right: 612px;
 }
-.nav-admin {
+.nav-recruit {
   position: absolute;
   display: block;
-  right: 484px;
+  right: 474px;
 }
+
 .nav-mypage {
   position: absolute;
   display: block;
-  right: 339px;
+  right: 330px;
 }
 
 /* limit header */
 
-.nav-about-limit {
-  position: absolute;
-  display: block;
-  left: 1088px;
-}
-.nav-project-limit {
-  position: absolute;
-  display: block;
-  left: 1219px;
-}
-.nav-recruit-limit {
-  position: absolute;
-  display: block;
-  left: 1367px;
-}
 .nav-login-limit {
   position: absolute;
   display: block;
-  left: 1510px;
+  right: 195px;
 }
