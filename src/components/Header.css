@@ -5,27 +5,37 @@ span {
 .nav-about {
   position: absolute;
   display: block;
-  left: 960px;
+  right: 1165px;
+}
+.nav-study {
+  position: absolute;
+  display: block;
+  right: 1036px;
+}
+.nav-notice {
+  position: absolute;
+  display: block;
+  right: 903px;
 }
 .nav-project {
   position: absolute;
   display: block;
-  left: 1091px;
+  right: 755px;
 }
 .nav-recruit {
   position: absolute;
   display: block;
-  left: 1239px;
+  right: 612px;
 }
 .nav-admin {
   position: absolute;
   display: block;
-  left: 1382px;
+  right: 484px;
 }
 .nav-mypage {
   position: absolute;
   display: block;
-  left: 1510px;
+  right: 339px;
 }
 
 /* limit header */

@@ -18,6 +18,12 @@ const Header = () => {
         <span className='nav-about'>
           <CustomLink to="/about">ABOUT</CustomLink>
         </span>
+        <span className='nav-study'>
+          <CustomLink to="/study">STUDY</CustomLink>
+        </span>
+        <span className='nav-notice'>
+          <CustomLink to="/notice">공지사항</CustomLink>
+        </span>
         <span className='nav-project'>
           <CustomLink to="/project">PROJECT</CustomLink>
         </span>
