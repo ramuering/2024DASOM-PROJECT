@@ -73,8 +73,8 @@ const Logo = styled.a`
   margin-top: 4px;
   margin-height: 70px;
   display: inline-block;
-  left: 360px;
   z-index: 3;
+  left: 360px;
   cursor: pointer;
 
   img {
