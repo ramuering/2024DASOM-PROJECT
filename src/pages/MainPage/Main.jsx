@@ -4,6 +4,7 @@ import Footer from '../../components/Footer'
 import styled from "styled-components"
 // import Slide from "../../components/Slider"
 import "./Main.css"
+import Slider from '../../components/Slider'
 
 
 
@@ -70,7 +71,8 @@ const Main = () => {
         <div className="activity-box-container">
           <div className="activity-box">
             <div className="image-box">
-              STUDY
+            <div className='main-background-image'></div>
+              <div className="main-text">STUDY</div>
             </div>
             <div className="content-box">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis ad autem, non consequatur tenetur voluptate iste. Consequuntur, quaerat! Natus recusandae rem corrupti quisquam neque consequuntur quod, minus magnam ipsa quia.
@@ -78,19 +80,22 @@ const Main = () => {
           </div>
           <div className="activity-box">
             <div className="image-box">
-              PROJECT
+              <div className='main-background-image'></div>
+              <div className="main-text">PROJECT</div>
             </div>
             <div className="content-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, laudantium. Impedit, maiores molestiae quis a mollitia accusamus veritatis molestias? Optio libero totam minima. Officiis ipsa deleniti architecto fugiat rem illo.</div>
           </div>
           <div className="activity-box">
             <div className="image-box">
-              MT
+            <div className='main-background-image'></div>
+              <div className="main-text">MT</div>
             </div>
             <div className="content-box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non nihil, et eligendi reiciendis vero id sit quidem cumque harum at sunt impedit voluptatem, voluptatibus consectetur culpa distinctio, expedita dolores sed.</div>
           </div>
           <div className="activity-box">
             <div className="image-box">
-              TUTORING
+            <div className='main-background-image'></div>
+              <div className="main-text">TUTORING</div>
             </div>
             <div className="content-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam mollitia libero ut quis iure necessitatibus, quae saepe! Vero quaerat voluptas incidunt odio commodi possimus, nostrum temporibus ex eligendi eius!</div>
           </div>
@@ -98,6 +103,10 @@ const Main = () => {
       </div>
       <div className="slider">
         <div className="slider-title">활동 사진</div>
+        <SliderWrapper >
+        {/* <Slider /> */}
+        </SliderWrapper>
+        
       </div>
       <div className="main-about">
         <div className="main-about-title">DASOM 둘러보기</div>
@@ -134,3 +143,10 @@ const Container = styled.main`
   flex-direction: column;
   text-align: center;
 `;
+const SliderWrapper = styled.div`
+  position: absolute;
+  top: 100%;
+  margin-top: 237px;
+  height: 700px;
+  width: 100vw;
+  `;
