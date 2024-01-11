@@ -4,7 +4,7 @@ import "./Apply2.css"
 import styled from 'styled-components';
 
 const Ap2_NullBox = styled.div`
-    height: 70px;
+    height: 40px;
 `;
 
 function Apply2() {
