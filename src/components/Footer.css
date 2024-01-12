@@ -47,10 +47,6 @@
     font-size: 16px;
     font-weight: 500;
 }
-.footer-mail {
-    cursor: pointer;
-    text-decoration: underline;
-}
 .footer-icon-text-container {
     display: flex;
     align-items: center;
