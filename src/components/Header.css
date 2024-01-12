@@ -1,52 +1,47 @@
 span {
   cursor: pointer;
 }
-
+.nav-admin {
+  position: absolute;
+  display: block;
+  right: 1165px;
+}
 .nav-about {
   position: absolute;
   display: block;
-  left: 960px;
+  right: 1036px;
+}
+.nav-study {
+  position: absolute;
+  display: block;
+  right: 903px;
+}
+.nav-notice {
+  position: absolute;
+  display: block;
+  right: 765px;
 }
 .nav-project {
   position: absolute;
   display: block;
-  left: 1091px;
+  right: 612px;
 }
 .nav-recruit {
   position: absolute;
   display: block;
-  left: 1239px;
+  right: 474px;
 }
-.nav-admin {
-  position: absolute;
-  display: block;
-  left: 1382px;
-}
+
 .nav-mypage {
   position: absolute;
   display: block;
-  left: 1510px;
+  right: 330px;
 }
 
 /* limit header */
 
-.nav-about-limit {
-  position: absolute;
-  display: block;
-  left: 1088px;
-}
-.nav-project-limit {
-  position: absolute;
-  display: block;
-  left: 1219px;
-}
-.nav-recruit-limit {
-  position: absolute;
-  display: block;
-  left: 1367px;
-}
 .nav-login-limit {
   position: absolute;
   display: block;
-  left: 1510px;
+  right: 195px;
 }

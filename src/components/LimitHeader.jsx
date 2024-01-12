@@ -16,20 +16,32 @@ const LimitHeader = () => {
         />
       </Logo>
       <NavBar>
-        <span className='nav-about-limit'>
+        <span className='nav-about'>
           <CustomLink to="/about">ABOUT</CustomLink>
         </span>
-        <span className='nav-project-limit'>
+        <span className='nav-study'>
+          <CustomLink to="/study">STUDY</CustomLink>
+        </span>
+        <span className='nav-notice'>
+          <CustomLink to="/notice">공지사항</CustomLink>
+        </span>
+        <span className='nav-project'>
           <CustomLink to="/project">PROJECT</CustomLink>
         </span>
-        <span className='nav-recruit-limit'>
+        <span className='nav-recruit'>
           <CustomLink to="/recruit">RECRUIT</CustomLink>
+        </span>
+        <span className='nav-mypage'>
+          <CustomLink to="mypage">
+            MY PAGE
+          </CustomLink>
         </span>
         <span className='nav-login-limit'>
           <CustomLink to="/login">
             LOGIN
           </CustomLink>
         </span>
+
       </NavBar>
     </NavWrapper>
   )

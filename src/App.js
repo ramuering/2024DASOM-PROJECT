@@ -12,6 +12,8 @@ import SignUp1 from "./pages/SignUpPage/SignUp1";
 import SignUp2 from "./pages/SignUpPage/SignUp2";
 import Apply1 from "./pages/ApplyPage/Apply1";
 import Apply2 from "./pages/ApplyPage/Apply2";
+import Notice from "./pages/NoticePage/Notice";
+import Study from "./pages/StudyPage/Study";
 
 const Layout = () => {
   return (
@@ -38,6 +40,8 @@ function App() {
           <Route path="signup02" element={<SignUp2 />} />
           <Route path="apply01" element={<Apply1 />} />
           <Route path="apply02" element={<Apply2 />} />
+          <Route path="notice" element={<Notice />} />
+          <Route path="study" element={<Study />} />
         </Route>
       </Routes>
     </div>
@@ -62,6 +66,5 @@ function App() {
         </div>
     );
 } */
-
 
 export default App;
