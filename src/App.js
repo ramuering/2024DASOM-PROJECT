@@ -12,6 +12,8 @@ import SignUp1 from "./pages/SignUpPage/SignUp1";
 import SignUp2 from "./pages/SignUpPage/SignUp2";
 import Apply1 from "./pages/ApplyPage/Apply1";
 import Apply2 from "./pages/ApplyPage/Apply2";
+import Notice from "./pages/NoticePage/Notice";
+import Study from "./pages/StudyPage/Study";
 
 const Layout = () => {
   return (
@@ -38,31 +40,12 @@ function App() {
           <Route path="signup02" element={<SignUp2 />} />
           <Route path="apply01" element={<Apply1 />} />
           <Route path="apply02" element={<Apply2 />} />
+          <Route path="notice" element={<Notice />} />
+          <Route path="study" element={<Study />} />
         </Route>
       </Routes>
     </div>
   );
 }
-
-/*
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
-
-function App() {
-   const [hello, setHello] = useState('')
-
-    useEffect(() => {
-        axios.get('/api/hello')
-        .then(response => setHello(response.data))
-        .catch(error => console.log(error))
-    }, []);
-
-    return (
-        <div>
-            백엔드에서 가져온 데이터입니다 : {hello}
-        </div>
-    );
-}
-*/
 
 export default App;

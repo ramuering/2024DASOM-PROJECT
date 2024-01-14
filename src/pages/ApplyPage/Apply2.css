@@ -1,9 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 
-#Apply2_main{
+#Ap2_main{
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -14,10 +10,25 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-#first_forms{
+#Ap2_first_forms{
     display: flex; /* flex 컨테이너로 설정 */
     justify-content: center; /* 자식 요소들 사이의 간격을 최대로 설정 */
     align-items: center; /* 세로 방향에서 중앙 정렬 */
     text-align: center;
     height: 100vh;
+}
+
+#Ap2_form_title{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#Ap2_sub_title{
+    font-size: 24px;
+    line-height: 50px;
+}
+
+.Ap2_mini_text{
+    color: #54ECC4;
+    cursor: Default;
 }
