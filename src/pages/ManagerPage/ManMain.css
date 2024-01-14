@@ -5,13 +5,13 @@
     flex-direction: column;
     align-items: center;
     height: 1326px;
-    font-family: 'Inter', sans-serif;
 }
 
 .manMain-title {
     margin: 209px 0 128px 0 ;
     font-size: 40px;
     font-weight: 700;
+    font-family: 'Inter', sans-serif;
 }
 .manMain-button {
     margin-bottom: 128px;
@@ -26,6 +26,7 @@
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
+    font-family: 'Inter', sans-serif;
 }
 /* 버튼 hover */
 .manMain-button:hover {
