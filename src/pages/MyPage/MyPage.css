@@ -1,0 +1,56 @@
+.myPage{
+    position: absolute;
+    left: 870px;
+    top: 207px;
+    width: 181px;
+    height: 48px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+.table{
+    position: absolute;
+    left: 360px;
+    top: 916px;
+    border-collapse: collapse;
+}
+.dataHead{
+    width: 175px;
+    height: 49px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family:'Inter';
+    border: 1px solid #D9D9D9;
+}
+.myData{
+    width: 1025px;
+    height: 49px;
+    font-size: 16px;
+    font-weight: medium;
+    font-family:'Inter';
+    text-indent: 30px;
+    border: 1px solid #D9D9D9;
+}
+.fixMyDataBorder{
+    position: absolute;
+    left: 740px;
+    top: 1219px;
+    width: 440px;
+    height: 64px;
+    
+    border: 2px solid #54ECC4;
+    border-radius: 16px;
+    background-color: #131313;
+}
+.fixMyDataFont{
+    position: absolute;
+    left: 172px;
+    top: 23px;
+    width: 81px;
+    height: 19px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Inter';
+    color: #54ECC4;
+    cursor: pointer;
+}

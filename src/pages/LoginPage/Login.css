@@ -1,0 +1,59 @@
+.dasom{
+    position: absolute;
+    left: 885px;
+    top: 340px;
+    width: 151px;
+    height: 48px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+.loginButton{
+    position: absolute;
+    left: 667px;
+    top: 505px;
+    width: 585px;
+    height: 71px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Inter';
+    color: #54ECC4;
+    
+    border: 2px solid #54ECC4;
+    border-radius: 25px;
+    background-color: #131313;
+    cursor: pointer;
+}
+.noMember{
+    position: absolute;
+    left: 895px;
+    top: 663px;
+    width: 131px;
+    height: 19px;
+    font-size: 16px;
+    font-weight: medium;
+    color: #B6B6B6;
+}
+.goMember{
+    position: absolute;
+    left: 914px;
+    top: 689px;
+    width: 131px;
+    height: 19px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #54ECC4;
+}
+.noMember,
+.goMember{
+    width: 131px;
+    height: 45px;
+    font-family:'Inter';
+}
+.loginButton:hover{
+    background-color: #54ECC4;
+    color: #131313;
+}
+.loginButton:hover +.noMember{
+    filter:blur(0.6px);
+}

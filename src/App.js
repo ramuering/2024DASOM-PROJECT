@@ -6,8 +6,10 @@ import Project from "./pages/ProjectPage/Project";
 import NewMember from "./pages/ApplyPage/NewMember";
 import ManMain from "./pages/ManagerPage/ManMain";
 import MyPage from "./pages/MyPage/MyPage";
+import MyPageModify from "./pages/MyPage/MyPageModify"
 import LimitHeader from "./components/LimitHeader";
 import Login from "./pages/LoginPage/Login";
+import Redirection from "./pages/LoginPage/Redirection";
 import SignUp1 from "./pages/SignUpPage/SignUp1";
 import SignUp2 from "./pages/SignUpPage/SignUp2";
 import Apply1 from "./pages/ApplyPage/Apply1";
@@ -30,12 +32,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/login" element={<Login />} />
+          <Route path="/redirection" element={<Redirection />} />
           <Route path="main" element={<Main />} />
           <Route path="about" element={<About />} />
           <Route path="project" element={<Project />} />
           <Route path="recruit" element={<NewMember />} />
           <Route path="admin" element={<ManMain />} />
           <Route path="mypage" element={<MyPage />} />
+          <Route path="mypagemodify" element={<MyPageModify />} />
           <Route path="signup01" element={<SignUp1 />} />
           <Route path="signup02" element={<SignUp2 />} />
           <Route path="apply01" element={<Apply1 />} />
