@@ -15,6 +15,13 @@ import Apply1 from "./pages/ApplyPage/Apply1";
 import Apply2 from "./pages/ApplyPage/Apply2";
 import Notice from "./pages/NoticePage/Notice";
 import Study from "./pages/StudyPage/Study";
+import ManMemberModify from "./pages/ManagerPage/ManMemberModify";
+import ManStudyApply from "./pages/ManagerPage/ManStudyApply";
+import ManStudyModify from "./pages/ManagerPage/ManStudyModify";
+import ManProjectApply from "./pages/ManagerPage/ManProjectApply";
+import ManProjectModify from "./pages/ManagerPage/ManProjectModify";
+
+
 
 const Layout = () => {
   return (
@@ -43,6 +50,14 @@ function App() {
           <Route path="apply02" element={<Apply2 />} />
           <Route path="notice" element={<Notice />} />
           <Route path="study" element={<Study />} />
+          <Route path="ManMemberModify" element={<ManMemberModify />} />
+          <Route path="ManStudyApply" element={<ManStudyApply />} />
+          <Route path="ManStudyModify" element={<ManStudyModify />} />
+          <Route path="ManProjectApply" element={<ManProjectApply/>} />
+          <Route path="ManProjectModify" element={<ManProjectModify/>} />
+
+
+
         </Route>
       </Routes>
     </div>
