@@ -16,6 +16,7 @@ import Apply2 from "./pages/ApplyPage/Apply2";
 import Notice from "./pages/NoticePage/Notice";
 import Study from "./pages/StudyPage/Study";
 
+
 const Layout = () => {
   return (
     <div>
