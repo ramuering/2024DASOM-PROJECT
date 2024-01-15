@@ -1,0 +1,156 @@
+
+.ManStudyApply {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 2642px;
+    font-family: 'Inter', sans-serif;;
+  }
+  
+.ManStudyApply-title {
+    margin-top: 260px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.ManStudyApply-box {
+    margin-top: 49px;
+}
+
+.ManStudyApply-name {
+    margin-top: 100px;
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+
+}
+
+.ManStudyApply-content {
+    width: 1157px;
+    height: 318px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+
+
+}
+
+.ManStudyApply-number {
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+
+}
+
+.ManStudyApply-book {
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+
+}
+
+.ManStudyApply-lecture {
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+
+}
+
+.ManStudyApply-notion {
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+
+}
+
+.ManStudyApply-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 97px;
+    margin-right: 1000px;
+}
+ 
+.ManStudyApply-1weeks {
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+
+}
+
+.ManStudyApply-2weeks {
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+
+}
+
+.ManStudyApply-3weeks {
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+
+}
+
+.plus{
+    margin-top: 54px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.ManStudyApply-picture {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 98px;
+    margin-right: 1020px;
+    
+}
+
+.ManStudyApply-select {
+    width:200px;
+    height: 40px;
+    border-radius: 16px;
+    margin-right: 950px;
+    margin-top: 20px;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+    color: #D9D9D9;
+
+}
+
+.ManStudyApply-activ {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 98px;
+    margin-right: 1040px;
+}
+
+.ManStudyApply-button {
+    margin-top: 150px;
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    background-color: #131313;
+    border: solid 1px  #54ECC4;
+    color: #54ECC4;
+    font-weight: bold;
+
+
+
+}
