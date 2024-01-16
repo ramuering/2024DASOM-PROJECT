@@ -20,7 +20,7 @@ import ManStudyApply from "./pages/ManagerPage/ManStudyApply";
 import ManStudyModify from "./pages/ManagerPage/ManStudyModify";
 import ManProjectApply from "./pages/ManagerPage/ManProjectApply";
 import ManProjectModify from "./pages/ManagerPage/ManProjectModify";
-import ManMember from "./pages/ManagerPage/ManMember";
+import ManApplyMember from "./pages/ManagerPage/ManApplyMember";
 import ManStudy from "./pages/ManagerPage/ManStudy";
 import ManProject from "./pages/ManagerPage/ManProject";
 import ManApply from "./pages/ManagerPage/ManApply";
@@ -58,7 +58,7 @@ function App() {
           <Route path="ManStudyModify" element={<ManStudyModify />} />
           <Route path="ManProjectApply" element={<ManProjectApply/>} />
           <Route path="ManProjectModify" element={<ManProjectModify/>} />
-          <Route path="ManMember" element={<ManMember />} />
+          <Route path="ManApplyMember" element={<ManApplyMember />} />
           <Route path="ManStudy" element={<ManStudy />} />
           <Route path="ManProject" element={<ManProject />} />
           <Route path="ManApply" element={<ManApply />} />
