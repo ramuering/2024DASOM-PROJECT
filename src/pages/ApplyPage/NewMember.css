@@ -110,11 +110,12 @@
     height: 100px;
   }
 
-  #NMB_center_button >button{
+  .NMB_linkButton{
     width: 235px;
     height: 95px;
     background: none;
     border: 2px solid #54ECC4;
+    line-height: 95px;
     border-radius: 25px;
     color: #54ECC4;
     text-align: center;
@@ -123,14 +124,10 @@
     transition: all 0.2s;
   }
 
-  #NMB_center_button .NMB_linkButton{
-    color: white;
-    font-weight: bold;
-  }
-
-  #NMB_center_button  button:hover{
+  .NMB_linkButton:hover{
     color: black;
     background:#54ECC4 ;
+    font-weight: bold;
     transition: all 0.2s;
   }
 

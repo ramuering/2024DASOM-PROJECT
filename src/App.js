@@ -26,8 +26,12 @@ import ManApplyMember from "./pages/ManagerPage/ManApplyMember";
 import ManStudy from "./pages/ManagerPage/ManStudy";
 import ManProject from "./pages/ManagerPage/ManProject";
 import ManApply from "./pages/ManagerPage/ManApply";
+<<<<<<< HEAD
 import Makers from "./pages/MakersPage/Makers";
 
+=======
+import NoticeDetail from "./pages/NoticePage/NoticeDetail";
+>>>>>>> 26a0a9e07b00001f06d2934695da2712c6bae64d
 
 const Layout = () => {
   return (
@@ -67,7 +71,11 @@ function App() {
           <Route path="ManStudy" element={<ManStudy />} />
           <Route path="ManProject" element={<ManProject />} />
           <Route path="ManApply" element={<ManApply />} />
+<<<<<<< HEAD
           <Route path="Makers" element={<Makers />} />
+=======
+          <Route path="/noticedetail/:id" element={<NoticeDetail />} />
+>>>>>>> 26a0a9e07b00001f06d2934695da2712c6bae64d
         </Route>
       </Routes>
     </div>

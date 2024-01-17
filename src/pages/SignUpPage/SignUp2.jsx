@@ -1,9 +1,9 @@
 import React from 'react'
-
 import "./SignUp2.css";
 
 const SignUp2 = () => {
   return ( 
+    
     <div className='SignUp2Page'>
      {/*  <div className="Element">
       <div className="subtract"></div>
@@ -64,16 +64,8 @@ const SignUp2 = () => {
           
           <fieldset id="Agree">
             <legend><p class="form_text">약관동의 <span class="red_text">*</span></p></legend>
-            <div class ="div_box">
-            <b className='AreeAll'>전체 약관 동의</b>
-            <input className='checkbox'
-            type='checkbox'/>
-
-            </div>
-              
           </fieldset>
           <button className='SignUp02_final'>다솜 가입 완료하기</button>
-
     </div>
 
   );
