@@ -31,8 +31,6 @@
 .noMember{
     position: absolute;
     top: 663px;
-    width: 131px;
-    height: 19px;
     font-size: 16px;
     font-weight: medium;
     color: #B6B6B6;
@@ -40,17 +38,14 @@
 .goMember{
     position: absolute;
     top: 689px;
-    width: 131px;
-    height: 19px;
     font-size: 16px;
     font-weight: bold;
     color: #54ECC4;
 }
 .noMember,
 .goMember{
-    width: 131px;
-    height: 45px;
     font-family:'Inter';
+    text-align: center;
 }
 .loginButton:hover{
     background-color: #54ECC4;

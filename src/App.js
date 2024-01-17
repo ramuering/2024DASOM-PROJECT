@@ -1,3 +1,4 @@
+
 import "./App.css";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Main from "./pages/MainPage/Main";
@@ -16,6 +17,17 @@ import Apply1 from "./pages/ApplyPage/Apply1";
 import Apply2 from "./pages/ApplyPage/Apply2";
 import Notice from "./pages/NoticePage/Notice";
 import Study from "./pages/StudyPage/Study";
+import ManMemberModify from "./pages/ManagerPage/ManMemberModify";
+import ManStudyApply from "./pages/ManagerPage/ManStudyApply";
+import ManStudyModify from "./pages/ManagerPage/ManStudyModify";
+import ManProjectApply from "./pages/ManagerPage/ManProjectApply";
+import ManProjectModify from "./pages/ManagerPage/ManProjectModify";
+import ManApplyMember from "./pages/ManagerPage/ManApplyMember";
+import ManStudy from "./pages/ManagerPage/ManStudy";
+import ManProject from "./pages/ManagerPage/ManProject";
+import ManApply from "./pages/ManagerPage/ManApply";
+import Makers from "./pages/MakersPage/Makers";
+
 
 const Layout = () => {
   return (
@@ -46,13 +58,25 @@ function App() {
           <Route path="apply02" element={<Apply2 />} />
           <Route path="notice" element={<Notice />} />
           <Route path="study" element={<Study />} />
+          <Route path="ManMemberModify" element={<ManMemberModify />} />
+          <Route path="ManStudyApply" element={<ManStudyApply />} />
+          <Route path="ManStudyModify" element={<ManStudyModify />} />
+          <Route path="ManProjectApply" element={<ManProjectApply/>} />
+          <Route path="ManProjectModify" element={<ManProjectModify/>} />
+          <Route path="ManApplyMember" element={<ManApplyMember />} />
+          <Route path="ManStudy" element={<ManStudy />} />
+          <Route path="ManProject" element={<ManProject />} />
+          <Route path="ManApply" element={<ManApply />} />
+          <Route path="Makers" element={<Makers />} />
         </Route>
       </Routes>
     </div>
   );
 }
 
-/*import React, {useEffect, useState} from 'react';
+
+/*
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 function App() {
@@ -69,6 +93,8 @@ function App() {
             백엔드에서 가져온 데이터입니다 : {hello}
         </div>
     );
-} */
+}
+*/
+
 
 export default App;
