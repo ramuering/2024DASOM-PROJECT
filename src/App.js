@@ -24,7 +24,7 @@ import ManApplyMember from "./pages/ManagerPage/ManApplyMember";
 import ManStudy from "./pages/ManagerPage/ManStudy";
 import ManProject from "./pages/ManagerPage/ManProject";
 import ManApply from "./pages/ManagerPage/ManApply";
-import Makers from "./pages/MakersPage/Makers";
+import NoticeDetail from "./pages/NoticePage/NoticeDetail";
 
 
 const Layout = () => {
@@ -63,8 +63,7 @@ function App() {
           <Route path="ManStudy" element={<ManStudy />} />
           <Route path="ManProject" element={<ManProject />} />
           <Route path="ManApply" element={<ManApply />} />
-          <Route path="Makers" element={<Makers />} />
-
+          <Route path="/noticedetail/:id" element={<NoticeDetail />} />
         </Route>
       </Routes>
     </div>

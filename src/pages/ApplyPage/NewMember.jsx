@@ -162,7 +162,7 @@ function NewMember() {
             </div>
           </div>
         <div id="NMB_center_button">
-        <button><Link to="../apply01" className="NMB_linkButton">지원하기</Link></button>
+        <Link to="../apply01" className="NMB_linkButton">지원하기</Link>
         </div>
       </div>
 
