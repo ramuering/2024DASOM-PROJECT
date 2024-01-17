@@ -26,6 +26,7 @@ import ManProject from "./pages/ManagerPage/ManProject";
 import ManApply from "./pages/ManagerPage/ManApply";
 import NoticeDetail from "./pages/NoticePage/NoticeDetail";
 
+
 const Layout = () => {
   return (
     <div>
