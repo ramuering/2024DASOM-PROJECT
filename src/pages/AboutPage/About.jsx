@@ -43,9 +43,15 @@ function About() {
               성장의 기회를 만나보세요.</p>
             </div>
             <div className='about-A'>
-              <div className='about-initial'>
-                <p>A</p>
+              <div className='about-circle'>
+                <div className='about-initial'>
+                  <p>A</p>
+                </div>
               </div>
+              <p className='about-title'>Algorithm</p>
+              <p className='about-explanation'>소프트웨어의 핵심, 알고리즘에 집중하여<br />
+              깊이 있는 학습과 협업을 통해<br />
+              멋진 프로젝트를 만들어냅니다.</p>
             </div>
             <div className='about-S'>
               <div className='about-circle'>
@@ -60,9 +66,16 @@ function About() {
               실무적인 능력을 키워갑니다.</p>
             </div>
             <div className='about-O'>
-              <div className='about-initial'>
-                <p>O</p>
+              <div className='about-circle'>
+                <div className='about-initial'>
+                  <p>O</p>
+                </div>
               </div>
+              <p className='about-title'>innOvation</p>
+              <p className='about-explanation'>혁신적인 아이디어와 열정을 통해 <br />
+              소프트웨어의 혁신을 <br />
+              함께 만들어가는 공간입니다.
+              </p>
             </div>
             <div className='about-M'>
               <div className='about-circle'>
