@@ -107,7 +107,7 @@ function Notice() {
       <div id="Null_box">
         <Noti_NullBox></Noti_NullBox>
         <p id="Noti_title">공지사항</p>
-        <input placeholder='검색어를 입력하세요' id="Noti_input"></input>
+        <input placeholder='검색어를 입력하세요' id="Noti_inputs"></input>
         <table>
           <thead>
             <tr id ="tr_title">
