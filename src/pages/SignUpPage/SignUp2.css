@@ -18,6 +18,10 @@
   align-items: center;
   margin-top: 30px; /* 더 큰 여백 추가 */
 }
+.form_text {
+  font-size: 24px;
+  font-weight: bold;
+}
 
 .subtract,
 .line10,
@@ -88,6 +92,8 @@ fieldset{
   height: 100px; /* 높이 조절 가능 */
 }
 
+
+
 .SignUp02_final {
   cursor: pointer;
   border: 2px solid;
@@ -100,6 +106,7 @@ fieldset{
   color: #54ecc4;
   border-radius: 25px;
   transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
 }
 
 .SignUp02_final:hover {

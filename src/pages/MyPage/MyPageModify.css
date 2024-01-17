@@ -1,0 +1,85 @@
+.content{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    position: absolute;
+    top: 238px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+.gitHub{
+    position: absolute;
+    top: 439px;
+    width: 1157px;
+    height: 56px;
+    color: #D9D9D9;
+    
+    border: 2px solid #D9D9D9;
+    border-radius: 16px;
+    background-color: #131313;
+}
+.gitHub::placeholder{  
+    font-size: 16px;
+    font-weight: medium;
+    font-family: 'Inter';
+    color: #D9D9D9;
+}
+.gitHub:hover{
+    cursor: auto;
+}
+.profile{
+    position: absolute;
+    left: 369px;
+    top: 539px;
+   
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+.choiceProfileBorder{
+    position: absolute;
+    left: 389px;
+    top: 587px;
+    width: 200px;
+    height: 40px;
+    border: 2px solid #D9D9D9;
+    border-radius: 16px;
+    background-color: #131313;
+    
+}
+.choiceProfileFont{
+    position: absolute;
+    left: 68px;
+    top: 11px;
+   
+    font-size: 16px;
+    font-weight: medium;
+    font-family: 'Inter';
+    color: #D9D9D9;
+    cursor: pointer;
+    text-align: center;
+}
+.MyDataButtonBorder{
+    position: absolute;
+    top: 704px;
+    width: 1157px;
+    height: 55px;
+    border: 2px solid #54ECC4;
+    border-radius: 16px;
+    background-color: #131313;
+}
+.MyDataButtonFont{
+    position: absolute;
+    left: 539px;
+    top: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Inter';
+    color: #54ECC4;
+    text-align: center;
+    cursor: pointer;
+}
