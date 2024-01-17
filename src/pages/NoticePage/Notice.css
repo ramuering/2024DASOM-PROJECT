@@ -1,13 +1,13 @@
 #Noti_main{
     margin: 0;
     padding: 0;
-    display: flex; /* flex 컨테이너로 설정 */
-    justify-content: center; /* 자식 요소들 사이의 간격을 최대로 설정 */
-    align-items: center; /* 세로 방향에서 중앙 정렬 */
-    height: 1500px;
+    height: 2200px;
+    width: 100%;
 }
 #Null_box{
     width: 1200px;
+    height: 1700px;
+    margin: 0 auto;
 }
 
 #Noti_inputs{
