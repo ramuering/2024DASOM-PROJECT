@@ -14,6 +14,7 @@ import Apply1 from "./pages/ApplyPage/Apply1";
 import Apply2 from "./pages/ApplyPage/Apply2";
 import Notice from "./pages/NoticePage/Notice";
 import Study from "./pages/StudyPage/Study";
+import NoticeDetail from "./pages/NoticePage/NoticeDetail";
 
 const Layout = () => {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="apply02" element={<Apply2 />} />
           <Route path="notice" element={<Notice />} />
           <Route path="study" element={<Study />} />
+          <Route path="/noticedetail/:id" element={<NoticeDetail />} />
         </Route>
       </Routes>
     </div>
