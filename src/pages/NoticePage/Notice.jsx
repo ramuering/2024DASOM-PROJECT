@@ -15,7 +15,7 @@ const Pagination = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 150px;
 `;
 
 const PrevNextBtn = styled.button`
@@ -136,6 +136,8 @@ function Notice() {
           <PrevNextBtn onClick={handleNextClick}>&gt;</PrevNextBtn>
         </Pagination>
       </div>
+
+      <Footer></Footer>
     </div>
   );
 }
