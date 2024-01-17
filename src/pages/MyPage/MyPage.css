@@ -1,6 +1,11 @@
+.content{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .myPage{
     position: absolute;
-    left: 870px;
     top: 207px;
     width: 181px;
     height: 48px;
@@ -8,9 +13,18 @@
     font-weight: bold;
     font-family: 'Inter';
 }
+.myProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 392px;
+    width: 416px;
+    height: 381px;
+    border-radius: 100px;
+}
 .table{
     position: absolute;
-    left: 360px;
     top: 916px;
     border-collapse: collapse;
 }
@@ -33,11 +47,9 @@
 }
 .fixMyDataBorder{
     position: absolute;
-    left: 740px;
     top: 1219px;
     width: 440px;
     height: 64px;
-    
     border: 2px solid #54ECC4;
     border-radius: 16px;
     background-color: #131313;

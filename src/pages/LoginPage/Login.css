@@ -1,6 +1,11 @@
+.content{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .dasom{
     position: absolute;
-    left: 885px;
     top: 340px;
     width: 151px;
     height: 48px;
@@ -10,7 +15,6 @@
 }
 .loginButton{
     position: absolute;
-    left: 667px;
     top: 505px;
     width: 585px;
     height: 71px;
@@ -26,7 +30,6 @@
 }
 .noMember{
     position: absolute;
-    left: 895px;
     top: 663px;
     width: 131px;
     height: 19px;
@@ -36,7 +39,6 @@
 }
 .goMember{
     position: absolute;
-    left: 914px;
     top: 689px;
     width: 131px;
     height: 19px;

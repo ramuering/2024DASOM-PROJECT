@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/login" element={<Login />} />
-          <Route path="/redirection" element={<Redirection />} />
+          <Route path="redirection" element={<Redirection />} />
           <Route path="main" element={<Main />} />
           <Route path="about" element={<About />} />
           <Route path="project" element={<Project />} />
