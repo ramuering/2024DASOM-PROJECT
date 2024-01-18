@@ -7,9 +7,9 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 const SignUp2 = () => {
-const [name, setName] = useState(''); // 추가: 이름 상태 추가
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
+const [name, setName] = useState(''); // 추가: 이름 상태 추가
 const [grade, setGrade] = useState('');
 const [major, setMajor] = useState('');
   const [agreement, setAgreement] = useState({
@@ -42,7 +42,7 @@ const [major, setMajor] = useState('');
   const handleSubmit = async () => {
     try {
           const response = await axios.post('http://localhost:8090/signup02', {
-            name, email, password, grade , major
+            email, password, name, grade , major
           });
 
           if (response.data === '회원가입 성공') {
@@ -79,6 +79,7 @@ const [major, setMajor] = useState('');
     <input
           className="SignUp2_input0"
           type='text' name="name"
+          autocomplete='off'
           placeholder='이름을 입력하세요.'
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -87,6 +88,7 @@ const [major, setMajor] = useState('');
     <input
         class="SignUp2_input1"
         type='text' name="email"
+        autocomplete='off'
         placeholder='@email.com.'
         value={email}
         onChange={(e) => setEmail(e.target.value)}>
