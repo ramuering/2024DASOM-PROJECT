@@ -7,6 +7,9 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const SignUp2 = () => {
 const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+const [grade, setGrade] = useState('');
+const [major, setMajor] = useState('');
   const [agreement, setAgreement] = useState({
     agree1: false,
     agree2: false,
@@ -37,7 +40,7 @@ const [email, setEmail] = useState('');
   const handleSubmit = async () => {
     try {
           const response = await axios.post('http://localhost:8090/signup02', {
-
+                email, password, grade , major
           });
 
           if (response.data === '회원가입 성공') {
@@ -77,48 +80,55 @@ const [email, setEmail] = useState('');
         type='text' name="email"
         placeholder='@email.com.'
         value={email}
-        onChange={(e) => setEmail(e.target.value)}></input>
-    <input class="SignUp2_input2" type='text' name="password" placeholder='비밀번호를 입력하세요.'></input>
+        onChange={(e) => setEmail(e.target.value)}>
+    </input>
+    <input
+        class="SignUp2_input2"
+        type='text' name="password"
+        placeholder='비밀번호를 입력하세요.'
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        ></input>
 
     </div>
      {/*학년*/}
-     <fieldset id="grade_field">
+     <fieldset id="grade_field" value={grade} onChange={(e) => setGrade(e.target.value)}>
             <legend><p class="form_text">학년 <span class="red_text">*</span></p></legend>
 
             <div class ="div_box">
               <div class="check_box">
-                <input type="radio" id="1grade" name="grade" value="1" required/>
+                <input type="radio" id="1grade" name="grade" value="1학년" required/>
                 <label for="1grade">1학년</label>
               </div>
 
               <div class="check_box">
-                <input type="radio" id="2grade" name="grade" value="2" required/>
+                <input type="radio" id="2grade" name="grade" value="2학년" required/>
                 <label for="2grade">2학년</label>
               </div>
 
               <div class="check_box">
-                <input type="radio" id="3grade" name="grade" value="3" required/>
+                <input type="radio" id="3grade" name="grade" value="3학년" required/>
                 <label for="3grade">3학년</label>
               </div>
             </div>
 
           </fieldset>
 
-          <fieldset id="major_field">
+          <fieldset id="major_field" value={major} onChange={(e) => setMajor(e.target.value)}>
             <legend><p class="form_text">학과 <span class="red_text">*</span></p></legend>
             <div class ="div_box">
               <div class="check_box">
-                <input type="radio" id="comso" name="major" value="comso"/>
+                <input type="radio" id="comso" name="major" value="컴퓨터소프트웨어공학과"/>
                 <label for="comso">컴퓨터소프트웨어공학과</label>
               </div>
 
               <div class="check_box">
-                <input type="radio" id="inso" name="major" value="inso" />
+                <input type="radio" id="inso" name="major" value="인공지능소프트웨어공학과" />
                 <label for="inso">인공지능소프트웨어공학과</label>
               </div>
             </div>
             <div  class="check_box">
-                <input type="radio" id="comim" name="major" value="comim" />
+                <input type="radio" id="comim" name="major" value="컴퓨터정보공학과" />
                 <label for="comim">컴퓨터정보공학과</label>
             </div>
           </fieldset>
