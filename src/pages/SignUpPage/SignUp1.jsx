@@ -13,7 +13,7 @@ export default function SignUp1() {
         uniqueCode: authCode,
       });
 
-      if (response.data === '부원인증 성공') {
+      if (response.data === '부원 인증 성공') {
         console.log('부원 인증 성공');
         navigate('/SignUp02');  // Use navigate instead of history.push
       } else {

@@ -1,15 +1,20 @@
 import React, { useState } from 'react';  // Import useState from React
 import "./SignUp2.css";
+import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom'
 
 
+
 const SignUp2 = () => {
+const [email, setEmail] = useState('');
   const [agreement, setAgreement] = useState({
     agree1: false,
     agree2: false,
     agree3: false,
     agree4: false,
   });
+
+  const navigate = useNavigate();
 
   const handleAgreementChange = (checkboxId) => {
     if (checkboxId === 'agree1') {
@@ -29,9 +34,25 @@ const SignUp2 = () => {
     }
   };
 
-  const handleSubmit = () => {
-    // Add your logic to handle the form submission using the agreement state
-    console.log('Form submitted with agreement state:', agreement);
+  const handleSubmit = async () => {
+    try {
+          const response = await axios.post('http://localhost:8090/signup02', {
+
+          });
+
+          if (response.data === '회원가입 성공') {
+            console.log('회원가입 성공');
+            navigate('/SignUp02');  // Use navigate instead of history.push
+          } else {
+            console.error('회원가입 실패');
+          }
+        } catch (error) {
+          if (error.response && error.response.status === 404) {
+            console.error('서버에서 404 응답이 왔습니다. 해당 엔드포인트를 확인하세요.');
+          } else {
+            console.error('에러:', error);
+          }
+        }
   };
   return ( 
     
@@ -51,8 +72,13 @@ const SignUp2 = () => {
     <div className='SignUp2_check'>이미 회원이신가요?</div>
     <Link to='/Login' className='SignUp2_login'>로그인 하기</Link>
 
-    <input class="SignUp2_input1" type='text' placeholder='@email.com.'></input>
-    <input class="SignUp2_input2" type='text' placeholder='비밀번호를 입력하세요.'></input>
+    <input
+        class="SignUp2_input1"
+        type='text' name="email"
+        placeholder='@email.com.'
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}></input>
+    <input class="SignUp2_input2" type='text' name="password" placeholder='비밀번호를 입력하세요.'></input>
 
     </div>
      {/*학년*/}
@@ -61,17 +87,17 @@ const SignUp2 = () => {
 
             <div class ="div_box">
               <div class="check_box">
-                <input type="checkbox" id="1grade" name="grade" value="1" required/>
+                <input type="radio" id="1grade" name="grade" value="1" required/>
                 <label for="1grade">1학년</label>
               </div>
 
               <div class="check_box">
-                <input type="checkbox" id="2grade" name="grade" value="2" required/>
+                <input type="radio" id="2grade" name="grade" value="2" required/>
                 <label for="2grade">2학년</label>
               </div>
 
               <div class="check_box">
-                <input type="check_box" id="3grade" name="grade" value="3" required/>
+                <input type="radio" id="3grade" name="grade" value="3" required/>
                 <label for="3grade">3학년</label>
               </div>
             </div>
@@ -82,17 +108,17 @@ const SignUp2 = () => {
             <legend><p class="form_text">학과 <span class="red_text">*</span></p></legend>
             <div class ="div_box">
               <div class="check_box">
-                <input type="checkbox" id="comso" name="major" value="comso"/>
+                <input type="radio" id="comso" name="major" value="comso"/>
                 <label for="comso">컴퓨터소프트웨어공학과</label>
               </div>
 
               <div class="check_box">
-                <input type="checkbox" id="inso" name="major" value="inso" />
+                <input type="radio" id="inso" name="major" value="inso" />
                 <label for="inso">인공지능소프트웨어공학과</label>
               </div>
             </div>
             <div  class="check_box">
-                <input type="checkbox" id="comim" name="major" value="comim" />
+                <input type="radio" id="comim" name="major" value="comim" />
                 <label for="comim">컴퓨터정보공학과</label>
             </div>
           </fieldset>
@@ -143,7 +169,7 @@ const SignUp2 = () => {
           <label htmlFor="agree4">[선택] 마켓팅 정보 수신 및 선택적 개인정보 제공</label>
         </div>
           </fieldset>
-          <button className='SignUp02_final'>다솜 가입 완료하기</button>
+          <button className='SignUp02_final' onClick={handleSubmit}>다솜 가입 완료하기</button>
     </div>
 
   );
