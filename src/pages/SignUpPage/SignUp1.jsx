@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'; // axios를 import합니다.
 import "./SignUp1.css";
 
 export default function SignUp1() {
@@ -7,15 +8,13 @@ export default function SignUp1() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:8090/SignUp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ authCode }),
+      // axios를 사용하여 서버에 POST 요청을 보냅니다.
+      const response = await axios.post('http://localhost:8090/Signup', {
+        authCode,
       });
 
-      if (response.ok) {
+      // 서버 응답이 OK인 경우
+      if (response.status === 200) {
         // 인증 성공
         console.log('인증 성공');
       } else {
@@ -56,8 +55,7 @@ export default function SignUp1() {
         </input>
       <button
         className='SignUp01_certification'
-        onClick={handleSubmit}
-      >
+        onClick={handleSubmit}>
         다솜 부원 인증하기
       </button>
     </div>
