@@ -9,7 +9,7 @@ export default function SignUp1() {
   const handleSubmit = async () => {
     try {
       // axios를 사용하여 서버에 POST 요청을 보냅니다.
-      const response = await axios.post('http://localhost:8090/Signup', {
+      const response = await axios.post('http://localhost:8090/signup01', {
         authCode,
       });
 
