@@ -1,29 +1,35 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios'; // axios를 import합니다.
+import axios from 'axios';
 import "./SignUp1.css";
 
 export default function SignUp1() {
   const [authCode, setAuthCode] = useState('');
+  //const history = useHistory();
 
   const handleSubmit = async () => {
     try {
       // axios를 사용하여 서버에 POST 요청을 보냅니다.
       const response = await axios.post('http://localhost:8090/signup01', {
-        authCode,
+        uniqueCode: authCode,
       });
 
       // 서버 응답이 OK인 경우
-      if (response.status === 200) {
+      if (response.data === '부원인증 성공') {
         // 인증 성공
-        console.log('인증 성공');
+        console.log('부원 인증 성공');
+        //history.push('/SignUp2');
       } else {
         // 인증 실패 처리
-        console.error('인증 실패');
+        console.error('부원 인증 실패');
       }
     } catch (error) {
-      // 네트워크 또는 기타 오류 처리
-      console.error('에러:', error);
+      if (error.response && error.response.status === 404) {
+        console.error('서버에서 404 응답이 왔습니다. 해당 엔드포인트를 확인하세요.');
+      } else {
+        // 네트워크 또는 기타 오류 처리
+        console.error('에러:', error);
+      }
     }
   };
 
