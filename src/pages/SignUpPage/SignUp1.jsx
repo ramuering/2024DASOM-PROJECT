@@ -7,7 +7,7 @@ export default function SignUp1() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:8090/SignUp', {
+      const response = await fetch('http://localhost:8090/Signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
