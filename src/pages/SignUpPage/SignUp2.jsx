@@ -10,6 +10,8 @@ const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 const [grade, setGrade] = useState('');
 const [major, setMajor] = useState('');
+
+
   const [agreement, setAgreement] = useState({
     agree1: false,
     agree2: false,
@@ -94,7 +96,6 @@ const [major, setMajor] = useState('');
      {/*학년*/}
      <fieldset id="grade_field" value={grade} onChange={(e) => setGrade(e.target.value)}>
             <legend><p class="form_text">학년 <span class="red_text">*</span></p></legend>
-
             <div class ="div_box">
               <div class="check_box">
                 <input type="radio" id="1grade" name="grade" value="1학년" required/>
