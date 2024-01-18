@@ -63,6 +63,18 @@
   color: #B6B6B6;
 }
 
+.SignUp2_input0 {
+  appearance: none;
+  width: 585px;
+  height: 77px;
+  border:2px solid ;
+  border-radius: 25px;
+  background-color: #131313;
+  color: white;
+  margin-bottom: -71px;
+  margin-top: 157px;
+  transition: border-color 0.3s, color 0.3s;;
+}
 
 .SignUp2_input1,
 .SignUp2_input2 {
@@ -78,22 +90,29 @@
   border-radius: 25px;
   background-color: #131313;
   color: white;
+  margin-right: 43px;
   margin-bottom: 71px;
   margin-top: 157px;
   transition: border-color 0.3s, color 0.3s;;
 }
 
-
-.SignUp2_input1::placeholder,
+.SignUp2_input0
+,.SignUp2_input1::placeholder,
 .SignUp2_input2::placeholder {
   font-size: 16px; /* Adjust the font size of the placeholder text */
   /* Add any other styles to adjust the position, color, etc. of the placeholder text */
 }
 
 
+
+.SignUp2_input0,
 .SignUp2_input1
 ,.SignUp2_input2:focus {
   outline: none;
+}
+
+.SignUp2_input0:hover{
+  border-color: #54ecc4;
 }
 
 .SignUp2_input1:hover{
@@ -112,6 +131,7 @@
   border-radius: 25px;
   background-color: #131313;
   color: white;
+  margin-right: 43px;
   margin-bottom: 71px;
   margin-top: 10px;
   transition: border-color 0.3s, color 0.3s;;
@@ -213,13 +233,14 @@ fieldset{
 
 /* ... (your existing styles) */
 
+
+
+/* SignUp2.css */
+
+/* ... (your existing styles) */
+
 #Agree .check_box input {
   display: none; /* Hide the default checkboxes */
-}
-
-
-#Agree #agree1 + label {
-  font-weight: bold; /* Make the label bold for the agree1 checkbox */
 }
 
 #Agree .check_box label {
@@ -236,6 +257,10 @@ fieldset{
   background-repeat: no-repeat; /* Ensure the image doesn't repeat */
   background-position: left center; /* Adjust the position of the image within the label */
   padding-left: 40px; /* Adjust padding to make space for the image */
+}
+
+#Agree .check_box input:checked + label:before {
+  content: ''; /* Remove the default content */
 }
 
 #Agree .check_box label:before {
@@ -264,6 +289,10 @@ fieldset{
 }
 
 /* ... (rest of your styles) */
+
+
+/* ... (rest of your styles) */
+
 
 
 .SignUp02_final {
