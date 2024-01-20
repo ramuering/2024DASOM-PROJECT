@@ -1,24 +1,31 @@
-import React, { useState } from 'react'
-import './ManApplyMember.css'
-import Header from '../../components/Header'
+import React, { useState } from 'react';
+import * as XLSX from 'xlsx';
+import './ManApplyMember.css';
+import Header from '../../components/Header';
 
 function ManApplyMember() {
-
   const applyMembers = [
-    { id: 1, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '31' },
-    { id: 3, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '31' },
-    { id: 2, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '31' },
-    { id: 4, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-    { id: 5, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-    { id: 6, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-    { id: 7, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-    { id: 8, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-    { id: 9, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-    { id: 10, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-    { id: 11, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-    { id: 12, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-    { id: 13, department: '컴퓨터소프트웨어공학과', name: '홍길동', gen: '32' },
-  ]
+    { id: 1, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1' },
+    { id: 3, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1' },
+    { id: 2, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1' },
+    { id: 4, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+    { id: 5, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+    { id: 6, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+    { id: 7, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+    { id: 8, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+    { id: 9, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+    { id: 10, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+    { id: 11, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+    { id: 12, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+    { id: 13, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
+  ];
+
+  const handleExportExcel = () => {
+    const ws = XLSX.utils.json_to_sheet(applyMembers);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, 'dasom_applicant_data.xlsx');
+  };
 
   const [editable, setEditable] = useState(false);
   const [dates, setDates] = useState({
@@ -101,21 +108,31 @@ function ManApplyMember() {
         )}
         <button className='manAM-magamBtn'>모집 마감</button>
         <p className='manAM-applyCount'>{`신청 인원 : ${applyMembers.length}`}</p>
-        <div>
-          <div className='manAM-ApplyMember-title'>
-
+        <div className='manAM-list'>
+          <div className='manAM-listTitle'>
+            <p className='manAM-department'>학과</p>
+            <p className='manAM-name'>이름</p>
+            <p className='manAM-grade'>학년</p>
+            <p className='manAM-pass'>합격</p>
+            <p className='manAM-nonPass'>불합격</p>
           </div>
           <ul>
-
+            {applyMembers.map((applyMember) => (
+              <li key={applyMember.id}>
+                <div className='manAM-infodepartment'>{`${applyMember.department}`}</div>
+                <div className='manAM-infoname'>{`${applyMember.name}`}</div>
+                <div className='manAM-infograde'>{`${applyMember.grade}`}</div>
+                <button className='manAM-infopass'>합격</button>
+                <button className='manAM-infononPass'>불합격</button>
+              </li>
+            ))}
           </ul>
         </div>
+        <button className='manAM-excel' onClick={handleExportExcel}>엑셀 추출</button>
       </div>
     </div>
   );
-};
-
-
-
+}
 
 const DateInput = ({ value, onChange, readOnly, editable }) => {
   const handleChange = (e) => {
