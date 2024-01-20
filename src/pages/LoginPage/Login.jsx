@@ -5,10 +5,10 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const Login = ()=>{
 
-    const Rest_api_key='03962c2c3a5cd86de893848c8e2ddcff' //REST API KEY
-    const redirect_uri = 'http://localhost:3000/login/oauth2/callback/kakao' //Redirect URI
+    const client_id = process.env.REACT_APP_KAKAO_CLIENT_ID;
+    const redirect_uri = process.env.REACT_APP_KAKAO_REDIRECT_URI;
     // oauth 요청 URL
-    const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code`
+    const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code`
   
     const navigate = useNavigate();
     const handleLogin = ()=>{
