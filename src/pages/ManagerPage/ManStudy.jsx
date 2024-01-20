@@ -79,14 +79,14 @@ function ManStudy() {
             <p className='manStudy-name'>이름</p>
             <p className='manStudy-gen'>기수</p>
             <p className='manStudy-modify'>수정</p>
-            <p className='manStudy-withdraw'>탈퇴</p>
+            <p className='manStudy-withdraw'>삭제</p>
           </div>
           <ul>
             {paginatedStudy.map((study) => (
               <li key={study.id}>
                 <div className='manStudy-infoname'>{`${study.name}`}</div> <div className='manStudy-infogen'>{`${study.gen}`}</div>
                 <a href="./ManStudyModify"><button className='manStudy-btn-modify'>수정</button></a>
-                <button className='manStudy-btn-withdraw' onClick={() => handleWithdrawal(study.id)}>탈퇴</button>
+                <button className='manStudy-btn-withdraw' onClick={() => handleWithdrawal(study.id)}>삭제</button>
               </li>
             ))}
           </ul>
