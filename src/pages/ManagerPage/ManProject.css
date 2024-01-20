@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+.manProject {
+    height: 1828px;
+}
+.manProject-only {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.manProject-title {
+    margin: 208px 0 105px 0 ;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.manProject-button {
+    margin-bottom: 191px;
+    width: 440px;
+    height: 64px;
+    border-style: 2px;
+    border-color: #54ECC4;
+    border-radius: 16px;
+    background-color: #131313;
+    color: #54ECC4;
+    font-size: 16px;
+    font-weight: 700;
+}
+.manProject-button:hover {
+    background-color: #54ECC4;
+    cursor: pointer;
+    color: black;
+}
+
+/*검색창*/
+.manProject-searchBar {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 48px;
+    border: 2px solid #d9d9d9;
+    border-radius: 40px;
+    margin-bottom: 86px;
+}
+.manProject-searchBar input {
+    margin-left: 12px;
+    width: 339px;
+    background-color: #100F0F;
+    border: none;
+    outline: none;
+    color: #d9d9d9;
+}
+.manProject-searchBar button {
+    width: 24px;
+    height: 24px;
+    margin: 12px 12px 12px 0;
+    padding: 0;
+    background-color: #100F0F;
+    border: none;
+}
+.manProject-searchBar img {
+    width: 24px;
+    height: 24px;
+}
+
+/*프로젝트리스트 타이틀*/
+.manProject-listTitle {
+    display: flex;
+    align-items: center;
+    background-color: #d9d9d9;
+    color: #000000;
+    font-weight: 700;
+    font-size: 16px;
+    width: 1200px;
+    height: 49px;
+}
+.manProject-gen {
+    display: flex;
+    justify-content: center;
+    margin-right: 110px;
+    width: 32px;
+}
+.manProject-part {
+    display: flex;
+    justify-content: center;
+    margin-right: 178px;
+    width: 160px;
+}
+.manProject-name {
+    display: flex;
+    justify-content: center;
+    margin-right: 110px;
+    margin-left: 70px;
+    width: 160px;
+}
+.manProject-modify {
+    display: flex;
+    justify-content: center;
+    margin-right: 112px;
+    width: 86px;
+}
+.manProject-withdraw {
+    display: flex;
+    justify-content: center;
+    width: 86px;
+}
+
+.manProject-projectList ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.manProject-infogen {
+    display: flex;
+    justify-content: center;
+    margin-right: 110px;
+    width: 32px;
+}
+.manProject-infopart {
+    display: flex;
+    justify-content: center;
+    margin-right: 178px;
+    width: 160px;
+}
+.manProject-infoname{
+    display: flex;
+    justify-content: center;
+    margin-right: 110px;
+    margin-left: 70px;
+    width: 160px;
+}
+.manProject-projectList button {
+    background-color: #100F0F;
+    width: 86px;
+    height: 33px;
+    border-radius: 25px;
+    border: 1px solid;
+    font-size: 16px;
+    font-weight: 500;
+}
+.manProject-btn-modify {
+    margin-right: 112px;
+    color: #54ECC4;
+    border-color: #54ECC4;
+}
+.manProject-projectList li {
+    list-style: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #b6b6b6;
+    width: 1200px;
+}
+.manProject-btn-withdraw {
+    color: #FA0000;
+    border-color: #FA0000;
+}
