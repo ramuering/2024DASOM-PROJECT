@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+
+.manAM {
+    height: 2146px;
+}
+.manAM-only {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.manAM-title {
+    margin: 208px 0 105px 0 ;
+    font-size: 40px;
+    font-weight: 700;
+}
+.manAM-date {
+    width: 1200px;
+    height: 196px;
+    border-top: 1px solid #D9D9D9;
+    margin-bottom: 77px;
+}
+.manAM-date-row {
+    display: flex;
+    align-items: center;
+    height: 49px;
+    border-bottom: 1px solid #D9D9D9;
+}
+.manAM-date-row p {
+    border-right: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+    height: 49px;
+    width: 175px;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.manAM-date-row > div {
+    margin: 15px 0;
+}
+.manAM-date-customInput {
+    background-color: #131313;
+    color: white;
+    border-style: none;
+    margin-left: 34px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    width: 130px;
+}
+.manAM-date-customInput::-webkit-calendar-picker-indicator {
+    filter: invert(1); /*달력 버튼 스타일-배경과 색반전*/
+}
+.manAM-editBtn {
+    margin-bottom: 47px;
+    width: 440px;
+    height: 64px;
+    border-style: 2px;
+    border-color: #54ECC4;
+    border-radius: 16px;
+    background-color: #131313;
+    color: #54ECC4;
+    font-size: 16px;
+    font-weight: 700;
+}
+.manAM-magamBtn {
+    margin-bottom: 295px;
+    width: 440px;
+    height: 64px;
+    border-style: 2px;
+    border-color: #FA0000;
+    border-radius: 16px;
+    background-color: #131313;
+    color: #FA0000;
+    font-size: 16px;
+    font-weight: 700;
+}
+.manAM-applyCount {
+    width: 1200px;
+    font-size: 24px;
+    font-weight: 700;
+}
