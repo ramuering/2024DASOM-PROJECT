@@ -40,14 +40,16 @@ function ManApply() {
   };
 
   const handleSearch = () => {
-    const filteredMembers = initialMembers.filter(member => 
-      member.gen.includes(search) ||
-      member.department.includes(search) ||
-      member.name.includes(search)
+    const lowercaseSearch = search.toLowerCase();
+    const filteredMembers = initialMembers.filter((member) => 
+      member.gen.toLowerCase().includes(lowercaseSearch) ||
+      member.department.toLowerCase().includes(lowercaseSearch) ||
+      member.name.toLowerCase().includes(lowercaseSearch)
     );
     setMembers(filteredMembers);
     setSearch('');
   };
+  
 
   const handleToggleStatus = (memberId) => {
     const updatedMembers = members.map((member) => {
