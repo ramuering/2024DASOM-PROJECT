@@ -19,7 +19,6 @@
 }
 
 .manStudy-button {
-    margin-bottom: 191px;
     width: 440px;
     height: 64px;
     border-style: 2px;
@@ -29,10 +28,10 @@
     color: #54ECC4;
     font-size: 16px;
     font-weight: 700;
+    cursor: pointer;
 }
 .manStudy-button:hover {
     background-color: #54ECC4;
-    cursor: pointer;
     color: black;
 }
 
@@ -44,6 +43,7 @@
     height: 48px;
     border: 2px solid #d9d9d9;
     border-radius: 40px;
+    margin-top: 191px;
     margin-bottom: 86px;
 }
 .manStudy-searchBar input {
@@ -132,11 +132,14 @@
     border: 1px solid;
     font-size: 16px;
     font-weight: 500;
+    cursor: pointer;
 }
 .manStudy-btn-modify {
-    margin-right: 112px;
     color: #54ECC4;
     border-color: #54ECC4;
+}
+.manStudy-studyList li a {
+    margin-right: 112px;
 }
 .manStudy-studyList li {
     list-style: none;

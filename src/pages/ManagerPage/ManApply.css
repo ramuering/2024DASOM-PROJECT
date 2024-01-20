@@ -127,10 +127,18 @@
     height: 33px;
     border-radius: 25px;
     border: 1px solid;
-    margin-right: 62px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
+}
+.manApply-btn-attend,
+.manApply-btn-graduated,
+.manApply-btn-timeOff,
+.manApply-btn-ungraduated {
+    margin-right: 62px;
+}
+.manApply-memList li a {
+    margin-right: 62px;
 }
 .manApply-btn-attend,
 .manApply-btn-graduated,
