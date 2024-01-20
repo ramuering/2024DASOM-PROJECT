@@ -87,9 +87,9 @@
 .manStudy-name {
     display: flex;
     justify-content: center;
-    margin-right: 250px;
-    margin-left: 156px;
-    width: 65px;
+    margin-right: 200px;
+    margin-left: 70px;
+    width: 160px;
 }
 .manStudy-modify {
     display: flex;
@@ -120,9 +120,9 @@
 .manStudy-infoname{
     display: flex;
     justify-content: center;
-    margin-right: 250px;
-    margin-left: 156px;
-    width: 65px;
+    margin-right: 200px;
+    margin-left: 70px;
+    width: 160px;
 }
 .manStudy-studyList button {
     background-color: #100F0F;
