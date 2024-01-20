@@ -130,6 +130,7 @@
     margin-right: 62px;
     font-size: 16px;
     font-weight: 500;
+    cursor: pointer;
 }
 .manApply-btn-attend,
 .manApply-btn-graduated,
