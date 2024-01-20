@@ -53,7 +53,7 @@ function ManProject() {
     const projectToRemove = project.find(project => project.id === projectId);
   
     if (projectToRemove) {
-      const message = `${projectToRemove.name} 스터디를 삭제하시겠습니까?`;
+      const message = `${projectToRemove.name} 프로젝트를 삭제하시겠습니까?`;
       const userResponse = window.confirm(message);
   
       if (userResponse) {
