@@ -33,7 +33,6 @@
 }
 .profile{
     position: absolute;
-    left: 369px;
     top: 539px;
    
     font-size: 24px;
@@ -42,7 +41,7 @@
 }
 .choiceProfileBorder{
     position: absolute;
-    left: 389px;
+    
     top: 587px;
     width: 200px;
     height: 40px;
