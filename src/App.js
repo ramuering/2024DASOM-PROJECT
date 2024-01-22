@@ -70,7 +70,7 @@ function App() {
           <Route path="ManStudy" element={<ManStudy />} />
           <Route path="ManProject" element={<ManProject />} />
           <Route path="ManApply" element={<ManApply />} />
-
+          
           <Route path="Makers" element={<Makers />} />
 
           <Route path="/noticedetail/:id" element={<NoticeDetail />} />

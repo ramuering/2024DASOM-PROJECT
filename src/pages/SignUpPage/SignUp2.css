@@ -64,16 +64,19 @@
 }
 
 .SignUp2_input0 {
-  appearance: none;
-  width: 585px;
+  display: block;
+  width: 550px;
   height: 77px;
-  border:2px solid ;
   border-radius: 25px;
-  background-color: #131313;
+  background: none;
+  border: 2px solid #D9D9D9;
+  padding-left: 30px;
+  font-weight: bold;
   color: white;
+  font-size: 16px;
   margin-bottom: -71px;
   margin-top: 157px;
-  transition: border-color 0.3s, color 0.3s;;
+transition: border-color 0.3s, color 0.3s;;
 }
 
 .SignUp2_input1,
@@ -83,17 +86,20 @@
 }
 
 .SignUp2_input1{
-  appearance: none;
-  width: 585px;
+  display: block;
+  width: 550px;
   height: 77px;
-  border:2px solid ;
   border-radius: 25px;
-  background-color: #131313;
+  background: none;
+  border: 2px solid #D9D9D9;
+  padding-left: 30px;
+  font-weight: bold;
   color: white;
+  font-size: 16px;
   margin-right: 43px;
-  margin-bottom: 71px;
+  margin-bottom:71px;
   margin-top: 157px;
-  transition: border-color 0.3s, color 0.3s;;
+transition: border-color 0.3s, color 0.3s;;
 }
 
 .SignUp2_input0
@@ -124,13 +130,16 @@
 }
 
 .SignUp2_input2 {
-  appearance: none;
-  width: 585px;
+  display: block;
+  width: 550px;
   height: 77px;
-  border:2px solid ;
   border-radius: 25px;
-  background-color: #131313;
+  background: none;
+  border: 2px solid #D9D9D9;
+  padding-left: 30px;
+  font-weight: bold;
   color: white;
+  font-size: 16px;
   margin-right: 43px;
   margin-bottom: 71px;
   margin-top: 10px;

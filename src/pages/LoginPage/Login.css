@@ -27,21 +27,24 @@
 
 .login-id,.login-password {
   appearance: none;
-  width: 585px;
+  width: 550px;
   height: 77px;
   border:2px solid ;
   border-radius: 25px;
   background-color: #131313;
   color: white;
   margin-bottom: 71px;
+  border-radius: 25px; 
+  padding-left: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
   transition: border-color 0.3s, color 0.3s;;
 }
 
 .login-id::placeholder, .login-password::placeholder {
-  color: white;
+  color: #B6B6B6;
   font-size: 16px;
-  text-align: center;
-
 }
 
 
