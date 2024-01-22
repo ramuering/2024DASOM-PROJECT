@@ -1,57 +1,83 @@
-.content{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #131313;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.dasom {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.login-member {
+  margin-bottom: 185px;
+}
+
+.noMember {
+  font-size: 16px;
+  color:#B6B6B6;
+  margin-bottom: 7px;
+}
+
+.login-id,.login-password {
+  appearance: none;
+  width: 585px;
+  height: 77px;
+  border:2px solid ;
+  border-radius: 25px;
+  background-color: #131313;
+  color: white;
+  margin-bottom: 71px;
+  transition: border-color 0.3s, color 0.3s;;
+}
+
+.login-id::placeholder, .login-password::placeholder {
+  color: white;
+  font-size: 16px;
+  text-align: center;
 
 }
-.dasom{
-    position: absolute;
-    top: 340px;
-    width: 151px;
-    height: 48px;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: 'Inter';
+
+
+.login-id:hover, .login-password:hover {
+  border-color: #54ecc4;
 }
-.loginButton{
-    position: absolute;
-    top: 505px;
-    width: 585px;
-    height: 71px;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Inter';
-    color: #54ECC4;
-    
-    border: 2px solid #54ECC4;
-    border-radius: 25px;
-    background-color: #131313;
-    cursor: pointer;
+
+.login-id:focus, .login-password:focus {
+  outline: none;
 }
-.noMember{
-    position: absolute;
-    top: 663px;
-    font-size: 16px;
-    font-weight: medium;
-    color: #B6B6B6;
+
+.login-complet {
+  cursor: pointer;
+  border: 2px solid;
+  width: 585px;
+  height: 71px;
+  font-size: 16px;
+  border-color: #54ecc4;
+  padding: 10px 20px;
+  background-color: #131313;
+  color: #54ecc4;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
 }
-.goMember{
-    position: absolute;
-    top: 689px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #54ECC4;
+
+.login-complet:hover {
+  background-color: #54ecc4;
+  color: #131313;
 }
-.noMember,
-.goMember{
-    font-family:'Inter';
-    text-align: center;
-}
-.loginButton:hover{
-    background-color: #54ECC4;
-    color: #131313;
-}
-.loginButton:hover +.noMember{
-    filter:blur(0.6px);
+
+.goMember {
+  cursor: pointer;
+  font-weight: bold;
+  color: #54ecc4;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: center;
 }
