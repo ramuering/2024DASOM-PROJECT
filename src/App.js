@@ -7,6 +7,7 @@ import Project from "./pages/ProjectPage/Project";
 import NewMember from "./pages/ApplyPage/NewMember";
 import ManMain from "./pages/ManagerPage/ManMain";
 import MyPage from "./pages/MyPage/MyPage";
+import MyPageModify from "./pages/MyPage/MyPageModify"
 import LimitHeader from "./components/LimitHeader";
 import Login from "./pages/LoginPage/Login";
 import SignUp1 from "./pages/SignUpPage/SignUp1";
@@ -24,7 +25,12 @@ import ManApplyMember from "./pages/ManagerPage/ManApplyMember";
 import ManStudy from "./pages/ManagerPage/ManStudy";
 import ManProject from "./pages/ManagerPage/ManProject";
 import ManApply from "./pages/ManagerPage/ManApply";
+//<<<<<<< HEAD
+import Makers from "./pages/MakersPage/Makers";
+
+//=======
 import NoticeDetail from "./pages/NoticePage/NoticeDetail";
+//>>>>>>> 26a0a9e07b00001f06d2934695da2712c6bae64d
 
 
 const Layout = () => {
@@ -41,13 +47,14 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/login" element={<Login />} />
+          <Route path="login" element={<Login />} />
           <Route path="main" element={<Main />} />
           <Route path="about" element={<About />} />
           <Route path="project" element={<Project />} />
           <Route path="recruit" element={<NewMember />} />
           <Route path="admin" element={<ManMain />} />
           <Route path="mypage" element={<MyPage />} />
+          <Route path="mypagemodify" element={<MyPageModify />} />
           <Route path="signup01" element={<SignUp1 />} />
           <Route path="signup02" element={<SignUp2 />} />
           <Route path="apply01" element={<Apply1 />} />
@@ -63,7 +70,11 @@ function App() {
           <Route path="ManStudy" element={<ManStudy />} />
           <Route path="ManProject" element={<ManProject />} />
           <Route path="ManApply" element={<ManApply />} />
+
+          <Route path="Makers" element={<Makers />} />
+
           <Route path="/noticedetail/:id" element={<NoticeDetail />} />
+
         </Route>
       </Routes>
     </div>
