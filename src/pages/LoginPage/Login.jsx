@@ -61,7 +61,7 @@ const firebaseConfig = {
       </div>
       
     )
-    
+       
 }
 
 export default Login
