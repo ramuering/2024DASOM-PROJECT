@@ -80,21 +80,21 @@ const Main = () => {
           </div>
           <div className="activity-box">
             <div className="image-box">
-              <div className='main-background-image'></div>
+              <div className='main-pro-background-image'></div>
               <div className="main-text">PROJECT</div>
             </div>
             <div className="content-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, laudantium. Impedit, maiores molestiae quis a mollitia accusamus veritatis molestias? Optio libero totam minima. Officiis ipsa deleniti architecto fugiat rem illo.</div>
           </div>
           <div className="activity-box">
             <div className="image-box">
-            <div className='main-background-image'></div>
+            <div className='main-mt-background-image'></div>
               <div className="main-text">MT</div>
             </div>
             <div className="content-box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non nihil, et eligendi reiciendis vero id sit quidem cumque harum at sunt impedit voluptatem, voluptatibus consectetur culpa distinctio, expedita dolores sed.</div>
           </div>
           <div className="activity-box">
             <div className="image-box">
-            <div className='main-background-image'></div>
+            <div className='main-tu-background-image'></div>
               <div className="main-text">TUTORING</div>
             </div>
             <div className="content-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam mollitia libero ut quis iure necessitatibus, quae saepe! Vero quaerat voluptas incidunt odio commodi possimus, nostrum temporibus ex eligendi eius!</div>
