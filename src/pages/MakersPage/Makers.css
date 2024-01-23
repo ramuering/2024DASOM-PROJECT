@@ -6,20 +6,28 @@
     height: 100vh;
     font-family: Inter;
 }
+.makers-position{
+    width: 1144px;
+    font-weight: bold;
+    font-size: 32px;
+    justify-content: left;
+    margin-bottom: 80px;
+    margin-top: 122px;
+}
 .makers-member{
     width: 1144px;
     height: 403.56px;
 }
 .makers-profileBox{
-    width: 150px;
-    height: 250px;
-    margin-left: 120px;
-   
+    width: 125px;
+    height: 230px;
     float: left;
-
     flex-wrap: wrap;
     align-items: center;
     background-color: black;
+}
+.makers-profileBox:not(:first-child){
+    margin-left: 134px;
 }
 
 .makers-profile {

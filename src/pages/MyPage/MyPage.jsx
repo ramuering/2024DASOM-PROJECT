@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 function MyPage() {
-  const [data, setData] = useState([])
+    const [data, setData] = useState([])
 
     /*useEffect(() => {
         axios.get('/api/hello') //백엔드에서 받아온 주소
@@ -37,25 +37,25 @@ function MyPage() {
     <div className='mypage-content'>
       <Header />
       
-      <div className='myPage'>My Page</div>
-      <img className='myProfile' src='./images/myPage/profile.jpg'></img>
+      <div className='mypage-title'>My Page</div>
+      <img className='mypage-myProfile' src='./images/myPage/profile.jpg'></img>
 
-      <table className='table'>
+      <table className='mypage-table'>
         <tr>
-          <th className='dataHead'>학과</th>
-          <td className='myData'>컴퓨터소프트웨어공학과</td>
+          <th className='mypage-dataHead'>학과</th>
+          <td className='mypage-myData'>컴퓨터소프트웨어공학과</td>
         </tr>
         <tr>
-          <th className='dataHead'>기수</th>
-          <td className='myData'>21기</td>
+          <th className='mypage-dataHead'>기수</th>
+          <td className='mypage-myData'>21기</td>
         </tr>
         <tr>
-          <th className='dataHead'>이름</th>
-          <td className='myData'>홍길동</td>
+          <th className='mypage-dataHead'>이름</th>
+          <td className='mypage-myData'>홍길동</td>
         </tr>
         <tr>
-          <th className='dataHead'>깃허브</th>
-          <td className='myData'>test</td>
+          <th className='mypage-dataHead'>깃허브</th>
+          <td className='mypage-myData'>test</td>
         </tr>
       </table>
       <div className='fixMyDataBorder'>

@@ -60,8 +60,10 @@
 }
 
 .MyPageModify-choicePicture > p{
+    position: absolute;
+    left: 68px;
+    margin-top: 10px;
     
-    text-align: center;
     font-size: 16px;
     font-weight: medium;
     color: #D9D9D9;

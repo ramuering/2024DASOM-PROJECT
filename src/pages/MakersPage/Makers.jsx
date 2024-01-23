@@ -18,37 +18,37 @@ const Member = ({ profile, name, gi }) => {
 function Makers() {
   return (
     <div className='makers-contents'>
+      <div className='makers-position'>Lead</div>
       <div className='makers-member'>
-        Lead
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
       </div>
 
+      <div className='makers-position'>Pm</div>
       <div className='makers-member'>
-        Pm
-        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-      </div>
-
-      <div className='makers-member'>
-        Back
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
       </div>
 
+      <div className='makers-position'>Back</div>
       <div className='makers-member'>
-        Front
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
       </div>
 
+      <div className='makers-position'>Front</div>
       <div className='makers-member'>
-        Design
+        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+      </div>
+
+      <div className='makers-position'>Design</div>
+      <div className='makers-member'>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>

@@ -38,9 +38,7 @@ export default function SignUp1() {
         </Link>
       </div>
       <input
-        className='SignUp1_input'
-        type='text'
-        placeholder='인증번호를 입력하세요.'
+        placeholder='인증번호를 입력하세요.' id='SignUp1_input'
         value={authCode}
         onChange={(e) => setAuthCode(e.target.value)}
       />

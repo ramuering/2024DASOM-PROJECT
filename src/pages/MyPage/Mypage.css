@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
 }
-.MyPage{
+.mypage-title{
     position: absolute;
     top: 207px;
     width: 181px;
@@ -13,7 +13,7 @@
     font-weight: bold;
     font-family: 'Inter';
 }
-.myProfile{
+.mypage-myProfile{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,12 +23,12 @@
     height: 381px;
     border-radius: 100px;
 }
-.table{
+.mypage-table{
     position: absolute;
     top: 916px;
     border-collapse: collapse;
 }
-.dataHead{
+.mypage-dataHead{
     width: 175px;
     height: 49px;
     font-size: 16px;
@@ -36,14 +36,15 @@
     font-family:'Inter';
     border: 1px solid #D9D9D9;
 }
-.myData{
+.mypage-myData{
     width: 1025px;
     height: 49px;
     font-size: 16px;
     font-weight: medium;
     font-family:'Inter';
-    text-indent: 30px;
+
     text-align: left;
+    text-indent: 30px !important;
     border: 1px solid #D9D9D9;
 }
 .fixMyDataBorder{

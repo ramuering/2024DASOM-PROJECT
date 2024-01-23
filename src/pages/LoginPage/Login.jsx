@@ -55,7 +55,7 @@ const firebaseConfig = {
         <div className='noMember'>회원이 아니신가요?</div>
         <Link to='/signup01' className='goMember'><div>회원가입 하기</div></Link>
         </div>
-        <input type='email' className="login-id" placeholder='아이디' />
+        <input type='email' className="login-id" placeholder='아이디'/>
         <input type='password' className="login-password" placeholder='비밀번호'/>
         <button className='login-complet' onClick={complet}>완료</button>
       </div>
