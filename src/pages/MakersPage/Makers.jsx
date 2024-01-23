@@ -7,10 +7,10 @@ const Member = ({ profile, name, gi }) => {
       <div className='makers-profile'>
         <img src={profile} alt='프로필사진'></img>
       </div>
-      <p className='makers-name'>
-        {name}</p>
-      <p className='makers-gi'>
-        {gi}</p>
+      <div className='makers-name'>
+        {name}</div>
+      <div className='makers-gi'>
+        {gi}</div>
     </div>
   );
 };
@@ -18,38 +18,41 @@ const Member = ({ profile, name, gi }) => {
 function Makers() {
   return (
     <div className='makers-contents'>
-      <div className='makers-member'><div className='makers-read'>Lead
+      <div className='makers-member'>
+        Lead
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        </div>
-        </div>
-      
-      <div className='makers-member'><div className='makers-pm'>Pm
-        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        </div>
-        </div>
+      </div>
 
-      <div className='makers-member'><div className='makers-back'>Back</div>Back
+      <div className='makers-member'>
+        Pm
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        </div>
+      </div>
 
-      <div className='makers-member'><div className='makers-front'>front</div>
+      <div className='makers-member'>
+        Back
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        </div>
+      </div>
 
-      <div className='makers-member'><div className='makers-design'>Design</div>
+      <div className='makers-member'>
+        Front
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
         <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-        </div>
+        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+      </div>
+
+      <div className='makers-member'>
+        Design
+        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+        <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+      </div>
     </div>
   )
 }

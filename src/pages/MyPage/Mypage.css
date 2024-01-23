@@ -1,4 +1,4 @@
-.content{
+.mypage-content{
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -43,6 +43,7 @@
     font-weight: medium;
     font-family:'Inter';
     text-indent: 30px;
+    text-align: left;
     border: 1px solid #D9D9D9;
 }
 .fixMyDataBorder{

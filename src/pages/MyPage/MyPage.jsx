@@ -20,21 +20,21 @@ function MyPage() {
       return (
         <div>
           {data.map((item)=>{
-            <div key={item.id}>{myData}</div>
+            <div key={item.id}>{item[myData]}</div>
           })}
         </div>
       )
     }
-    <Data className='myProfile' myData='item.profile'></Data>
-    <td className='myData'><Data className='myHakgoa' myData='item.hakgoa'></Data></td>
-    <td className='myData'><Data className='myGi' myData='item.gi'></Data></td>
-    <td className='myData'><Data className='myName' myData='item.name'></Data></td>
-    <td className='myData'><Data className='myGithub' myData='item.github'></Data></td>
+    <Data className='myProfile' myData='profileImg'></Data>
+    <td className='myData'><Data className='myHakgoa' myData='hakgoa'></Data></td>
+    <td className='myData'><Data className='myGi' myData='gi'></Data></td>
+    <td className='myData'><Data className='myName' myData='name'></Data></td>
+    <td className='myData'><Data className='myGithub' myData='github'></Data></td>
     */
 
   return (
     <div>
-    <div className='content'>
+    <div className='mypage-content'>
       <Header />
       
       <div className='myPage'>My Page</div>
