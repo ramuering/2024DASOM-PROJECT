@@ -4,6 +4,7 @@ import Footer from "../../components/Footer"
 import styled from "styled-components";
 import Apply1 from './Apply1';
 import { Link } from "react-router-dom";
+import { useAppContext } from '../../contexts/AppContext';
 
 const NMB_VideoDiv = styled.div`
   width:100vw;
@@ -93,6 +94,7 @@ function NewMember() {
     window.scrollTo(0, 0);
   }, [])
 
+  const { isApplicationOpen } = useAppContext();
 
   return (
     <div id="NMB_MAIN_BOX">
@@ -161,9 +163,15 @@ function NewMember() {
               </NMB_NullBox2>
             </div>
           </div>
-        <div id="NMB_center_button">
-        <Link to="../apply01" className="NMB_linkButton">지원하기</Link>
-        </div>
+          <div id="NMB_center_button">
+          {isApplicationOpen ? (
+            <Link to="../apply01" className="NMB_linkButton">
+              지원하기
+            </Link>
+          ) : (
+            <span id='NMB_center_button_closed'>지원 마감</span>
+          )}
+          </div>
       </div>
 
       <NMB_NullBox></NMB_NullBox>

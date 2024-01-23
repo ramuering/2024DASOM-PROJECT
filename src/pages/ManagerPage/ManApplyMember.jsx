@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import './ManApplyMember.css';
 import Header from '../../components/Header';
+import { useAppContext } from '../../contexts/AppContext';
 
 function ManApplyMember() {
   const applyMembers = [
@@ -53,6 +54,8 @@ function ManApplyMember() {
       [fieldName]: value,
     }));
   };
+
+  const { closeApplication, isApplicationOpen } = useAppContext();
 
   return (
     <div className='manAM'>
@@ -106,7 +109,10 @@ function ManApplyMember() {
         ) : (
           <button className='manAM-editBtn' onClick={handleEditClick}>모집 일정 변경</button>
         )}
-        <button className='manAM-magamBtn'>모집 마감</button>
+        {isApplicationOpen ? (
+          <button className='manAM-magamBtn' onClick={closeApplication}>모집 마감</button>
+        ) : (
+          <button className='manAM-magamBtn' onClick={closeApplication}>모집 열기</button>)}
         <p className='manAM-applyCount'>{`신청 인원 : ${applyMembers.length}`}</p>
         <div className='manAM-list'>
           <div className='manAM-listTitle'>
