@@ -195,10 +195,15 @@
     color: #FA0000;
     border-color: #FA0000;
 }
+.manAM-selected {
+    color: #b6b6b6;
+    border-color: #b6b6b6;
+}
 
 .manAM-excel {
     margin-bottom: 239px;
-    width: 440px;
+    margin-right: 20px;
+    width: 220px;
     height: 64px;
     border-style: 2px;
     border-color: #54ECC4;
@@ -209,7 +214,20 @@
     font-weight: 700;
     cursor: pointer;
 }
-.manAM-excel:hover {
+.manAM-excel:hover,
+.manAM-passMembersBtn:hover {
     background-color: #54ECC4;
     color: #131313;
+}
+.manAM-passMembersBtn {
+    width: 220px;
+    height: 64px;
+    border-style: 2px;
+    border-color: #54ECC4;
+    border-radius: 16px;
+    background-color: #131313;
+    color: #54ECC4;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer; 
 }

@@ -5,21 +5,21 @@ import Header from '../../components/Header';
 import { useAppContext } from '../../contexts/AppContext';
 
 function ManApplyMember() {
-  const applyMembers = [
-    { id: 1, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1' },
-    { id: 3, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1' },
-    { id: 2, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1' },
-    { id: 4, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-    { id: 5, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-    { id: 6, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-    { id: 7, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-    { id: 8, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-    { id: 9, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-    { id: 10, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-    { id: 11, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-    { id: 12, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-    { id: 13, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2' },
-  ];
+  const [applyMembers, setApplyMembers] = useState([
+    { id: 1, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1', status: '' },
+    { id: 3, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1', status: '' },
+    { id: 2, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1', status: '' },
+    { id: 4, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+    { id: 5, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+    { id: 6, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+    { id: 7, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+    { id: 8, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+    { id: 9, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+    { id: 10, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+    { id: 11, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+    { id: 12, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+    { id: 13, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
+  ]);
 
   const handleExportExcel = () => {
     const ws = XLSX.utils.json_to_sheet(applyMembers);
@@ -56,6 +56,24 @@ function ManApplyMember() {
   };
 
   const { closeApplication, isApplicationOpen } = useAppContext();
+
+  const handleButtonClick = (id, status) => {
+    const updatedApplyMembers = applyMembers.map((applyMember) => {
+      if (applyMember.id === id) {
+        return { ...applyMember, status: status };
+      }
+      return applyMember;
+    });
+    setApplyMembers(updatedApplyMembers);
+  };
+  const handleSendPassMembersToBackend = () => {
+    const passMembers = applyMembers.filter((applyMember) => applyMember.status === 'pass');
+    
+    // 서버로 'pass'인 멤버들을 전송하는 로직
+    console.log('Pass Members:', passMembers);
+    // fetch('/api/sendPassMembers', { method: 'POST', body: JSON.stringify(passMembers) });
+    alert("합격자 정보를 전송하였습니다!");
+  };
 
   return (
     <div className='manAM'>
@@ -128,13 +146,26 @@ function ManApplyMember() {
                 <div className='manAM-infodepartment'>{`${applyMember.department}`}</div>
                 <div className='manAM-infoname'>{`${applyMember.name}`}</div>
                 <div className='manAM-infograde'>{`${applyMember.grade}`}</div>
-                <button className='manAM-infopass'>합격</button>
-                <button className='manAM-infononPass'>불합격</button>
+                <button
+                  className={`manAM-infopass ${applyMember.status === 'pass' ? 'manAM-selected' : ''}`}
+                  onClick={() => handleButtonClick(applyMember.id, 'pass')}
+                >
+                  합격
+                </button>
+                <button
+                  className={`manAM-infononPass ${applyMember.status === 'nonPass' ? 'manAM-selected' : ''}`}
+                  onClick={() => handleButtonClick(applyMember.id, 'nonPass')}
+                >
+                  불합격
+                </button>
               </li>
             ))}
           </ul>
         </div>
-        <button className='manAM-excel' onClick={handleExportExcel}>엑셀 추출</button>
+        <div className='manAM-excelPassBtn'>
+          <button className='manAM-excel' onClick={handleExportExcel}>엑셀 추출</button>
+          <button className='manAM-passMembersBtn' onClick={handleSendPassMembersToBackend}>합격자 전송</button>
+        </div>
       </div>
     </div>
   );
