@@ -25,6 +25,8 @@ import ManStudy from "./pages/ManagerPage/ManStudy";
 import ManProject from "./pages/ManagerPage/ManProject";
 import ManApply from "./pages/ManagerPage/ManApply";
 import NoticeDetail from "./pages/NoticePage/NoticeDetail";
+import NoticeAdmin from "./pages/NoticePage/NoticeAdmin";
+import NoticeCreate from "./pages/NoticePage/NoticeCreate";
 
 const Layout = () => {
   return (
@@ -52,6 +54,8 @@ function App() {
           <Route path="apply01" element={<Apply1 />} />
           <Route path="apply02" element={<Apply2 />} />
           <Route path="notice" element={<Notice />} />
+          <Route path="noticeadmin" element={<NoticeAdmin />} />
+          <Route path="noticecreate" element={<NoticeCreate />} />
           <Route path="study" element={<Study />} />
           <Route path="ManMemberModify" element={<ManMemberModify />} />
           <Route path="ManStudyApply" element={<ManStudyApply />} />
