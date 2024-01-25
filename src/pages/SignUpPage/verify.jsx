@@ -4,13 +4,13 @@ import axios from 'axios';
 import "./SignUp1.css";
 
 export default function SignUp1() {
-  const [authCode, setAuthCode] = useState('');
+  const [uniqueCode, setuniqueCode] = useState('');
   const navigate = useNavigate();  // Use useNavigate instead of useHistory
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:8090/signup01', {
-        uniqueCode: authCode,
+      const response = await axios.post('http://localhost:8090/signup/verify', {
+         uniqueCode : uniqueCode,
       });
 
       if (response.data === '부원 인증 성공') {
@@ -41,8 +41,8 @@ export default function SignUp1() {
         className='SignUp1_input'
         type='text'
         placeholder='인증번호를 입력하세요.'
-        value={authCode}
-        onChange={(e) => setAuthCode(e.target.value)}
+        value={uniqueCode}
+        onChange={(e) => setuniqueCode(e.target.value)}
       />
       <button className='SignUp01_certification' onClick={handleSubmit}>
         다솜 부원 인증하기

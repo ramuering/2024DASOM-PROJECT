@@ -9,7 +9,7 @@ import ManMain from "./pages/ManagerPage/ManMain";
 import MyPage from "./pages/MyPage/MyPage";
 import LimitHeader from "./components/LimitHeader";
 import Login from "./pages/LoginPage/Login";
-import SignUp1 from "./pages/SignUpPage/SignUp1";
+import SignUp1 from "./pages/SignUpPage/verify";
 import SignUp2 from "./pages/SignUpPage/SignUp2";
 import Apply1 from "./pages/ApplyPage/Apply1";
 import Apply2 from "./pages/ApplyPage/Apply2";
