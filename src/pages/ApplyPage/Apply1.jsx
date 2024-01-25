@@ -36,14 +36,14 @@ function Apply1() {
         <form id="Ap1_club_join_form "action="../apply02">
           {/*이름*/}
         <label for="Ap1_name"><p class="Ap1_form_text">이름 <span class="Ap1_red_text">*</span></p></label>
-          <input class="Ap1_form_input" id="Ap1_name" required></input>
+          <input class="Ap1_form_input" id="Ap1_name" required placeholder='이름'></input>
 
           {/*학번*/}
           <label for="Ap1_gradecode"><p class="Ap1_form_text">학번 <span class="Ap1_red_text">*</span></p></label>
           <input class="Ap1_form_input" id="Ap1_gradecode" required></input>
 
           {/*학년*/}
-          <fieldset id="Ap1_grade_field">
+          <fieldset id="Ap1_grade_field" class="fieldset">
             <legend><p class="Ap1_form_text">학년 <span class="Ap1_red_text">*</span></p></legend>
 
             <div class ="Ap1_div_box">
@@ -65,7 +65,7 @@ function Apply1() {
 
           </fieldset>
 
-          <fieldset id="Ap1_major_field">
+          <fieldset id="Ap1_major_field" class="fieldset">
             <legend><p class="Ap1_form_text">학과 <span class="Ap1_red_text">*</span></p></legend>
             <div class ="Ap1_div_box">
               <div class="Ap1_radio_box">
@@ -99,7 +99,7 @@ function Apply1() {
           <label for="Ap1_Dasomtalk"><p class="Ap1_form_text">DASOM에게 하고 싶은 말</p></label>
           <textarea id="Ap1_Dasomtalk" name="Dasomtalk" required></textarea>
           
-          <input type="submit" value="DASOM 지원하기"/>
+          <input type="submit" value="DASOM 지원하기" id='Ap1_submit'/>
           
         </form>
       </div>
