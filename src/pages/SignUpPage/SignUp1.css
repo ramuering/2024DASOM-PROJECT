@@ -31,33 +31,36 @@
   font-size: 1em;
 }
 
-.SignUp1_input {
-  appearance: none;
-  width: 585px;
-  height: 77px;
-  border:2px solid ;
-  border-radius: 25px;
-  background-color: #131313;
-  color: white;
-  margin-bottom: 71px;
+#SignUp1_input {
+
+    display: block;
+    width: 550px;
+    height: 77px;
+    border-radius: 25px;
+    background: none;
+    border: 2px solid #D9D9D9;
+    padding-left: 30px;
+    margin: 0 auto;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 85px;
   transition: border-color 0.3s, color 0.3s;;
 }
 
-.SignUp1_input::placeholder {
-  color: white;
-  font-size: 16px;
-  text-align: center;
-
-}
-
-
-.SignUp1_input:hover {
-  border-color: #54ecc4;
-}
-
-.SignUp1_input:focus {
+#SignUp1_input:focus {
   outline: none;
 }
+
+#SignUp1_input:hover {
+  border-color: #54ECC4;
+}
+
+#SignUp1_input::placeholder {
+  color: white;
+  font-weight:lighter;
+}
+
 
 .SignUp01_certification {
   cursor: pointer;

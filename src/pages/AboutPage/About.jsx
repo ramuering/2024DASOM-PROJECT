@@ -14,8 +14,8 @@ function About() {
 
   return (
     <div>
-      <div className='about-container'>
       <Header />
+      <div className='about-container'>
       <div className='about'>
         <div className='about-main'>
           <div className='about-main-text-box'>
