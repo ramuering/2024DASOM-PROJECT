@@ -21,8 +21,6 @@
     border-color: #ffffff;
     border-radius: 25px;
     background-color: #131313;
-}
-.manMain-a {
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
@@ -32,7 +30,5 @@
 .manMain-button:hover {
     background-color: #54ECC4;
     cursor: pointer;
-}
-.manMain-button:hover .manMain-a {
     color: black;
 }

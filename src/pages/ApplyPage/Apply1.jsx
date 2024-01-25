@@ -9,6 +9,7 @@ const Ap1_NullBox = styled.div`
     height: 350px;
 `;
 
+
 function Apply1() {
 
   useEffect(() => {
@@ -96,7 +97,7 @@ function Apply1() {
           <input class="Ap1_form_input"></input>
 
           <label for="Ap1_Dasomtalk"><p class="Ap1_form_text">DASOM에게 하고 싶은 말</p></label>
-          <textarea id="Ap1_Dasomtalk" name="Dasomtalk" required></textarea>
+          <textarea id="Ap1_Dasomtalk" name="Dasomtalk" required></textarea>\
           
           <input type="submit" value="DASOM 지원하기"/>
           

@@ -152,8 +152,45 @@
   height: 100%;
   border-radius: 16px 0px 0px 16px;
   background-image: url("../../../public/images/study-sample.jpeg");
+  background-size: 100%;
   filter: brightness(40%);
 }
+
+.main-pro-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 0px 0px 16px;
+  background-image: url("../../../public/images/pro-background.JPG");
+  background-size: contain;
+  filter: brightness(40%);
+}
+.main-mt-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 0px 0px 16px;
+  background-image: url("../../../public/images/mt-background.png");
+  background-size: 100% 100%;
+  filter: brightness(40%);
+}
+
+.main-tu-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 0px 0px 16px;
+  background-image: url("../../../public/images/tu-backgorund.PnG");
+  background-size: 100% 100%;
+  filter: brightness(40%);
+}
+
 .main-text {
   position: inherit;
   display: inline;
