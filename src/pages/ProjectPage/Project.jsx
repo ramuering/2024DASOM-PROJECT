@@ -56,7 +56,7 @@ const Project = ()=>  {
           </div>
           </div>
       </div>
-      <Link to="/projectInfo" className="project-move-button">
+      <Link to="/projectinfo" className="project-move-button">
         <div className="project-move-font">더보기</div>
       </Link>
       <div className="project-footer">

@@ -57,13 +57,19 @@ function App() {
           <Route path="apply02" element={<Apply2 />} />
           <Route path="notice" element={<Notice />} />
           <Route path="study" element={<Study />} />
-          <Route path="ManMemberModify" element={<ManMemberModify />} />
-          <Route path="ManStudyApply" element={<ManStudyApply />} />
-          <Route path="ManStudyModify" element={<ManStudyModify />} />
-          <Route path="ManProjectApply" element={<ManProjectApply />} />
-          <Route path="ManProjectModify" element={<ManProjectModify />} />
-          <Route path="studyInfo" element={<StudyInfo />} />
-          <Route path="projectInfo" element={<ProjectInfo />} />
+          <Route path="manmembermodify" element={<ManMemberModify />} />
+          <Route path="manstudyapply" element={<ManStudyApply />} />
+          <Route path="manstudymodify" element={<ManStudyModify />} />
+          <Route path="manprojectapply" element={<ManProjectApply />} />
+          <Route path="manprojectmodify" element={<ManProjectModify />} />
+          <Route path="studyinfo" element={<StudyInfo />} />
+          <Route path="projectinfo" element={<ProjectInfo />} />
+          <Route path="noticedetail" element={<NoticeDetail />} />
+          <Route path="makers" element={<Makers />} />
+          <Route path="manapplymember" element={<ManApplyMember />} />
+          <Route path="manstudy" element={<ManStudy />} />
+          <Route path="manapply" element={<ManApply />} />
+          <Route path="manproject" element={<ManProject />} />
         </Route>
       </Routes>
     </div>
