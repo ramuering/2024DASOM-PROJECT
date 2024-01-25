@@ -1,9 +1,8 @@
 .studyInfo-title-wrapper {
   position: relative;
   top: 232px;
-  width: 1920px;
+  left: 360px;
   text-align: left;
-  margin: 0 auto;
   display: flex;
 }
 
@@ -22,11 +21,10 @@
 .studyInfo-content-wrapper {
   position: relative;
   top: 392px;
-  width: 1920px;
+  left: 360px;
   text-align: left;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
 }
 .studyInfo-content {
   position: absolute;
@@ -45,8 +43,7 @@
 .studyInfo-refer {
   position: relative;
   top: 1524px;
-  width: 1920px;
-  margin: 0 auto;
+  left: 360px;
 }
 
 .studyInfo-refer-title {
@@ -71,7 +68,7 @@ td {
   font-weight: 700;
 }
 .studyInfo-table-content2 {
-  width: 1200px;
+  width: 1000px;
   text-align: left;
   padding-left: 21px;
   box-sizing: border-box;
@@ -80,8 +77,8 @@ td {
 .studyInfo-weekly {
   position: relative;
   top: 2204px;
-  width: 1920px;
-  margin: 0 auto;
+  left: 360px;
+  width: 1200px;
 }
 
 .studyInfo-weekly-title {

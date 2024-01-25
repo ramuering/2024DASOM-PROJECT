@@ -52,7 +52,7 @@ const StudyInfo = () => {
         <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
         <hr/>
         <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
-        <hr/>
+        
       </div>
       <div className="studyInfo-footer">
         <Footer/>

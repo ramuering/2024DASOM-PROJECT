@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../../components/Footer'
 import styled from 'styled-components'
 import "./Project.css"
+import { Link } from 'react-router-dom'
 
 const Project = ()=>  {
   return (
@@ -57,9 +58,9 @@ const Project = ()=>  {
           </div>
           </div>
       </div>
-      <div className="project-move-button">
+      <Link to="/projectInfo" className="project-move-button">
         <div className="project-move-font">더보기</div>
-      </div>
+      </Link>
       <div className="project-footer">
         <Footer/>
       </div>

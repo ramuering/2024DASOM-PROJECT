@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../../components/Footer'
 import styled from 'styled-components'
 import "./Study.css"
+import { Link } from 'react-router-dom'
 
 const Study = ()=>  {
   return (
@@ -53,9 +54,9 @@ const Study = ()=>  {
           </div>
           </div>
       </div>
-      <div className="study-move-button">
+      <Link to="/studyInfo" className="study-move-button">
         <div className="study-move-font">더보기</div>
-      </div>
+      </Link>
       <div className="study-footer">
         <Footer/>
       </div>
