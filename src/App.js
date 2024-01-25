@@ -1,4 +1,3 @@
-
 import "./App.css";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Main from "./pages/MainPage/Main";
@@ -7,7 +6,7 @@ import Project from "./pages/ProjectPage/Project";
 import NewMember from "./pages/ApplyPage/NewMember";
 import ManMain from "./pages/ManagerPage/ManMain";
 import MyPage from "./pages/MyPage/MyPage";
-import MyPageModify from "./pages/MyPage/MyPageModify"
+import MyPageModify from "./pages/MyPage/MyPageModify";
 import LimitHeader from "./components/LimitHeader";
 import Login from "./pages/LoginPage/Login";
 import SignUp1 from "./pages/SignUpPage/SignUp1";
@@ -21,6 +20,8 @@ import ManStudyApply from "./pages/ManagerPage/ManStudyApply";
 import ManStudyModify from "./pages/ManagerPage/ManStudyModify";
 import ManProjectApply from "./pages/ManagerPage/ManProjectApply";
 import ManProjectModify from "./pages/ManagerPage/ManProjectModify";
+import StudyInfo from "./pages/StudyPage/StudyInfo";
+import ProjectInfo from "./pages/ProjectPage/ProjectInfo";
 import ManApplyMember from "./pages/ManagerPage/ManApplyMember";
 import ManStudy from "./pages/ManagerPage/ManStudy";
 import ManProject from "./pages/ManagerPage/ManProject";
@@ -31,7 +32,6 @@ import Makers from "./pages/MakersPage/Makers";
 //=======
 import NoticeDetail from "./pages/NoticePage/NoticeDetail";
 //>>>>>>> 26a0a9e07b00001f06d2934695da2712c6bae64d
-
 
 const Layout = () => {
   return (
@@ -64,23 +64,15 @@ function App() {
           <Route path="ManMemberModify" element={<ManMemberModify />} />
           <Route path="ManStudyApply" element={<ManStudyApply />} />
           <Route path="ManStudyModify" element={<ManStudyModify />} />
-          <Route path="ManProjectApply" element={<ManProjectApply/>} />
-          <Route path="ManProjectModify" element={<ManProjectModify/>} />
-          <Route path="ManApplyMember" element={<ManApplyMember />} />
-          <Route path="ManStudy" element={<ManStudy />} />
-          <Route path="ManProject" element={<ManProject />} />
-          <Route path="ManApply" element={<ManApply />} />
-          
-          <Route path="Makers" element={<Makers />} />
-
-          <Route path="/noticedetail/:id" element={<NoticeDetail />} />
-
+          <Route path="ManProjectApply" element={<ManProjectApply />} />
+          <Route path="ManProjectModify" element={<ManProjectModify />} />
+          <Route path="studyInfo" element={<StudyInfo />} />
+          <Route path="projectInfo" element={<ProjectInfo />} />
         </Route>
       </Routes>
     </div>
   );
 }
-
 
 /*
 import React, {useEffect, useState} from 'react';
@@ -102,6 +94,5 @@ function App() {
     );
 }
 */
-
 
 export default App;
