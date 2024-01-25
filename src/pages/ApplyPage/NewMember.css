@@ -131,6 +131,19 @@
     transition: all 0.2s;
   }
 
+  #NMB_center_button_closed {
+    width: 235px;
+    height: 95px;
+    background: none;
+    border: 2px solid #b6b6b6;
+    line-height: 95px;
+    border-radius: 25px;
+    color: #b6b6b6;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
   #NMB_ques{
     width: 100vw;
     height: 1000px;
