@@ -10,8 +10,6 @@ const Project = ()=>  {
       <div className='project-title'>PROJECT</div>
       <div className="project-list">
         <div className="project-box-container">
-
-        
         <div className="project-box">
           <div className="project-img"></div>
           <div className="project-content">
@@ -39,8 +37,8 @@ const Project = ()=>  {
           <div className="project-content">
           <div className="project-content-title-wrapper">
           <div className="project-content-title">다솜플젝</div>
-                <div className="project-content-part">WEB</div>
-                <div className="project-content-gener">32기</div>
+               <div className="project-content-part">WEB</div>
+               <div className="project-content-gener">32기</div>
               </div>
             <div className="project-content-sub">다솜플젝상세</div>
           </div>
