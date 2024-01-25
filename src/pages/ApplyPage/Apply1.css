@@ -1,0 +1,153 @@
+
+
+#Ap1_main{
+    width: 100vw;
+    height: 4100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Ap1_first_form{
+    display: flex; /* flex 컨테이너로 설정 */
+    justify-content: center; /* 자식 요소들 사이의 간격을 최대로 설정 */
+    align-items: center; /* 세로 방향에서 중앙 정렬 */
+    text-align: center;
+    height: 450px;
+}
+
+#Ap1_first_form div{
+    padding-top: 30px;
+}
+
+#Ap1_second_form{
+    display: flex; /* flex 컨테이너로 설정 */
+    justify-content: center; /* 자식 요소들 사이의 간격을 최대로 설정 */
+    align-items: center; /* 세로 방향에서 중앙 정렬 */
+    height: 4000px;
+    border-top: 1px solid white;
+    width: 100vw;
+}
+
+
+#Ap1_form_title{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#Ap1_sub_title{
+    font-size: 24px;
+}
+
+.Ap1_form{
+    width: 600px;
+    margin: 0 auto;
+}
+.Ap1_form_text{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.Ap1_red_text{
+    color: red;
+    margin-right: 10px;
+}
+
+.Ap1_form_input{
+    width: 585px;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    background-color: #D9D9D9;
+    font-size: 20px;
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+    padding-left: 20px;
+    margin-bottom: 100px;
+}
+
+fieldset{
+    width: 585px;
+    height: 300px;
+    border-top: solid 1px white;
+    border-left: 0;
+    border-bottom: 0;
+    border-right: 0;
+    font-size: 16px;
+    padding-top: 65px;
+    margin: 0;
+    padding: 0;
+}
+.Ap1_div_box{
+    display: flex; /* flex 컨테이너로 설정 */
+    justify-content: space-between; /* 자식 요소들 사이의 간격을 최대로 설정 */
+    align-items: center; /* 세로 방향에서 중앙 정렬 */
+    height: 100px; /* 높이 조절 가능 */
+}
+
+[type="radio"] {
+    vertical-align: middle;
+    appearance: none;
+    border: max(2px, 0.1em) solid gray;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: 10px;
+  }
+
+  [type="radio"]:checked {
+    border: 0.4em solid white;
+  }
+
+  #Ap1_motivation{
+    width: 585px;
+    height: 315px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    background-color: #D9D9D9;
+    font-size: 20px;
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 100px;
+    word-wrap: break-word; /* 일정 수 이상이 되면 단어 단위로 줄바꿈 */
+  }
+
+  #Ap1_Dasomtalk {width: 585px;
+  height: 315px;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  background-color: #D9D9D9;
+  font-size: 20px;
+  color: rgb(37, 37, 37);
+  font-weight: bold;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-bottom: 100px;
+  word-wrap: break-word; /* 일정 수 이상이 되면 단어 단위로 줄바꿈 */
+}
+
+[type="submit"]{
+    width: 455px;
+    height: 95px;
+    background:none;
+    border: 2px solid #54ECC4;
+    border-radius: 25px;
+    font-size: 24px;
+    color: #54ECC4;
+    font-weight: bold;
+    transition: all 0.2s;
+    margin: 0 auto;
+    display: block;
+}
+
+[type="submit"]:hover{
+    background:#54ECC4;
+    color: white;
+    transition: all 0.2s;
+    cursor: pointer;
+}

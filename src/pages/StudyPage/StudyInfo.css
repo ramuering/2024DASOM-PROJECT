@@ -1,0 +1,102 @@
+.studyInfo-title-wrapper {
+  position: relative;
+  top: 232px;
+  width: 1920px;
+  text-align: left;
+  margin: 0 auto;
+  display: flex;
+}
+
+.studyInfo-title {
+  position: absolute;
+  font-size: 40px;
+  font-weight: 700;
+}
+.studyInfo-date {
+  position: absolute;
+  margin-left: 184px;
+  margin-top: 29px;
+  font-size: 16px;
+}
+
+.studyInfo-content-wrapper {
+  position: relative;
+  top: 392px;
+  width: 1920px;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.studyInfo-content {
+  position: absolute;
+  width: 1052px;
+  font-size: 24px;
+  text-align: left;
+}
+.studyInfo-image {
+  position: absolute;
+  width: 1200px;
+  height: 483px;
+  background-image: url("../../../public/images/study-sample.jpeg");
+  margin-top: 220px;
+}
+
+.studyInfo-refer {
+  position: relative;
+  top: 1524px;
+  width: 1920px;
+  margin: 0 auto;
+}
+
+.studyInfo-refer-title {
+  font-size: 40px;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 65px;
+}
+
+th,
+.studyInfo-table-head {
+  display: none;
+}
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.studyInfo-table-content1 {
+  width: 175px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.studyInfo-table-content2 {
+  width: 1200px;
+  text-align: left;
+  padding-left: 21px;
+  box-sizing: border-box;
+}
+
+.studyInfo-weekly {
+  position: relative;
+  top: 2204px;
+  width: 1920px;
+  margin: 0 auto;
+}
+
+.studyInfo-weekly-title {
+  font-size: 40px;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 65px;
+}
+
+.studyInfo-weekly-content {
+  text-align: left;
+  padding: 42px;
+}
+
+/* footer */
+.studyInfo-footer {
+  margin-top: 3319px;
+}

@@ -1,0 +1,108 @@
+/* SignUp2.css */
+
+.SignUp2Page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 2313px;
+  background-color: #131313;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  padding-top: 50px; /* 더 큰 여백 추가 */
+}
+
+.Element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px; /* 더 큰 여백 추가 */
+}
+
+.subtract,
+.line10,
+.rectangle929,
+.ellipse40,
+.ellipse39,
+.one,
+.certification,
+.inputInfo {
+  margin-top: 20px; /* 더 큰 여백 추가 */
+}
+
+.one {
+  color: #131313;
+  padding: 10px; /* 더 큰 여백 추가 */
+  border-radius: 10px; /* 더 큰 여백 추가 */
+  margin-left: 170px;
+}
+
+.SignUp2Title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top:0; /* 더 큰 여백 추가 */
+}
+
+.SignUp2_form {
+  margin-top: 30px; /* 더 큰 여백 추가 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SignUp2_check,
+.SignUp2_login {
+  margin-top: 20px; /* 더 큰 여백 추가 */
+}
+
+.SignUp2_check{
+  color: #B6B6B6;
+}
+
+.SignUp2_login {
+  color: #54ecc4;
+  font-weight: bold;
+  margin-top: 7px;
+  
+}
+
+.SignUp2_login:hover {
+  cursor: pointer;
+}
+
+fieldset{
+  width: 585px;
+  height: 300px;
+  border-top: solid 1px white;
+  border-left: 0;
+  border-bottom: 0;
+  border-right: 0;
+  font-size: 16px;
+  padding-top: 61px;
+  margin-top: 172px;
+}
+.div_box{
+  display: flex; /* flex 컨테이너로 설정 */
+  justify-content: space-between; /* 자식 요소들 사이의 간격을 최대로 설정 */
+  align-items: center; /* 세로 방향에서 중앙 정렬 */
+  height: 100px; /* 높이 조절 가능 */
+}
+
+.SignUp02_final {
+  cursor: pointer;
+  border: 2px solid;
+  width: 585px;
+  height: 71px;
+  font-size: 16px;
+  border-color: #54ecc4;
+  padding: 10px 20px;
+  background-color: #131313;
+  color: #54ecc4;
+  border-radius: 25px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.SignUp02_final:hover {
+  color: #131313;
+  background-color: #54ecc4;
+}

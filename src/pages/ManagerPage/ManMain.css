@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+.manMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1326px;
+}
+
+.manMain-title {
+    margin: 209px 0 128px 0 ;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+.manMain-button {
+    margin-bottom: 128px;
+    width: 440px;
+    height: 66px;
+    border-style: 1px;
+    border-color: #ffffff;
+    border-radius: 25px;
+    background-color: #131313;
+}
+.manMain-a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+/* 버튼 hover */
+.manMain-button:hover {
+    background-color: #54ECC4;
+    cursor: pointer;
+}
+.manMain-button:hover .manMain-a {
+    color: black;
+}
