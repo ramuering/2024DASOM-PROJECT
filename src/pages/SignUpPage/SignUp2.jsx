@@ -74,7 +74,9 @@ const [memDepartment, setmemDepartment] = useState('');
       <div className="certification">부원 인증</div>
       <div className="inputInfo">부원 정보 입력</div>
       </div> */}
-    <div className='SignUp2Title'>DASOM</div>
+    <div class="SignUp_step">
+              <img src="images/SignUp2.png"></img>
+            </div>
     <div className='SignUp2_form'>
     <div className='SignUp2_check'>이미 회원이신가요?</div>
     <Link to='/Login' className='SignUp2_login'>로그인 하기</Link>

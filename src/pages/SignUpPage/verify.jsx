@@ -30,7 +30,9 @@ export default function SignUp1() {
 
   return (
     <div className='SignUp1Page'>
-      <div className='SignUp1Title'>DASOM</div>
+      <div class="SignUp_step">
+              <img src="images/SignUp1.png"></img>
+            </div>
       <div className='SignUp1_form'>
         <div className='SignUp1_check'>이미 회원이신가요?</div>
         <Link to='/Login' className='SignUp1_login'>
