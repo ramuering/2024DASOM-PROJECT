@@ -9,7 +9,7 @@ import MyPage from "./pages/MyPage/MyPage";
 import MyPageModify from "./pages/MyPage/MyPageModify";
 import LimitHeader from "./components/LimitHeader";
 import Login from "./pages/LoginPage/Login";
-import SignUp1 from "./pages/SignUpPage/SignUp1";
+import SignUp1 from "./pages/SignUpPage/verify";
 import SignUp2 from "./pages/SignUpPage/SignUp2";
 import Apply1 from "./pages/ApplyPage/Apply1";
 import Apply2 from "./pages/ApplyPage/Apply2";
@@ -26,12 +26,8 @@ import ManApplyMember from "./pages/ManagerPage/ManApplyMember";
 import ManStudy from "./pages/ManagerPage/ManStudy";
 import ManProject from "./pages/ManagerPage/ManProject";
 import ManApply from "./pages/ManagerPage/ManApply";
-//<<<<<<< HEAD
 import Makers from "./pages/MakersPage/Makers";
-
-//=======
 import NoticeDetail from "./pages/NoticePage/NoticeDetail";
-//>>>>>>> 26a0a9e07b00001f06d2934695da2712c6bae64d
 
 const Layout = () => {
   return (
