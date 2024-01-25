@@ -1,0 +1,326 @@
+/* SignUp2.css */
+
+.SignUp2Page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 3000px;
+  background-color: #131313;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  padding-top: 50px; /* 더 큰 여백 추가 */
+}
+
+.Element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px; /* 더 큰 여백 추가 */
+}
+.form_text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtract,
+.line10,
+.rectangle929,
+.ellipse40,
+.ellipse39,
+.one,
+.certification,
+.inputInfo {
+  margin-top: 20px; /* 더 큰 여백 추가 */
+}
+
+.one {
+  color: #131313;
+  padding: 10px; /* 더 큰 여백 추가 */
+  border-radius: 10px; /* 더 큰 여백 추가 */
+  margin-left: 170px;
+}
+
+.SignUp2Title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top:-190px; /* 더 큰 여백 추가 */
+}
+
+.SignUp2_form {
+  margin-top: 30px; /* 더 큰 여백 추가 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SignUp2_check,
+.SignUp2_login {
+  margin-top: 20px; /* 더 큰 여백 추가 */
+}
+
+.SignUp2_check{
+  color: #B6B6B6;
+}
+
+.SignUp2_input0 {
+  display: block;
+  width: 550px;
+  height: 77px;
+  border-radius: 25px;
+  background: none;
+  border: 2px solid #D9D9D9;
+  padding-left: 30px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  margin-bottom: -71px;
+  margin-top: 157px;
+transition: border-color 0.3s, color 0.3s;;
+}
+
+.SignUp2_input1,
+.SignUp2_input2 {
+  font-size: 16px; /* Adjust the font size as needed */
+  margin-left: 40px;
+}
+
+.SignUp2_input1{
+  display: block;
+  width: 550px;
+  height: 77px;
+  border-radius: 25px;
+  background: none;
+  border: 2px solid #D9D9D9;
+  padding-left: 30px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  margin-right: 43px;
+  margin-bottom:71px;
+  margin-top: 157px;
+transition: border-color 0.3s, color 0.3s;;
+}
+
+.SignUp2_input0
+,.SignUp2_input1::placeholder,
+.SignUp2_input2::placeholder {
+  font-size: 16px; /* Adjust the font size of the placeholder text */
+  /* Add any other styles to adjust the position, color, etc. of the placeholder text */
+}
+
+
+
+.SignUp2_input0,
+.SignUp2_input1
+,.SignUp2_input2:focus {
+  outline: none;
+}
+
+.SignUp2_input0:hover{
+  border-color: #54ecc4;
+}
+
+.SignUp2_input1:hover{
+  border-color: #54ecc4;
+}
+
+.SignUp2_input2:hover {
+  border-color: #54ecc4;
+}
+
+.SignUp2_input2 {
+  display: block;
+  width: 550px;
+  height: 77px;
+  border-radius: 25px;
+  background: none;
+  border: 2px solid #D9D9D9;
+  padding-left: 30px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  margin-right: 43px;
+  margin-bottom: 71px;
+  margin-top: 10px;
+  transition: border-color 0.3s, color 0.3s;;
+}
+
+.SignUp2_login {
+  color: #54ecc4;
+  font-weight: bold;
+  margin-top: 7px;
+  
+}
+
+.SignUp2_login:hover {
+  cursor: pointer;
+}
+
+
+#major_field {
+  margin-top: 20px; /* Adjust the value as needed */
+}
+
+
+fieldset{
+  width: 585px;
+  height: 300px;
+  border-top: solid 1px white;
+  border-left: 0;
+  border-bottom: 0;
+  border-right: 0;
+  font-size: 16px;
+  padding-top: 61px;
+  margin-top: 100px;
+}
+.div_box{
+  display: flex; /* flex 컨테이너로 설정 */
+  justify-content: space-between; /* 자식 요소들 사이의 간격을 최대로 설정 */
+  align-items: center; /* 세로 방향에서 중앙 정렬 */
+  height: 100px; /* 높이 조절 가능 */
+}
+
+
+#Agree {
+  margin-top: 20px;
+}
+
+.check_box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 52px;
+}
+
+.check_box input {
+  margin-right: 10px;
+}
+
+.check_box label {
+  font-size: 16px;
+  color: white;
+}
+
+/* SignUp2.css */
+
+/* ... (your existing styles) */
+
+.check_box input {
+  display: none; /* Hide the default checkbox */
+}
+
+.check_box label {
+  position: relative;
+  padding-left: 30px; /* Adjust the padding to control the size of the circle */
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+
+.check_box label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px; /* Adjust the width and height to control the size of the circle */
+  height:15px;
+  border: 2px solid white; /* Border color of the circle */
+  border-radius: 50%; /* Make it a circle */
+  background-color: #131313; /* Background color of the circle */
+  transition: background-color 0.3s; /* Add a transition for a smooth effect */
+}
+
+.check_box input:checked + label:before {
+  background-color: #54ecc4; /* Change background color when checkbox is checked */
+  border-color: #54ecc4; /* Change border color when checkbox is checked */
+}
+
+
+/* ... (rest of your styles) */
+
+/* SignUp2.css */
+
+/* ... (your existing styles) */
+
+
+
+/* SignUp2.css */
+
+/* ... (your existing styles) */
+
+#Agree .check_box input {
+  display: none; /* Hide the default checkboxes */
+}
+
+#Agree .check_box label {
+  position: relative;
+  padding-left: 30px; /* Adjust the padding to control the size of the circle */
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+
+#Agree .check_box input:checked + label {
+  background-image: url('/src/pages/SignUpPage/—Pngtree—check mark icon_3566306.png'); /* Replace 'path/to/your/checked-image.png' with the path to your checked image */
+  background-size: 20px 20px; /* Adjust the size of the background image */
+  background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+  background-position: left center; /* Adjust the position of the image within the label */
+  padding-left: 40px; /* Adjust padding to make space for the image */
+}
+
+#Agree .check_box input:checked + label:before {
+  content: ''; /* Remove the default content */
+}
+
+#Agree .check_box label:before {
+  display: inline-block; /* Ensure the content takes up space for background image */
+  width: 20px; /* Adjust the width of the content (image) */
+  height: 20px; /* Adjust the height of the content (image) */
+  margin-right: 10px; /* Add margin between the content and the text */
+}
+
+#Agree .check_box label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px; /* Adjust the width and height to control the size of the circle */
+  height: 16px;
+  border: 2px solid white; /* Border color of the circle */
+  border-radius: 4px; /* Make it a rounded rectangle */
+  background-color: #131313; /* Background color of the checkbox */
+  transition: background-color 0.3s; /* Add a transition for a smooth effect */
+}
+
+#Agree .check_box input:checked + label:before {
+  background-color: #54ecc4; /* Change background color when checkbox is checked */
+  border-color: #54ecc4; /* Change border color when checkbox is checked */
+}
+
+/* ... (rest of your styles) */
+
+
+/* ... (rest of your styles) */
+
+
+
+.SignUp02_final {
+  cursor: pointer;
+  margin-top: 242px;
+  border: 2px solid;
+  width: 585px;
+  height: 71px;
+  font-size: 16px;
+  border-color: #54ecc4;
+  padding: 10px 20px;
+  background-color: #131313;
+  color: #54ecc4;
+  border-radius: 25px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.SignUp02_final:hover {
+  color: #131313;
+  background-color: #54ecc4;
+}
