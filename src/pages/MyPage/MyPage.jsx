@@ -36,7 +36,7 @@ function MyPage() {
     <div>
     <div className='content'>
       <Header />
-      
+
       <div className='myPage'>My Page</div>
       <img className='myProfile' src='./images/myPage/profile.jpg'></img>
 
@@ -103,7 +103,7 @@ function MyPage() {
 //     <div>
 //     <div className='content'>
 //       <Header />
-      
+
 //       <div className='myPage'>My Page</div>
 //       <img className='myProfile' src='./images/myPage/profile.jpg'></img>ㅞ
 

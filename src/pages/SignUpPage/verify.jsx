@@ -38,17 +38,11 @@ export default function SignUp1() {
         </Link>
       </div>
       <input
-<<<<<<< HEAD:src/pages/SignUpPage/verify.jsx
         className='SignUp1_input'
         type='text'
         placeholder='인증번호를 입력하세요.'
         value={uniqueCode}
         onChange={(e) => setuniqueCode(e.target.value)}
-=======
-        placeholder='인증번호를 입력하세요.' id='SignUp1_input'
-        value={authCode}
-        onChange={(e) => setAuthCode(e.target.value)}
->>>>>>> 6560b88f8fa759fe10093d9d21d64124c902bb67:src/pages/SignUpPage/SignUp1.jsx
       />
       <button className='SignUp01_certification' onClick={handleSubmit}>
         다솜 부원 인증하기
