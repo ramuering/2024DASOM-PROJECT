@@ -3,8 +3,8 @@ import "./Footer.css"
 
 const Footer = () => {
   return (
-    <div className='footer'>
-
+    <div>
+      <div className='footer'>
       <div className='footer-logo-container'>
         <img className='footer-img-logo' src='./images/dasom-logo.PNG' alt='다솜로고'></img>
         <p className='footer-logo-text'>DASOM</p>
@@ -28,7 +28,9 @@ const Footer = () => {
           <p>회장 남호성</p>
         </div>
       </div>
-
+     
+      </div>
+      <div className="footer-bottom">
       <div className='footer-location'>
         <img className='footer-img-map' src='./images/map-pin.PNG' alt='맵핀이미지'></img>
         <p>3호관 5층</p>
@@ -43,7 +45,7 @@ const Footer = () => {
           <img className='footer-img-instagram' src='./images/instagram.PNG' alt='인스타로고'></img>
         </a>
       </div>
-
+      </div>
     </div>
   )
 }
