@@ -1,0 +1,113 @@
+.project-title {
+  position: relative;
+  top: 248px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.project-list {
+  position: relative;
+  top: 621px;
+  height: auto;
+  text-align: center;
+}
+.project-box-container {
+  top: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 1500px;
+  height: 826px;
+  margin: 0 auto;
+}
+.project-box {
+  background-color: #323232;
+  width: 560px;
+  height: 376px;
+  margin: 0 30px;
+  border-radius: 25px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.project-img {
+  position: inherit;
+  background-image: url("../../../public/images/study-sample.jpeg");
+  width: 539.695px;
+  height: 204.007px;
+  border-radius: 16px;
+  margin-right: 10px;
+}
+.project-content {
+  position: inherit;
+  top: 100%;
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.project-content-title-wrapper {
+  position: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.project-content-title {
+  width: auto;
+  font-size: 24px;
+  font-weight: 700;
+}
+.project-content-part {
+  width: 70.534px;
+  text-align: center;
+  background-color: #131313;
+  border-radius: 16px;
+  height: 26px;
+  font-size: 12px;
+  padding-top: 5px;
+  box-sizing: border-box;
+  color: #b6b6b6;
+  margin-left: 260px;
+}
+.project-content-gener {
+  width: 70.534px;
+  text-align: center;
+  background-color: #131313;
+  border-radius: 16px;
+  height: 26px;
+  font-size: 12px;
+  padding-top: 5px;
+  box-sizing: border-box;
+  color: #b6b6b6;
+}
+.project-content-sub {
+  position: inherit;
+  font-size: 12px;
+  top: 100%;
+  margin-top: 18px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.project-move-button {
+  position: relative;
+  top: 880px;
+  margin: 0 auto;
+  width: 262px;
+  height: 76px;
+  background-color: #323232;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.project-move-font {
+  padding-top: 23px;
+}
+
+/* footer */
+
+.project-footer {
+  margin-top: 1890px;
+}

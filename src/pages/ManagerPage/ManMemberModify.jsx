@@ -8,17 +8,16 @@ function ManMemberModify() {
     <div className="horizontal-line-container">
         <p>학과</p>
         <div className="horizontal-line"></div>
-    <div className="horizontal-line"></div>
     </div>
     <div className='ManMemberModify-checkbox'>
     <div className='ManMemberModify-button1'>
-      <input type='checkbox'></input>
+      <input type='radio'></input>
       <label for="comso">컴퓨터소프트웨어공학과</label></div>
       <div className='ManMemberModify-button2'>
-      <input type='checkbox'></input>
+      <input type='radio'></input>
       <label for="comin">컴퓨터정보공학과</label></div>
       <div className='ManMemberModify-button3'>
-      <input type='checkbox'></input>
+      <input type='radio'></input>
       <label for="inso">인공지능소프트웨어공학과</label></div>
       </div>
         <div className='ManMemberModify-box1'>

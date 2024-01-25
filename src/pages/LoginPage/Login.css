@@ -1,57 +1,93 @@
-.content{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #131313;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
 
+.dasom {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
 }
-.dasom{
-    position: absolute;
-    top: 340px;
-    width: 151px;
-    height: 48px;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: 'Inter';
+
+.login-member {
+  margin-bottom: 185px;
 }
-.loginButton{
-    position: absolute;
-    top: 505px;
-    width: 585px;
-    height: 71px;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Inter';
-    color: #54ECC4;
-    
-    border: 2px solid #54ECC4;
-    border-radius: 25px;
-    background-color: #131313;
-    cursor: pointer;
+
+.noMember {
+  font-size: 16px;
+  color:#B6B6B6;
+  margin-bottom: 7px;
 }
-.noMember{
-    position: absolute;
-    top: 663px;
-    font-size: 16px;
-    font-weight: medium;
-    color: #B6B6B6;
+
+.login-id,.login-password {
+  appearance: none;
+  width: 550px;
+  height: 77px;
+  border:2px solid ;
+  border-radius: 25px;
+  background-color: #131313;
+  color: white;
+  margin-bottom: 71px;
+  border-radius: 25px; 
+  padding-left: 30px;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  transition: border-color 0.3s, color 0.3s;;
 }
-.goMember{
-    position: absolute;
-    top: 689px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #54ECC4;
+
+.login-id::placeholder, .login-password::placeholder {
+  color: #B6B6B6;
+  font-size: 16px;
 }
-.noMember,
-.goMember{
-    font-family:'Inter';
-    text-align: center;
+
+.login-id:focus::placeholder {
+  opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
 }
-.loginButton:hover{
-    background-color: #54ECC4;
-    color: #131313;
+
+.login-password:focus::placeholder {
+  opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
 }
-.loginButton:hover +.noMember{
-    filter:blur(0.6px);
+
+.login-id:hover, .login-password:hover {
+  border-color: #54ecc4;
+}
+
+.login-id:focus, .login-password:focus {
+  outline: none;
+}
+
+.login-complet {
+  cursor: pointer;
+  border: 2px solid;
+  width: 585px;
+  height: 71px;
+  font-size: 16px;
+  border-color: #54ecc4;
+  padding: 10px 20px;
+  background-color: #131313;
+  color: #54ecc4;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.login-complet:hover {
+  background-color: #54ecc4;
+  color: #131313;
+}
+
+.goMember {
+  cursor: pointer;
+  font-weight: bold;
+  color: #54ecc4;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: center;
 }

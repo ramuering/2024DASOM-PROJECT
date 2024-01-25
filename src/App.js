@@ -1,4 +1,3 @@
-
 import "./App.css";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Main from "./pages/MainPage/Main";
@@ -7,9 +6,10 @@ import Project from "./pages/ProjectPage/Project";
 import NewMember from "./pages/ApplyPage/NewMember";
 import ManMain from "./pages/ManagerPage/ManMain";
 import MyPage from "./pages/MyPage/MyPage";
+import MyPageModify from "./pages/MyPage/MyPageModify";
 import LimitHeader from "./components/LimitHeader";
 import Login from "./pages/LoginPage/Login";
-import SignUp1 from "./pages/SignUpPage/SignUp1";
+import SignUp1 from "./pages/SignUpPage/verify";
 import SignUp2 from "./pages/SignUpPage/SignUp2";
 import Apply1 from "./pages/ApplyPage/Apply1";
 import Apply2 from "./pages/ApplyPage/Apply2";
@@ -20,13 +20,15 @@ import ManStudyApply from "./pages/ManagerPage/ManStudyApply";
 import ManStudyModify from "./pages/ManagerPage/ManStudyModify";
 import ManProjectApply from "./pages/ManagerPage/ManProjectApply";
 import ManProjectModify from "./pages/ManagerPage/ManProjectModify";
+import StudyInfo from "./pages/StudyPage/StudyInfo";
+import ProjectInfo from "./pages/ProjectPage/ProjectInfo";
 import ManApplyMember from "./pages/ManagerPage/ManApplyMember";
 import ManStudy from "./pages/ManagerPage/ManStudy";
 import ManProject from "./pages/ManagerPage/ManProject";
 import ManApply from "./pages/ManagerPage/ManApply";
+import Makers from "./pages/MakersPage/Makers";
 import NoticeDetail from "./pages/NoticePage/NoticeDetail";
 import { AppProvider } from './contexts/AppContext';
-
 
 const Layout = () => {
   return (
@@ -73,7 +75,6 @@ function App() {
   );
 }
 
-
 /*
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
@@ -94,6 +95,5 @@ function App() {
     );
 }
 */
-
 
 export default App;
