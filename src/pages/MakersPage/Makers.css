@@ -1,36 +1,89 @@
 .makers-contents {
-    width: 100vw;
     display: flex;
-    justify-content: left;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Inter';
 }
-.makers-read{
+.makers-logo{
     position: absolute;
+    top: 300px;
+    width: 300px;
+    height: 300px;
+}
+.makers-dasom{
+    position: absolute;
+    top: 655px;
+    width: 1049px;
+    height: 156px;
+    font-weight: medium;
+    font-size: 32px;
+    text-align: center;
+}
+.makers-body{
+    position: absolute;
+    width: 1200px;
+    height: 2233px;
     top: 1141px;
 }
-.makers-pm{
-    position: absolute;
-    top: 1612px;
-}
-.makers-back{
-    position: absolute;
-    top: 2083px;
-}
-.makers-front{
-    position: absolute;
-    top: 2554px;
-}
-.makers-design{
-    position: absolute;
-    top: 3025px;
-}
 
+.makers-position{
+    width: 1144px;
+    font-weight: bold;
+    font-size: 32px;
+    justify-content: left;
+    margin-bottom: -18px;
+    margin-top: 122px;
+}
+.makers-line1,
+.makers-line2,
+.makers-line3,
+.makers-line4,
+.makers-line5{
+    margin-bottom: 98px;
+    border: solid #323232 1px;
+}
+.makers-line1{
+    margin-left: 133px;
+    width: 1095px;
+}
+.makers-line2{
+    margin-left: 100px;
+    width: 1122px;
+}
+.makers-line3{
+    margin-left: 134px;
+    width: 1094px;
+}
+.makers-line4{
+    margin-left: 153px;
+    width: 1089px;
+}
+.makers-line5{
+    margin-left: 166px;
+    width: 1062px;
+}
+.makers-member{
+    width: 1144px;
+    height: 403.56px;
+}
+.makers-profileBox{
+    width: 125px;
+    height: 230px;
+    float: left;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.makers-profileBox:not(:first-child){
+    margin-left: 134px;
+}
 
 .makers-profile {
-    width: 182.37px;
-    height: 182.37px;
-    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    border-radius: 100px;
     overflow: hidden;
-    margin-top: 43.53px;
 }
 .makers-profile img {
     width: 100%;
@@ -38,14 +91,19 @@
     object-fit: cover;
 }
 .makers-name {
-    margin-top: 40.1px;
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 700;
+    margin-left: 35px;
+    margin-top: 43px;
+    width: 60px;
+    height: 24px;
+    font-size: 20px;
+    font-weight: bold;
 }
 .makers-gi {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 500;
+    margin-left: 48px;
+    margin-top: 21px;
+    width: 30px;
+    height: 17px;
+    font-size: 14px;
+    font-weight: medium;
     color: #D9D9D9;
 }
