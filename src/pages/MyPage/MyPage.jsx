@@ -1,9 +1,10 @@
-// import React, {useEffect, useState} from 'react'
-//  import Header from '../../components/Header'
-//  import Footer from '../../components/Footer'
-//  import './MyPage.css'
-//  import { Link } from 'react-router-dom'
-//  import axios from 'axios'
+
+import React, {useEffect, useState} from 'react'
+ import Header from '../../components/Header'
+ import Footer from '../../components/Footer'
+ import './MyPage.css'
+ import { Link } from 'react-router-dom'
+ import axios from 'axios'
 
 // function MyPage() {
 //   const [data, setData] = useState([])
@@ -134,4 +135,4 @@
 //  // }
 
 
-// export default MyPage
+export default MyPage
