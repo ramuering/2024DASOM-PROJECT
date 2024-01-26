@@ -7,11 +7,13 @@ import { Link, useNavigate } from 'react-router-dom'
 
 
 const SignUp2 = () => {
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
-const [name, setName] = useState(''); // 추가: 이름 상태 추가
-const [grade, setGrade] = useState('');
-const [major, setMajor] = useState('');
+const [memEmail, setmemEmail] = useState('');
+const [memPassword, setmemPassword] = useState('');
+const [memName, setmemName] = useState(''); // 추가: 이름 상태 추가
+const [memGrade, setmemGrade] = useState('');
+const [memDepartment, setmemDepartment] = useState('');
+
+
   const [agreement, setAgreement] = useState({
     agree1: false,
     agree2: false,
@@ -41,13 +43,13 @@ const [major, setMajor] = useState('');
 
   const handleSubmit = async () => {
     try {
-          const response = await axios.post('http://localhost:8090/signup02', {
-            email, password, name, grade , major
+          const response = await axios.post('http://localhost:8090/signup', {
+            memEmail, memPassword, memName, memGrade , memDepartment
           });
 
           if (response.data === '회원가입 성공') {
             console.log('회원가입 성공');
-            navigate('/SignUp02');  // Use navigate instead of history.push
+            navigate('/Main');  // Use navigate instead of history.push
           } else {
             console.error('회원가입 실패');
           }
@@ -72,7 +74,9 @@ const [major, setMajor] = useState('');
       <div className="certification">부원 인증</div>
       <div className="inputInfo">부원 정보 입력</div>
       </div> */}
-    <div className='SignUp2Title'>DASOM</div>
+    <div class="SignUp_step">
+              <img src="images/SignUp2.png"></img>
+            </div>
     <div className='SignUp2_form'>
     <div className='SignUp2_check'>이미 회원이신가요?</div>
     <Link to='/Login' className='SignUp2_login'>로그인 하기</Link>
@@ -81,8 +85,8 @@ const [major, setMajor] = useState('');
           type='text' name="name"
           autocomplete='off'
           placeholder='이름을 입력하세요.'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={memName}
+          onChange={(e) => setmemName(e.target.value)}
         ></input>
 
     <input
@@ -90,56 +94,55 @@ const [major, setMajor] = useState('');
         type='text' name="email"
         autocomplete='off'
         placeholder='@email.com.'
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}>
+        value={memEmail}
+        onChange={(e) => setmemEmail(e.target.value)}>
     </input>
     <input
         class="SignUp2_input2"
         type='text' name="password"
         placeholder='비밀번호를 입력하세요.'
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={memPassword}
+        onChange={(e) => setmemPassword(e.target.value)}
         ></input>
 
     </div>
      {/*학년*/}
-     <fieldset id="grade_field" value={grade} onChange={(e) => setGrade(e.target.value)}>
+     <fieldset id="grade_field" value={memGrade} onChange={(e) => setmemGrade(e.target.value)}>
             <legend><p class="form_text">학년 <span class="red_text">*</span></p></legend>
-
             <div class ="div_box">
               <div class="check_box">
-                <input type="radio" id="1grade" name="grade" value="1학년" required/>
+                <input type="radio" id="1grade" name="grade" value="1" required/>
                 <label for="1grade">1학년</label>
               </div>
 
               <div class="check_box">
-                <input type="radio" id="2grade" name="grade" value="2학년" required/>
+                <input type="radio" id="2grade" name="grade" value="2" required/>
                 <label for="2grade">2학년</label>
               </div>
 
               <div class="check_box">
-                <input type="radio" id="3grade" name="grade" value="3학년" required/>
+                <input type="radio" id="3grade" name="grade" value="3" required/>
                 <label for="3grade">3학년</label>
               </div>
             </div>
 
           </fieldset>
 
-          <fieldset id="major_field" value={major} onChange={(e) => setMajor(e.target.value)}>
+          <fieldset id="major_field" value={memDepartment} onChange={(e) => setmemDepartment(e.target.value)}>
             <legend><p class="form_text">학과 <span class="red_text">*</span></p></legend>
             <div class ="div_box">
               <div class="check_box">
-                <input type="radio" id="comso" name="major" value="컴퓨터소프트웨어공학과"/>
+                <input type="radio" id="comso" name="major" value="컴소"/>
                 <label for="comso">컴퓨터소프트웨어공학과</label>
               </div>
 
               <div class="check_box">
-                <input type="radio" id="inso" name="major" value="인공지능소프트웨어공학과" />
+                <input type="radio" id="inso" name="major" value="인소" />
                 <label for="inso">인공지능소프트웨어공학과</label>
               </div>
             </div>
             <div  class="check_box">
-                <input type="radio" id="comim" name="major" value="컴퓨터정보공학과" />
+                <input type="radio" id="comim" name="major" value="컴정" />
                 <label for="comim">컴퓨터정보공학과</label>
             </div>
           </fieldset>

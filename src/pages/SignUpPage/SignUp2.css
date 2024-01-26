@@ -102,10 +102,11 @@ transition: border-color 0.3s, color 0.3s;;
 transition: border-color 0.3s, color 0.3s;;
 }
 
-.SignUp2_input0
+.SignUp2_input0::placeholder
 ,.SignUp2_input1::placeholder,
 .SignUp2_input2::placeholder {
-  font-size: 16px; /* Adjust the font size of the placeholder text */
+  font-size: 16px;
+  color: #B6B6B6; /* Adjust the font size of the placeholder text */
   /* Add any other styles to adjust the position, color, etc. of the placeholder text */
 }
 
@@ -115,7 +116,27 @@ transition: border-color 0.3s, color 0.3s;;
 .SignUp2_input1
 ,.SignUp2_input2:focus {
   outline: none;
+  
 }
+
+.SignUp2_input0,
+.SignUp2_input1
+,.SignUp2_input2:focus:-ms-input-placeholder{
+  color: transparent;
+}
+
+.SignUp2_input0:focus::placeholder {
+  opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
+}
+
+.SignUp2_input1:focus::placeholder {
+  opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
+}
+
+.SignUp2_input2:focus::placeholder {
+  opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
+}
+
 
 .SignUp2_input0:hover{
   border-color: #54ecc4;
@@ -252,6 +273,7 @@ fieldset{
   display: none; /* Hide the default checkboxes */
 }
 
+
 #Agree .check_box label {
   position: relative;
   padding-left: 30px; /* Adjust the padding to control the size of the circle */
@@ -268,9 +290,6 @@ fieldset{
   padding-left: 40px; /* Adjust padding to make space for the image */
 }
 
-#Agree .check_box input:checked + label:before {
-  content: ''; /* Remove the default content */
-}
 
 #Agree .check_box label:before {
   display: inline-block; /* Ensure the content takes up space for background image */
@@ -296,11 +315,6 @@ fieldset{
   background-color: #54ecc4; /* Change background color when checkbox is checked */
   border-color: #54ecc4; /* Change border color when checkbox is checked */
 }
-
-/* ... (rest of your styles) */
-
-
-/* ... (rest of your styles) */
 
 
 

@@ -57,7 +57,7 @@ const firebaseConfig = {
         </div>
         <input type='email' className="login-id" placeholder='아이디'/>
         <input type='password' className="login-password" placeholder='비밀번호'/>
-        <button className='login-complet' onClick={complet}>완료</button>
+        <button className='login-complet' onClick={complet}>로그인 하기</button>
       </div>
       
     )

@@ -47,6 +47,13 @@
   font-size: 16px;
 }
 
+.login-id:focus::placeholder {
+  opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
+}
+
+.login-password:focus::placeholder {
+  opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
+}
 
 .login-id:hover, .login-password:hover {
   border-color: #54ecc4;

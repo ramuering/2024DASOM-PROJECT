@@ -10,7 +10,7 @@
     margin: 0 auto;
 }
 
-#Noti_inputs{
+#Nocr_inputs{
     display: block;
     width: 400px;
     height: 50px;
@@ -18,7 +18,7 @@
     background: none;
     border: 2px solid #D9D9D9;
     padding-left: 30px;
-    margin: 0 auto;
+    margin: 0 200px 0 380px;
     font-weight: bold;
     color: white;
     font-size: 16px;
@@ -62,10 +62,43 @@
     font-weight: bold;
   }
 
-  .search-icon1 {
+  #Nocr_div {
+    display: flex;
+    height: 100px;
+    margin-bottom: 100px;
+  }
+
+
+  .Nocr_btn{
+    width: 170px;
+    height: 64px;
+    background: none;
+    border: 2px solid #54ECC4;
+    border-radius: 16px;
+    line-height: 64px;
+    color: #54ECC4;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s;
+  }
+
+  .Nocr_btn:hover{
+    color: black;
+    background:#54ECC4 ;
+    font-weight: bold;
+    transition: all 0.2s;
+  }
+
+  .search-container {
+    position: relative;
+    width: 1200px; /* 원하는 너비로 조절 */
+  }
+
+  .search-icon {
     position: absolute;
-    top: 50%;
-    left: 63%;
+    top: 29%;
+    left: 72%;
     transform: translateY(-50%);
     width: 20px;
     height: 20px;

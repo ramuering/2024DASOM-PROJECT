@@ -4,15 +4,65 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family: Inter;
+    font-family: 'Inter';
 }
+.makers-logo{
+    position: absolute;
+    top: 300px;
+    width: 300px;
+    height: 300px;
+}
+.makers-dasom{
+    position: absolute;
+    top: 655px;
+    width: 1049px;
+    height: 156px;
+    font-weight: medium;
+    font-size: 32px;
+    text-align: center;
+}
+.makers-body{
+    position: absolute;
+    width: 1200px;
+    height: 2233px;
+    top: 1141px;
+}
+
 .makers-position{
     width: 1144px;
     font-weight: bold;
     font-size: 32px;
     justify-content: left;
-    margin-bottom: 80px;
+    margin-bottom: -18px;
     margin-top: 122px;
+}
+.makers-line1,
+.makers-line2,
+.makers-line3,
+.makers-line4,
+.makers-line5{
+    margin-bottom: 98px;
+    border: solid #323232 1px;
+}
+.makers-line1{
+    margin-left: 133px;
+    width: 1095px;
+}
+.makers-line2{
+    margin-left: 100px;
+    width: 1122px;
+}
+.makers-line3{
+    margin-left: 134px;
+    width: 1094px;
+}
+.makers-line4{
+    margin-left: 153px;
+    width: 1089px;
+}
+.makers-line5{
+    margin-left: 166px;
+    width: 1062px;
 }
 .makers-member{
     width: 1144px;
@@ -24,7 +74,6 @@
     float: left;
     flex-wrap: wrap;
     align-items: center;
-    background-color: black;
 }
 .makers-profileBox:not(:first-child){
     margin-left: 134px;
@@ -42,7 +91,7 @@
     object-fit: cover;
 }
 .makers-name {
-    
+    margin-left: 35px;
     margin-top: 43px;
     width: 60px;
     height: 24px;
@@ -50,7 +99,7 @@
     font-weight: bold;
 }
 .makers-gi {
-    
+    margin-left: 48px;
     margin-top: 21px;
     width: 30px;
     height: 17px;

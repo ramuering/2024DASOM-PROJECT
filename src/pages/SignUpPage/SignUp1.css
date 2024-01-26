@@ -31,7 +31,7 @@
   font-size: 1em;
 }
 
-#SignUp1_input {
+.SignUp1_input {
 
     display: block;
     width: 550px;
@@ -48,16 +48,23 @@
   transition: border-color 0.3s, color 0.3s;;
 }
 
-#SignUp1_input:focus {
+.SignUp1_input:focus {
   outline: none;
 }
 
-#SignUp1_input:hover {
+/* 포커스됐을 때 placeholder가 안 보이게 하는 CSS */
+.SignUp1_input:focus::placeholder {
+  opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
+}
+
+
+
+.SignUp1_input:hover {
   border-color: #54ECC4;
 }
 
-#SignUp1_input::placeholder {
-  color: white;
+.SignUp1_input::placeholder {
+  color: #B6B6B6;
   font-weight:lighter;
 }
 

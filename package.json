@@ -14,7 +14,8 @@
     "react-router-dom": "^6.21.2",
     "styled-components": "^6.1.6",
     "swiper": "^6.8.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "proxy": "http://localhost:8090",
   "scripts": {

@@ -167,6 +167,11 @@
   
   }
 
+  .ManMemberModify-name:focus::placeholder {
+    opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
+  }
+  
+
   .ManMemberModify-name:hover {
     border-color: #54ECC4;
   }
@@ -200,6 +205,9 @@
     font-weight: bold;
 
 }
+.ManMemberModify-phone:focus::placeholder {
+    opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
+  }
 
 .ManMemberModify-phone:hover {
     border-color: #54ECC4;
