@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from 'react'
  import Header from '../../components/Header'
  import Footer from '../../components/Footer'
@@ -202,4 +201,3 @@ import axios from 'axios'
  }
 
 export default MyPage
->>>>>>> 8b6c0e8a3eff6fdcf910ccd03f1a93236a1413e0
