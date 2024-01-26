@@ -12,8 +12,12 @@ export default function SignUp1() {
       const response = await axios.post('http://localhost:8090/signup/verify', {
          uniqueCode : uniqueCode,
       });
+<<<<<<< HEAD
 
     if (response.status === 200) {
+=======
+    if (response.status === 200 ) {
+>>>>>>> ddd7e0e (http status 구현완료)
           navigate('/SignUp02');
         }
       } catch (error) {
