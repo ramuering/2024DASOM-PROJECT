@@ -12,7 +12,7 @@ export default function SignUp1() {
       const response = await axios.post('http://localhost:8090/signup/verify', {
          uniqueCode : uniqueCode,
       });
-    if (response.status === 200) {
+    if (response.status === 200 ) {
           navigate('/SignUp02');
         }
       } catch (error) {
