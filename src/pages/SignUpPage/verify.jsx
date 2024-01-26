@@ -1,38 +1,37 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';  // Import useNavigate instead of useHistory
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./SignUp1.css";
 
 export default function SignUp1() {
-  const [uniqueCode, setuniqueCode] = useState('');
-  const navigate = useNavigate();  // Use useNavigate instead of useHistory
+  const [uniqueCode, setUniqueCode] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     try {
       const response = await axios.post('http://localhost:8090/signup/verify', {
          uniqueCode : uniqueCode,
       });
+    if (response.status === 200 ) {
+          navigate('/SignUp02');
+        }
+      } catch (error) {
+      alert('Dasom 부원 인증에 실패 하였습니다. 관리자에게 문의해주세요.')
 
-      if (response.data === '부원 인증 성공') {
-        console.log('부원 인증 성공');
-        navigate('/SignUp02');  // Use navigate instead of history.push
-      } else {
-        console.error('부원 인증 실패');
       }
-    } catch (error) {
-      if (error.response && error.response.status === 404) {
-        console.error('서버에서 404 응답이 왔습니다. 해당 엔드포인트를 확인하세요.');
-      } else {
-        console.error('에러:', error);
-      }
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSubmit(); // 엔터를 눌렀을 때 handleSubmit 함수 호출
     }
   };
 
   return (
     <div className='SignUp1Page'>
-      <div class="SignUp_step">
-              <img src="images/SignUp1.png"></img>
-            </div>
+      <div className="SignUp_step">
+        <img src="images/SignUp1.png" alt="Step 1"></img>
+      </div>
       <div className='SignUp1_form'>
         <div className='SignUp1_check'>이미 회원이신가요?</div>
         <Link to='/Login' className='SignUp1_login'>
@@ -44,7 +43,8 @@ export default function SignUp1() {
         type='text'
         placeholder='인증번호를 입력하세요.'
         value={uniqueCode}
-        onChange={(e) => setuniqueCode(e.target.value)}
+        onChange={(e) => setUniqueCode(e.target.value)}
+        onKeyPress={handleKeyPress} // 엔터 키 입력 이벤트 핸들러 연결
       />
       <button className='SignUp01_certification' onClick={handleSubmit}>
         다솜 부원 인증하기

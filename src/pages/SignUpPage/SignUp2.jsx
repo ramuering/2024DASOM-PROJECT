@@ -108,7 +108,7 @@ const [memDepartment, setmemDepartment] = useState('');
     </div>
      {/*학년*/}
      <fieldset id="grade_field" value={memGrade} onChange={(e) => setmemGrade(e.target.value)}>
-            <legend><p class="form_text">학년 <span class="red_text">*</span></p></legend>
+            <legend><p class="form_text">학년<span class="red_text">*</span></p></legend>
             <div class ="div_box">
               <div class="check_box">
                 <input type="radio" id="1grade" name="grade" value="1" required/>
@@ -129,7 +129,7 @@ const [memDepartment, setmemDepartment] = useState('');
           </fieldset>
 
           <fieldset id="major_field" value={memDepartment} onChange={(e) => setmemDepartment(e.target.value)}>
-            <legend><p class="form_text">학과 <span class="red_text">*</span></p></legend>
+            <legend><p class="form_text">학과<span class="red_text">*</span></p></legend>
             <div class ="div_box">
               <div class="check_box">
                 <input type="radio" id="comso" name="major" value="컴소"/>
