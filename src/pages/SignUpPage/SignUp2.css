@@ -87,9 +87,54 @@ transition: border-color 0.3s, color 0.3s;;
 transition: border-color 0.3s, color 0.3s;;
 }
 
+.SignUp2_input3 {
+  display: block;
+  width: 550px;
+  height: 77px;
+  border-radius: 25px;
+  background: none;
+  border: 2px solid #D9D9D9;
+  padding-left: 30px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom:71px;
+  margin-top: 15px;
+  transition: border-color 0.3s, color 0.3s;;
+  outline: none;
+
+}
+
+.SignUp2_input3.invalid {
+  /* 유효성 검사에 실패한 경우의 입력 상자 스타일 */
+  border: 2px solid red; /* 빨간색 테두리 색상 */
+}
+
+.SignUp2_input3:hover {
+  border-color: #54ecc4;
+  
+}
+.SignUp2_input3.invalid:hover {
+  /* 유효성 검사에 실패한 경우의 입력 상자 스타일 */
+  border: 2px solid red; /* 빨간색 테두리 색상 */
+}
+
+.SignUp2_error-message {
+  color: red;
+  margin-top: -35px
+}
+
+.SignUp2_toggle-password {
+  position: absolute;
+  margin-top: 590px;
+  margin-left: 400px;
+}
+
 .SignUp2_input0::placeholder
 ,.SignUp2_input1::placeholder,
-.SignUp2_input2::placeholder {
+.SignUp2_input2::placeholder,
+.SignUp2_input3:focus::placeholder {
   font-size: 16px;
   color: #B6B6B6; /* Adjust the font size of the placeholder text */
   /* Add any other styles to adjust the position, color, etc. of the placeholder text */

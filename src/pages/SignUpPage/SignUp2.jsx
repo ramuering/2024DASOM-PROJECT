@@ -1,31 +1,27 @@
-import React, { useState } from 'react';  // Import useState from React
+import React, { useState } from 'react';
 import "./SignUp2.css";
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom'
 
-
-
-
 const SignUp2 = () => {
-const [memEmail, setmemEmail] = useState('');
-const [memPassword, setmemPassword] = useState('');
-const [memName, setmemName] = useState(''); // 추가: 이름 상태 추가
-const [memGrade, setmemGrade] = useState('');
-const [memDepartment, setmemDepartment] = useState('');
-
-
+  const [memEmail, setmemEmail] = useState('');
+  const [memPassword, setmemPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [memName, setmemName] = useState('');
+  const [memGrade, setmemGrade] = useState('');
+  const [memDepartment, setmemDepartment] = useState('');
   const [agreement, setAgreement] = useState({
     agree1: false,
     agree2: false,
     agree3: false,
     agree4: false,
   });
-
+  const [passwordMismatch, setPasswordMismatch] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleAgreementChange = (checkboxId) => {
     if (checkboxId === 'agree1') {
-      // If the first checkbox is checked, set all checkboxes to true
       setAgreement({
         agree1: !agreement.agree1,
         agree2: !agreement.agree1,
@@ -33,7 +29,6 @@ const [memDepartment, setmemDepartment] = useState('');
         agree4: !agreement.agree1,
       });
     } else {
-      // If any other checkbox is checked, toggle its state
       setAgreement((prevAgreement) => ({
         ...prevAgreement,
         [checkboxId]: !prevAgreement[checkboxId],
@@ -42,70 +37,88 @@ const [memDepartment, setmemDepartment] = useState('');
   };
 
   const handleSubmit = async () => {
-    try {
-          const response = await axios.post('http://localhost:8090/signup', {
-            memEmail, memPassword, memName, memGrade , memDepartment
-          });
+    if (memPassword !== confirmPassword) {
+      setPasswordMismatch(true);
+      return;
+    }
 
-          if (response.data === '회원가입 성공') {
-            console.log('회원가입 성공');
-            navigate('/Main');  // Use navigate instead of history.push
-          } else {
-            console.error('회원가입 실패');
-          }
-        } catch (error) {
-          if (error.response && error.response.status === 404) {
-            console.error('서버에서 404 응답이 왔습니다. 해당 엔드포인트를 확인하세요.');
-          } else {
-            console.error('에러:', error);
-          }
-        }
+    try {
+      const response = await axios.post('http://localhost:8090/signup', {
+        memEmail,
+        memPassword,
+        memName,
+        memGrade,
+        memDepartment
+      });
+      if (response.status === 201) {
+        console.log(response.status)
+        navigate('/Main');
+      }
+    } catch (error) {
+      alert('이미 존재하는 이메일입니다 ! ')
+    }
   };
-  return ( 
-    
+
+  const handleConfirmPasswordChange = (event) => {
+    setConfirmPassword(event.target.value);
+    setPasswordMismatch(memPassword !== event.target.value);
+  };
+
+  return (
     <div className='SignUp2Page'>
-     {/*  <div className="Element">
-      <div className="subtract"></div>
-      <div className="line10"></div>
-      <div className="rectangle929"></div>
-      <div className="ellipse40"></div>
-      <div className="ellipse39"></div>
-      <div className="one">1</div>
-      <div className="certification">부원 인증</div>
-      <div className="inputInfo">부원 정보 입력</div>
-      </div> */}
-    <div class="SignUp_step">
-              <img src="images/SignUp2.png"></img>
-            </div>
-    <div className='SignUp2_form'>
-    <div className='SignUp2_check'>이미 회원이신가요?</div>
-    <Link to='/Login' className='SignUp2_login'>로그인 하기</Link>
-    <input
-          className="SignUp2_input0"
-          type='text' name="name"
-          autocomplete='off'
+      <div class="SignUp_step">
+        <img src="images/SignUp2.png"></img>
+      </div>
+      <div className='SignUp2_form'>
+        <div className='SignUp2_check'>이미 회원이신가요?</div>
+        <Link to='/Login' className='SignUp2_login'>로그인 하기</Link>
+        <input
+          className={`SignUp2_input0 ${passwordMismatch ? 'invalid' : ''}`}
+          type='text'
+          name="name"
+          autoComplete='off'
           placeholder='이름을 입력하세요.'
           value={memName}
           onChange={(e) => setmemName(e.target.value)}
         ></input>
 
-    <input
-        class="SignUp2_input1"
-        type='text' name="email"
-        autocomplete='off'
-        placeholder='@email.com.'
-        value={memEmail}
-        onChange={(e) => setmemEmail(e.target.value)}>
-    </input>
-    <input
-        class="SignUp2_input2"
-        type='text' name="password"
-        placeholder='비밀번호를 입력하세요.'
-        value={memPassword}
-        onChange={(e) => setmemPassword(e.target.value)}
+        <input
+          className={`SignUp2_input1 ${passwordMismatch ? 'invalid' : ''}`}
+          type='text'
+          name="email"
+          autoComplete='off'
+          placeholder='@email.com.'
+          value={memEmail}
+          onChange={(e) => setmemEmail(e.target.value)}
         ></input>
 
-    </div>
+        <input
+          className={`SignUp2_input2 ${passwordMismatch ? 'invalid' : ''}`}
+          type={showPassword ? 'text' : 'password'}
+          name="password"
+          autoComplete='off'
+          placeholder='비밀번호를 입력하세요.'
+          value={memPassword}
+          onChange={(e) => setmemPassword(e.target.value)}
+        ></input>
+
+        <button
+          className='SignUp2_toggle-password'
+          onClick={() => setShowPassword(!showPassword)} // 비밀번호 보이기/숨기기 토글
+        >
+          {showPassword ? '비밀번호 숨기기' : '비밀번호 보이기'}
+        </button>
+        <input
+          className={`SignUp2_input3 ${passwordMismatch ? 'invalid' : ''}`}
+          type='password'
+          name="confirmPassword"
+          autoComplete='off'
+          placeholder='비밀번호를 다시 입력하세요.'
+          value={confirmPassword}
+          onChange={handleConfirmPasswordChange}
+        ></input>
+        {passwordMismatch && <div className='SignUp2_error-message'>비밀번호가 일치하지 않습니다.</div>}
+      </div>
      {/*학년*/}
      <fieldset id="grade_field" value={memGrade} onChange={(e) => setmemGrade(e.target.value)}>
             <legend><p class="form_text">학년<span class="red_text">*</span></p></legend>
