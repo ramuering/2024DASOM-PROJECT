@@ -17,16 +17,13 @@
 
 /* info */
 .main-title {
-  position: absolute;
-  top: 90%;
+  margin-top: 549px;
   display: block;
   font-size: 40px;
   width: 100%;
   font-weight: 700;
 }
 .main-title-info {
-  position: absolute;
-  top: 100%;
   margin-top: 134px;
   width: 100%;
   display: flex;
@@ -34,6 +31,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .main-title-info-title {
   width: 100%;
   font-size: 24px;
@@ -294,7 +292,5 @@
 
 /* footer */
 .main-footer {
-  position: absolute;
-  top: 100%;
   margin-top: 7450px;
 }

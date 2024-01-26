@@ -4,7 +4,7 @@ import Footer from '../../components/Footer'
 import styled from "styled-components"
 // import Slide from "../../components/Slider"
 import "./Main.css"
-import Slider from '../../components/Slider'
+// import Slider from '../../components/Slider'
 
 
 
