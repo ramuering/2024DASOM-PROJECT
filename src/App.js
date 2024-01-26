@@ -1,5 +1,6 @@
 import "./App.css";
 import { Outlet, Route, Routes } from "react-router-dom";
+import { AppProvider } from "./contexts/AppContext";
 import Main from "./pages/MainPage/Main";
 import About from "./pages/AboutPage/About";
 import Project from "./pages/ProjectPage/Project";
@@ -43,6 +44,7 @@ const Layout = () => {
 function App() {
   return (
     <div className="app">
+      <AppProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="login" element={<Login />} />
@@ -84,6 +86,7 @@ function App() {
           <Route path="manproject" element={<ManProject />} />
         </Route>
       </Routes>
+      </AppProvider>
     </div>
   );
 }
