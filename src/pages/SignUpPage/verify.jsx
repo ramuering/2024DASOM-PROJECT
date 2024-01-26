@@ -12,20 +12,12 @@ export default function SignUp1() {
       const response = await axios.post('http://localhost:8090/signup/verify', {
          uniqueCode : uniqueCode,
       });
-
-      if (response.data === '부원 인증 성공') {
-        console.log('부원 인증 성공');
-        navigate('/SignUp02');  // Use navigate instead of history.push
-      } else {
-        console.error('부원 인증 실패');
+    if (response.status === 200) {
+          navigate('/SignUp02');
+        }
+      } catch (error) {
+      alert('Dasom 부원 인증에 실패 하였습니다. 관리자에게 문의해주세요.')
       }
-    } catch (error) {
-      if (error.response && error.response.status === 404) {
-        console.error('서버에서 404 응답이 왔습니다. 해당 엔드포인트를 확인하세요.');
-      } else {
-        console.error('에러:', error);
-      }
-    }
   };
 
   return (
