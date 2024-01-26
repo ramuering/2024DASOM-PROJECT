@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import Footer from '../../components/Footer';
 import data from './data.js';
 import { Link } from 'react-router-dom';
-import "./Notice.css"
+import "./NoticeAdmin.css"
 
 const Noti_NullBox = styled.div`
     width: 100%;
@@ -107,9 +107,12 @@ function Notice() {
       <div id="Null_box">
         <Noti_NullBox></Noti_NullBox>
         <p id="Noti_title">공지사항</p>
+        <div id="Nocr_div">
         <div class="search-container">
             <input placeholder='검색어를 입력하세요' id="Nocr_inputs"></input>
-            <div class="search-icon1" style={{ backgroundImage: "url('images/search-icon.png')" }}></div>
+            <div class="search-icon" style={{ backgroundImage: "url('images/search-icon.png')" }}></div>
+        </div>
+        <Link to="../noticecreate" className="Nocr_btn">공지사항 등록</Link>
         </div>
         <table>
           <thead>

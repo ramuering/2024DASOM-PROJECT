@@ -1,0 +1,101 @@
+#NoCr_main {
+    width: 100vw;
+    height: 1900px;
+    padding: 50px 0;
+}
+#NoCr_box{
+    padding-top: 200px;
+    margin: 0 auto;
+    width: 1150px;
+    height: 1500px;
+}
+
+#NoCr_title{
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+#NoCr_Cr_title{
+    width: 1150px;
+    height: 60px;
+    border: 1px solid white;
+    background: none;
+    border-radius: 16px;
+    font-size: 16px;
+    color: white;
+    padding: 0px 0 0 20px;
+}
+
+#NoCr_Cr_title::placeholder{
+    color: #B4B4B4;
+    font-weight: bold;
+}
+#NoCr_Cr_text::placeholder{
+    color: #B4B4B4;
+    font-weight: bold;
+}
+#NoCr_Cr_text{
+    width: 1150px;
+    height: 315px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    background: none;
+    font-size: 16px;
+    border: 1px solid white;
+    color: white;
+    word-wrap: break-word; /* 일정 수 이상이 되면 단어 단위로 줄바꿈 */
+    padding: 20px 0 0 20px;
+}
+.filebox{
+    margin: 150px 0;
+}
+.filebox label {
+    display: inline-block;
+    line-height: 40px;
+    color: #fff;
+    vertical-align: middle;
+    background:none;
+    border: 1px solid white;
+    border-radius: 16px;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+}
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    border: 0;
+}
+#filebox_titles{
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+#NoCr_submit{
+    width: 1170px;
+    height: 55px;
+    background:none;
+    border: 1px solid #54ECC4;
+    border-radius: 16px;
+    font-size: 24px;
+    color: #54ECC4;
+    font-weight: bold;
+    transition: all 0.2s;
+    margin: 0 auto;
+    display: block;
+}
+
+#NoCr_submit:hover{
+    background:#54ECC4;
+    color: black;
+    transition: all 0.2s;
+    cursor: pointer;
+}

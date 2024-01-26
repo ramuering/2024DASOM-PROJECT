@@ -10,7 +10,7 @@ function ManMain() {
       <a className='manMain-a' href="./manApply"><button className='manMain-button'>회원 관리</button></a>
       <a className='manMain-a' href="./manStudy"><button className='manMain-button'>스터디 관리</button></a>
       <a className='manMain-a' href="./manProject"><button className='manMain-button'>프로젝트 관리</button></a>
-      <a className='manMain-a' href="./manApply"><button className='manMain-button'>모집 관리</button></a>
+      <a className='manMain-a' href="./manApplyMember"><button className='manMain-button'>모집 관리</button></a>
     </div>
   )
 }

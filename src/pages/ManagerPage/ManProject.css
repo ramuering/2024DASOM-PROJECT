@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
 
-.manApply {
-    height: 1626px;
+.manProject {
+    height: 1828px;
 }
-.manApply-only {
+.manProject-only {
     font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
@@ -12,26 +12,41 @@
     padding: 0;
 }
 
-.manApply-title {
-    margin: 209px 0 127px 0 ;
+.manProject-title {
+    margin: 208px 0 105px 0 ;
     font-size: 40px;
     font-weight: 700;
-    color: white;
+}
+
+.manProject-button {
+    width: 440px;
+    height: 64px;
+    border-style: 2px;
+    border-color: #54ECC4;
+    border-radius: 16px;
+    background-color: #131313;
+    color: #54ECC4;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.manProject-button:hover {
+    background-color: #54ECC4;
+    color: black;
 }
 
 /*검색창*/
-.manApply-searchBar {
+.manProject-searchBar {
     display: flex;
     align-items: center;
     width: 400px;
     height: 48px;
     border: 2px solid #d9d9d9;
     border-radius: 40px;
+    margin-top: 191px;
     margin-bottom: 86px;
 }
-
-
-.manApply-searchBar input {
+.manProject-searchBar input {
     margin-left: 12px;
     width: 339px;
     background-color: #100F0F;
@@ -39,7 +54,7 @@
     outline: none;
     color: #d9d9d9;
 }
-.manApply-searchBar button {
+.manProject-searchBar button {
     width: 24px;
     height: 24px;
     margin: 12px 12px 12px 0;
@@ -47,13 +62,13 @@
     background-color: #100F0F;
     border: none;
 }
-.manApply-searchBar img {
+.manProject-searchBar img {
     width: 24px;
     height: 24px;
 }
 
-/*멤버리스트 타이틀*/
-.manApply-listTitle {
+/*프로젝트리스트 타이틀*/
+.manProject-listTitle {
     display: flex;
     align-items: center;
     background-color: #d9d9d9;
@@ -63,40 +78,38 @@
     width: 1200px;
     height: 49px;
 }
-.manApply-gen {
+.manProject-gen {
     display: flex;
     justify-content: center;
-    margin-left: 62px;
-    margin-right: 65px;
+    margin-right: 110px;
     width: 32px;
 }
-.manApply-department {
+.manProject-part {
     display: flex;
     justify-content: center;
-    margin-right: 78px;
-    width: 195px;
+    margin-right: 178px;
+    width: 160px;
 }
-.manApply-name {
+.manProject-name {
     display: flex;
     justify-content: center;
-    margin-right: 111px;
-    width: 65px;
+    margin-right: 110px;
+    margin-left: 70px;
+    width: 160px;
 }
-.manApply-timeOff,
-.manApply-graduation,
-.manApply-modify {
+.manProject-modify {
     display: flex;
     justify-content: center;
-    margin-right: 62px;
+    margin-right: 112px;
     width: 86px;
 }
-.manApply-withdraw {
+.manProject-withdraw {
     display: flex;
     justify-content: center;
     width: 86px;
 }
 
-.manApply-memList ul {
+.manProject-projectList ul {
     margin: 0;
     padding: 0;
     display: flex;
@@ -104,26 +117,26 @@
     flex-direction: column;
     justify-content: center;
 }
-.manApply-infogen {
+.manProject-infogen {
     display: flex;
     justify-content: center;
-    margin-left: 62px;
-    margin-right: 65px;
+    margin-right: 110px;
     width: 32px;
 }
-.manApply-infodept {
+.manProject-infopart {
     display: flex;
     justify-content: center;
-    margin-right: 78px;
-    width: 195px;
+    margin-right: 178px;
+    width: 160px;
 }
-.manApply-infoname{
+.manProject-infoname{
     display: flex;
     justify-content: center;
-    margin-right: 111px;
-    width: 65px;
+    margin-right: 110px;
+    margin-left: 70px;
+    width: 160px;
 }
-.manApply-memList button {
+.manProject-projectList button {
     background-color: #100F0F;
     width: 86px;
     height: 33px;
@@ -133,27 +146,14 @@
     font-weight: 500;
     cursor: pointer;
 }
-.manApply-btn-attend,
-.manApply-btn-graduated,
-.manApply-btn-timeOff,
-.manApply-btn-ungraduated {
-    margin-right: 62px;
-}
-.manApply-memList li a {
-    margin-right: 62px;
-}
-.manApply-btn-attend,
-.manApply-btn-graduated,
-.manApply-btn-modify {
+.manProject-btn-modify {
     color: #54ECC4;
     border-color: #54ECC4;
 }
-.manApply-btn-timeOff,
-.manApply-btn-ungraduated {
-    color: #b6b6b6;
-    border-color: #b6b6b6;
+.manProject-projectList li a {
+    margin-right: 112px;
 }
-.manApply-memList li {
+.manProject-projectList li {
     list-style: none;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -162,32 +162,7 @@
     border-bottom: 1px solid #b6b6b6;
     width: 1200px;
 }
-.manApply-btn-withdraw {
+.manProject-btn-withdraw {
     color: #FA0000;
     border-color: #FA0000;
-}
-
-/*페이지*/
-.manApply-pagination {
-    margin-top: 166px;
-}
-.manApply-pagination button {
-    width: 24px;
-    height: 24px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    color: #54ECC4;
-    background-color: #100F0F;
-    border: 1px solid #54ECC4;
-    border-radius: 50%;
-    margin: 0 32px;
-}
-.manApply-pagination button:hover {
-    background-color: #54ECC4;
-    color: #000000;
-}
-.manApply-pagination button.manApply-pageActive {
-    background-color: #54ECC4;
-    color: #000000;
 }
