@@ -61,7 +61,7 @@ const [memDepartment, setmemDepartment] = useState('');
           }
         }
   };
-  return ( 
+  return (
     
     <div className='SignUp2Page'>
      {/*  <div className="Element">
