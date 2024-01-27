@@ -103,7 +103,6 @@ transition: border-color 0.3s, color 0.3s;;
   margin-top: 15px;
   transition: border-color 0.3s, color 0.3s;;
   outline: none;
-
 }
 
 .SignUp2_input3.invalid {
@@ -125,22 +124,34 @@ transition: border-color 0.3s, color 0.3s;;
   margin-top: -35px
 }
 
-.SignUp2_toggle-password {
+.SignUp2_toggle-password_1 {
+  appearance: none;
+  border-color: #D9D9D9;
   position: absolute;
   margin-top: 590px;
-  margin-left: 400px;
+  margin-left: 470px;
+}
+
+.SignUp2_toggle-password_2 {
+  appearance: none;
+  border-color: #D9D9D9;
+  position: absolute;
+  margin-top: 760px;
+  margin-left: 470px;
 }
 
 .SignUp2_input0::placeholder
 ,.SignUp2_input1::placeholder,
-.SignUp2_input2::placeholder,
-.SignUp2_input3:focus::placeholder {
+.SignUp2_input2::placeholder {
   font-size: 16px;
   color: #B6B6B6; /* Adjust the font size of the placeholder text */
   /* Add any other styles to adjust the position, color, etc. of the placeholder text */
 }
 
-
+.SignUp2_input3:focus::placeholder {
+  font-size: 16px;
+  color: #B6B6B6;
+}
 
 .SignUp2_input0,
 .SignUp2_input1
