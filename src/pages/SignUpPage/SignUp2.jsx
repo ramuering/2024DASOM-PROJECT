@@ -110,20 +110,20 @@ const SignUp2 = () => {
         </button>
         <input
           className={`SignUp2_input3 ${passwordMismatch ? 'invalid' : ''}`}
-          type='password'
+          type={showPassword ? 'text' : 'password'} // 비밀번호 보이기/숨기기 상태에 따라 input type 변경
           name="confirmPassword"
           autoComplete='off'
           placeholder='비밀번호를 다시 입력하세요.'
           value={confirmPassword}
           onChange={handleConfirmPasswordChange}
-        ></input>
+        />
+
         <button
           className='SignUp2_toggle-password_2'
           onClick={() => setShowPassword(!showPassword)} // 비밀번호 보이기/숨기기 토글
         >
           {showPassword ? 'Hide' : 'Show'}
         </button>
-
         {passwordMismatch && <div className='SignUp2_error-message'>비밀번호가 일치하지 않습니다.</div>}
       </div>
      {/*학년*/}
