@@ -31,4 +31,6 @@
     background-color: #54ECC4;
     cursor: pointer;
     color: black;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
 }

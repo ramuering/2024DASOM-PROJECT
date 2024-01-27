@@ -33,6 +33,8 @@
 .manProject-button:hover {
     background-color: #54ECC4;
     color: black;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
 }
 
 /*검색창*/
@@ -54,6 +56,9 @@
     outline: none;
     color: #d9d9d9;
 }
+.manProject-searchBar:hover {
+    border-color: #54ECC4;
+}
 .manProject-searchBar button {
     width: 24px;
     height: 24px;
@@ -61,6 +66,7 @@
     padding: 0;
     background-color: #100F0F;
     border: none;
+    cursor: pointer;
 }
 .manProject-searchBar img {
     width: 24px;

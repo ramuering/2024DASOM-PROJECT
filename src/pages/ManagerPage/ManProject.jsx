@@ -65,6 +65,12 @@ function ManProject() {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <div className='manProject'>
       <Header />
@@ -72,7 +78,11 @@ function ManProject() {
         <p className='manProject-title'>프로젝트 관리</p>
         <a className='manProject-a' href="./manProjectApply"><button className='manProject-button'>프로젝트 등록</button></a>
         <div className='manProject-searchBar'>
-          <input type="text" placeholder='검색어를 입력하세요' value={search} onChange={(e) => setSearch(e.target.value)}/>
+          <input type="text" 
+          placeholder='검색어를 입력하세요' 
+          value={search} 
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKeyDown}/>
           <button onClick={handleSearch}><img src='./images/search.PNG' alt="검색" /></button>
         </div>
         <div className='manProject-projectList'>
