@@ -46,6 +46,7 @@ const Header = () => {
 export default Header
 
 const CustomLink = styled(Link)`
+  transition: color 4s;
   &:hover{
     color: #54Ecc4;
   }

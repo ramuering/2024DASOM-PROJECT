@@ -36,7 +36,7 @@ import axios from 'axios'
        <Header />
 
        <div className='myPage'>My Page</div>
-       <img className='myProfile' src='./images/myPage/profile.jpg'></img>ㅞ
+       <img className='myProfile' src='./images/myPage/profile.jpg' alt="프로필"></img>ㅞ
 
        <table className='table'>
          <tr>
