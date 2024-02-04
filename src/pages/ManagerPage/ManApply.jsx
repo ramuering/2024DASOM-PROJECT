@@ -40,14 +40,16 @@ function ManApply() {
   };
 
   const handleSearch = () => {
-    const filteredMembers = initialMembers.filter(member => 
-      member.gen.includes(search) ||
-      member.department.includes(search) ||
-      member.name.includes(search)
+    const lowercaseSearch = search.toLowerCase();
+    const filteredMembers = initialMembers.filter((member) => 
+      member.gen.toLowerCase().includes(lowercaseSearch) ||
+      member.department.toLowerCase().includes(lowercaseSearch) ||
+      member.name.toLowerCase().includes(lowercaseSearch)
     );
     setMembers(filteredMembers);
     setSearch('');
   };
+  
 
   const handleToggleStatus = (memberId) => {
     const updatedMembers = members.map((member) => {
@@ -96,13 +98,23 @@ function ManApply() {
     setMembers(updatedMembers);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+  
   return (
     <div className='manApply'>
       <Header />
       <div className='manApply-only'>
         <p className='manApply-title'>회원 관리</p>
         <div className='manApply-searchBar'>
-          <input type="text" placeholder='검색어를 입력하세요' value={search} onChange={(e) => setSearch(e.target.value)}/>
+          <input type="text" 
+          placeholder='검색어를 입력하세요' 
+          value={search} 
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKeyDown}/>
           <button onClick={handleSearch}><img src='./images/search.PNG' alt="검색" /></button>
         </div>
         <div className='manApply-memList'>

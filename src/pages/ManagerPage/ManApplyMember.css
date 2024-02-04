@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+
+.manAM-only {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.manAM-title {
+    margin: 208px 0 105px 0 ;
+    font-size: 40px;
+    font-weight: 700;
+}
+.manAM-date {
+    width: 1200px;
+    height: 196px;
+    border-top: 1px solid #D9D9D9;
+    margin-bottom: 77px;
+}
+.manAM-date-row {
+    display: flex;
+    align-items: center;
+    height: 49px;
+    border-bottom: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+}
+.manAM-date-row p {
+    border-right: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+    height: 49px;
+    width: 175px;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.manAM-date-row > div {
+    margin: 15px 0;
+}
+.manAM-date-customInput {
+    background-color: #131313;
+    color: white;
+    border-style: none;
+    margin-left: 34px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    width: 130px;
+}
+.manAM-date-customInput::-webkit-calendar-picker-indicator {
+    filter: invert(1); /*달력 버튼 스타일-배경과 색반전*/
+}
+.manAM-editBtn {
+    margin-bottom: 47px;
+    width: 440px;
+    height: 64px;
+    border-style: 2px;
+    border-color: #54ECC4;
+    border-radius: 16px;
+    background-color: #131313;
+    color: #54ECC4;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.manAM-editBtn:hover {
+    background-color: #54ECC4;
+    color: #131313;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
+}
+.manAM-magamBtn {
+    margin-bottom: 295px;
+    width: 440px;
+    height: 64px;
+    border-style: 2px;
+    border-color: #FA0000;
+    border-radius: 16px;
+    background-color: #131313;
+    color: #FA0000;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.manAM-magamBtn:hover {
+    background-color: #FA0000;
+    color: #131313;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
+}
+.manAM-applyCount {
+    width: 1200px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.manAM-list {
+    margin-bottom: 80px;   
+}
+/*신청자 리스트 타이틀*/
+.manAM-listTitle {
+    display: flex;
+    align-items: center;
+    background-color: #d9d9d9;
+    color: #000000;
+    font-weight: 700;
+    font-size: 16px;
+    width: 1200px;
+    height: 49px;
+}
+.manAM-grade {
+    display: flex;
+    justify-content: center;
+    margin-right: 178px;
+    width: 32px;
+}
+.manAM-name {
+    display: flex;
+    justify-content: center;
+    margin-right: 110px;
+    width: 160px;
+}
+.manAM-department {
+    display: flex;
+    justify-content: center;
+    margin-right: 110px;
+    margin-left: 70px;
+    width: 200px;
+}
+.manAM-pass {
+    display: flex;
+    justify-content: center;
+    margin-right: 112px;
+    width: 86px;
+}
+.manAM-nonPass {
+    display: flex;
+    justify-content: center;
+    width: 86px;
+}
+
+.manAM-list ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.manAM-list li {
+    list-style: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #b6b6b6;
+    width: 1200px;
+}
+.manAM-infograde {
+    display: flex;
+    justify-content: center;
+    margin-right: 178px;
+    width: 32px;
+}
+.manAM-infoname {
+    display: flex;
+    justify-content: center;
+    margin-right: 110px;
+    width: 160px;
+}
+.manAM-infodepartment{
+    display: flex;
+    justify-content: center;
+    margin-right: 110px;
+    margin-left: 70px;
+    width: 200px;
+}
+.manAM-list button {
+    background-color: #100F0F;
+    width: 86px;
+    height: 33px;
+    border-radius: 25px;
+    border: 1px solid;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.manAM-infopass {
+    margin-right: 112px;
+    color: #54ECC4;
+    border-color: #54ECC4;
+}
+.manAM-infononPass {
+    color: #FA0000;
+    border-color: #FA0000;
+}
+.manAM-selected {
+    color: #b6b6b6;
+    border-color: #b6b6b6;
+}
+
+.manAM-excel {
+    margin-bottom: 239px;
+    margin-right: 20px;
+    width: 220px;
+    height: 64px;
+    border-style: 2px;
+    border-color: #54ECC4;
+    border-radius: 16px;
+    background-color: #131313;
+    color: #54ECC4;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.manAM-excel:hover,
+.manAM-passMembersBtn:hover {
+    background-color: #54ECC4;
+    color: #131313;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
+}
+.manAM-passMembersBtn {
+    width: 220px;
+    height: 64px;
+    border-style: 2px;
+    border-color: #54ECC4;
+    border-radius: 16px;
+    background-color: #131313;
+    color: #54ECC4;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer; 
+}
