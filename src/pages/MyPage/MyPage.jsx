@@ -63,36 +63,3 @@ function MyPage() {
 
 export default MyPage;
 
-<<<<<<< HEAD
-       <div className='myPage'>My Page</div>
-       <img className='myProfile' src='./images/myPage/profile.jpg' alt="프로필"></img>ㅞ
-
-       <table className='table'>
-         <tr>
-           <th className='dataHead'>학과</th>
-           <td className='myData'>컴퓨터소프트웨어공학과</td>
-         </tr>
-         <tr>
-           <th className='dataHead'>기수</th>
-           <td className='myData'>21기</td>
-         </tr>
-         <tr>
-           <th className='dataHead'>이름</th>
-           <td className='myData'>홍길동</td>
-         </tr>
-         <tr>
-           <th className='dataHead'>깃허브</th>
-           <td className='myData'>test</td>
-         </tr>
-       </table>
-       <div className='fixMyDataBorder'>
-         <Link to='/mypagemodify' className='fixMyDataFont'>내 정보 수정</Link>
-       </div>
-     </div>
-     </div>
-   )
- }
-
-export default MyPage
-=======
->>>>>>> 09f5506a1599aee7afb966f0937c15ff6231b594

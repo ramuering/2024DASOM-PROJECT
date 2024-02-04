@@ -276,6 +276,11 @@
   padding-left: 24px;
   box-sizing: border-box;
   padding-top: 26px;
+  cursor: pointer;
+}
+.main-about-link:hover {
+  transition: color 0.4s ease-in-out;
+  color: #54ecc4;
 }
 .main-about-link-tag {
   width: 277px !important;
@@ -289,7 +294,10 @@
   box-sizing: border-box;
   padding-top: 26px;
 }
-
+.main-about-link-tag:hover {
+  transition: color 0.4s ease-in-out;
+  color: #54ecc4;
+}
 /* footer */
 .main-footer {
   margin-top: 7450px;
