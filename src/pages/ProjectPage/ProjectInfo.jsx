@@ -3,6 +3,20 @@ import styled from 'styled-components';
 import "./ProjectInfo.css"
 import Footer from '../../components/Footer';
 
+const Member = ({ profile, name, gi }) => {
+  return (
+    <div className='projectInfo-profileBox'>
+      <div className='projectInfo-profile'>
+        <img src={profile} alt='프로필사진'></img>
+      </div>
+      <div className='projectInfo-name'>
+        {name}</div>
+      <div className='projectInfo-gi'>
+        {gi}</div>
+    </div>
+  );
+};
+
 const ProjectInfo = () => {
   return (
     <Container>
@@ -42,6 +56,11 @@ const ProjectInfo = () => {
         </div>
       <div className="projectInfo-teamMember">
         <div className="projectInfo-teamMem-title">프로젝트 팀원</div>
+        <div className="projectInfo-teamMem-members">
+          <Member profile='./images/myPage/profile.jpg' name='홍길동 / Front' gi='31기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='홍길동 / Back' gi='31기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='홍길동 / Design' gi='31기'></Member>
+        </div>
       </div>
       <div className="projectInfo-footer">
         <Footer/>
