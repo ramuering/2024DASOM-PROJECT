@@ -52,6 +52,7 @@ export default LimitHeader
 const CustomLink = styled(Link)`
   &:hover{
     color: #54Ecc4;
+    transition: color 0.4s ease-in-out;
   }
 `;
 
