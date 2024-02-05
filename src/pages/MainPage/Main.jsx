@@ -4,6 +4,7 @@ import Footer from '../../components/Footer'
 import styled from "styled-components"
 // import Slide from "../../components/Slider"
 import "./Main.css"
+import { Link } from 'react-router-dom'
 // import Slider from '../../components/Slider'
 
 
@@ -113,7 +114,9 @@ const Main = () => {
         <div className="main-about-box-container">
           <div className="main-about-box">
             <div className="main-about-img"></div>
+            <Link to="/about">
             <div className="main-about-link-tag">ABOUT &gt;</div>
+            </Link>
           </div>
           <div className="main-about-box">
             <div className="main-about-img"></div>
@@ -121,7 +124,9 @@ const Main = () => {
           </div>
           <div className="main-about-box">
             <div className="main-about-img"></div>
-            <div className="main-about-link">GitHub &gt;</div>
+            <a href='https://github.com/DASOM-GitHub'>
+              <div className="main-about-link">GitHub &gt;</div>
+              </a>
           </div>
         </div>
       </div>
