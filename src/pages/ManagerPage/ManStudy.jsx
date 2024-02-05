@@ -63,6 +63,11 @@ function ManStudy() {
       }
     }
   };
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   return (
     <div className='manStudy'>
@@ -71,7 +76,11 @@ function ManStudy() {
         <p className='manStudy-title'>스터디 관리</p>
         <a className='manStudy-a' href="./manStudyApply"><button className='manStudy-button'>스터디 등록</button></a>
         <div className='manStudy-searchBar'>
-          <input type="text" placeholder='검색어를 입력하세요' value={search} onChange={(e) => setSearch(e.target.value)}/>
+          <input type="text" 
+          placeholder='검색어를 입력하세요' 
+          value={search} 
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKeyDown}/>
           <button onClick={handleSearch}><img src='./images/search.PNG' alt="검색" /></button>
         </div>
         <div className='manStudy-studyList'>

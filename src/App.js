@@ -1,5 +1,6 @@
 import "./App.css";
 import { Outlet, Route, Routes } from "react-router-dom";
+import { AppProvider } from "./contexts/AppContext";
 import Main from "./pages/MainPage/Main";
 import About from "./pages/AboutPage/About";
 import Project from "./pages/ProjectPage/Project";
@@ -43,47 +44,49 @@ const Layout = () => {
 function App() {
   return (
     <div className="app">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="login" element={<Login />} />
-          <Route path="main" element={<Main />} />
-          <Route path="about" element={<About />} />
-          <Route path="project" element={<Project />} />
-          <Route path="recruit" element={<NewMember />} />
-          <Route path="admin" element={<ManMain />} />
-          <Route path="mypage" element={<MyPage />} />
-          <Route path="mypagemodify" element={<MyPageModify />} />
-          <Route path="signup01" element={<SignUp1 />} />
-          <Route path="signup02" element={<SignUp2 />} />
-          <Route path="apply01" element={<Apply1 />} />
-          <Route path="apply02" element={<Apply2 />} />
-          <Route path="notice" element={<Notice />} />
-          <Route path="noticeadmin" element={<NoticeAdmin />} />
-          <Route path="noticecreate" element={<NoticeCreate />} />
-          <Route path="study" element={<Study />} />
-          <Route path="ManMemberModify" element={<ManMemberModify />} />
-          <Route path="ManStudyApply" element={<ManStudyApply />} />
-          <Route path="ManStudyModify" element={<ManStudyModify />} />
-          <Route path="ManProjectApply" element={<ManProjectApply />} />
-          <Route path="ManProjectModify" element={<ManProjectModify />} />
-          <Route path="studyInfo" element={<StudyInfo />} />
-          <Route path="projectInfo" element={<ProjectInfo />} />
-          <Route path="/noticedetail/:id" element={<NoticeDetail />} />
-          <Route path="manmembermodify" element={<ManMemberModify />} />
-          <Route path="manstudyapply" element={<ManStudyApply />} />
-          <Route path="manstudymodify" element={<ManStudyModify />} />
-          <Route path="manprojectapply" element={<ManProjectApply />} />
-          <Route path="manprojectmodify" element={<ManProjectModify />} />
-          <Route path="studyinfo" element={<StudyInfo />} />
-          <Route path="projectinfo" element={<ProjectInfo />} />
-          <Route path="noticedetail" element={<NoticeDetail />} />
-          <Route path="makers" element={<Makers />} />
-          <Route path="manapplymember" element={<ManApplyMember />} />
-          <Route path="manstudy" element={<ManStudy />} />
-          <Route path="manapply" element={<ManApply />} />
-          <Route path="manproject" element={<ManProject />} />
-        </Route>
-      </Routes>
+      <AppProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="login" element={<Login />} />
+            <Route path="main" element={<Main />} />
+            <Route path="about" element={<About />} />
+            <Route path="project" element={<Project />} />
+            <Route path="recruit" element={<NewMember />} />
+            <Route path="admin" element={<ManMain />} />
+            <Route path="mypage" element={<MyPage />} />
+            <Route path="mypagemodify" element={<MyPageModify />} />
+            <Route path="signup01" element={<SignUp1 />} />
+            <Route path="signup02" element={<SignUp2 />} />
+            <Route path="apply01" element={<Apply1 />} />
+            <Route path="apply02" element={<Apply2 />} />
+            <Route path="notice" element={<Notice />} />
+            <Route path="noticeadmin" element={<NoticeAdmin />} />
+            <Route path="noticecreate" element={<NoticeCreate />} />
+            <Route path="study" element={<Study />} />
+            <Route path="ManMemberModify" element={<ManMemberModify />} />
+            <Route path="ManStudyApply" element={<ManStudyApply />} />
+            <Route path="ManStudyModify" element={<ManStudyModify />} />
+            <Route path="ManProjectApply" element={<ManProjectApply />} />
+            <Route path="ManProjectModify" element={<ManProjectModify />} />
+            <Route path="studyInfo" element={<StudyInfo />} />
+            <Route path="projectInfo" element={<ProjectInfo />} />
+            <Route path="/noticedetail/:id" element={<NoticeDetail />} />
+            <Route path="manmembermodify" element={<ManMemberModify />} />
+            <Route path="manstudyapply" element={<ManStudyApply />} />
+            <Route path="manstudymodify" element={<ManStudyModify />} />
+            <Route path="manprojectapply" element={<ManProjectApply />} />
+            <Route path="manprojectmodify" element={<ManProjectModify />} />
+            <Route path="studyinfo" element={<StudyInfo />} />
+            <Route path="projectinfo" element={<ProjectInfo />} />
+            <Route path="noticedetail" element={<NoticeDetail />} />
+            <Route path="makers" element={<Makers />} />
+            <Route path="manapplymember" element={<ManApplyMember />} />
+            <Route path="manstudy" element={<ManStudy />} />
+            <Route path="manapply" element={<ManApply />} />
+            <Route path="manproject" element={<ManProject />} />
+          </Route>
+        </Routes>
+      </AppProvider>
     </div>
   );
 }

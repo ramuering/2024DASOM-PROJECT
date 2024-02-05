@@ -227,6 +227,7 @@
 .about-button:hover {
     color: #FFFFFF;
     border-bottom: 2px solid #FFFFFF;
+    transition: color 0.3s ease;
 }
 .about-active {
     color: #FFFFFF;
