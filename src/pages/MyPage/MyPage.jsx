@@ -1,65 +1,137 @@
-import React, { useEffect, useState } from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 
+import React, {useEffect, useState} from 'react'
+ import Header from '../../components/Header'
+ import Footer from '../../components/Footer'
+ import './MyPage.css'
+ import { Link } from 'react-router-dom'
+ import axios from 'axios'
 
-function MyPage() {
-  const [data, setData] = useState([]);
+// function MyPage() {
+//   const [data, setData] = useState([])
 
-//   useEffect(() => {
-//     axios.get('/api/hello') // 백엔드에서 받아온 주소
-//       .then(response => setData(response.data))
-//       .catch(error => console.log(error));
-//   }, []);
+//     /*useEffect(() => {
+//         axios.get('/api/hello') //백엔드에서 받아온 주소
+//          .then(response => setData(response.data))
+//         .catch(error => console.log(error))
+//     }, []);
 
-  const Data = ({ myData }) => {
-    return (
-      <div>
-        {data.map((item) => (
-          <div key={item.id}>{item[myData]}</div>
-        ))}
-      </div>
-    );
-  };
+//     const Data= ()=>{
 
-  return (
-    <div>
-      <div className='mypage-content'>
-        <Header />
+//        var myData;
+//        return (
+//          <div>
+//            {data.map((item)=>{
+//              <div key={item.id}>{myData}</div>
+//          })}
+//          </div>
+//       )
+//     }
+//     <Data className='myProfile' myData='item.profile'></Data>
+//    <td className='myData'><Data className='myHakgoa' myData='item.hakgoa'></Data></td>
+//     <td className='myData'><Data className='myGi' myData='item.gi'></Data></td>
+//     <td className='myData'><Data className='myName' myData='item.name'></Data></td>
+//     <td className='myData'><Data className='myGithub' myData='item.github'></Data></td>
+//      */
 
-        <div className='mypage-title'>My Page</div>
-        <img className='mypage-myProfile' src='./images/myPage/profile.jpg' alt='Profile'></img>
+//    return (
+//      <div>
+//     <div className='content'>
+//       <Header />
 
-        <table className='mypage-table'>
-          <tbody>
-            <tr>
-              <th className='mypage-dataHead'>학과</th>
-              <td className='mypage-myData'><Data myData='hakgoa' /></td>
-            </tr>
-            <tr>
-              <th className='mypage-dataHead'>기수</th>
-              <td className='mypage-myData'><Data myData='gi' /></td>
-            </tr>
-            <tr>
-              <th className='mypage-dataHead'>이름</th>
-              <td className='mypage-myData'><Data myData='name' /></td>
-            </tr>
-            <tr>
-              <th className='mypage-dataHead'>깃허브</th>
-              <td className='mypage-myData'><Data myData='github' /></td>
-            </tr>
-          </tbody>
-        </table>
-        <div className='fixMyDataBorder'>
-          <Link to='/mypagemodify' className='fixMyDataFont'>내 정보 수정</Link>
-        </div>
-      </div>
-      <Footer />
-    </div>
-  );
-}
+//        <div className='myPage'>My Page</div>
+//        <img className='myProfile' src='./images/myPage/profile.jpg'></img>
 
-export default MyPage;
+//       <table className='table'>
+//          <tr>
+//            <th className='dataHead'>학과</th>
+//            <td className='myData'>컴퓨터소프트웨어공학과</td>
+//          </tr>
+//          <tr>
+//            <th className='dataHead'>기수</th>
+//            <td className='myData'>21기</td>
+//          </tr>
+//          <tr>
+//            <th className='dataHead'>이름</th>
+//            <td className='myData'>홍길동</td>
+//          </tr>
+//          <tr>
+//            <th className='dataHead'>깃허브</th>
+//            <td className='myData'>test</td>
+//          </tr>
+//        </table>
+//        <div className='fixMyDataBorder'>
+//          <Link to='/mypagemodify' className='fixMyDataFont'>내 정보 수정</Link>
+//        </div>
+//      </div>
+//      </div>
+//    )
+//  }
+//  // import React, {useEffect, useState} from 'react'
+//  // import Header from '../../components/Header'
+//  // import Footer from '../../components/Footer'
+//  // import './MyPage.css'
+//  // import { Link } from 'react-router-dom'
+//  // import axios from 'axios'
 
+//  // function MyPage() {
+//  //   const [data, setData] = useState([])
+
+//  //     /*useEffect(() => {
+//  //         axios.get('/api/hello') //백엔드에서 받아온 주소
+//  //         .then(response => setData(response.data))
+//  //         .catch(error => console.log(error))
+//  //     }, []);
+
+//  //     const Data= ()=>{
+
+//  //       var myData;
+//  //       return (
+//  //         <div>
+//  //           {data.map((item)=>{
+//  //             <div key={item.id}>{myData}</div>
+//  //           })}
+//  //         </div>
+//  //       )
+//  //     }
+//  //     <Data className='myProfile' myData='item.profile'></Data>
+//  //     <td className='myData'><Data className='myHakgoa' myData='item.hakgoa'></Data></td>
+//  //     <td className='myData'><Data className='myGi' myData='item.gi'></Data></td>
+//  //     <td className='myData'><Data className='myName' myData='item.name'></Data></td>
+//  //     <td className='myData'><Data className='myGithub' myData='item.github'></Data></td>
+//  //     */
+
+//  //   return (
+//  //     <div>
+//  //     <div className='content'>
+//  //       <Header />
+
+//  //       <div className='myPage'>My Page</div>
+//  //       <img className='myProfile' src='./images/myPage/profile.jpg'></img>ㅞ
+
+//  //       <table className='table'>
+//  //         <tr>
+//  //           <th className='dataHead'>학과</th>
+//  //           <td className='myData'>컴퓨터소프트웨어공학과</td>
+// //         </tr>
+//  //         <tr>
+//  //           <th className='dataHead'>기수</th>
+//  //           <td className='myData'>21기</td>
+//  //         </tr>
+//  //         <tr>
+//  //           <th className='dataHead'>이름</th>
+//  //           <td className='myData'>홍길동</td>
+//  //         </tr>
+//  //         <tr>
+//  //           <th className='dataHead'>깃허브</th>
+//  //           <td className='myData'>test</td>
+//  //         </tr>
+//  //       </table>
+//  //       <div className='fixMyDataBorder'>
+//  //         <Link to='/mypagemodify' className='fixMyDataFont'>내 정보 수정</Link>
+//  //       </div>
+//  //     </div>
+//  //     </div>
+//   //   )
+//  // }
+
+export default MyPage
