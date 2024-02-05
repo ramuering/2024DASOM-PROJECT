@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+
+import React, { useEffect } from 'react'
 import LimitHeader from "../../components/LimitHeader"
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom'
@@ -6,6 +7,11 @@ import axios from 'axios';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAPj6z3yEcXMZnXhfPu1YMFM3zIKwLFdh8",
@@ -22,14 +28,17 @@ const firebaseConfig = {
 
   const Login = ()=>{
 
-  const [username, setusername] = useState('');
-  const [password, setpassword] = useState('');
+
+  //const [username, setusername] = useState('');
+  //const [password, setpassword] = useState('');
   const navigate = useNavigate();
 
     const handleSubmit = async () => {
         try {
           const response = await axios.post('http://localhost:8090/login', {
-                username : username , password : password
+
+                //username : username , password : password
+
           });
 
 //           if (response.status === 200) {
@@ -61,15 +70,17 @@ const firebaseConfig = {
         type='email'
         className="login-id"
         placeholder='아이디'
-        value={username}
-        onChange={(e) => setusername(e.target.value)}
+
+        //value={username}
+        //onChange={(e) => setusername(e.target.value)}
         />
         <input
         type='password'
         className="login-password"
         placeholder='비밀번호'
-        value={password}
-        onChange={(e) => setpassword(e.target.value)}
+
+        //value={password}
+        //onChange={(e) => setpassword(e.target.value)}
         />
         <button className='login-complet' onClick={handleSubmit}>로그인 하기</button>
       </div>
