@@ -1,19 +1,19 @@
-.content {
+.mypage-content{
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.myPage {
+.mypage-title{
   position: absolute;
   top: 207px;
   width: 181px;
   height: 48px;
   font-size: 40px;
   font-weight: bold;
-  font-family: "Inter";
+  font-family: 'Inter';
 }
-.myProfile {
+.mypage-myProfile{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,31 +23,34 @@
   height: 381px;
   border-radius: 100px;
 }
-.table {
+.mypage-table{
   position: absolute;
   top: 916px;
   border-collapse: collapse;
 }
-.dataHead {
+.mypage-dataHead{
   width: 175px;
   height: 49px;
   font-size: 16px;
   font-weight: bold;
-  font-family: "Inter";
-  border: 1px solid #d9d9d9;
+  font-family:'Inter';
+  border: 1px solid #D9D9D9;
 }
-.myData {
+.mypage-myData{
   width: 1025px;
   height: 49px;
   font-size: 16px;
   font-weight: medium;
-  font-family: "Inter";
-  text-indent: 1px !important;
-  border: 1px solid #d9d9d9;
+  font-family:'Inter';
+
+  text-align: left;
+  text-indent: 30px !important;
+  border: 1px solid #D9D9D9;
 }
+
 .fixMyDataBorder {
   position: absolute;
-  top: 1219px;
+  top: 1291px;
   width: 440px;
   height: 64px;
   border: 2px solid #54ecc4;
@@ -64,4 +67,7 @@
   color: #54ecc4;
   text-align: center;
   cursor: pointer;
+}
+.myPage-footer{
+  margin-top: 1539px;
 }
