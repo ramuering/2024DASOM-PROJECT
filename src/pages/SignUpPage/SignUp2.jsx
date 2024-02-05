@@ -169,7 +169,7 @@ const SignUp2 = () => {
           
           <fieldset id="Agree">
             <legend><p class="form_text">약관동의 <span class="red_text">*</span></p></legend>
-            <div className="check_box">
+            <div className="SignUp2_check_box">
           <input
             type="checkbox"
             id="agree1"
@@ -180,7 +180,7 @@ const SignUp2 = () => {
           <label htmlFor="agree1">전체 약관 동의</label>
         </div>
 
-        <div className="check_box">
+        <div className="SignUp2_check_box">
           <input
             type="checkbox"
             id="agree2"
@@ -191,7 +191,7 @@ const SignUp2 = () => {
           <label htmlFor="agree2">[필수] 다솜 이용 약관에 동의</label>
         </div>
 
-        <div className="check_box">
+        <div className="SignUp2_check_box">
           <input
             type="checkbox"
             id="agree3"
@@ -202,7 +202,7 @@ const SignUp2 = () => {
           <label htmlFor="agree3">[필수] 개인정보 수집 및 이용에 동의</label>
         </div>
 
-        <div className="check_box">
+        <div className="SignUp2_check_box">
           <input
             type="checkbox"
             id="agree4"
