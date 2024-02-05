@@ -71,6 +71,8 @@
 .manAM-editBtn:hover {
     background-color: #54ECC4;
     color: #131313;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
 }
 .manAM-magamBtn {
     margin-bottom: 295px;
@@ -88,6 +90,8 @@
 .manAM-magamBtn:hover {
     background-color: #FA0000;
     color: #131313;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
 }
 .manAM-applyCount {
     width: 1200px;
@@ -218,6 +222,8 @@
 .manAM-passMembersBtn:hover {
     background-color: #54ECC4;
     color: #131313;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
 }
 .manAM-passMembersBtn {
     width: 220px;
