@@ -1,3 +1,78 @@
+
+.mypage-content{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mypage-title{
+  position: absolute;
+  top: 207px;
+  width: 181px;
+  height: 48px;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Inter';
+}
+.mypage-myProfile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 392px;
+  width: 416px;
+  height: 381px;
+  border-radius: 100px;
+}
+.mypage-table{
+  position: absolute;
+  top: 916px;
+  border-collapse: collapse;
+}
+.mypage-dataHead{
+  width: 175px;
+  height: 49px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family:'Inter';
+  border: 1px solid #D9D9D9;
+}
+.mypage-myData{
+  width: 1025px;
+  height: 49px;
+  font-size: 16px;
+  font-weight: medium;
+  font-family:'Inter';
+
+  text-align: left;
+  text-indent: 30px !important;
+  border: 1px solid #D9D9D9;
+}
+
+.fixMyDataBorder {
+  position: absolute;
+  top: 1291px;
+  width: 440px;
+  height: 64px;
+  border: 2px solid #54ecc4;
+  border-radius: 16px;
+  background-color: #131313;
+}
+.fixMyDataFont {
+  position: absolute;
+  left: 172px;
+  top: 23px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Inter";
+  color: #54ecc4;
+  text-align: center;
+  cursor: pointer;
+}
+.myPage-footer{
+  margin-top: 1539px;
+}
+
 .content {
     width: 100vw;
     display: flex;
@@ -65,3 +140,4 @@
     text-align: center;
     cursor: pointer;
   }
+
