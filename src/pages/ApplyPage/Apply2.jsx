@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../components/LimitHeader'
 import "./Apply2.css"
 import styled from 'styled-components';
 
@@ -10,7 +9,6 @@ const Ap2_NullBox = styled.div`
 function Apply2() {
   return (
     <div id="Ap2_main">
-      <Header></Header>
       <div id="Ap2_first_forms" class="form">
 
         <div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import LimitHeader from "../../components/LimitHeader"
+import Header from "../../components/Header"
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
@@ -54,7 +54,7 @@ const firebaseConfig = {
 
     return(
       <div className='login-content'>
-        <LimitHeader />
+        <Header />
         <div className='dasom'>DASOM</div>
         <div className='login-member'>
         <div className='noMember'>회원이 아니신가요?</div>

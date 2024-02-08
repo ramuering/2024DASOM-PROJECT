@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from "../../components/Header"
 import Footer from '../../components/Footer'
 import styled from "styled-components"
 // import Slide from "../../components/Slider"
@@ -12,7 +11,6 @@ import { Link } from 'react-router-dom'
 const Main = () => {
   return (
     <Container>
-      <Header />
       <div className='video-wrapper'>
         <div className='video'>
         <iframe

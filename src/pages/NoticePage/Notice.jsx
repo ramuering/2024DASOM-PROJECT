@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Header from '../../components/LimitHeader';
 import styled, { css } from 'styled-components';
 import Footer from '../../components/Footer';
 import data from './data.js';
 import { Link } from 'react-router-dom';
-import "./Notice.css"
+import "./Common_Notice.css"
 
 const Noti_NullBox = styled.div`
     width: 100%;
@@ -107,29 +106,27 @@ function Notice() {
       <div id="Null_box">
         <Noti_NullBox></Noti_NullBox>
         <p id="Noti_title">공지사항</p>
+        
         <div class="search-container">
             <input placeholder='검색어를 입력하세요' id="Nocr_inputs"></input>
             <div class="search-icon1" style={{ backgroundImage: "url('images/search-icon.png')" }}></div>
         </div>
-        <table>
-          <thead>
+
+        <table id='Noti_table'>     
             <tr id ="tr_title">
               <td>번호</td>
               <td>제목</td>
               <td>작성자</td>
               <td>작성일</td>
             </tr>
-          </thead>
-          <tbody>
             {currentItems.map((item) => (
               <tr id='tr_contents' key={item.id}>
-                <td><Link to={`/noticedetail/${item.id}`}>{item.id}</Link></td>
-                <td><Link to={`/noticedetail/${item.id}`}>{item.title}</Link></td>
-                <td><Link to={`/noticedetail/${item.id}`}>{item.name}</Link></td>
-                <td><Link to={`/noticedetail/${item.id}`}>{item.date}</Link></td>
+                <td class="Noti_s"><Link to={`/noticedetail/${item.id}`}>{item.id}</Link></td>
+                <td class="Noti_l"><Link to={`/noticedetail/${item.id}`}>{item.title}</Link></td>
+                <td class="Noti_s"><Link to={`/noticedetail/${item.id}`}>{item.name}</Link></td>
+                <td class="Noti_s"><Link to={`/noticedetail/${item.id}`}>{item.date}</Link></td>
               </tr>
             ))}
-          </tbody>
         </table>
 
         {/* 페이지 버튼 생성 */}
@@ -139,8 +136,7 @@ function Notice() {
           <PrevNextBtn onClick={handleNextClick}>&gt;</PrevNextBtn>
         </Pagination>
       </div>
-
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }
