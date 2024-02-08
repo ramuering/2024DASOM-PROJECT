@@ -1,16 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import LimitHeader from "../../components/LimitHeader"
 import './Login.css';
-import { Link } from 'react-router-dom'
-// Import the functions you need from the SDKs you need
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAPj6z3yEcXMZnXhfPu1YMFM3zIKwLFdh8",
   authDomain: "dasom-login.firebaseapp.com",
@@ -24,28 +20,34 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-  const Login = ()=>{    
+  const Login = ()=>{
 
-    const complet=(event)=>{
-      event.preventDefault()
+  const [username, setusername] = useState('');
+  const [password, setpassword] = useState('');
+  const navigate = useNavigate();
 
-      const email = document.getElementsByClassName('login-id').value;
-      const password = document.getElementsByClassName('login-password').value;
-      const auth = getAuth();
+    const handleSubmit = async () => {
+        try {
+          const response = await axios.post('http://localhost:8090/login', {
+                username : username , password : password
+          });
 
-      signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential)
-        // Signed in 
-        const user = userCredential.user;
-        // ...
-      })
-      .catch((error) => {
-        console.log('error')
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
-    }
+//           if (response.status === 200) {
+//           console.log(response.status)
+//             console.log('부원 인증 성공');
+//             navigate('/SignUp02');  // Use navigate instead of history.push
+//           } else {
+//           console.log(response.status)
+//             console.error('부원 인증 실패');
+//           }
+        } catch (error) {
+          if (error.response && error.response.status === 200) {
+            console.error('인증완료.');
+          } else {
+            console.error('에러:', error);
+          }
+        }
+      };
 
     return(
       <div className='login-content'>
@@ -55,9 +57,21 @@ const firebaseConfig = {
         <div className='noMember'>회원이 아니신가요?</div>
         <Link to='/signup01' className='goMember'><div>회원가입 하기</div></Link>
         </div>
-        <input type='email' className="login-id" placeholder='아이디'/>
-        <input type='password' className="login-password" placeholder='비밀번호'/>
-        <button className='login-complet' onClick={complet}>로그인 하기</button>
+        <input
+        type='email'
+        className="login-id"
+        placeholder='아이디'
+        value={username}
+        onChange={(e) => setusername(e.target.value)}
+        />
+        <input
+        type='password'
+        className="login-password"
+        placeholder='비밀번호'
+        value={password}
+        onChange={(e) => setpassword(e.target.value)}
+        />
+        <button className='login-complet' onClick={handleSubmit}>로그인 하기</button>
       </div>
       
     )

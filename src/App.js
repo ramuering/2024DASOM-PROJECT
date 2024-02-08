@@ -1,5 +1,6 @@
 import "./App.css";
 import { Outlet, Route, Routes } from "react-router-dom";
+import { AppProvider } from "./contexts/AppContext";
 import Main from "./pages/MainPage/Main";
 import About from "./pages/AboutPage/About";
 import Project from "./pages/ProjectPage/Project";
@@ -28,8 +29,10 @@ import ManProject from "./pages/ManagerPage/ManProject";
 import ManApply from "./pages/ManagerPage/ManApply";
 import Makers from "./pages/MakersPage/Makers";
 import NoticeDetail from "./pages/NoticePage/NoticeDetail";
+import NoticeAdminDetail from "./pages/NoticePage/NoticeAdminDetail";
 import NoticeAdmin from "./pages/NoticePage/NoticeAdmin";
 import NoticeCreate from "./pages/NoticePage/NoticeCreate";
+import NoticeUpdate from "./pages/NoticePage/NoticeUpdate";
 
 const Layout = () => {
   return (
@@ -43,6 +46,7 @@ const Layout = () => {
 function App() {
   return (
     <div className="app">
+      <AppProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="login" element={<Login />} />
@@ -60,6 +64,7 @@ function App() {
           <Route path="notice" element={<Notice />} />
           <Route path="noticeadmin" element={<NoticeAdmin />} />
           <Route path="noticecreate" element={<NoticeCreate />} />
+          <Route path="noticeupdate" element={<NoticeUpdate />} />
           <Route path="study" element={<Study />} />
           <Route path="ManMemberModify" element={<ManMemberModify />} />
           <Route path="ManStudyApply" element={<ManStudyApply />} />
@@ -69,6 +74,7 @@ function App() {
           <Route path="studyInfo" element={<StudyInfo />} />
           <Route path="projectInfo" element={<ProjectInfo />} />
           <Route path="/noticedetail/:id" element={<NoticeDetail />} />
+          <Route path="/noticeadmindetail/:id" element={<NoticeAdminDetail />} />
           <Route path="manmembermodify" element={<ManMemberModify />} />
           <Route path="manstudyapply" element={<ManStudyApply />} />
           <Route path="manstudymodify" element={<ManStudyModify />} />
@@ -84,6 +90,7 @@ function App() {
           <Route path="manproject" element={<ManProject />} />
         </Route>
       </Routes>
+      </AppProvider>
     </div>
   );
 }
