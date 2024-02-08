@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import Footer from '../../components/Footer';
 import data from './data.js';
 import { Link } from 'react-router-dom';
+import "./Common_Notice.css"
 import "./NoticeAdmin.css"
 
 const Noti_NullBox = styled.div`
@@ -113,26 +114,23 @@ function Notice() {
         </div>
         <Link to="../noticecreate" className="Nocr_btn">공지사항 등록</Link>
         </div>
-        <table>
-          <thead>
+        <table id='Noti_table'>     
             <tr id ="tr_title">
               <td>번호</td>
               <td>제목</td>
               <td>작성자</td>
               <td>작성일</td>
             </tr>
-          </thead>
-          <tbody>
             {currentItems.map((item) => (
               <tr id='tr_contents' key={item.id}>
-                <td><Link to={`/noticedetail/${item.id}`}>{item.id}</Link></td>
-                <td><Link to={`/noticedetail/${item.id}`}>{item.title}</Link></td>
-                <td><Link to={`/noticedetail/${item.id}`}>{item.name}</Link></td>
-                <td><Link to={`/noticedetail/${item.id}`}>{item.date}</Link></td>
+                <td class="Noti_s"><Link to={`/noticeadmindetail/${item.id}`}>{item.id}</Link></td>
+                <td class="Noti_l"><Link to={`/noticeadmindetail/${item.id}`}>{item.title}</Link></td>
+                <td class="Noti_s"><Link to={`/noticeadmindetail/${item.id}`}>{item.name}</Link></td>
+                <td class="Noti_s"><Link to={`/noticeadmindetail/${item.id}`}>{item.date}</Link></td>
               </tr>
             ))}
-          </tbody>
         </table>
+
 
         {/* 페이지 버튼 생성 */}
         <Pagination className="pagination">

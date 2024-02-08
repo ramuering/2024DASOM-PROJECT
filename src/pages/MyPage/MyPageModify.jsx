@@ -27,20 +27,21 @@ function MyPageModify() {
   }
 */
   return (
+    <div>
     <div className='myPageModify-content'>
       <Header />
-      <div className='title'>내 정보 수정</div>
+      <div className='myPageModify-title'>내 정보 수정</div>
       
       <input type='text' 
-      className='gitHub' 
+      className='myPageModify-gitHub' 
       placeholder='깃허브 주소'
       value={newGithub}
       onChange={(e)=> setNewGithub(e.target.value)} />
 
-      <div className='MyPageModify-choice'>
-      <div className='profile'>프로필 사진</div>
+      <div className='myPageModify-choice'>
+      <div className='myPageModify-profile'>프로필 사진</div>
 
-      <label className='MyPageModify-choicePicture'
+      <label className='myPageModify-choicePicture'
         htmlFor='input-file'><p>사진 선택</p></label>
       
       <input type='file'
@@ -50,8 +51,8 @@ function MyPageModify() {
         onChange={(e) => setNewProfileImg(e.target.files[0])}
         />
 
-      <div className='MyDataButtonBorder'>
-        <div className='MyDataButtonFont'
+      <div className='myDataButtonBorder'>
+        <div className='myDataButtonFont'
         //onClick={()=>{
           //{handleGithubChange}
           //{handleProfileImgChange}
@@ -59,6 +60,10 @@ function MyPageModify() {
         >내 정보 수정</div>
       </div>
     </div>
+    </div>
+      <div className='myPageModify-footer'>
+      <Footer />
+      </div>
     </div>
   )
 }

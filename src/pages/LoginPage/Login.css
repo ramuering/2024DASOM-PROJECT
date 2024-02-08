@@ -57,6 +57,7 @@
 
 .login-id:hover, .login-password:hover {
   border-color: #54ecc4;
+  transition: all 0.3s;
 }
 
 .login-id:focus, .login-password:focus {
