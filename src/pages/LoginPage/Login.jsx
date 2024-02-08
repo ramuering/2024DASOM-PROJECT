@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import LimitHeader from "../../components/LimitHeader"
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+import Header from '../../components/Header';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAPj6z3yEcXMZnXhfPu1YMFM3zIKwLFdh8",
@@ -51,7 +51,7 @@ const firebaseConfig = {
 
     return(
       <div className='login-content'>
-        <LimitHeader />
+        <Header />
         <div className='dasom'>DASOM</div>
         <div className='login-member'>
         <div className='noMember'>회원이 아니신가요?</div>

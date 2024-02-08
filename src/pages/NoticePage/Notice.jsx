@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../../components/LimitHeader';
 import styled, { css } from 'styled-components';
 import Footer from '../../components/Footer';
 import data from './data.js';
@@ -139,8 +138,7 @@ function Notice() {
           <PrevNextBtn onClick={handleNextClick}>&gt;</PrevNextBtn>
         </Pagination>
       </div>
-
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }
