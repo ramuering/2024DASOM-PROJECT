@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import "./About.css"
 
@@ -14,7 +13,6 @@ function About() {
 
   return (
     <div>
-      <Header />
       <div className='about-container'>
       <div className='about'>
         <div className='about-main'>

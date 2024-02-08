@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Header from '../../components/LimitHeader'
 import "./Apply1.css"
 import styled from "styled-components";
 import Footer from '../../components/Footer';
@@ -19,7 +18,6 @@ function Apply1() {
   
   return (
     <div id="Ap1_main">
-      <Header></Header>
       {/*1번 문단*/}
       <div id="Ap1_first_form" class="Ap1_form">
 

@@ -8,7 +8,7 @@ import NewMember from "./pages/ApplyPage/NewMember";
 import ManMain from "./pages/ManagerPage/ManMain";
 import MyPage from "./pages/MyPage/MyPage";
 import MyPageModify from "./pages/MyPage/MyPageModify";
-import LimitHeader from "./components/LimitHeader";
+import Header from "./components/Header";
 import Login from "./pages/LoginPage/Login";
 import SignUp1 from "./pages/SignUpPage/verify";
 import SignUp2 from "./pages/SignUpPage/SignUp2";
@@ -35,7 +35,7 @@ import NoticeCreate from "./pages/NoticePage/NoticeCreate";
 const Layout = () => {
   return (
     <div>
-      <LimitHeader />
+      <Header />
       <Outlet />
     </div>
   );
