@@ -31,11 +31,13 @@ import Makers from "./pages/MakersPage/Makers";
 import NoticeDetail from "./pages/NoticePage/NoticeDetail";
 import NoticeAdmin from "./pages/NoticePage/NoticeAdmin";
 import NoticeCreate from "./pages/NoticePage/NoticeCreate";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Layout = () => {
   return (
     <div>
       <Header />
+      <ScrollToTop />
       <Outlet />
     </div>
   );
@@ -84,6 +86,7 @@ function App() {
             <Route path="manstudy" element={<ManStudy />} />
             <Route path="manapply" element={<ManApply />} />
             <Route path="manproject" element={<ManProject />} />
+            
           </Route>
         </Routes>
       </AppProvider>
