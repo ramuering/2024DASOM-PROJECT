@@ -1,13 +1,10 @@
 
 
-#Ap1_main{
+#Ap1-main{
     width: 100vw;
     height: 5000px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-#Ap1_first_form{
+#Ap1-first-form{
     display: flex; /* flex 컨테이너로 설정 */
     justify-content: center; /* 자식 요소들 사이의 간격을 최대로 설정 */
     align-items: center; /* 세로 방향에서 중앙 정렬 */
@@ -15,11 +12,11 @@
     height: 450px;
 }
 
-#Ap1_first_form div{
+#Ap1-first-form div{
     padding-top: 30px;
 }
 
-#Ap1_second_form{
+#Ap1-second-form{
     display: flex; /* flex 컨테이너로 설정 */
     justify-content: center; /* 자식 요소들 사이의 간격을 최대로 설정 */
     align-items: center; /* 세로 방향에서 중앙 정렬 */
@@ -29,31 +26,31 @@
 }
 
 
-#Ap1_form_title{
+#Ap1-form-title{
     font-size: 40px;
     font-weight: bold;
 }
 
-#Ap1_sub_title{
+#Ap1-sub-title{
     font-size: 24px;
 }
 
-.Ap1_form{
+.Ap1-form{
     width: 600px;
     margin: 0 auto;
 }
-.Ap1_form_text{
+.Ap1-form-text{
     font-size: 24px;
     font-weight: bold;
     margin: 20px 0;
 }
 
-.Ap1_red_text{
+.Ap1-red-text{
     color: red;
     margin-right: 10px;
 }
 
-.Ap1_form_input{
+.Ap1-form-input{
     width: 585px;
     height: 55px;
     border: none;
@@ -81,7 +78,7 @@
     padding: 0;
     margin-top: 50px;
 }
-.Ap1_div_box{
+.Ap1-div-box{
     display: flex; /* flex 컨테이너로 설정 */
     justify-content: space-between; /* 자식 요소들 사이의 간격을 최대로 설정 */
     align-items: center; /* 세로 방향에서 중앙 정렬 */
@@ -103,7 +100,7 @@
     border: none;
   }
 
-  #Ap1_motivation{
+  #Ap1-motivation{
     width: 585px;
     height: 315px;
     border: none;
@@ -120,7 +117,7 @@
     word-wrap: break-word; /* 일정 수 이상이 되면 단어 단위로 줄바꿈 */
   }
 
-  #Ap1_Dasomtalk {width: 585px;
+  #Ap1-Dasomtalk {width: 585px;
   height: 315px;
   border: none;
   outline: none;
@@ -136,7 +133,7 @@
   word-wrap: break-word; /* 일정 수 이상이 되면 단어 단위로 줄바꿈 */
 }
 
-#Ap1_submit{
+#Ap1-submit{
     width: 455px;
     height: 95px;
     background:none;
@@ -150,7 +147,7 @@
     display: block;
 }
 
-#Ap1_submit:hover{
+#Ap1-submit:hover{
     background:#54ECC4;
     color: black;
     transition: all 0.2s;

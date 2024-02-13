@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import data from './data'; 
 import Header from '../../components/LimitHeader'
 import "./NoticeDetail.css"
 
 const NoticeDetail = () => {
+
+  useEffect(() => {
+    // Scroll to the top when the component is mounted
+    window.scrollTo(0, 0);
+  }, [])
+
   const { id } = useParams();
 console.log(id);// 콘솔에 id 출력
 
@@ -19,11 +25,11 @@ console.log(id);// 콘솔에 id 출력
   const { name, title, contents } = selectedData;
 
   return (
-    <div id="ND_main">
-      <div id='ND_box'>
-      <p id='ND_title'>{title}</p>
-      <p id="ND_name">{name}</p>
-      <p id="ND_contents">{contents}</p>
+    <div id="ND-main">
+      <div id='ND-box'>
+      <p id='ND-title'>{title}</p>
+      <p id="ND-name">{name}</p>
+      <p id="ND-contents">{contents}</p>
       </div>
     </div>
   );

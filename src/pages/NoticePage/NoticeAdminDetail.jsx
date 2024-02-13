@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import data from './data'; 
 import Header from '../../components/LimitHeader'
-import "./NoticeDetail.css"
+import "./NoticeAdminDetail.css"
 
 const NoticeAdminDetail = () => {
+
+  useEffect(() => {
+    // Scroll to the top when the component is mounted
+    window.scrollTo(0, 0);
+  }, [])
+
   const { id } = useParams();
 console.log(id);// 콘솔에 id 출력
 
@@ -19,13 +26,17 @@ console.log(id);// 콘솔에 id 출력
   const { name, title, contents } = selectedData;
 
   return (
-    <div id="ND_main">
-      <div id='ND_box'>
-      <p id='ND_title'>{title}</p>
-      <div id='ND_NameBox'>
-      <p id="ND_name">{name}</p>
+    <div id="ND-main">
+      <div id='ND-box'>
+      <p id='ND-title'>{title}</p>
+      <div id='ND-NameBox'>
+      <p id="NDs-name">{name}</p>
+      <div id='ND-LinkBox'>
+      <Link to="../noticeupdate" className="ND-linkButton">공지수항 수정</Link>
+      <Link to="../apply01" className="ND-linkButton1">공지사항 삭제</Link>
       </div>
-      <p id="ND_contents">{contents}</p>
+      </div>
+      <p id="ND-contents">{contents}</p>
       </div>
     </div>
   );
