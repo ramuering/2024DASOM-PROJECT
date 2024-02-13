@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../components/LimitHeader.jsx';
 import styled, { css } from 'styled-components';
 import Footer from '../../components/Footer.jsx';
 import data from './data.js';

@@ -8,7 +8,7 @@ import NewMember from "./pages/ApplyPage/NewMember";
 import ManMain from "./pages/ManagerPage/ManMain";
 import MyPage from "./pages/MyPage/MyPage";
 import MyPageModify from "./pages/MyPage/MyPageModify";
-import LimitHeader from "./components/LimitHeader";
+import Header from "./components/Header";
 import Login from "./pages/LoginPage/Login";
 import SignUp1 from "./pages/SignUpPage/verify";
 import SignUp2 from "./pages/SignUpPage/SignUp2";
@@ -33,11 +33,13 @@ import NoticeAdmin from "./pages/NoticePage/NoticeAdmin";
 import NoticeAdminDetail from "./pages/NoticePage/NoticeAdminDetail";
 import NoticeCreate from "./pages/NoticePage/NoticeCreate";
 import NoticeUpdate from "./pages/NoticePage/NoticeUpdate";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Layout = () => {
   return (
     <div>
-      <LimitHeader />
+      <Header />
+      <ScrollToTop />
       <Outlet />
     </div>
   );
@@ -88,6 +90,7 @@ function App() {
             <Route path="manstudy" element={<ManStudy />} />
             <Route path="manapply" element={<ManApply />} />
             <Route path="manproject" element={<ManProject />} />
+            
           </Route>
         </Routes>
       </AppProvider>

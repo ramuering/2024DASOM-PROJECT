@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import data from './data'; 
-import Header from '../../components/LimitHeader'
 import "./NoticeAdminDetail.css"
 
 const NoticeAdminDetail = () => {

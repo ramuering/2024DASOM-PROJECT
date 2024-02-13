@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../components/LimitHeader';
 import styled, { css } from 'styled-components';
 import Footer from '../../components/Footer';
 import data from './data.js';
@@ -153,7 +152,3 @@ function NoticeAdmin() {
 }
 
 export default NoticeAdmin;
-
-/*
-  테스트용 코드
-*/

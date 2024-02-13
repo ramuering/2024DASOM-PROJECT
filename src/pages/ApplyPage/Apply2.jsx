@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import Header from '../../components/LimitHeader'
 import "./Apply2.css"
 import styled from 'styled-components';
 
@@ -16,7 +15,6 @@ function Apply2() {
 
   return (
     <div id="Ap2-main">
-      <Header></Header>
       <div id="Ap2-first-forms" class="form">
 
         <div>
