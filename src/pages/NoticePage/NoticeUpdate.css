@@ -1,16 +1,16 @@
-#NoCr_main {
+#NoCr-main {
     width: 100vw;
     height: 1900px;
     padding: 50px 0;
 }
-#NoCr_box{
+#NoCr-box{
     padding-top: 200px;
     margin: 0 auto;
     width: 1150px;
     height: 1500px;
 }
 
-#NoCr_title{
+#NoCr-title{
     font-weight: bold;
     color: white;
     font-size: 40px;
@@ -18,7 +18,7 @@
     margin-bottom: 150px;
 }
 
-#NoCr_Cr_title{
+#NoCr-Cr-title{
     width: 1150px;
     height: 60px;
     border: 1px solid white;
@@ -29,15 +29,15 @@
     padding: 0px 0 0 20px;
 }
 
-#NoCr_Cr_title::placeholder{
+#NoCr-Cr-title::placeholder{
     color: #B4B4B4;
     font-weight: bold;
 }
-#NoCr_Cr_text::placeholder{
+#NoCr-Cr-text::placeholder{
     color: #B4B4B4;
     font-weight: bold;
 }
-#NoCr_Cr_text{
+#NoCr-Cr-text{
     width: 1150px;
     height: 315px;
     border: none;
@@ -73,13 +73,13 @@
     padding: 0;
     border: 0;
 }
-#filebox_titles{
+#filebox-titles{
     font-weight: bold;
     color: white;
     font-size: 40px;
     margin-bottom: 30px;
 }
-#NoCr_submit{
+#NoCr-submit{
     width: 1170px;
     height: 55px;
     background:none;
@@ -93,7 +93,7 @@
     display: block;
 }
 
-#NoCr_submit:hover{
+#NoCr-submit:hover{
     background:#54ECC4;
     color: black;
     transition: all 0.2s;

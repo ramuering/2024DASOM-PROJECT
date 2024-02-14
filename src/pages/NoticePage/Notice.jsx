@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import styled, { css } from 'styled-components';
 import Footer from '../../components/Footer';
 import data from './data.js';
 import { Link } from 'react-router-dom';
-import "./Common_Notice.css"
+import "./Common-Notice.css"
 
-const Noti_NullBox = styled.div`
+
+
+const NotiNullBox = styled.div`
     width: 100%;
     height: 150px;
 `;
@@ -28,8 +30,8 @@ const PrevNextBtn = styled.button`
   font-weight: bold;
 `;
 
-// ND_btn 스타일 컴포넌트 정의
-const ND_btn = styled.button`
+// ND-btn 스타일 컴포넌트 정의
+const NDbtn = styled.button`
 width: 24px;
 height: 24px;
 border-radius: 10px;
@@ -49,6 +51,12 @@ font-weight: bold;
 
 
 function Notice() {
+
+  useEffect(() => {
+    // Scroll to the top when the component is mounted
+    window.scrollTo(0, 0);
+  }, [])
+
   const itemsPerPage = 10; // 한 페이지에 표시할 아이템 개수
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 정보
 
@@ -86,13 +94,13 @@ function Notice() {
     return Array.from({ length: totalPageButtons }, (_, index) => {
       const pageNumber = startPage + index;
       return (
-        <ND_btn
+        <NDbtn
           key={pageNumber}
           onClick={() => handlePageChange(pageNumber)}
           active={currentPage === pageNumber}
         >
           {pageNumber}
-        </ND_btn>
+        </NDbtn>
       );
     });
   };
@@ -102,29 +110,29 @@ function Notice() {
   };
 
   return (
-    <div id='Noti_main'>
-      <div id="Null_box">
-        <Noti_NullBox></Noti_NullBox>
-        <p id="Noti_title">공지사항</p>
+    <div id='Noti-main'>
+      <div id="Null-box">
+        <NotiNullBox></NotiNullBox>
+        <p id="Noti-title">공지사항</p>
         
         <div class="search-container">
-            <input placeholder='검색어를 입력하세요' id="Nocr_inputs"></input>
+            <input placeholder='검색어를 입력하세요' id="Nocr-inputs"></input>
             <div class="search-icon1" style={{ backgroundImage: "url('images/search-icon.png')" }}></div>
         </div>
 
-        <table id='Noti_table'>     
-            <tr id ="tr_title">
+        <table id='Noti-table'>     
+            <tr id ="tr-title">
               <td>번호</td>
               <td>제목</td>
               <td>작성자</td>
               <td>작성일</td>
             </tr>
             {currentItems.map((item) => (
-              <tr id='tr_contents' key={item.id}>
-                <td class="Noti_s"><Link to={`/noticedetail/${item.id}`}>{item.id}</Link></td>
-                <td class="Noti_l"><Link to={`/noticedetail/${item.id}`}>{item.title}</Link></td>
-                <td class="Noti_s"><Link to={`/noticedetail/${item.id}`}>{item.name}</Link></td>
-                <td class="Noti_s"><Link to={`/noticedetail/${item.id}`}>{item.date}</Link></td>
+              <tr id='tr-contents' key={item.id}>
+                <td class="Noti-s"><Link to={`/noticedetail/${item.id}`}>{item.id}</Link></td>
+                <td class="Noti-l"><Link to={`/noticedetail/${item.id}`}>{item.title}</Link></td>
+                <td class="Noti-s"><Link to={`/noticedetail/${item.id}`}>{item.name}</Link></td>
+                <td class="Noti-s"><Link to={`/noticedetail/${item.id}`}>{item.date}</Link></td>
               </tr>
             ))}
         </table>
@@ -136,13 +144,11 @@ function Notice() {
           <PrevNextBtn onClick={handleNextClick}>&gt;</PrevNextBtn>
         </Pagination>
       </div>
-      <Footer />
+
+      <Footer></Footer>
     </div>
   );
 }
 
 export default Notice;
 
-/*
-  테스트용 코드
-*/

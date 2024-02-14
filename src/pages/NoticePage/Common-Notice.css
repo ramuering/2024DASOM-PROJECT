@@ -1,27 +1,27 @@
-#Noti_main{
+#Noti-main{
     margin: 0;
     padding: 0;
     height: 2200px;
     width: 100%;
 }
-#Null_box{
+#Null-box{
     width: 1200px;
     height: 1700px;
     margin: 0 auto;
 }
 
-#Noti_title{
+#Noti-title{
     font-size: 40px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 155px;
 }
 
-#Noti_table {
+#Noti-table {
     border-collapse: collapse;
 }
 
-#Noti_table td {
+#Noti-table td {
     text-align: center;
     height: 50px;
     font-size: 16px;
@@ -29,33 +29,33 @@
     border-top: none; border-bottom: none;border-left: none;border-right: none;
 }
 
-.Noti_s{
+.Noti-s{
     width: 250px;
 }
 
 
-.Noti_l{
+.Noti-l{
     width: 550px;
 }
 
-#Noti_table #tr_contents {
+#Noti-table #tr-contents {
     border-bottom: 1px solid white;
 }
 
-#tr_title {
+#tr-title {
     background: #c0c0c0;
     color: black;
     font-weight: bold;
 }
 
-#Noti_table thead #tr_title {
+#Noti-table thead #tr-title {
     font-weight: bold;
 }
 
-#Noti_table thead #tr_title {
+#Noti-table thead #tr-title {
     font-weight: bold;
 }
-#Nocr_inputs{
+#Nocr-inputs{
     display: block;
     width: 400px;
     height: 50px;

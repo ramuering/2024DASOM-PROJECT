@@ -1,9 +1,9 @@
 
-#NMB_MAIN_BOX{
+#NMB-MAIN-BOX{
   -ms-overflow-style: none;
 }
 
-.NMB_Style_Reset {
+.NMB-Style-Reset {
   margin: 0;
   padding: 0;
 }
@@ -11,53 +11,53 @@
 ::-webkit-scrollbar { /*스크롤 바 지우기(기능 유지)*/
     display: none;
 }
-#NMB_club_join{
+#NMB-club-join{
     width: 100vw;
     height: 100vh;
 }
 
 
-  #NMB_text_box{
+  #NMB-text-box{
     width: 850px;
     height: 700px;
     margin: 0 auto;
     padding-top: 15vh;
   }
-.NMB_big_box{
+.NMB-big-box{
     width: 850px;
     height: 300px;
     border-radius: 15px;
     margin-top: 20px;
 }
 
-#NMB_bgstyle{
+#NMB-bgstyle{
     width: 850px;
     height: 250px;
     border-radius: 15px;
     margin-top: 20px;
     background-color: #323232;
 }
-  .NMB_small_box{
+  .NMB-small-box{
     width: 410px;
     height: 300px;
     background-color: #323232;
     border-radius: 15px;
     float: left;
   }
-  #NMB_null_box2{
+  #NMB-null-box2{
     width: 30px;
     height: 300px;
     float: left;
   }
 
-  #NMB_Main_text{
+  #NMB-Main-text{
     text-align: center;
     font-size: 54px;
     font-weight: bold;
     margin-bottom: 15vh;
   }
 
-  .NMB_text_title{
+  .NMB-text-title{
     line-height: 80px;
     vertical-align: middle;
     text-align: left;
@@ -66,7 +66,7 @@
     font-weight: bold;
   }
 
-  .NMB_sub_text{
+  .NMB-sub-text{
     line-height: 30px;
     vertical-align: middle;
     text-align: left;
@@ -74,19 +74,19 @@
     font-size: 16px;
   }
 
-  .NMB_align_box{
+  .NMB-align-box{
     float: left;
   }
-  .NMB_align_box > img{
+  .NMB-align-box > img{
     margin: 0 50px;
   }
 
-  #NMB_center_box{
+  #NMB-center-box{
     width: 750px;
     height: 1000px;
     margin: 0 auto;
   }
-  .NMB_text_titles{
+  .NMB-text-titles{
     line-height: 40px;
     vertical-align: middle;
     text-align: left;
@@ -95,7 +95,7 @@
     margin: 0;
   }
 
-  .NMB_sub_texts{
+  .NMB-sub-texts{
     line-height: 30px;
     vertical-align: middle;
     text-align: left;
@@ -103,14 +103,14 @@
     margin: 0;
   }
 
-  #NMB_center_button {
+  #NMB-center-button {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
   }
 
-  .NMB_linkButton{
+  .NMB-linkButton{
     width: 235px;
     height: 95px;
     background: none;
@@ -124,14 +124,14 @@
     transition: all 0.2s;
   }
 
-  .NMB_linkButton:hover{
+  .NMB-linkButton:hover{
     color: black;
     background:#54ECC4 ;
     font-weight: bold;
     transition: all 0.2s;
   }
 
-  #NMB_center_button_closed {
+  #NMB-center-button-closed {
     width: 235px;
     height: 95px;
     background: none;
@@ -144,7 +144,7 @@
     font-weight: bold;
   }
 
-  #NMB_ques{
+  #NMB-ques{
     width: 100vw;
     height: 1000px;
     display: flex; /* flex 컨테이너로 설정 */
@@ -154,29 +154,29 @@
     text-align: center;
   }
 
-  #NMB_ques_title{
+  #NMB-ques-title{
     margin-bottom: 50px;
   }
-  #NMB_ques_text{
+  #NMB-ques-text{
     text-align: center;
     font-size: 40px;
     font-weight: bold;
   }
 
-  #NMB_ques_subtext{
+  #NMB-ques-subtext{
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     color: #D9D9D9;
   }
 
-  .NMB_ques_text{
+  .NMB-ques-text{
     font-weight: bold;
     margin-left: 20px;
     font-size: 16px;
   }
 
-  #footer_box{
+  #footer-box{
     width: 100vw;
     height: 680px;
     display: flex; /* flex 컨테이너로 설정 */
@@ -186,7 +186,7 @@
     text-align: center;
   }
 
-  .NMB_f_text{
+  .NMB-f-text{
     font-size: 16px;
     margin-bottom: 20px;
   }
