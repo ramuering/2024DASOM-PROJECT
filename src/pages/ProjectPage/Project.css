@@ -105,6 +105,10 @@
 .project-move-font {
   padding-top: 23px;
 }
+.project-move-font:hover {
+  transition: color 0.4s ease-in-out;
+  color: #54ecc4;
+}
 
 /* footer */
 

@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from "../../components/Header"
 import Footer from '../../components/Footer'
 import styled from "styled-components"
 // import Slide from "../../components/Slider"
 import "./Main.css"
+import { Link } from 'react-router-dom'
 // import Slider from '../../components/Slider'
 
 
@@ -11,7 +11,6 @@ import "./Main.css"
 const Main = () => {
   return (
     <Container>
-      <Header />
       <div className='video-wrapper'>
         <div className='video'>
         <iframe
@@ -113,7 +112,9 @@ const Main = () => {
         <div className="main-about-box-container">
           <div className="main-about-box">
             <div className="main-about-img"></div>
+            <Link to="/about">
             <div className="main-about-link-tag">ABOUT &gt;</div>
+            </Link>
           </div>
           <div className="main-about-box">
             <div className="main-about-img"></div>
@@ -121,7 +122,9 @@ const Main = () => {
           </div>
           <div className="main-about-box">
             <div className="main-about-img"></div>
-            <div className="main-about-link">GitHub &gt;</div>
+            <a href='https://github.com/DASOM-GitHub'>
+              <div className="main-about-link">GitHub &gt;</div>
+              </a>
           </div>
         </div>
       </div>

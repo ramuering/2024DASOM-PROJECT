@@ -105,6 +105,10 @@ transition: border-color 0.3s, color 0.3s;;
   outline: none;
 }
 
+.SignUp2_input3::placeholder {
+  color: #B6B6B6;
+}
+
 .SignUp2_input3.invalid {
   /* 유효성 검사에 실패한 경우의 입력 상자 스타일 */
   border: 2px solid red; /* 빨간색 테두리 색상 */
@@ -163,21 +167,18 @@ transition: border-color 0.3s, color 0.3s;;
   /* Add any other styles to adjust the position, color, etc. of the placeholder text */
 }
 
-.SignUp2_input3:focus::placeholder {
-  font-size: 16px;
-  color: #B6B6B6;
-}
-
 .SignUp2_input0,
 .SignUp2_input1
-,.SignUp2_input2:focus {
+,.SignUp2_input2,
+.SignUp02_input3:focus {
   outline: none;
   
 }
 
 .SignUp2_input0,
 .SignUp2_input1
-,.SignUp2_input2:focus:-ms-input-placeholder{
+,.SignUp2_input2,
+.SignUp02_input3:focus:-ms-input-placeholder{
   color: transparent;
 }
 
@@ -190,6 +191,10 @@ transition: border-color 0.3s, color 0.3s;;
 }
 
 .SignUp2_input2:focus::placeholder {
+  opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
+}
+
+.SignUp2_input3:focus::placeholder {
   opacity: 0; /* 포커스됐을 때 투명하게 만들어 placeholder를 숨김 */
 }
 
@@ -314,58 +319,52 @@ fieldset{
 .check_box input:checked + label:before {
   background-color: #54ecc4; /* Change background color when checkbox is checked */
   border-color: #54ecc4; /* Change border color when checkbox is checked */
+  transition: border-color 0.3s, color 0.3s;;
+  transition: backgroung-color 0.3s, color 0.3s;;
 }
 
-#agree 
-
-
-/* ... (your existing styles) */
-
-#Agree .check_box input {
-  display: none; /* Hide the default checkboxes */
+#Agree .SignUp2_check_box {
+  margin-bottom: 50px;
+  transition: border-color 0.3s, color 0.3s;;
+  transition: backgroung-color 0.3s, color 0.3s;;
 }
 
+#Agree .SignUp2_check_box input[type="checkbox"] {
+  display: none;
+  transition: border-color 0.3s, color 0.3s;;
+  transition: backgroung-color 0.3s, color 0.3s;;
+}
 
-#Agree .check_box label {
-  position: relative;
-  padding-left: 30px; /* Adjust the padding to control the size of the circle */
+#Agree .SignUp2_check_box label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 15px;
+  vertical-align: middle;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+#Agree .SignUp2_check_box input[type="checkbox"]:checked + label:before {
+  background-color: #54ecc4;
+  border-color: #54ecc4;
+  background-image: url('../../../public/images/checkbox.png'); /* Add the path to your background image */
+  background-size: cover; /* Adjust background size as needed */
+}
+
+#Agree .SignUp2_check_box label {
   font-size: 16px;
   color: white;
+  cursor: pointer;
 }
 
-#Agree .check_box input:checked + label {
-  background-image: url('/src/pages/SignUpPage/—Pngtree—check mark icon_3566306.png'); /* Replace 'path/to/your/checked-image.png' with the path to your checked image */
-  background-size: 20px 20px; /* Adjust the size of the background image */
-  background-repeat: no-repeat; /* Ensure the image doesn't repeat */
-  background-position: left center; /* Adjust the position of the image within the label */
-  padding-left: 40px; /* Adjust padding to make space for the image */
-}
-
-
-#Agree .check_box label:before {
-  display: inline-block; /* Ensure the content takes up space for background image */
-  width: 20px; /* Adjust the width of the content (image) */
-  height: 20px; /* Adjust the height of the content (image) */
-  margin-right: 10px; /* Add margin between the content and the text */
-}
-
-#Agree .check_box label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 16px; /* Adjust the width and height to control the size of the circle */
-  height: 16px;
-  border: 2px solid white; /* Border color of the circle */
-  border-radius: 4px; /* Make it a rounded rectangle */
-  background-color: #131313; /* Background color of the checkbox */
-  transition: background-color 0.3s; /* Add a transition for a smooth effect */
-}
-
-#Agree .check_box input:checked + label:before {
-  background-color: #54ecc4; /* Change background color when checkbox is checked */
-  border-color: #54ecc4; /* Change border color when checkbox is checked */
+#Agree .SignUp2_check_box input[type="checkbox"]:checked + label {
+  color: white;
+  border-color: #54ecc4;
 }
 
 

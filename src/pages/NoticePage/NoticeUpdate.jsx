@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import Header from '../../components/LimitHeader.jsx';
 import styled, { css } from 'styled-components';
-import Footer from '../../components/Footer';
+import Footer from '../../components/Footer.jsx';
 import data from './data.js';
 import { Link } from 'react-router-dom';
-import "./NoticeCreate.css"
+import "./NoticeUpdate.css"
 
-function NoticeCreate(){
+function NoticeUpdate(){
     return(
         <div>
             <div id='NoCr_main'>
             <div id='NoCr_box'>
-            <p id='NoCr_title'>공지사항 등록</p>
+            <p id='NoCr_title'>공지사항 수정</p>
             
             <form action="../noticeadmin">
                 <input id="NoCr_Cr_title" placeholder='글 제목을 입력하세요*'></input>
@@ -29,9 +30,9 @@ function NoticeCreate(){
             </form>
             </div>
         </div>
-        <Footer />
+        <Footer></Footer>
         </div>
     )
 }
 
-export default NoticeCreate;
+export default NoticeUpdate;

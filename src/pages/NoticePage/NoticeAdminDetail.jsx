@@ -1,9 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import data from './data'; 
+import Header from '../../components/LimitHeader'
 import "./NoticeDetail.css"
 
-const NoticeDetail = () => {
+const NoticeAdminDetail = () => {
   const { id } = useParams();
 console.log(id);// 콘솔에 id 출력
 
@@ -21,11 +22,13 @@ console.log(id);// 콘솔에 id 출력
     <div id="ND_main">
       <div id='ND_box'>
       <p id='ND_title'>{title}</p>
+      <div id='ND_NameBox'>
       <p id="ND_name">{name}</p>
+      </div>
       <p id="ND_contents">{contents}</p>
       </div>
     </div>
   );
 };
 
-export default NoticeDetail;
+export default NoticeAdminDetail;
