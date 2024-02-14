@@ -301,3 +301,8 @@
     color: #131313;
     cursor: pointer;
 }
+
+
+.ManStudyApply input.error {
+    border: 1px solid red;
+  }
