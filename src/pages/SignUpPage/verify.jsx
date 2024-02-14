@@ -14,8 +14,8 @@ export default function SignUp1() {
       const response = await axios.post('http://localhost:8090/signup/verify', {
          uniqueCode : uniqueCode,
       });
-
-      if (response.status === 200 ) {
+      
+      if (response.status === 302 ) {
           navigate('/SignUp02');
       } else {
           setErrorMessage('로그인 실패'); // 실패 시 에러 메시지 설정
