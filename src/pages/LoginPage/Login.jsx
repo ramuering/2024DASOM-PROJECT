@@ -1,70 +1,93 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react'
 import './Login.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import firebase from 'firebase/app'; // Import firebase from npm instead of using external scripts
+import 'firebase/auth'; // Import firebase/auth module
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 import Header from '../../components/Header';
 
-const Login = () => {
+const firebaseConfig = {
+  apiKey: "AIzaSyAPj6z3yEcXMZnXhfPu1YMFM3zIKwLFdh8",
+  authDomain: "dasom-login.firebaseapp.com",
+  projectId: "dasom-login",
+  storageBucket: "dasom-login.appspot.com",
+  messagingSenderId: "595103046458",
+  appId: "1:595103046458:web:fa37ce8c8ef7f6bf724e03",
+  measurementId: "G-F95JBVQQN7"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  const Login = ()=>{
+
   const [username, setusername] = useState('');
   const [password, setpassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {
-    try {
-      const response = await axios.post('http://localhost:8090/login', {
-        username: username,
-        password: password,
-      });
+  const onClick = async () => {
+    const result = await Login(username, password);
+    console.log(result);
+    const { accessToken, refreshToken } = result;
+    localStorage.setItem('access', accessToken); 
+    localStorage.setItem('refresh', refreshToken);
+  }
+    const handleSubmit = async () => {
+        try {
+          const response = await axios.post('http://localhost:8090/login', {
+                username : username ,
+                password : password
+          });
 
-      if (response.status === 200) {
-        // 로그인 성공 시 토큰 저장
-        localStorage.setItem('token', response.data.token);
-        console.log(response.status);
-        // 토큰을 헤더에 추가하여 요청 보내기
-        const config = {
-          headers: {
-            Authorization: `Bearer ${response.data.token}`,
-          },
-        };
+          if (response.status === 200) {
+          console.log(response.status)
+            console.log('부원 인증 성공');
+            navigate('/main');  // Use navigate instead of history.push
+            
+          } else {
+          console.log(response.status)
+            console.error('부원 인증 실패');
+          }
+        } catch (error) {
+          if (error.response && error.response.status === 200) {
+            console.error('인증완료.');
+          } else {
+            console.error('에러:', error);
+          }
+        }
+      };
 
-       // navigate('/Main');
-      }
-    } catch (error) {
-      console.error("로그인 오류: ", error);
-      // 로그인 실패 시 처리할 내용 추가
-      alert("로그인에 실패했습니다. 아이디와 비밀번호를 다시 확인해주세요.");
-    }
-  };
-
-  return (
-    <div className='login-content'>
-      <Header />
-      <div className='dasom'>DASOM</div>
-      <div className='login-member'>
+    return(
+      <div className='login-content'>
+        <Header />
+        <div className='dasom'>DASOM</div>
+        <div className='login-member'>
         <div className='noMember'>회원이 아니신가요?</div>
-        <Link to='/signup01' className='goMember'>
-          <div>회원가입 하기</div>
-        </Link>
-      </div>
-      <input
+        <Link to='/signup01' className='goMember'><div>회원가입 하기</div></Link>
+        </div>
+        <input
         type='email'
-        className='login-id'
+        className="login-id"
         placeholder='아이디'
         value={username}
         onChange={(e) => setusername(e.target.value)}
-      />
-      <input
+        />
+        <input
         type='password'
-        className='login-password'
+        className="login-password"
         placeholder='비밀번호'
         value={password}
         onChange={(e) => setpassword(e.target.value)}
-      />
-      <button className='login-complet' onClick={handleSubmit}>
-        로그인 하기
-      </button>
-    </div>
-  );
-};
+        />
+        <button className='login-complet' onClick={handleSubmit}>로그인 하기</button>
+      </div>
+      
+    )
+       
+}
 
-export default Login;
+export default Login
