@@ -7,6 +7,8 @@ function ManProjectApply() {
         const newWeek = `${activityWeeks.length + 4}주차`;
                   setActivityWeeks([...activityWeeks, newWeek]);
                 };
+        
+                
   return (
     <div className='ManStudyApply'>
     <div className='ManStudyApply-title'>프로젝트 등록</div>
@@ -21,7 +23,7 @@ function ManProjectApply() {
               <div className='ManStudyApply-box'>
       <input class="ManStudyApply-number"
               type='text'
-              placeholder='기수을 입력하세요 *' autoFocus></input></div>
+              placeholder='기수을 입력하세요 *' autoFocus  required></input></div>
               <div className='ManStudyApply-box'>
       <input class="ManStudyApply-book"
               type='text'
@@ -61,7 +63,6 @@ function ManProjectApply() {
       <button className='ManStudyApply-select'>사진 선택</button>
       <div className='ManStudyApply-activ'>활동 사진</div>
       <button className='ManStudyApply-select'>사진 선택</button>
-
       <button className='ManStudyApply-button'>프로젝트 등록</button>
 </div>
   )
