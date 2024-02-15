@@ -46,7 +46,7 @@ const firebaseConfig = {
           if (response.status === 200) {
           console.log(response.status)
             console.log('부원 인증 성공');
-            //navigate('/main');  // Use navigate instead of history.push
+            navigate('/main');  // Use navigate instead of history.push
             
           } else {
           console.log(response.status)
