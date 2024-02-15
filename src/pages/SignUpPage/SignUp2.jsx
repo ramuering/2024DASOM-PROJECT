@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 const SignUp2 = () => {
+  
   const [memEmail, setmemEmail] = useState('');
   const [memPassword, setmemPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -193,8 +194,8 @@ const SignUp2 = () => {
             onChange={() => handleAgreementChange('agree2')}
           />
           <label htmlFor="agree2">[필수] 다솜 이용 약관에 동의</label>
+          <span class="tooltiptext">다솜 이용 약관에 동의합니다.</span>
         </div>
-
         <div className="SignUp2_check_box">
           <input
             type="checkbox"
@@ -204,6 +205,7 @@ const SignUp2 = () => {
             onChange={() => handleAgreementChange('agree3')}
           />
           <label htmlFor="agree3">[필수] 개인정보 수집 및 이용에 동의</label>
+          <span class="tooltiptext">개인정보 수집 및 이용에 동의합니다.</span>
         </div>
 
         <div className="SignUp2_check_box">
@@ -215,6 +217,7 @@ const SignUp2 = () => {
             onChange={() => handleAgreementChange('agree4')}
           />
           <label htmlFor="agree4">[선택] 마켓팅 정보 수신 및 선택적 개인정보 제공</label>
+          <span class="tooltiptext">마케팅 정보 수신 및 개인정보 제공에 동의합니다.</span>
         </div>
           </fieldset>
           <button className='SignUp02_final' onClick={handleSubmit}>다솜 가입 완료하기</button>

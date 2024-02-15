@@ -389,3 +389,24 @@ fieldset{
   color: #131313;
   background-color: #54ecc4;
 }
+
+/* 툴팁 스타일 */
+.tooltiptext {
+  visibility: hidden; /* 기본적으로 숨김 */
+  width: 150px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  left: 1300px;
+  transform: translateX(-50%); /* 가운데 정렬 */
+  transition: max-height 0.5s; /* 부드러운 툴팁 표시 애니메이션 */}
+
+/* 호버 시 툴팁을 보여줌 */
+.SignUp2_check_box:hover .tooltiptext {
+  visibility: visible;
+
+}
