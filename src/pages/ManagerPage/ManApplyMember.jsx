@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
+import axios from 'axios';
 import './ManApplyMember.css';
 import Header from '../../components/Header';
 import { useAppContext } from '../../contexts/AppContext';
@@ -29,23 +30,40 @@ function ManApplyMember() {
   };
 
   const [editable, setEditable] = useState(false);
+
   const [dates, setDates] = useState({
-    documentSubmissionStart: '',
-    documentSubmissionEnd: '',
-    documentResultStart: '',
-    documentResultEnd: '',
-    InterviewStart: '',
-    InterviewEnd: '',
-    finalAnnouncementStart: '',
-    finalAnnouncementEnd: '',
+    applyStart: '',
+    applyEnd: '',
+    firstAnnounce: '',
+    interviewStart: '',
+    interviewEnd: '',
+    secondAnnounce: '',
   });
 
   const handleEditClick = () => {
     setEditable(true);
   };
 
-  const handleSaveClick = () => {
+  const handleSaveClick = async () => {
     setEditable(false);
+    try {
+      // 서버로 선택된 날짜를 전송
+      const response = await axios.post('http://localhost:8090/recruit', { 
+        applyStart,
+        applyEnd,
+        firstAnnounce,
+        interviewStart,
+        interviewEnd,
+        secondAnnounce,
+       });
+      if (response.status === 201) {
+        alert('날짜가 성공적으로 저장되었습니다!');
+      } else {
+        alert('날짜 저장 중 오류가 발생했습니다.');
+      }
+    } catch (error) {
+      console.error('날짜 저장 중 오류 발생:', error);
+    }
   };
 
   const handleDateChange = (fieldName, value) => {
@@ -66,14 +84,33 @@ function ManApplyMember() {
     });
     setApplyMembers(updatedApplyMembers);
   };
-  const handleSendPassMembersToBackend = () => {
+
+  const handleSendPassMembersToBackend = async () => {
     const passMembers = applyMembers.filter((applyMember) => applyMember.status === 'pass');
-    
-    // 서버로 'pass'인 멤버들을 전송하는 로직
+  
     console.log('Pass Members:', passMembers);
-    // fetch('/api/sendPassMembers', { method: 'POST', body: JSON.stringify(passMembers) });
-    alert("합격자 정보를 전송하였습니다!");
+    
+    try {
+      const response = await fetch('http://localhost:8090/recruit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(passMembers),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      // 서버 응답을 기다린 후에 alert를 표시
+      alert("합격자 정보를 전송하였습니다!");
+    } catch (error) {
+      console.error('Error sending data to the server:', error);
+      alert('서버와의 통신 중 오류가 발생했습니다.');
+    }
   };
+
 
   return (
     <div className='manAM'>
@@ -84,42 +121,38 @@ function ManApplyMember() {
           <div className='manAM-date-row'>
             <p>서류 접수</p>
             <DateRangeInput
-              startDate={dates.documentSubmissionStart}
-              endDate={dates.documentSubmissionEnd}
-              onChangeStart={(value) => handleDateChange('documentSubmissionStart', value)}
-              onChangeEnd={(value) => handleDateChange('documentSubmissionEnd', value)}
+              startDate={dates.applyStart}
+              endDate={dates.applyEnd}
+              onChangeStart={(value) => handleDateChange('applyStart', value)}
+              onChangeEnd={(value) => handleDateChange('applyEnd', value)}
               readOnly={!editable}
             />
           </div>
           <div className='manAM-date-row'>
             <p>서류 결과 발표</p>
-            <DateRangeInput
-              startDate={dates.documentResultStart}
-              endDate={dates.documentResultEnd}
-              onChangeStart={(value) => handleDateChange('documentResultStart', value)}
-              onChangeEnd={(value) => handleDateChange('documentResultEnd', value)}
+            <DateInput 
+              value={dates.firstAnnounce}
+              onChange={(value) => handleDateChange('firstAnnounce', value)}
               readOnly={!editable}
-            />
+               />
           </div>
           <div className='manAM-date-row'>
             <p>대면 면접</p>
             <DateRangeInput
-              startDate={dates.InterviewStart}
-              endDate={dates.InterviewEnd}
-              onChangeStart={(value) => handleDateChange('InterviewStart', value)}
-              onChangeEnd={(value) => handleDateChange('InterviewEnd', value)}
+              startDate={dates.interviewStart}
+              endDate={dates.interviewEnd}
+              onChangeStart={(value) => handleDateChange('interviewStart', value)}
+              onChangeEnd={(value) => handleDateChange('interviewEnd', value)}
               readOnly={!editable}
             />
           </div>
           <div className='manAM-date-row'>
             <p>최종 발표</p>
-            <DateRangeInput
-              startDate={dates.finalAnnouncementStart}
-              endDate={dates.finalAnnouncementEnd}
-              onChangeStart={(value) => handleDateChange('finalAnnouncementStart', value)}
-              onChangeEnd={(value) => handleDateChange('finalAnnouncementEnd', value)}
+            <DateInput 
+              value={dates.secondAnnounce}
+              onChange={(value) => handleDateChange('secondAnnounce', value)}
               readOnly={!editable}
-            />
+               />
           </div>
         </div>
         {editable ? (
