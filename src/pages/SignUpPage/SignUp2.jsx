@@ -39,6 +39,10 @@ const SignUp2 = () => {
   };
 
   const handleSubmit = async () => {
+    if (!agreement.agree2 || !agreement.agree3) {
+      alert('[필수] 항목에 동의 해 주세요.');
+      return;
+    }
     if (memPassword !== confirmPassword) {
       setPasswordMismatch(true);
       return;
@@ -115,7 +119,7 @@ const SignUp2 = () => {
           type={showPassword ? 'text' : 'password'} // 비밀번호 보이기/숨기기 상태에 따라 input type 변경
           name="confirmPassword"
           autoComplete='off'
-          placeholder='비밀번호를 다시 입력하세요.'
+          placeholder='비밀번호 확인'
           value={confirmPassword}
           onChange={handleConfirmPasswordChange}
         />

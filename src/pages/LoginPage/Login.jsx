@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import firebase from 'firebase/app'; // Import firebase from npm instead of using external scripts
+import 'firebase/auth'; // Import firebase/auth module
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
@@ -16,6 +18,7 @@ const firebaseConfig = {
   appId: "1:595103046458:web:fa37ce8c8ef7f6bf724e03",
   measurementId: "G-F95JBVQQN7"
 };
+
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
@@ -26,10 +29,18 @@ const firebaseConfig = {
   const [password, setpassword] = useState('');
   const navigate = useNavigate();
 
+  const onClick = async () => {
+    const result = await Login(username, password);
+    console.log(result);
+    const { accessToken, refreshToken } = result;
+    localStorage.setItem('access', accessToken); 
+    localStorage.setItem('refresh', refreshToken);
+  }
     const handleSubmit = async () => {
         try {
           const response = await axios.post('http://localhost:8090/login', {
-                username : username , password : password
+                username : username ,
+                password : password
           });
 
           if (response.status === 200) {
