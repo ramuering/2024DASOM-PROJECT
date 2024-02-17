@@ -390,23 +390,54 @@ fieldset{
   background-color: #54ecc4;
 }
 
-/* 툴팁 스타일 */
-.tooltiptext {
-  visibility: hidden; /* 기본적으로 숨김 */
-  width: 150px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
+.agree_toggle1{
   position: absolute;
-  z-index: 1;
-  left: 1300px;
-  transform: translateX(-50%); /* 가운데 정렬 */
-  transition: max-height 0.5s; /* 부드러운 툴팁 표시 애니메이션 */}
+  right: 1040px;
+  outline: none;
+  border: none;
+  background-color: #131313;
+  cursor: pointer;
+  top: 2360px;
+}
 
-/* 호버 시 툴팁을 보여줌 */
-.SignUp2_check_box:hover .tooltiptext {
-  visibility: visible;
+.agree_toggle2{
+  position: absolute;
+  right: 1040px;
+  outline: none;
+  border: none;
+  background-color: #131313;
+  cursor: pointer;
+  top: 2435px;
+}
 
+.agree_toggle3{
+  position: absolute;
+  right: 1040px;
+  outline: none;
+  border: none;
+  background-color: #131313;
+  cursor: pointer;
+  top: 2509px;
+}
+
+.div-box {
+  display: none; /* 기본적으로 숨겨짐 */
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.agree1_content{
+  position: absolute;
+  right: 1090px;
+  top: 2300px;
+}
+
+.agree2_content{
+  position: absolute;
+}
+.agree3_content{
+  position: absolute;
 }
