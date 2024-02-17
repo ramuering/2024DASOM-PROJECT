@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as XLSX from 'xlsx';
 import axios from 'axios';
 import './ManApplyMember.css';
@@ -6,31 +6,7 @@ import Header from '../../components/Header';
 import { useAppContext } from '../../contexts/AppContext';
 
 function ManApplyMember() {
-  const [applyMembers, setApplyMembers] = useState([
-    { id: 1, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1', status: '' },
-    { id: 3, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1', status: '' },
-    { id: 2, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1', status: '' },
-    { id: 4, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 5, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 6, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 7, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 8, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 9, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 10, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 11, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 12, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 13, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-  ]);
-
-  const handleExportExcel = () => {
-    const ws = XLSX.utils.json_to_sheet(applyMembers);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-    XLSX.writeFile(wb, 'dasom_applicant_data.xlsx');
-  };
-
-  const [editable, setEditable] = useState(false);
-
+  const [applyMembers, setApplyMembers] = useState([]);
   const [dates, setDates] = useState({
     applyStart: '',
     applyEnd: '',
@@ -40,6 +16,60 @@ function ManApplyMember() {
     secondAnnounce: '',
   });
 
+  const handleExportExcel = () => {
+    const ws = XLSX.utils.json_to_sheet(applyMembers);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    XLSX.writeFile(wb, 'dasom_applicant_data.xlsx');
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8090/32/applicants'); 
+        setApplyMembers(response.data);  
+        if (response.status === 200) {
+          console.log('지원자 목록 가져오기 성공');
+        } 
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          console.error('Error fetching data:', error);
+          console.log('지원자 데이터가 없습니다.')
+        } else {
+          console.log('지원자 목록 가져오기 실패', error);
+        }
+      } finally {
+        console.log(applyMembers)
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8090/32'); 
+        setDates(response.data);
+        if (response.status === 200) {
+          console.log('스케줄 가져오기 성공');
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          console.error('Error fetching data: ', error);
+          console.log('스케줄 데이터가 없습니다.');
+        } else {
+          console.error('스케줄 가져오기 실패', error);
+        }
+      } finally {
+        console.log(dates)
+      }
+    };
+    fetchData();
+  }, []);
+
+
+  const [editable, setEditable] = useState(false);
+
   const handleEditClick = () => {
     setEditable(true);
   };
@@ -47,8 +77,16 @@ function ManApplyMember() {
   const handleSaveClick = async () => {
     setEditable(false);
     try {
+      const {
+        applyStart,
+        applyEnd,
+        firstAnnounce,
+        interviewStart,
+        interviewEnd,
+        secondAnnounce,
+      } = dates;
       // 서버로 선택된 날짜를 전송
-      const response = await axios.post('http://localhost:8090/recruit', { 
+      const response = await axios.put('http://localhost:8090/recruit/32', { 
         applyStart,
         applyEnd,
         firstAnnounce,
@@ -58,11 +96,11 @@ function ManApplyMember() {
        });
       if (response.status === 201) {
         alert('날짜가 성공적으로 저장되었습니다!');
-      } else {
-        alert('날짜 저장 중 오류가 발생했습니다.');
       }
     } catch (error) {
       console.error('날짜 저장 중 오류 발생:', error);
+    } finally {
+      console.log(dates);
     }
   };
 
@@ -75,10 +113,10 @@ function ManApplyMember() {
 
   const { closeApplication, isApplicationOpen } = useAppContext();
 
-  const handleButtonClick = (id, status) => {
+  const handleButtonClick = (acStudentNo, acStatus) => {
     const updatedApplyMembers = applyMembers.map((applyMember) => {
-      if (applyMember.id === id) {
-        return { ...applyMember, status: status };
+      if (applyMember.acStudentNo === acStudentNo) {
+        return { ...applyMember, acStatus: acStatus };
       }
       return applyMember;
     });
@@ -89,25 +127,22 @@ function ManApplyMember() {
     const passMembers = applyMembers.filter((applyMember) => applyMember.status === 'pass');
   
     console.log('Pass Members:', passMembers);
-    
+  
     try {
-      const response = await fetch('http://localhost:8090/recruit', {
-        method: 'POST',
+      const response = await axios.post('http://localhost:8090/recruit/32', passMembers, {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(passMembers),
       });
-  
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+      if (response.status === 200) {
+        alert('합격자 정보를 전송하였습니다!');
       }
-  
-      // 서버 응답을 기다린 후에 alert를 표시
-      alert("합격자 정보를 전송하였습니다!");
     } catch (error) {
       console.error('Error sending data to the server:', error);
-      alert('서버와의 통신 중 오류가 발생했습니다.');
+      console.log('합격자 전송 실패');
+      alert('합격자 정보 전송에 실패하였습니다.')
+    } finally {
+      console.log(passMembers);
     }
   };
 
@@ -176,17 +211,17 @@ function ManApplyMember() {
           <ul>
             {applyMembers.map((applyMember) => (
               <li key={applyMember.id}>
-                <div className='manAM-infodepartment'>{`${applyMember.department}`}</div>
-                <div className='manAM-infoname'>{`${applyMember.name}`}</div>
-                <div className='manAM-infograde'>{`${applyMember.grade}`}</div>
+                <div className='manAM-infodepartment'>{`${applyMember.acDepartment}`}</div>
+                <div className='manAM-infoname'>{`${applyMember.acName}`}</div>
+                <div className='manAM-infograde'>{`${applyMember.acGrade}`}</div>
                 <button
-                  className={`manAM-infopass ${applyMember.status === 'pass' ? 'manAM-selected' : ''}`}
-                  onClick={() => handleButtonClick(applyMember.id, 'pass')}
+                  className={`manAM-infopass ${applyMember.acStatus === 'pass' ? 'manAM-selected' : ''}`}
+                  onClick={() => handleButtonClick(applyMember.acStudentNo, 'pass')}
                 >
                   합격
                 </button>
                 <button
-                  className={`manAM-infononPass ${applyMember.status === 'nonPass' ? 'manAM-selected' : ''}`}
+                  className={`manAM-infononPass ${applyMember.acStatus === 'nonPass' ? 'manAM-selected' : ''}`}
                   onClick={() => handleButtonClick(applyMember.id, 'nonPass')}
                 >
                   불합격
