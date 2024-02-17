@@ -29,13 +29,16 @@ const firebaseConfig = {
     const handleSubmit = async () => {
         try {
           const response = await axios.post('http://localhost:8090/login', {
-                username : username , password : password
+                username : username , password :password
           });
 
           if (response.status === 200) {
           console.log(response.status)
             console.log('부원 인증 성공');
-            navigate('/main');  // Use navigate instead of history.push
+            const accessToken = response.headers['Authorization'];
+                     localStorage.setItem("accessToken", accessToken);
+            localStorage.setlitem("Authorizationrefresh", ["Authorizationrefresh"]);
+            //navigate('/main');  // Use navigate instead of history.push
             
           } else {
           console.log(response.status)
