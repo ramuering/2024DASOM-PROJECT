@@ -25,16 +25,7 @@ function ManStudyApply() {
               <div className='ManStudyApply-box'>
       <input class="ManStudyApply-book"
               type='text'
-              placeholder='교재를 입력하세요 ' autoFocus></input></div>
-              <div className='ManStudyApply-box'>
-      <input class="ManStudyApply-lecture"
-              type='text'
-              placeholder='강의를 입력하세요 ' autoFocus></input></div>
-              <div className='ManStudyApply-box'>
-      <input class="ManStudyApply-notion"
-              type='text'
-              placeholder='노션을 입력하세요' autoFocus></input></div>
-
+              placeholder='참고자료를 입력하세요 ' autoFocus></input></div>
       <div className='ManStudyApply-subtitle'>주차 별 활동 내역</div>
 
       <div className='ManStudyApply-box'>
