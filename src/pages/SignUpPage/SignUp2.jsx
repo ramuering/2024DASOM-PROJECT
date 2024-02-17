@@ -5,7 +5,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
+
 const SignUp2 = () => {
+  
   const [memEmail, setmemEmail] = useState('');
   const [memPassword, setmemPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -20,6 +22,9 @@ const SignUp2 = () => {
   });
   const [passwordMismatch, setPasswordMismatch] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showDivBox1, setShowDivBox1] = useState(false);
+  const [showDivBox2, setShowDivBox2] = useState(false);
+  const [showDivBox3, setShowDivBox3] = useState(false);
   const navigate = useNavigate();
 
   const handleAgreementChange = (checkboxId) => {
@@ -69,6 +74,21 @@ const SignUp2 = () => {
   const handleConfirmPasswordChange = (event) => {
     setConfirmPassword(event.target.value);
     setPasswordMismatch(memPassword !== event.target.value);
+  };
+
+  const toggleDivBox1 = () => {
+    setShowDivBox1(!showDivBox1);
+  };
+
+  const toggleDivBox2 = () => {
+    setShowDivBox2(!showDivBox2);
+  };
+
+  const toggleDivBox3 = () => {
+    setShowDivBox3(!showDivBox3);
+  };
+
+  const handleClick = () => {
   };
 
   return (
@@ -195,8 +215,12 @@ const SignUp2 = () => {
           />
           <label htmlFor="agree2">[필수] 다솜 이용 약관에 동의</label>
         </div>
-
-        <div className="SignUp2_check_box">
+              <button className="agree_toggle1"
+              type="button"
+              onClick={toggleDivBox1}>
+            <img src="images/agree.png"/>
+             </button>        
+          <div className="SignUp2_check_box">
           <input
             type="checkbox"
             id="agree3"
@@ -206,7 +230,11 @@ const SignUp2 = () => {
           />
           <label htmlFor="agree3">[필수] 개인정보 수집 및 이용에 동의</label>
         </div>
-
+        <button className="agree_toggle2"
+              type="button"
+              onClick={toggleDivBox2}>
+            <img src="images/agree.png"/>
+             </button>   
         <div className="SignUp2_check_box">
           <input
             type="checkbox"
@@ -217,11 +245,35 @@ const SignUp2 = () => {
           />
           <label htmlFor="agree4">[선택] 마켓팅 정보 수신 및 선택적 개인정보 제공</label>
         </div>
+        <button className="agree_toggle3"
+              type="button"
+              onClick={toggleDivBox3}>
+            <img src="images/agree.png"/>
+             </button>   
           </fieldset>
+
+          {/* Div Box 1 */}
+          <div className="div-box agree1_content" style={{ display: showDivBox1 ? 'block' : 'none' }}>
+            {/* 여기에 div 박스 내용을 추가하세요 */}
+            <p>Div Box 1의 내용</p>
+          </div>
+
+          {/* Div Box 2 */}
+          <div className="div-box agree2_content" style={{ display: showDivBox2 ? 'block' : 'none' }}>
+            {/* 여기에 div 박스 내용을 추가하세요 */}
+            <p>Div Box 2의 내용</p>
+          </div>
+
+          {/* Div Box 3 */}
+          <div className="div-box agree3_content" style={{ display: showDivBox3 ? 'block' : 'none' }}>
+            {/* 여기에 div 박스 내용을 추가하세요 */}
+            <p>Div Box 3의 내용</p>
+          </div>
+
           <button className='SignUp02_final' onClick={handleSubmit}>다솜 가입 완료하기</button>
     </div>
 
   );
 }
-    
+
 export default SignUp2;
