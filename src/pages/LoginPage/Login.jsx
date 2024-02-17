@@ -29,13 +29,13 @@ const firebaseConfig = {
   const [password, setpassword] = useState('');
   const navigate = useNavigate();
 
-  const onClick = async () => {
-    const result = await Login(username, password);
-    console.log(result);
-    const { accessToken, refreshToken } = result;
-    localStorage.setItem('access', accessToken); 
-    localStorage.setItem('refresh', refreshToken);
-  }
+//   const onClick = async () => {
+//     const result = await Login(username, password);
+//     console.log(result);
+//     const { accessToken, refreshToken } = result;
+//     localStorage.setItem('access', accessToken);
+//     localStorage.setItem('refresh', refreshToken);
+//   }
     const handleSubmit = async () => {
         try {
           const response = await axios.post('http://localhost:8090/login', {
@@ -44,22 +44,20 @@ const firebaseConfig = {
                 password : password
           });
 
-          if (response.status === 200) {
+          if (response.status === 200 && response.headers.authorization) {
           console.log(response.status)
             console.log('부원 인증 성공');
-            const accessToken = response.headers['Authorization'];
-                     localStorage.setItem("accessToken", accessToken);
-            localStorage.setlitem("Authorizationrefresh", ["Authorizationrefresh"]);
+             localStorage.setItem("accessToken", response.headers.authorization);
+
+             //axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
             //navigate('/main');
             
-          } else {
-          console.log(response.status)
-            console.error('부원 인증 실패');
           }
         } catch (error) {
           if (error.response && error.response.status === 200) {
             console.error('인증완료.');
           } else {
+          alert("아이디 혹은 비밀번호가 틀렸습니다")
             console.error('에러:', error);
           }
         }
