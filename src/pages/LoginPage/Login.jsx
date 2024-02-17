@@ -47,7 +47,6 @@ const firebaseConfig = {
           if (response.status === 200) {
           console.log(response.status)
             console.log('부원 인증 성공');
-<<<<<<< HEAD
             const accessToken = response.headers['Authorization'];
                      localStorage.setItem("accessToken", accessToken);
             localStorage.setlitem("Authorizationrefresh", ["Authorizationrefresh"]);
