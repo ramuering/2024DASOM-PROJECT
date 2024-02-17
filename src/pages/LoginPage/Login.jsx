@@ -50,7 +50,7 @@ const firebaseConfig = {
             const accessToken = response.headers['Authorization'];
                      localStorage.setItem("accessToken", accessToken);
             localStorage.setlitem("Authorizationrefresh", ["Authorizationrefresh"]);
-            //navigate('/main');  // Use navigate instead of history.push
+            //navigate('/main');
             
           } else {
           console.log(response.status)
