@@ -8,6 +8,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 import Header from '../../components/Header';
+import { useCookies } from 'react-cookie';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAPj6z3yEcXMZnXhfPu1YMFM3zIKwLFdh8",
@@ -28,6 +29,7 @@ const firebaseConfig = {
   const [username, setusername] = useState('');
   const [password, setpassword] = useState('');
   const navigate = useNavigate();
+   const [, setCookie] = useCookies(['refreshToken']);
 
 //   const onClick = async () => {
 //     const result = await Login(username, password);
@@ -44,10 +46,12 @@ const firebaseConfig = {
                 password : password
           });
 
-          if (response.status === 200 && response.headers.authorization) {
+          if (response.status === 200 ) {
           console.log(response.status)
             console.log('부원 인증 성공');
-             localStorage.setItem("accessToken", response.headers.authorization);
+             localStorage.setItem("accessToken", response.data.data.accessToken);
+             setCookie("refreshToken", response.data.data.refreshToken)
+             console.log(response.data.data.accessToken)
 
              //axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
             //navigate('/main');
