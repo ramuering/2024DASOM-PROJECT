@@ -9,8 +9,8 @@ function ManStudyApply() {
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [activityWeeks, setActivityWeeks] = useState(["1주차"]);
-    const [thumbnailPic, setThumbnailPic] = useState(null); // 썸네일 사진 상태 추가
-    const [studyPic, setStudyPic] = useState(null); // 활동 사진 상태 추가
+    const [thumbnailPic, setThumbnailPic] = useState(null); 
+    const [studyPic, setStudyPic] = useState(null); 
 
     const addWeek = () => {
         const newWeek = `${activityWeeks.length + 4}주차`;

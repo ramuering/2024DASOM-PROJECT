@@ -53,11 +53,11 @@ const Main = () => {
           </div>
           <div className="box">
             <div className='part-info-title'>Server</div>
-            <p className='part-info-content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam voluptates debitis eligendi, nulla adipisci illo dignissimos obcaecati rerum veniam nihil harum accusamus tempore ut doloremque, facilis doloribus laborum suscipit ex.</p>
+            <p className='part-info-content'>Spring 프레임 워크, 관계형 데이터베이스와AWS를 기반으로 서버를 구축및 운영하는 과정을 학습합니다. 세미나, 코드리뷰, 스터디를 통해 개발 실력을 증진시킵니다.</p>
           </div>
           <div className="box">
             <div className='part-info-title'>Web</div>
-            <p className='part-info-content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad iste, aperiam natus magnam quam temporibus nam quas aspernatur possimus? At nulla quos voluptatibus quia harum dicta voluptates eligendi aut quidem.</p>
+            <p className='part-info-content'>UI 구현, 서버 통신 등 웹 서비스 개발에 필요한 역량들을 학습합니다. 또한 기획자, 디자이너, 서버 개발자와의 협업 경험을 통해 개발 협업 방식을 익힐 수 있습니다.</p>
           </div>
           <div className="box">
             <div className='part-info-title'>App</div>
