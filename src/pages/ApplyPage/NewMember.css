@@ -33,16 +33,18 @@
 #NMB-bgstyle{
     width: 850px;
     height: 250px;
-    border-radius: 15px;
+    border-radius: 25px;
     margin-top: 20px;
     background-color: #323232;
 }
+
   .NMB-small-box{
     width: 410px;
     height: 300px;
     background-color: #323232;
-    border-radius: 15px;
+    border-radius: 25px;
     float: left;
+
   }
   #NMB-null-box2{
     width: 30px;
@@ -52,8 +54,8 @@
 
   #NMB-Main-text{
     text-align: center;
-    font-size: 54px;
-    font-weight: bold;
+    font-size: 40px;
+    font-weight: 500;
     margin-bottom: 15vh;
   }
 
@@ -63,7 +65,7 @@
     text-align: left;
     margin:0 0 0 30px;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
   }
 
   .NMB-sub-text{
@@ -77,6 +79,7 @@
   .NMB-align-box{
     float: left;
   }
+
   .NMB-align-box > img{
     margin: 0 50px;
   }
@@ -91,7 +94,7 @@
     vertical-align: middle;
     text-align: left;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 500;
     margin: 0;
   }
 
@@ -111,15 +114,16 @@
   }
 
   .NMB-linkButton{
+    margin-top: 50px;
     width: 235px;
-    height: 95px;
+    height: 70px;
     background: none;
-    border: 2px solid #54ECC4;
-    line-height: 95px;
+    border: 1px solid #54ECC4;
+    line-height: 70px;
     border-radius: 25px;
     color: #54ECC4;
     text-align: center;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     transition: all 0.2s;
   }
@@ -160,18 +164,18 @@
   #NMB-ques-text{
     text-align: center;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 500;
   }
 
   #NMB-ques-subtext{
     text-align: center;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
     color: #D9D9D9;
   }
 
   .NMB-ques-text{
-    font-weight: bold;
+    font-weight: 500;
     margin-left: 20px;
     font-size: 16px;
   }

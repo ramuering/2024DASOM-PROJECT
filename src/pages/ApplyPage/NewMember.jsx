@@ -166,7 +166,7 @@ function NewMember() {
           <div id="NMB-center-button">
           {isApplicationOpen ? (
             <Link to="../apply01" className="NMB-linkButton">
-              지원하기
+              지원하러 가기
             </Link>
           ) : (
             <span id='NMB-center-button-closed'>지원 마감</span>
