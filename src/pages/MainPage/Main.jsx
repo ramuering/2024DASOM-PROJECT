@@ -71,7 +71,7 @@ const Main = () => {
 
       <div className='part'>
         <div className='part-title'>DASOM은 총 4개의 파트로 나뉘어져 있어요</div>
-        <Link to='/apply01' className='go-recruit'>지원하러 가기</Link>
+        <Link to='/apply01' className='go-recruit'>하러 가기 &gt;</Link>
 
         <div className='box-container'>
           <div className="box">
