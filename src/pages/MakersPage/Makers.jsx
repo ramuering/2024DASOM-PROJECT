@@ -29,38 +29,41 @@ function Makers() {
       <div className='makers-body'>
         <div className='makers-position'>Lead</div><div className='makers-line1'></div>
         <div className='makers-member'>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+          <Member profile='./images/myPage/hosungProfile.jpg' name='남호성' gi='29기'></Member>
         </div>
 
         <div className='makers-position'>Pm</div><div className='makers-line2'></div>
         <div className='makers-member'>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='남호성' gi='29기'></Member>
+
         </div>
 
         <div className='makers-position'>Back</div><div className='makers-line3'></div>
         <div className='makers-member'>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='김나리' gi='32기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='김신영' gi='32기'></Member>
+          <Member profile='./images/myPage/hosungProfile.jpg' name='남호성' gi='29기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='송영민' gi='32기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='이권희' gi='32기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='우승원' gi='32기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='유승완' gi='32기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='윤도훈' gi='32기'></Member>
         </div>
 
         <div className='makers-position'>Front</div><div className='makers-line4'></div>
         <div className='makers-member'>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='김수현' gi='32기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='김아람' gi='32기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='신솔미' gi='32기'></Member>
+          <Member profile='./images/myPage/yewonProfile.jpg' name='이예원' gi='32기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='유정민' gi='32기'></Member>
         </div>
 
         <div className='makers-position'>Design</div><div className='makers-line5'></div>
         <div className='makers-member'>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
-          <Member profile='./images/myPage/profile.jpg' name='홍길동' gi='31기'></Member>
+          <Member profile='./images/myPage/hosungProfile.jpg' name='남호성' gi='29기'></Member>
+          <Member profile='./images/myPage/yewonProfile.jpg' name='이예원' gi='32기'></Member>
+          <Member profile='./images/myPage/profile.jpg' name='우승원' gi='32기'></Member>
         </div>
       </div>
     </div>
