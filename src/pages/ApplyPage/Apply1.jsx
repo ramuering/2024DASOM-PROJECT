@@ -34,11 +34,11 @@ function Apply1() {
         <form id="Ap1-club-join-form "action="../apply02">
           {/*이름*/}
         <label for="Ap1-name"><p class="Ap1-form-text">이름 <span class="Ap1-red-text">*</span></p></label>
-          <input class="Ap1-form-input" id="Ap1-name" required placeholder='이름'></input>
+          <input class="Ap1-form-input" id="Ap1-name" required placeholder='이름을 입력하세요.'></input>
 
           {/*학번*/}
           <label for="Ap1-gradecode"><p class="Ap1-form-text">학번 <span class="Ap1-red-text">*</span></p></label>
-          <input class="Ap1-form-input" id="Ap1-gradecode" required></input>
+          <input class="Ap1-form-input" id="Ap1-gradecode" required placeholder='ex) 20241111'></input>
 
           {/*학년*/}
           <fieldset id="Ap1-grade-field" class="fieldset">
@@ -97,7 +97,7 @@ function Apply1() {
           <label for="Ap1-Dasomtalk"><p class="Ap1-form-text">DASOM에게 하고 싶은 말</p></label>
           <textarea id="Ap1-Dasomtalk" name="Dasomtalk" required></textarea>
           
-          <input type="submit" value="DASOM 지원하기" id='Ap1-submit'/>
+          <input type="submit" value="다솜 지원하기" id='Ap1-submit'/>
           
         </form>
       </div>

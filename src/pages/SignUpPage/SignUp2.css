@@ -389,3 +389,55 @@ fieldset{
   color: #131313;
   background-color: #54ecc4;
 }
+
+.agree_toggle1{
+  position: absolute;
+  right: 1040px;
+  outline: none;
+  border: none;
+  background-color: #131313;
+  cursor: pointer;
+  top: 2360px;
+}
+
+.agree_toggle2{
+  position: absolute;
+  right: 1040px;
+  outline: none;
+  border: none;
+  background-color: #131313;
+  cursor: pointer;
+  top: 2435px;
+}
+
+.agree_toggle3{
+  position: absolute;
+  right: 1040px;
+  outline: none;
+  border: none;
+  background-color: #131313;
+  cursor: pointer;
+  top: 2509px;
+}
+
+.div-box {
+  display: none; /* 기본적으로 숨겨짐 */
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.agree1_content{
+  position: absolute;
+  right: 1090px;
+  top: 2300px;
+}
+
+.agree2_content{
+  position: absolute;
+}
+.agree3_content{
+  position: absolute;
+}

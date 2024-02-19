@@ -3,12 +3,13 @@ import Header from "../../components/Header"
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import firebase from 'firebase/app'; // Import firebase from npm instead of using external scripts
+import 'firebase/auth'; // Import firebase/auth module
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import Header from '../../components/Header';
+import { useCookies } from 'react-cookie';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAPj6z3yEcXMZnXhfPu1YMFM3zIKwLFdh8",
@@ -19,6 +20,7 @@ const firebaseConfig = {
   appId: "1:595103046458:web:fa37ce8c8ef7f6bf724e03",
   measurementId: "G-F95JBVQQN7"
 };
+
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
@@ -28,26 +30,39 @@ const firebaseConfig = {
   //const [username, setusername] = useState('');
   //const [password, setpassword] = useState('');
   const navigate = useNavigate();
+   const [, setCookie] = useCookies(['refreshToken']);
 
+//   const onClick = async () => {
+//     const result = await Login(username, password);
+//     console.log(result);
+//     const { accessToken, refreshToken } = result;
+//     localStorage.setItem('access', accessToken);
+//     localStorage.setItem('refresh', refreshToken);
+//   }
     const handleSubmit = async () => {
         try {
           const response = await axios.post('http://localhost:8090/login', {
-                //username : username , password : password
+
+                username : username ,
+                password : password
           });
 
-          if (response.status === 200) {
+          if (response.status === 200 ) {
           console.log(response.status)
             console.log('부원 인증 성공');
-            navigate('/main');  // Use navigate instead of history.push
+             localStorage.setItem("accessToken", response.data.data.accessToken);
+             setCookie("refreshToken", response.data.data.refreshToken)
+             console.log(response.data.data.accessToken)
+
+             //axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+            //navigate('/main');
             
-          } else {
-          console.log(response.status)
-            console.error('부원 인증 실패');
           }
         } catch (error) {
           if (error.response && error.response.status === 200) {
             console.error('인증완료.');
           } else {
+          alert("아이디 혹은 비밀번호가 틀렸습니다")
             console.error('에러:', error);
           }
         }

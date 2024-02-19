@@ -228,6 +228,49 @@
     transition: border-color 0.3s, color 0.3s;
 }
 
+.ManStudyApply-4weeks {
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    padding-left: 30px;
+    font-size: 16px;
+    display: block;
+    font-weight: bold;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+    color: #D9D9D9;
+}
+
+.ManStudyApply-4weeks:focus {
+    outline: none;
+}
+
+.ManStudyApply-4weeks:hover {
+    border-color: #54ECC4;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.ManStudyApply-5weeks {
+    width: 1157px;
+    height: 56px;
+    border-radius: 16px;
+    padding-left: 30px;
+    font-size: 16px;
+    display: block;
+    font-weight: bold;
+    background-color: #131313;
+    border: solid 1px  #D9D9D9;
+    color: #D9D9D9;
+}
+
+.ManStudyApply-5weeks:focus {
+    outline: none;
+}
+
+.ManStudyApply-5weeks:hover {
+    border-color: #54ECC4;
+    transition: border-color 0.3s, color 0.3s;
+}
 
 .plus{
     margin-top: 54px;
@@ -295,9 +338,23 @@
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
+.ManStudyApply-select {
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    text-align: center;
+    cursor: pointer;
+
+
+}
 
 .ManStudyApply-button:hover {
     background-color: #54ECC4;
     color: #131313;
     cursor: pointer;
 }
+
+
+.ManStudyApply input.error {
+    border: 1px solid red;
+  }
