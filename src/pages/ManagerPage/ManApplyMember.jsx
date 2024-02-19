@@ -94,7 +94,7 @@ function ManApplyMember() {
         interviewEnd,
         secondAnnounce,
        });
-      if (response.status === 201) {
+      if (response.status === 200) {
         alert('날짜가 성공적으로 저장되었습니다!');
       }
     } catch (error) {
@@ -124,7 +124,7 @@ function ManApplyMember() {
   };
 
   const handleSendPassMembersToBackend = async () => {
-    const passMembers = applyMembers.filter((applyMember) => applyMember.status === 'pass');
+    const passMembers = applyMembers.filter((applyMember) => applyMember.acStatus === 'pass');
   
     console.log('Pass Members:', passMembers);
   
@@ -134,13 +134,14 @@ function ManApplyMember() {
           'Content-Type': 'application/json',
         },
       });
-      if (response.status === 200) {
+      if (response.acStatus === 200) {
         alert('합격자 정보를 전송하였습니다!');
+      } else {
+        alert('합격자 정보 전송에 실패하였습니다.');
       }
     } catch (error) {
       console.error('Error sending data to the server:', error);
       console.log('합격자 전송 실패');
-      alert('합격자 정보 전송에 실패하였습니다.')
     } finally {
       console.log(passMembers);
     }
