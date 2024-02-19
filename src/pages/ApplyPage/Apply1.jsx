@@ -211,10 +211,10 @@ function Apply1() {
           <p class="Ap1-form-text">지원분야</p>
           <input class="Ap1-form-input"></input>
 
-          <label for="Ap1-Dasomtalk"><p class="Ap1-form-text">DASOM에게 하고 싶은 말</p></label>
+          <label for="Ap1-Dasomtalk"><p class="Ap1-form-text">다솜에게 하고 싶은 말</p></label>
           <textarea id="Ap1-Dasomtalk" name="Dasomtalk"></textarea>
           
-          <input type="submit" value="DASOM 지원하기" id='Ap1-submit' onClick={handleSubmit}/>
+          <input type="submit" value="다솜 지원하기" id='Ap1-submit' onClick={handleSubmit}/>
           
         </form>
       </div>
