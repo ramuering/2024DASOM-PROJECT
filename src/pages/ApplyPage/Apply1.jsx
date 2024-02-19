@@ -85,7 +85,11 @@ function Apply1() {
         recNo,
         applydate,
         applyStart,
-        applyEnd,firstAnnounce,interviewStart,interviewEnd,secondAnnounce
+        applyEnd,
+        firstAnnounce,
+        interviewStart,
+        interviewEnd,
+        secondAnnounce
       });
 
       if (response && response.status === 201) {
@@ -223,3 +227,7 @@ function Apply1() {
 }
 
 export default Apply1
+
+/*
+  테스트 코드
+*/
