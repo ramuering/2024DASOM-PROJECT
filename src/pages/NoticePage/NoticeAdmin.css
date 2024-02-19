@@ -1,10 +1,10 @@
-#Nocr_div {
+#Nocr-div {
     display: flex;
     height: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 
-.Nocr_btn{
+.Nocr-btn{
     width: 170px;
     height: 64px;
     background: none;
@@ -18,7 +18,7 @@
     transition: all 0.2s;
 }
 
-.Nocr_btn:hover{
+.Nocr-btn:hover{
     color: black;
     background:#54ECC4 ;
     font-weight: bold;

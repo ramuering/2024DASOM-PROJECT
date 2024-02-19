@@ -61,6 +61,7 @@ const SignUp2 = () => {
     }
   };
 
+
   const handleConfirmPasswordChange = (event) => {
     setConfirmPassword(event.target.value);
     setPasswordMismatch(memPassword !== event.target.value);
