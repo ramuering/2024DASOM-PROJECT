@@ -118,15 +118,7 @@ const Menu = ({ currentPage, onPageChange }) => {
 const Lead = () => {
   return (
     <div className='about-mem-list'>
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='홍길동' year='31기' />
+      <MemBox imageUrl='./images/myPage/hosungProfile.jpg' name='남호성' year='29기'/>
     </div>
   );
 };
@@ -134,12 +126,13 @@ const Lead = () => {
 const CoreMember = () => {
   return (
     <div className='about-mem-list'>
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
-      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='김연아' year='31기' />
+      <MemBox imageUrl='./images/myPage/hosungProfile.jpg' name='남호성' year='29기' />
+      <MemBox imageUrl='./images/myPage/basicProfile.jpeg' name='박희태' year='32기' />
+      <MemBox imageUrl='./images/myPage/basicProfile.jpeg' name='송영민' year='33기' />
+      <MemBox imageUrl='./images/myPage/seonghwanProfile.jpeg' name='유승완' year='32기'/>
+      <MemBox imageUrl='./images/myPage/yewonProfile2.jpg' name='이예원' year='32기'/>
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+
     </div>
   );
 };
@@ -151,6 +144,14 @@ const Member = () => {
       <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
       <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
       <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+
+      <MemBox imageUrl='./images/about/cat-4189697_640.jpg' name='손흥민' year='31기' />
+
     </div>
   );
 };
