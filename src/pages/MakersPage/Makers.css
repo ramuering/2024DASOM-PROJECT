@@ -108,3 +108,13 @@
     font-weight: medium;
     color: #D9D9D9;
 }
+
+.makers-member-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px; /* 각 그리드 아이템 간의 간격 조절 */
+}
+
+.makers-member-grid > * {
+  /* 그리드 아이템의 스타일링을 원하는 대로 지정하세요 */
+}

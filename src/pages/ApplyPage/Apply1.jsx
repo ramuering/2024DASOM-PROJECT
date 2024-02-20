@@ -10,7 +10,7 @@ const Ap1NullBox = styled.div`
     height: 350px;
 `;
 
-const recNo=323;
+const recNo=32;
 
 function Apply1() {
 
@@ -74,29 +74,20 @@ function Apply1() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8090/recruit', {
+      const response = await axios.post('http://dmu-dasom.or.kr:8090/recruit/32/applicants', {
         acStudentNo,
         acName,
         acContact,
         acEmail,
         acDepartment,
         acGrade,
-        reasonForApply,
-        recNo,
-        applydate,
-        applyStart,
-        applyEnd,
-        firstAnnounce,
-        interviewStart,
-        interviewEnd,
-        secondAnnounce
+        reasonForApply
       });
 
       if (response && response.status === 201) {
         console.log(response.data.message);
         // 페이지 이동
         navigate('/apply02');
-        recNo +=1;
       }
     } catch (error) {
       console.error('Error submitting application:', error.response);
@@ -181,17 +172,17 @@ function Apply1() {
             <legend><p class="Ap1-form-text">학과 <span class="Ap1-red-text">*</span></p></legend>
             <div class ="Ap1-div-box">
               <div class="Ap1-radio-box">
-                <input type="radio" id="Ap1-comso" name="major" value="comso"/>
+                <input type="radio" id="Ap1-comso" name="major" value="컴소"/>
                 <label for="Ap1-comso">컴퓨터소프트웨어공학과</label>
               </div>
 
               <div class="Ap1-radio-box">
-                <input type="radio" id="Ap1-inso" name="major" value="inso" />
+                <input type="radio" id="Ap1-inso" name="major" value="인공" />
                 <label for="Ap1-inso">인공지능소프트웨어공학과</label>
               </div>
             </div>
             <div  class="Ap1-radio-box">
-                <input type="radio" id="Ap1-comim" name="major" value="comim" />
+                <input type="radio" id="Ap1-comim" name="major" value="컴정" />
                 <label for="Ap1-comim">컴퓨터정보공학과</label>
             </div>
           </fieldset>

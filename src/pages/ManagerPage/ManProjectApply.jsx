@@ -1,109 +1,99 @@
 import React, { useState } from 'react';
 import "./ManStudyApply.css"
+import axios from 'axios';
 
 function ManProjectApply() {
-        const [ProjectTitle, setProjectTitle] = useState('');
-        const [ProjectContent, setProjectContent] = useState(''); 
-        const [startDate, setStartDate] = useState('');
-        const [endDate, setEndDate] = useState('');
-        const [activityWeeks, setActivityWeeks] = useState(["1주차"]);
-        const [thumbnailPic, setThumbnailPic] = useState(null); 
-        const [studyPic, setStudyPic] = useState(null); 
-        
-        
-        const addWeek = () => {
-        const newWeek = `${activityWeeks.length + 4}주차`;
-                  setActivityWeeks([...activityWeeks, newWeek]);
-        };
-        const handleThumbnailPicChange = (event) => {
-                const file = event.target.files[0];
-                setThumbnailPic(file);
-         };
-                
-        const handleStudyPicChange = (event) => {
-                const file = event.target.files[0];
-                setStudyPic(file);
-        };
+    const [projectTitle, setProjectTitle] = useState('');
+    const [projectContent, setProjectContent] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [thumbnailPic, setThumbnailPic] = useState(null);
+    const [studyPic, setStudyPic] = useState(null);
 
-        const handleProjectRegistration = () => {
-                // 스터디 등록 버튼 클릭 시 실행되는 함수
-                console.log('프로젝트 제목:', ProjectTitle);
-                console.log('프로젝트 내용:', ProjectContent);
-                console.log('시작 날짜:', startDate);
-                console.log('종료 날짜:', endDate);
-                console.log('활동 주차:', activityWeeks);
-                console.log('썸네일 사진:', thumbnailPic);
-                console.log('활동 사진:', studyPic);
-            };
-    
-                
-  return (
-    <div className='ManStudyApply'>
-        <div className='ManStudyApply-title'>프로젝트 등록</div>
-        <div className='ManStudyApply-box'>
-                <input 
-                class="ManStudyApply-name"
-                type='text'
-                value={ProjectTitle}
-                onChange={(e) => setProjectTitle(e.target.value)}
-                placeholder='프로젝트 이름을 입력하세요 *' 
-                autoFocus></input>
-                </div>
+    const handleThumbnailPicChange = (event) => {
+        const file = event.target.files[0];
+        setThumbnailPic(file);
+    };
 
-        <div className='ManStudyApply-box'>
-      <input 
-              class="ManStudyApply-content"
-              type='text'
-              value={ProjectContent}
-              onChange={(e) => setProjectContent(e.target.value)}
-              placeholder='프로젝트 내용을 입력하세요 *' 
-              autoFocus></input>
-              </div>
+    const handleStudyPicChange = (event) => {
+        const file = event.target.files[0];
+        setStudyPic(file);
+    };
 
-        <div className='ManStudyApply-box'>
-      <input 
-              class="ManStudyApply-number"
-              type='text'
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-              placeholder='프로젝트 시작하는 날짜를 입력하세요.   ex) 2024-04-04' 
-              autoFocus></input>
-              </div>
+    const handleProjectRegistration = async () => {
+        const formData = new FormData();
+        formData.append('projectTitle', projectTitle);
+        formData.append('projectContent', projectContent);
+        formData.append('startDate', startDate);
+        formData.append('endDate', endDate);
+        formData.append('thumbnailPic', thumbnailPic);
+        formData.append('studyPic', studyPic);
 
-        <div className='ManStudyApply-box'>
-      <input class="ManStudyApply-book"
-              type='text'
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-              placeholder='프로젝트 끝나는 날짜를 입력하세요.   ex) 2024-04-04 ' 
-              autoFocus></input>
-              </div>
+        console.log('studyPic', studyPic)
 
-      <div className='ManStudyApply-subtitle'>프로젝트 팀원</div>
+        try {
+            const axiosInstance = axios.create({
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
 
-      <div className='ManStudyApply-box'>
-      <input class="ManStudyApply-1weeks"
-              type='text'
-              placeholder='기수, 이름, 파트' autoFocus></input></div>
-              <div className='ManStudyApply-box'>
-      <input class="ManStudyApply-2weeks"
-              type='text'
-              placeholder='기수, 이름, 파트' autoFocus></input></div>
-              <div className='ManStudyApply-box'>
-      <input class="ManStudyApply-3weeks"
-              type='text'
-              placeholder='기수, 이름, 파트' autoFocus></input></div>
-              {activityWeeks.map((week, index) => (
-        <div className='ManStudyApply-box' key={index}>
-          <input
-            className={`ManStudyApply-${index + 1}weeks`}
-            type='text'
-            placeholder="기수, 이름, 파트"
-          autoFocus
-          ></input>
-        </div>
-      ))}
-                 <div className='ManStudyApply-picture'>썸네일 사진</div>
+            const response = await axiosInstance.post('http://dmu-dasom.or.kr:8090/board/project', formData);
+
+            if (response.status === 200) {
+                console.log("성공")
+                //navigate('/SignUp02');
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    };
+
+    return (
+        <div className='ManStudyApply'>
+            <div className='ManStudyApply-title'>프로젝트 등록</div>
+            <div className='ManStudyApply-box'>
+                <input
+                    className="ManStudyApply-name"
+                    type='text'
+                    value={projectTitle}
+                    onChange={(e) => setProjectTitle(e.target.value)}
+                    placeholder='프로젝트 이름을 입력하세요 *'
+                    autoFocus
+                />
+            </div>
+
+            <div className='ManStudyApply-box'>
+                <input
+                    className="ManStudyApply-content"
+                    type='text'
+                    value={projectContent}
+                    onChange={(e) => setProjectContent(e.target.value)}
+                    placeholder='프로젝트 내용을 입력하세요 *'
+                />
+            </div>
+
+            <div className='ManStudyApply-box'>
+                <input
+                    className="ManStudyApply-number"
+                    type='text'
+                    value={startDate}
+                    onChange={(e) => setStartDate(e.target.value)}
+                    placeholder='프로젝트 시작하는 날짜를 입력하세요.   ex) 2024-04-04'
+                />
+            </div>
+
+            <div className='ManStudyApply-box'>
+                <input
+                    className="ManStudyApply-book"
+                    type='text'
+                    value={endDate}
+                    onChange={(e) => setEndDate(e.target.value)}
+                    placeholder='프로젝트 끝나는 날짜를 입력하세요.   ex) 2024-04-04 '
+                />
+            </div>
+
+            <div className='ManStudyApply-picture'>썸네일 사진</div>
             <input
                 type="file"
                 accept="image/*"
@@ -128,5 +118,4 @@ function ManProjectApply() {
     );
 }
 
-
-export default ManProjectApply
+export default ManProjectApply;

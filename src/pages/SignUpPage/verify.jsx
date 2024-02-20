@@ -17,20 +17,15 @@ export default function SignUp1() {
       if (response.status === 200) {
             console.log("성공")
             navigate('/SignUp02');
-            navigate(`/SignUp2/${uniqueCode}`);
       } else {
               setErrorMessage('로그인 실패'); // 실패 시 에러 메시지 설정
               setIsCodeValid(false); // 유효성 검사 실패 시 상태 업데이트
       }
-      console.log("response.status :" + response)
     } catch (error) {
 
       setErrorMessage('부원 인증에 실패 하였습니다. 관리자에게 문의해주세요.'); // 실패 시 에러 메시지 설정
       setIsCodeValid(false); // 유효성 검사 실패 시 상태 업데이트
    }
-   <Link to={`/SignUp2/${uniqueCode}`} className='SignUp1_login'>
-     다솜 가입 완료하기
-   </Link>
  };
 
   const handleKeyPress = (event) => {
