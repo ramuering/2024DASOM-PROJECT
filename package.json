@@ -19,6 +19,8 @@
     "react-countup": "^6.5.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.2",
+    "react-slick": "^0.30.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.6",
     "swiper": "^6.8.4",
     "universal-cookie": "^7.0.2",

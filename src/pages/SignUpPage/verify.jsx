@@ -14,18 +14,19 @@ export default function SignUp1() {
       const response = await axios.post('http://dmu-dasom.or.kr:8090/signup/verify', {
          uniqueCode : uniqueCode,
       });
-      
-      if (response.status === 302 ) {
-          navigate('/SignUp02');
+      if (response.status === 200) {
+            console.log("성공")
+            navigate('/SignUp02');
       } else {
-          setErrorMessage('로그인 실패'); // 실패 시 에러 메시지 설정
-          setIsCodeValid(false); // 유효성 검사 실패 시 상태 업데이트
+              setErrorMessage('로그인 실패'); // 실패 시 에러 메시지 설정
+              setIsCodeValid(false); // 유효성 검사 실패 시 상태 업데이트
       }
     } catch (error) {
+
       setErrorMessage('부원 인증에 실패 하였습니다. 관리자에게 문의해주세요.'); // 실패 시 에러 메시지 설정
       setIsCodeValid(false); // 유효성 검사 실패 시 상태 업데이트
-    }
-  };
+   }
+ };
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
