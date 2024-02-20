@@ -52,19 +52,19 @@ function ManApply() {
   }, []);
   // 재학, 휴학
 const handleToggleStatus = async (memberNo) => {
+console.log(members)
     try {
       const memberToToggle = members.find((member) => member.memNo === memberNo);
-      if (!memberToToggle) {
-        console.error('Member not found');
-        return;
-      }
-  
+             if (!memberToToggle) {
+               console.error('Member not found');
+               return;
+             }
       const newStatus = memberToToggle.memberstate=== '재학' ? '휴학' : '재학';
       const message = `${memberToToggle.memName}님을 ${newStatus} 처리 하시겠습니까?`;
       const userResponse = window.confirm(message);
   
       if (userResponse) {
-        const response = await axios.put(`http://localhost:8090/members/${memberNo}`, {
+        const response = await axios.put(`http://dmu-dasom.or.kr:8090/members/${memberNo}`, {
           newStatus: newStatus,
         });
   
@@ -94,7 +94,7 @@ const handleToggleStatus = async (memberNo) => {
         const userResponse = window.confirm(message);
   
         if (userResponse) {
-          const response = await axios.delete(`http://localhost:8090/members/${memberNo}`);
+          const response = await axios.delete(`http://dmu-dasom.or.kr:8090/members/${memberNo}`);
   
           if (response.data.success) {
             setMembers((prevMembers) =>
@@ -123,7 +123,7 @@ const handleToggleGraduation = async (memberNo) => {
     const userResponse = window.confirm(message);
 
     if (userResponse) {
-      const response = await axios.put(`http://localhost:8090/members/${memberNo}`, {
+      const response = await axios.put(`http://dmu-dasom.or.kr:8090/members/${memberNo}`, {
         newGraduation: newGraduation,
       });
 
@@ -169,7 +169,8 @@ const handleToggleGraduation = async (memberNo) => {
             <p className='manApply-gen'>기수</p>
             <p className='manApply-department'>학과</p>
             <p className='manApply-name'>이름</p>
-            <p className='manApply-timeOff'>휴・복학</p>
+            <p className='manApply-timeOff'>휴학</p>
+            <p className='manApply-timeOff'>복학</p>
             <p className='manApply-graduation'>졸업</p>
             <p className='manApply-modify'>수정</p>
             <p className='manApply-withdraw'>탈퇴</p>

@@ -1,8 +1,27 @@
-import React, {useState} from 'react'
+import React,{ useEffect, useState } from 'react'
 import Footer from "../../components/Footer"
 import "./About.css"
+import axios from 'axios';
 
 function About() {
+
+      const [members, setMembers] = useState([]);
+
+   useEffect(() => {
+       const fetchMembers = async () => {
+         try {
+           const response = await axios.get('http://dmu-dasom.or.kr:8090/members');
+           console.log(response)
+           if (response.data.success) {
+             setMembers(response.data.data);
+           }
+         } catch (error) {
+           console.error('Error fetching members:', error);
+         }
+       };
+
+       fetchMembers();
+     }, []);
 
   const [currentPage, setCurrentPage] = useState('Lead');
 
