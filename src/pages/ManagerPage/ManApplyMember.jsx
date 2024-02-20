@@ -1,25 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as XLSX from 'xlsx';
+import axios from 'axios';
 import './ManApplyMember.css';
 import Header from '../../components/Header';
 import { useAppContext } from '../../contexts/AppContext';
 
 function ManApplyMember() {
-  const [applyMembers, setApplyMembers] = useState([
-    { id: 1, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1', status: '' },
-    { id: 3, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1', status: '' },
-    { id: 2, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '1', status: '' },
-    { id: 4, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 5, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 6, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 7, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 8, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 9, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 10, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 11, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 12, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-    { id: 13, department: '컴퓨터소프트웨어공학과', name: '홍길동', grade: '2', status: '' },
-  ]);
+  const [applyMembers, setApplyMembers] = useState([]);
+  const [dates, setDates] = useState({
+    applyStart: '',
+    applyEnd: '',
+    firstAnnounce: '',
+    interviewStart: '',
+    interviewEnd: '',
+    secondAnnounce: '',
+  });
 
   const handleExportExcel = () => {
     const ws = XLSX.utils.json_to_sheet(applyMembers);
@@ -28,24 +23,85 @@ function ManApplyMember() {
     XLSX.writeFile(wb, 'dasom_applicant_data.xlsx');
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8090/32/applicants'); 
+        setApplyMembers(response.data);  
+        if (response.status === 200) {
+          console.log('지원자 목록 가져오기 성공');
+        } 
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          console.error('Error fetching data:', error);
+          console.log('지원자 데이터가 없습니다.')
+        } else {
+          console.log('지원자 목록 가져오기 실패', error);
+        }
+      } finally {
+        console.log(applyMembers)
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8090/32'); 
+        setDates(response.data);
+        if (response.status === 200) {
+          console.log('스케줄 가져오기 성공');
+        }
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          console.error('Error fetching data: ', error);
+          console.log('스케줄 데이터가 없습니다.');
+        } else {
+          console.error('스케줄 가져오기 실패', error);
+        }
+      } finally {
+        console.log(dates)
+      }
+    };
+    fetchData();
+  }, []);
+
+
   const [editable, setEditable] = useState(false);
-  const [dates, setDates] = useState({
-    documentSubmissionStart: '',
-    documentSubmissionEnd: '',
-    documentResultStart: '',
-    documentResultEnd: '',
-    InterviewStart: '',
-    InterviewEnd: '',
-    finalAnnouncementStart: '',
-    finalAnnouncementEnd: '',
-  });
 
   const handleEditClick = () => {
     setEditable(true);
   };
 
-  const handleSaveClick = () => {
+  const handleSaveClick = async () => {
     setEditable(false);
+    try {
+      const {
+        applyStart,
+        applyEnd,
+        firstAnnounce,
+        interviewStart,
+        interviewEnd,
+        secondAnnounce,
+      } = dates;
+      // 서버로 선택된 날짜를 전송
+      const response = await axios.put('http://dmu-dasom.or.kr:8090/recruit/32', {
+        applyStart,
+        applyEnd,
+        firstAnnounce,
+        interviewStart,
+        interviewEnd,
+        secondAnnounce,
+       });
+      if (response.status === 200) {
+        alert('날짜가 성공적으로 저장되었습니다!');
+      }
+    } catch (error) {
+      console.error('날짜 저장 중 오류 발생:', error);
+    } finally {
+      console.log(dates);
+    }
   };
 
   const handleDateChange = (fieldName, value) => {
@@ -57,23 +113,40 @@ function ManApplyMember() {
 
   const { closeApplication, isApplicationOpen } = useAppContext();
 
-  const handleButtonClick = (id, status) => {
+  const handleButtonClick = (acStudentNo, acStatus) => {
     const updatedApplyMembers = applyMembers.map((applyMember) => {
-      if (applyMember.id === id) {
-        return { ...applyMember, status: status };
+      if (applyMember.acStudentNo === acStudentNo) {
+        return { ...applyMember, acStatus: acStatus };
       }
       return applyMember;
     });
     setApplyMembers(updatedApplyMembers);
   };
-  const handleSendPassMembersToBackend = () => {
-    const passMembers = applyMembers.filter((applyMember) => applyMember.status === 'pass');
-    
-    // 서버로 'pass'인 멤버들을 전송하는 로직
+
+  const handleSendPassMembersToBackend = async () => {
+    const passMembers = applyMembers.filter((applyMember) => applyMember.acStatus === 'pass');
+  
     console.log('Pass Members:', passMembers);
-    // fetch('/api/sendPassMembers', { method: 'POST', body: JSON.stringify(passMembers) });
-    alert("합격자 정보를 전송하였습니다!");
+  
+    try {
+      const response = await axios.post('http://localhost:8090/recruit/32', passMembers, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.acStatus === 200) {
+        alert('합격자 정보를 전송하였습니다!');
+      } else {
+        alert('합격자 정보 전송에 실패하였습니다.');
+      }
+    } catch (error) {
+      console.error('Error sending data to the server:', error);
+      console.log('합격자 전송 실패');
+    } finally {
+      console.log(passMembers);
+    }
   };
+
 
   return (
     <div className='manAM'>
@@ -84,42 +157,38 @@ function ManApplyMember() {
           <div className='manAM-date-row'>
             <p>서류 접수</p>
             <DateRangeInput
-              startDate={dates.documentSubmissionStart}
-              endDate={dates.documentSubmissionEnd}
-              onChangeStart={(value) => handleDateChange('documentSubmissionStart', value)}
-              onChangeEnd={(value) => handleDateChange('documentSubmissionEnd', value)}
+              startDate={dates.applyStart}
+              endDate={dates.applyEnd}
+              onChangeStart={(value) => handleDateChange('applyStart', value)}
+              onChangeEnd={(value) => handleDateChange('applyEnd', value)}
               readOnly={!editable}
             />
           </div>
           <div className='manAM-date-row'>
             <p>서류 결과 발표</p>
-            <DateRangeInput
-              startDate={dates.documentResultStart}
-              endDate={dates.documentResultEnd}
-              onChangeStart={(value) => handleDateChange('documentResultStart', value)}
-              onChangeEnd={(value) => handleDateChange('documentResultEnd', value)}
+            <DateInput 
+              value={dates.firstAnnounce}
+              onChange={(value) => handleDateChange('firstAnnounce', value)}
               readOnly={!editable}
-            />
+               />
           </div>
           <div className='manAM-date-row'>
             <p>대면 면접</p>
             <DateRangeInput
-              startDate={dates.InterviewStart}
-              endDate={dates.InterviewEnd}
-              onChangeStart={(value) => handleDateChange('InterviewStart', value)}
-              onChangeEnd={(value) => handleDateChange('InterviewEnd', value)}
+              startDate={dates.interviewStart}
+              endDate={dates.interviewEnd}
+              onChangeStart={(value) => handleDateChange('interviewStart', value)}
+              onChangeEnd={(value) => handleDateChange('interviewEnd', value)}
               readOnly={!editable}
             />
           </div>
           <div className='manAM-date-row'>
             <p>최종 발표</p>
-            <DateRangeInput
-              startDate={dates.finalAnnouncementStart}
-              endDate={dates.finalAnnouncementEnd}
-              onChangeStart={(value) => handleDateChange('finalAnnouncementStart', value)}
-              onChangeEnd={(value) => handleDateChange('finalAnnouncementEnd', value)}
+            <DateInput 
+              value={dates.secondAnnounce}
+              onChange={(value) => handleDateChange('secondAnnounce', value)}
               readOnly={!editable}
-            />
+               />
           </div>
         </div>
         {editable ? (
@@ -143,17 +212,17 @@ function ManApplyMember() {
           <ul>
             {applyMembers.map((applyMember) => (
               <li key={applyMember.id}>
-                <div className='manAM-infodepartment'>{`${applyMember.department}`}</div>
-                <div className='manAM-infoname'>{`${applyMember.name}`}</div>
-                <div className='manAM-infograde'>{`${applyMember.grade}`}</div>
+                <div className='manAM-infodepartment'>{`${applyMember.acDepartment}`}</div>
+                <div className='manAM-infoname'>{`${applyMember.acName}`}</div>
+                <div className='manAM-infograde'>{`${applyMember.acGrade}`}</div>
                 <button
-                  className={`manAM-infopass ${applyMember.status === 'pass' ? 'manAM-selected' : ''}`}
-                  onClick={() => handleButtonClick(applyMember.id, 'pass')}
+                  className={`manAM-infopass ${applyMember.acStatus === 'pass' ? 'manAM-selected' : ''}`}
+                  onClick={() => handleButtonClick(applyMember.acStudentNo, 'pass')}
                 >
                   합격
                 </button>
                 <button
-                  className={`manAM-infononPass ${applyMember.status === 'nonPass' ? 'manAM-selected' : ''}`}
+                  className={`manAM-infononPass ${applyMember.acStatus === 'nonPass' ? 'manAM-selected' : ''}`}
                   onClick={() => handleButtonClick(applyMember.id, 'nonPass')}
                 >
                   불합격
