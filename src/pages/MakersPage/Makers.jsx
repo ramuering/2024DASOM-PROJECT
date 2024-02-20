@@ -74,7 +74,9 @@ function Makers() {
                 {renderMembers(pmMembers)}
               </div>
 
-              <div className='makers-position'>Back</div><div className='makers-line3'></div>
+        <div className='makers-position'>Back</div>
+        <div className='makers-line3'>
+        </div>
               <div className='makers-member-grid'>
                 {renderMembers(backMembers)}
               </div>
