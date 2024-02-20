@@ -75,6 +75,7 @@
     flex-wrap: wrap;
     align-items: center;
 }
+
 .makers-profileBox:not(:first-child){
     margin-left: 134px;
 }
