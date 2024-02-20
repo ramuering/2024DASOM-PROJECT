@@ -38,7 +38,7 @@ function ManApply() {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await axios.get('http://localhost:8090/members');
+        const response = await axios.get('http://dmu-dasom.or.kr:8090/members');
         console.log(response)
         if (response.data.success) {
           setMembers(response.data.data);

@@ -31,15 +31,13 @@ function Makers() {
   const backMembers = [
     { profile: './images/myPage/basicProfile.jpeg', name: '김나리', gi: '32기' },
     { profile: './images/myPage/sinyoungProfile.png', name: '김신영', gi: '32기' },
-    { profile: './images/myPage/sinyoungProfile.png', name: '김신영', gi: '32기' },
+    { profile: './images/myPage/hosungProfile.jpg', name: '남호성', gi: '29기' },
     { profile: './images/myPage/sinyoungProfile.png', name: '김신영', gi: '32기' },
     { profile: './images/myPage/sinyoungProfile.png', name: '김신영', gi: '32기' },
     { profile: './images/myPage/sinyoungProfile.png', name: '김신영', gi: '32기' },
     { profile: './images/myPage/sinyoungProfile.png', name: '김신영', gi: '32기' },
     { profile: './images/myPage/sinyoungProfile.png', name: '김신영', gi: '32기' },
 
-
-    // 다른 Back 멤버들 추가
   ];
 
   const frontMembers = [
@@ -49,6 +47,8 @@ function Makers() {
 
   const designMembers = [
     { profile: './images/myPage/hosungProfile.jpg', name: '남호성', gi: '29기' },
+    { profile: './images/myPage/hosungProfile.jpg', name: '이예원', gi: '32기' },
+    { profile: './images/myPage/hosungProfile.jpg', name: '우승원', gi: '32기' },
     // 다른 Design 멤버들 추가
   ];
 
