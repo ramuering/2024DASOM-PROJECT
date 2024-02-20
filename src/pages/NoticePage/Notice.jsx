@@ -4,6 +4,7 @@ import Footer from '../../components/Footer';
 import data from './data.js';
 import { Link } from 'react-router-dom';
 import "./Common-Notice.css"
+import axios from 'axios';
 
 
 
@@ -56,6 +57,48 @@ function Notice() {
     // Scroll to the top when the component is mounted
     window.scrollTo(0, 0);
   }, [])
+
+  const [boardList, setBoardList] = useState([]);
+
+  const getBoardList = async () => {
+    try {
+      const response = await axios.get('http://localhost:8090/notice')
+      setBoardList(response.data);
+      if (response.status === 200) {
+        console.log('공지사항 목록 조회 성공');
+      } 
+      else if (response.status === 404){
+        console.log('데이터 가져오기 실패');
+      }
+    } catch (error) {
+      console.error('에러 발생:', error);
+    }
+  };
+
+useEffect(() => {
+  getBoardList();
+}, []);
+
+const [filteredResults, setfilteredResults] = useState([]);
+const [searchInput, setSearchInput] = useState('');
+
+const searchTitle = async (searchValue) =>{
+  try {
+    const resp = await (await axios.get('http://localhost:8090/notice/title')).data;
+    setSearchInput(searchValue)
+    const filteredData = resp.data.filter((item) =>{
+      return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase()) //검색어와 데이터 비교
+    })
+    if(resp.status === 200){
+        setfilteredResults(filteredData)
+        console.log('데이터 가져오기 성공');
+      }
+    else if(resp.status === 404){
+        console.log('데이터 가져오기 실패');
+      }}catch(error){
+    console.error('에러 발생:', error);
+  }
+}
 
   const itemsPerPage = 10; // 한 페이지에 표시할 아이템 개수
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 정보
@@ -117,7 +160,8 @@ function Notice() {
         
         <div class="search-container">
             <input placeholder='검색어를 입력하세요' id="Nocr-inputs"></input>
-            <div class="search-icon1" style={{ backgroundImage: "url('images/search-icon.png')" }}></div>
+            <div class="search-icon1" style={{ backgroundImage: "url('images/search-icon.png')" }}
+            onChange={(e)=>searchTitle(e.target.value)}></div>
         </div>
 
         <table id='Noti-table'>     

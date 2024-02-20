@@ -19,7 +19,7 @@ function Makers() {
   return (
     <div className='makers-contents'>
 
-      <img src='./images/dasom-logo-header.PNG' className='makers-logo' />
+      <img src='./images/dasom-logo-header.png' className='makers-logo' />
       <div className='makers-dasom'>
         <p>DASOM makers는</p> 
         <p>DASOM 구성원들이 가진 불편함을 제품을 통해 해결하여,</p>

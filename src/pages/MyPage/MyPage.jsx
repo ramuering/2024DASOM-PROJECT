@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -38,6 +37,8 @@ function MyPage() {
     <div>
       <div className='mypage-content'>
         <Header />
+        <div className='mypage-title'>MY PAGE</div>
+        
       <img className='mypage-myProfile' src='./images/myPage/profile.jpg'></img>
 
       <table className='mypage-table'>
@@ -70,4 +71,3 @@ function MyPage() {
 }
 
 export default MyPage
-
