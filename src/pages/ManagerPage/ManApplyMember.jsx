@@ -86,7 +86,7 @@ function ManApplyMember() {
         secondAnnounce,
       } = dates;
       // 서버로 선택된 날짜를 전송
-      const response = await axios.put('http://localhost:8090/recruit/32', { 
+      const response = await axios.put('http://dmu-dasom.or.kr:8090/recruit/32', {
         applyStart,
         applyEnd,
         firstAnnounce,

@@ -3,10 +3,14 @@ import "./SignUp2.css";
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom'
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useParams } from 'react-router-dom';
+
+
 
 
 
 const SignUp2 = () => {
+
   
   const [memEmail, setmemEmail] = useState('');
   const [memPassword, setmemPassword] = useState('');
@@ -26,6 +30,7 @@ const SignUp2 = () => {
   const [showDivBox2, setShowDivBox2] = useState(false);
   const [showDivBox3, setShowDivBox3] = useState(false);
   const navigate = useNavigate();
+
 
   const handleAgreementChange = (checkboxId) => {
     if (checkboxId === 'agree1') {
@@ -53,8 +58,9 @@ const SignUp2 = () => {
       return;
     }
 
+
     try {
-      const response = await axios.post('http://localhost:8090/signup', {
+      const response = await axios.post(`http://dmu-dasom.or.kr:8090/signup/`, {
         memEmail,
         memPassword,
         memName,

@@ -40,22 +40,20 @@ const firebaseConfig = {
 //   }
     const handleSubmit = async () => {
         try {
-          const response = await axios.post('http://localhost:8090/login', {
+          const response = await axios.post('http://dmu-dasom.or.kr:8090/login', {
 
                 username : username ,
                 password : password
           });
 
-          if (response.status === 200 ) {
+          if (response.request.status === 200 ) {
           console.log(response.status)
-            console.log('부원 인증 성공');
+            console.log('로그인 성공');
              localStorage.setItem("accessToken", response.data.data.accessToken);
              setCookie("refreshToken", response.data.data.refreshToken)
-             console.log(response.data.data.accessToken)
-
+             console.log(response.request.status)
              //axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
             //navigate('/main');
-            
           }
         } catch (error) {
           if (error.response && error.response.status === 200) {
