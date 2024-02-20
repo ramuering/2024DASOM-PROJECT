@@ -1,16 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer'
 import styled from "styled-components"
-// import Slide from "../../components/Slider"
 import CountUp from 'react-countup';
 import "./Main.css"
 import { Link } from 'react-router-dom'
-// import Slider from '../../components/Slider'
+
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
  
 
 const Main = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+  
+  const images = [
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" },
+    { src: '/images/study-sample.jpeg', alt: "image" }
+  ];
+
+  const renderImage = (image) => {
+    const { src, alt } = image;
+    return (
+      <div className="slide-item">
+        <img src={src} alt={alt} />
+      </div>
+    )
+  }
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -129,12 +187,16 @@ const Main = () => {
           </div>
         </div>
       </div>
-      <div className="slider">
+      <div className="slider-part">
         <div className="slider-title">활동 사진</div>
-        <SliderWrapper >
         {/* <Slider /> */}
-        </SliderWrapper>
-        
+        <Wrap>
+          <Slider {...settings}>
+            {images.map((image, index) => (
+            <React.Fragment key={index}>{renderImage(image)}</React.Fragment>
+          ))}
+          </Slider>
+        </Wrap>
       </div>
       <div className="main-about">
         <div className="main-about-title">DASOM 둘러보기</div>
@@ -175,10 +237,10 @@ const Container = styled.main`
   flex-direction: column;
   text-align: center;
 `;
-const SliderWrapper = styled.div`
-  position: absolute;
-  top: 100%;
-  margin-top: 237px;
-  height: 700px;
-  width: 100vw;
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10% auto;
+  width: 100%;
   `;

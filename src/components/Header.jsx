@@ -3,10 +3,18 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [show, setShow] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [showDropdown, setShowDropdown] = useState(false)
+  
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  }
+  
+  const token = '1234567abcd' //임시값
+
 
   return (
-    <NavWrapper show={show}>
+    <NavWrapper>
       <Logo to="/main">
         <img alt="Dasom Logo" src="/images/dasom-logo-header.png" />
       </Logo>
@@ -22,7 +30,40 @@ const Header = () => {
         </NavItemWithDropdown>
         <NavItem to="/recruit">RECRUIT</NavItem>
         <NavItem to="/admin">ADMIN</NavItem>
-        <NavItem to="/mypage">MY PAGE</NavItem>
+        <NavItemWithDropdown>
+          <ProfileImageWrapper>
+          {isLoggedIn ? (
+      <>
+        <ProfileImage
+          src="/images/myPage/profile.jpg"
+          onMouseEnter={() => setShowDropdown(true)}
+          onMouseLeave={() => setShowDropdown(false)}
+        />
+        {showDropdown && (
+          <DropdownMenu>
+            {/* 로그인 상태일 때 나타날 드롭다운 메뉴 */}
+            <DropdownItem to="/mypage">MY PAGE</DropdownItem>
+            <DropdownItem onClick={handleLogout}>LOGOUT</DropdownItem>
+          </DropdownMenu>
+        )}
+      </>
+    ) : (
+      <>
+        <ProfileImage
+          src="/images/myPage/profile.jpg"
+          onMouseEnter={() => setShowDropdown(true)}
+          onMouseLeave={() => setShowDropdown(false)}
+        />
+        {showDropdown && (
+          <DropdownMenu>
+            {/* 로그인 상태가 아닐 때 나타날 드롭다운 메뉴 */}
+            <DropdownItem to="/login">LOGIN</DropdownItem>
+          </DropdownMenu>
+        )}
+      </>
+    )}
+          </ProfileImageWrapper>
+        </NavItemWithDropdown>
       </NavBar>
     </NavWrapper>
   );
@@ -62,13 +103,13 @@ const NavBar = styled.div`
   display: flex;
   background-color: #050505;
   justify-content: flex-start;
-  margin-right: 20px;
+  margin-right: 100px;
   align-items: center;
 `;
 
 const NavItem = styled(Link)`
   cursor: pointer;
-  margin: 0 30px;
+  margin: 0 40px;
   color: #ffffff;
 
   &:hover {
@@ -126,4 +167,15 @@ const DropdownItem = styled(Link)`
     color: #54ecc4;
     transition: color .4s ease-in-out;
   }
+`;
+
+const ProfileImageWrapper = styled.div`
+  position: relative;
+`;
+
+const ProfileImage = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
 `;
