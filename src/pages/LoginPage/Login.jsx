@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useEffect } from 'react'
+import Header from "../../components/Header"
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
@@ -26,8 +27,8 @@ const firebaseConfig = {
 
   const Login = ()=>{
 
-  const [username, setusername] = useState('');
-  const [password, setpassword] = useState('');
+  //const [username, setusername] = useState('');
+  //const [password, setpassword] = useState('');
   const navigate = useNavigate();
    const [, setCookie] = useCookies(['refreshToken']);
 
@@ -77,15 +78,15 @@ const firebaseConfig = {
         type='email'
         className="login-id"
         placeholder='아이디'
-        value={username}
-        onChange={(e) => setusername(e.target.value)}
+        //value={username}
+        //onChange={(e) => setusername(e.target.value)}
         />
         <input
         type='password'
         className="login-password"
         placeholder='비밀번호'
-        value={password}
-        onChange={(e) => setpassword(e.target.value)}
+        //value={password}
+        //onChange={(e) => setpassword(e.target.value)}
         />
         <button className='login-complet' onClick={handleSubmit}>로그인 하기</button>
       </div>
