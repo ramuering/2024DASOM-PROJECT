@@ -50,21 +50,23 @@ function ManApply() {
 
     fetchMembers();
   }, []);
+
+
   // 재학, 휴학
 const handleToggleStatus = async (memberNo) => {
     try {
-      const memberToToggle = members.find((member) => member.memNo === memberNo);
-      if (!memberToToggle) {
-        console.error('Member not found');
-        return;
-      }
+      const memberToUpdate = members.find((member) => member.memNo === memberNo);
+          if (!memberToUpdate) {
+            console.error('Member not found');
+            return;
+          }
   
-      const newStatus = memberToToggle.memState=== 'active' ? 'inactive' : 'active';
-      const message = `${memberToToggle.memName}님을 ${newStatus} 처리 하시겠습니까?`;
+      const newStatus = memberToUpdate.memState=== 'active' ? 'inactive' : 'active';
+      const message = `${memberToUpdate.memName}님을 ${newStatus} 처리 하시겠습니까?`;
       const userResponse = window.confirm(message);
   
       if (userResponse) {
-        const response = await axios.put(`http://localhost:8090/members/${memberNo}`, {
+        const response = await axios.put(`http://dmu-dasom.or.kr:8090/members/${memberNo}`, {
           newStatus: newStatus,
         });
   
@@ -94,19 +96,20 @@ const handleToggleGraduation = async (memberNo) => {
       return;
     }
 
-    const newGraduation = memberToUpdate.memState === '재학' ? '졸업' : '재학';
-    const message = `${memberToUpdate.memName}님을 ${newGraduation} 처리 하시겠습니까?`;
+    const memState = memberToUpdate.memState=== 'active' ? 'inactive' : 'active';
+    const message = `${memberToUpdate.memName}님을 ${memState} 처리 하시겠습니까?`;
     const userResponse = window.confirm(message);
 
     if (userResponse) {
-      const response = await axios.put(`http://localhost:8090/members/${memberNo}`, {
-        newGraduation: newGraduation,
+    console.log(memberNo)
+      const response = await axios.put(`http://dmu-dasom.or.kr:8090/${memberNo}`, {
+        memState: memState,
       });
 
       if (response.data.success) {
         const updatedMembers = members.map((member) => {
           if (member.memNo === memberNo) {
-            return { ...member, memState: newGraduation };
+            return { ...member, memState: memState };
           }
           return member;
         });
@@ -129,7 +132,7 @@ const handleToggleGraduation = async (memberNo) => {
         const userResponse = window.confirm(message);
   
         if (userResponse) {
-          const response = await axios.delete(`http://localhost:8090/members/${memberNo}`);
+          const response = await axios.delete(`http://dmu-dasom.or.kr:8090/members/${memberNo}`);
   
           if (response.data.success) {
             setMembers((prevMembers) =>

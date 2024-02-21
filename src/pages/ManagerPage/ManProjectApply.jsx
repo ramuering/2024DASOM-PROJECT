@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import "./ManStudyApply.css"
 import axios from 'axios';
+import {  useNavigate } from 'react-router-dom'
+
+
 
 function ManProjectApply() {
+ const navigate = useNavigate();
     const [projectTitle, setProjectTitle] = useState('');
     const [projectContent, setProjectContent] = useState('');
     const [startDate, setStartDate] = useState('');
@@ -10,39 +14,20 @@ function ManProjectApply() {
     const [thumbnailPic, setThumbnailPic] = useState(null);
     const [studyPic, setStudyPic] = useState(null);
 
-    const handleThumbnailPicChange = (event) => {
-        const file = event.target.files[0];
-        setThumbnailPic(file);
-    };
-
-    const handleStudyPicChange = (event) => {
-        const file = event.target.files[0];
-        setStudyPic(file);
-    };
-
     const handleProjectRegistration = async () => {
-        const formData = new FormData();
-        formData.append('projectTitle', projectTitle);
-        formData.append('projectContent', projectContent);
-        formData.append('startDate', startDate);
-        formData.append('endDate', endDate);
-        formData.append('thumbnailPic', thumbnailPic);
-        formData.append('studyPic', studyPic);
 
         console.log('studyPic', studyPic)
 
         try {
-            const axiosInstance = axios.create({
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
+            const response = await axios.post(`http://dmu-dasom.or.kr:8090/board/project`,{
+                    projectTitle,
+                    projectContent,
+                    startDate,
+                    endDate,
             });
-
-            const response = await axiosInstance.post('http://dmu-dasom.or.kr:8090/board/project', formData);
-
-            if (response.status === 200) {
-                console.log("성공")
-                //navigate('/SignUp02');
+            if (response.status === 201) {
+                console.log("프로젝트 생성 성공")
+                navigate('/ManProject');
             }
         } catch (error) {
             console.error(error)
@@ -93,25 +78,7 @@ function ManProjectApply() {
                 />
             </div>
 
-            <div className='ManStudyApply-picture'>썸네일 사진</div>
-            <input
-                type="file"
-                accept="image/*"
-                onChange={handleThumbnailPicChange}
-                style={{ display: 'none' }}
-                id="thumbnailPicInput"
-            />
-            <label htmlFor="thumbnailPicInput" className='ManStudyApply-select'>사진 선택</label>
 
-            <div className='ManStudyApply-activ'>활동 사진</div>
-            <input
-                type="file"
-                accept="image/*"
-                onChange={handleStudyPicChange}
-                style={{ display: 'none' }}
-                id="studyPicInput"
-            />
-            <label htmlFor="studyPicInput" className='ManStudyApply-select'>사진 선택</label>
 
             <button className='ManStudyApply-button' onClick={handleProjectRegistration}>프로젝트 등록</button>
         </div>
