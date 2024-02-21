@@ -59,7 +59,7 @@ const handleToggleStatus = async (memberNo) => {
         return;
       }
   
-      const newStatus = memberToToggle.memberstate=== '재학' ? '휴학' : '재학';
+      const newStatus = memberToToggle.memState=== 'active' ? 'inactive' : 'active';
       const message = `${memberToToggle.memName}님을 ${newStatus} 처리 하시겠습니까?`;
       const userResponse = window.confirm(message);
   
@@ -71,7 +71,7 @@ const handleToggleStatus = async (memberNo) => {
         if (response.data.success) {
           const updatedMembers = members.map((member) => {
             if (member.memNo === memberNo) {
-              return { ...member, memberstate: newStatus };
+              return { ...member, memState: newStatus };
             }
             return member;
           });
@@ -83,6 +83,41 @@ const handleToggleStatus = async (memberNo) => {
     } catch (error) {
       console.error('Error toggling member status:', error);
     }
+};
+  
+// 재학/졸업
+const handleToggleGraduation = async (memberNo) => {
+  try {
+    const memberToUpdate = members.find((member) => member.memNo === memberNo);
+    if (!memberToUpdate) {
+      console.error('Member not found');
+      return;
+    }
+
+    const newGraduation = memberToUpdate.memState === '재학' ? '졸업' : '재학';
+    const message = `${memberToUpdate.memName}님을 ${newGraduation} 처리 하시겠습니까?`;
+    const userResponse = window.confirm(message);
+
+    if (userResponse) {
+      const response = await axios.put(`http://localhost:8090/members/${memberNo}`, {
+        newGraduation: newGraduation,
+      });
+
+      if (response.data.success) {
+        const updatedMembers = members.map((member) => {
+          if (member.memNo === memberNo) {
+            return { ...member, memState: newGraduation };
+          }
+          return member;
+        });
+        setMembers(updatedMembers);
+      } else {
+        console.error('Failed to update member graduation');
+      }
+    }
+  } catch (error) {
+    console.error('Error toggling member graduation:', error);
+  }
 };
   // 탈퇴
   const handleWithdrawal = async (memberNo) => {
@@ -109,40 +144,6 @@ const handleToggleStatus = async (memberNo) => {
       console.error('Error handling withdrawal:', error);
     }
   };
-// 재학/졸업
-const handleToggleGraduation = async (memberNo) => {
-  try {
-    const memberToUpdate = members.find((member) => member.memNo === memberNo);
-    if (!memberToUpdate) {
-      console.error('Member not found');
-      return;
-    }
-
-    const newGraduation = memberToUpdate.memberstate === '재학' ? '졸업' : '재학';
-    const message = `${memberToUpdate.memName}님을 ${newGraduation} 처리 하시겠습니까?`;
-    const userResponse = window.confirm(message);
-
-    if (userResponse) {
-      const response = await axios.put(`http://localhost:8090/members/${memberNo}`, {
-        newGraduation: newGraduation,
-      });
-
-      if (response.data.success) {
-        const updatedMembers = members.map((member) => {
-          if (member.memNo === memberNo) {
-            return { ...member, memberstate: newGraduation };
-          }
-          return member;
-        });
-        setMembers(updatedMembers);
-      } else {
-        console.error('Failed to update member graduation');
-      }
-    }
-  } catch (error) {
-    console.error('Error toggling member graduation:', error);
-  }
-};
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -182,13 +183,13 @@ const handleToggleGraduation = async (memberNo) => {
                   <div className='manApply-infoname'>{member.memName}</div>
                   <button
                     onClick={() => handleToggleStatus(member.memNO)}
-                    className={member.memberstate === '재학' ? 'manApply-btn-attend' : 'manApply-btn-timeOff'}>
-                  {`${member.memberstate}`}
+                    className={member.memState === 'active' ? 'manApply-btn-attend' : 'manApply-btn-timeOff'}>
+                  {member.memState}
                   </button>
                 <button
-                  onClick={() => handleToggleGraduation(member.id)}
-                  className={member.memberstate === '재학' ? 'manApply-btn-ungraduated' : 'manApply-btn-graduated'}>
-                  {`${member.memberstate}`}
+                  onClick={() => handleToggleGraduation(member.memNo)}
+                  className={member.memState === 'active' ? 'manApply-btn-ungraduated' : 'manApply-btn-graduated'}>
+                  {member.memState}
                 </button>
                   <button className='manApply-btn-withdraw' onClick={() => handleWithdrawal(member.memNO)}>탈퇴</button>
                 </li>
