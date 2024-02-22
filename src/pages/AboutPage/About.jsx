@@ -135,6 +135,7 @@ const Menu = ({ currentPage, onPageChange }) => {
 const Lead = ({ members }) => {
   return (
     <div className='about-mem-list'>
+
       {members.map((member, index) => (
         <MemBox key={index} imageUrl={member.memProfilePic} name={member.memName} year={member.memRecNo} />
       ))}
@@ -145,6 +146,7 @@ const Lead = ({ members }) => {
 const CoreMember = ({ members }) => {
   return (
     <div className='about-mem-list'>
+
       {members.map((member, index) => (
         <MemBox key={index} imageUrl={member.memProfilePic} name={member.memName} year={member.memRecNo} />
       ))}
@@ -155,6 +157,7 @@ const CoreMember = ({ members }) => {
 const Member = ({ members }) => {
   return (
     <div className='about-mem-list'>
+
       {members.map((member, index) => (
         <MemBox key={index} imageUrl={member.memProfilePic} name={member.memName} year={member.memRecNo} />
       ))}

@@ -60,7 +60,7 @@ const [boardList, setboardList] = useState([]);
           const response = await axios.get('https://dmu-dasom.or.kr:8090/board/notice');
           if (response.data.success) {
             setboardList(response.data.data);
-            console.log("관리자 공지사항 페이지 데이터 받앙오기 성공")
+            console.log("관리자 공지사항 페이지 데이터 받아오기 성공")
             console.log(response)
           }
         } catch (error) {

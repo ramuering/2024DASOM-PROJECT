@@ -25,6 +25,9 @@
     font-size: 16px;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s, color 0.3s;;
+    transition: background-color 0.3s, color 0.3s;;
+
 }
 /* 버튼 hover */
 .manMain-button:hover {
@@ -33,4 +36,5 @@
     color: black;
     transition: background-color 0.3s;
     transition: color 0.3s;
+    border-color: #54ECC4;
 }

@@ -52,9 +52,12 @@ function NoticeUpdate(){
                 <br></br>
                 <br></br>
                 <br></br>
+
                 <textarea id="NoCr-Cr-text" name="motivation" required placeholder='본문  내용을 입력하세요*'
                 value={noticeContent}
                 onChange={(e) => setNoticeContent(e.target.value)}></textarea>
+
+
 
                 <div class="filebox">
                     <p id='filebox-titles'>사진</p>

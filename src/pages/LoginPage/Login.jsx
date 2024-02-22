@@ -9,6 +9,7 @@ import 'firebase/auth'; // Import firebase/auth module
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
 import { useCookies } from 'react-cookie';
 
 const firebaseConfig = {
@@ -29,8 +30,9 @@ const firebaseConfig = {
 
   const [username, setusername] = useState('');
    const [password, setpassword] = useState('');
+
   const navigate = useNavigate();
-   const [, setCookie] = useCookies(['refreshToken']);
+  const [, setCookie] = useCookies(['refreshToken']);
 
 //   const onClick = async () => {
 //     const result = await Login(username, password);
