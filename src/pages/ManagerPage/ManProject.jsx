@@ -13,7 +13,7 @@ function ManProject() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('http://dmu-dasom.or.kr:8090/board/project');
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/board/project');
         if (response.data.success) {
           setProjects(response.data.data);
         }

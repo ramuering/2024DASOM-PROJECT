@@ -34,9 +34,7 @@ function Makers() {
 
         <div className='makers-position'>Pm</div><div className='makers-line2'></div>
         <div className='makers-member'>
-          <Member profile='./images/myPage/aramProfile.jpeg' name='김아람' gi='32기'></Member>
           <Member profile='./images/myPage/hosungProfile.jpg' name='남호성' gi='29기'></Member>
-          <Member profile='./images/myPage/seonghwanProfile.jpeg' name='유승완' gi='32기'></Member>
 
 
         </div>

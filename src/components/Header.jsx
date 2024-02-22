@@ -10,7 +10,7 @@ const Header = () => {
     setIsLoggedIn(false);
   }
   
-  const token = '1234567abcd' //임시값
+  //const token = '1234567abcd' //임시값
 
 
   return (

@@ -1,70 +1,55 @@
-import React from 'react'
 import Footer from '../../components/Footer'
 import styled from 'styled-components'
 import "./Project.css"
 import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Project = ()=>  {
+
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/board/project');
+        if (response.data.success) {
+          setProjects(response.data.data);
+          console.log("회원이 보는 프로젝트 페이지 == > 프로젝트 리스트 받아오기 성공")
+          console.log(response)
+        }
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <Container>
       <div className='project-title'>PROJECT</div>
       <div className="project-list">
         <div className="project-box-container">
-        <div className="project-box">
-          <div className="project-img"></div>
-          <div className="project-content">
-          <div className="project-content-title-wrapper">
-                <div className="project-content-title">다솜플젝</div>
-                <div className="project-content-part">WEB</div>
-                <div className="project-content-gener">32기</div>
+          {projects.map((project, index) => (
+            <Link to={`/ProjectInfo/${project.projectNo}`} key={index} className="project-link">
+              <div className="project-box">
+                <div className="project-img"></div>
+                <div className="project-content">
+                  <div className="project-content-title-wrapper">
+                    <div className="project-content-title">{project.projectTitle}</div>
+                  </div>
+                </div>
               </div>
-            <div className="project-content-sub">다솜플젝상세</div>
-          </div>
+            </Link>
+          ))}
         </div>
-        <div className="project-box">
-          <div className="project-img"></div>
-          <div className="project-content">
-              <div className="project-content-title-wrapper">
-              <div className="project-content-title">다솜플젝</div>
-                <div className="project-content-part">WEB</div>
-                <div className="project-content-gener">32기</div>
-              </div>
-            <div className="project-content-sub">다솜플젝상세</div>
-          </div>
-        </div>
-        <div className="project-box">
-          <div className="project-img"></div>
-          <div className="project-content">
-          <div className="project-content-title-wrapper">
-          <div className="project-content-title">다솜플젝</div>
-               <div className="project-content-part">WEB</div>
-               <div className="project-content-gener">32기</div>
-              </div>
-            <div className="project-content-sub">다솜플젝상세</div>
-          </div>
-        </div>
-        <div className="project-box">
-          <div className="project-img"></div>
-          <div className="project-content">
-          <div className="project-content-title-wrapper">
-          <div className="project-content-title">다솜플젝</div>
-                <div className="project-content-part">WEB</div>
-                <div className="project-content-gener">32기</div>
-              </div>
-            <div className="project-content-sub">다솜플젝상세</div>
-          </div>
-          </div>
-          </div>
       </div>
-      <Link to="/projectinfo" className="project-move-button">
-        <div className="project-move-font">더보기</div>
-      </Link>
       <div className="project-footer">
         <Footer/>
       </div>
     </Container>
-    
-  )
+  );
 }
 
 export default Project
