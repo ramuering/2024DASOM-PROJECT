@@ -114,7 +114,7 @@ function Apply1() {
         <div>
         <p id="Ap1-form-title">지원서 작성</p>
         <br></br>
-        <p id="Ap1-sub-title">32기 신입부원 모집</p>
+        <p id="Ap1-sub-title">33기 신입부원 모집</p>
         </div>
         
 

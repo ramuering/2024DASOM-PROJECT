@@ -34,11 +34,13 @@ const Header = () => {
           <ProfileImageWrapper>
           {isLoggedIn ? (
       <>
+      <Link to="/mypage">
         <ProfileImage
           src="/images/myPage/profile.jpg"
           onMouseEnter={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
         />
+        </Link>
         {showDropdown && (
           <DropdownMenu>
             {/* 로그인 상태일 때 나타날 드롭다운 메뉴 */}
@@ -49,11 +51,13 @@ const Header = () => {
       </>
     ) : (
       <>
+      <Link to="/mypage">
         <ProfileImage
           src="/images/myPage/profile.jpg"
           onMouseEnter={() => setShowDropdown(true)}
           onMouseLeave={() => setShowDropdown(false)}
         />
+        </Link>
         {showDropdown && (
           <DropdownMenu>
             {/* 로그인 상태가 아닐 때 나타날 드롭다운 메뉴 */}

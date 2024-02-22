@@ -41,7 +41,7 @@ const Footer = () => {
         <a href='https://github.com/DASOM-GitHub'>
           <img className='footer-img-github' src='./images/github.PNG' alt='깃허브로고'></img>
         </a>
-        <a href='https://instagram.com/das_om31'>
+        <a href='https://instagram.com/dasom___official'>
           <img className='footer-img-instagram' src='./images/instagram.PNG' alt='인스타로고'></img>
         </a>
       </div>
