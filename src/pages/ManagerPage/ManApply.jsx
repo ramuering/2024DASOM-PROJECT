@@ -4,10 +4,14 @@ import Header from '../../components/Header'
 import axios from 'axios';
 
 function ManApply() {
+
+
   const PAGE_SIZE = 10; // 페이지당 표시할 멤버 수
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
   const [members, setMembers] = useState([]);
   const [search, setSearch] = useState("");
+
+
 
   // 페이징된 멤버 목록
   const paginatedMembers = members.slice(
@@ -38,7 +42,7 @@ function ManApply() {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await axios.get('http://dmu-dasom.or.kr:8090/members');
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/members');
         console.log(response)
         if (response.data.success) {
           setMembers(response.data.data);
@@ -50,28 +54,30 @@ function ManApply() {
 
     fetchMembers();
   }, []);
+
+
   // 재학, 휴학
 const handleToggleStatus = async (memberNo) => {
-console.log(members)
     try {
-      const memberToToggle = members.find((member) => member.memNo === memberNo);
-             if (!memberToToggle) {
-               console.error('Member not found');
-               return;
-             }
-      const newStatus = memberToToggle.memberstate=== '재학' ? '휴학' : '재학';
-      const message = `${memberToToggle.memName}님을 ${newStatus} 처리 하시겠습니까?`;
+      const memberToUpdate = members.find((member) => member.memNo === memberNo);
+          if (!memberToUpdate) {
+            console.error('Member not found');
+            return;
+          }
+  
+      const newStatus = memberToUpdate.memState=== 'active' ? 'inactive' : 'active';
+      const message = `${memberToUpdate.memName}님을 ${newStatus} 처리 하시겠습니까?`;
       const userResponse = window.confirm(message);
   
       if (userResponse) {
-        const response = await axios.put(`http://dmu-dasom.or.kr:8090/members/${memberNo}`, {
+        const response = await axios.put(`https://dmu-dasom.or.kr:8090/members/${memberNo}`, {
           newStatus: newStatus,
         });
   
         if (response.data.success) {
           const updatedMembers = members.map((member) => {
             if (member.memNo === memberNo) {
-              return { ...member, memberstate: newStatus };
+              return { ...member, memState: newStatus };
             }
             return member;
           });
@@ -83,6 +89,42 @@ console.log(members)
     } catch (error) {
       console.error('Error toggling member status:', error);
     }
+};
+  
+// 재학/졸업
+const handleToggleGraduation = async (memberNo) => {
+  try {
+    const memberToUpdate = members.find((member) => member.memNo === memberNo);
+    if (!memberToUpdate) {
+      console.error('Member not found');
+      return;
+    }
+
+    const memState = memberToUpdate.memState=== 'active' ? 'inactive' : 'active';
+    const message = `${memberToUpdate.memName}님을 ${memState} 처리 하시겠습니까?`;
+    const userResponse = window.confirm(message);
+
+    if (userResponse) {
+    console.log(memberNo)
+      const response = await axios.patch(`https://dmu-dasom.or.kr:8090/${memberNo}`, {
+        memState: memState,
+      });
+
+      if (response.data.success) {
+        const updatedMembers = members.map((member) => {
+          if (member.memNo === memberNo) {
+            return { ...member, memState: memState };
+          }
+          return member;
+        });
+        setMembers(updatedMembers);
+      } else {
+        console.error('Failed to update member graduation');
+      }
+    }
+  } catch (error) {
+    console.error('Error toggling member graduation:', error);
+  }
 };
   // 탈퇴
   const handleWithdrawal = async (memberNo) => {
@@ -109,40 +151,6 @@ console.log(members)
       console.error('Error handling withdrawal:', error);
     }
   };
-// 재학/졸업
-const handleToggleGraduation = async (memberNo) => {
-  try {
-    const memberToUpdate = members.find((member) => member.memNo === memberNo);
-    if (!memberToUpdate) {
-      console.error('Member not found');
-      return;
-    }
-
-    const newGraduation = memberToUpdate.memberstate === '재학' ? '졸업' : '재학';
-    const message = `${memberToUpdate.memName}님을 ${newGraduation} 처리 하시겠습니까?`;
-    const userResponse = window.confirm(message);
-
-    if (userResponse) {
-      const response = await axios.put(`http://dmu-dasom.or.kr:8090/members/${memberNo}`, {
-        newGraduation: newGraduation,
-      });
-
-      if (response.data.success) {
-        const updatedMembers = members.map((member) => {
-          if (member.memNo === memberNo) {
-            return { ...member, memberstate: newGraduation };
-          }
-          return member;
-        });
-        setMembers(updatedMembers);
-      } else {
-        console.error('Failed to update member graduation');
-      }
-    }
-  } catch (error) {
-    console.error('Error toggling member graduation:', error);
-  }
-};
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -169,27 +177,26 @@ const handleToggleGraduation = async (memberNo) => {
             <p className='manApply-gen'>기수</p>
             <p className='manApply-department'>학과</p>
             <p className='manApply-name'>이름</p>
-            <p className='manApply-timeOff'>휴학</p>
-            <p className='manApply-timeOff'>복학</p>
+            <p className='manApply-timeOff'>휴・복학</p>
             <p className='manApply-graduation'>졸업</p>
             <p className='manApply-modify'>수정</p>
             <p className='manApply-withdraw'>탈퇴</p>
           </div>
           <ul>
             {paginatedMembers.map((member) => (
-               <li key={member.memNO}>
+               <li key={member.memNo}>
                   <div className='manApply-infogen'>{member.memNo}</div>
                   <div className='manApply-infodept'>{member.memDepartment}</div>
                   <div className='manApply-infoname'>{member.memName}</div>
                   <button
                     onClick={() => handleToggleStatus(member.memNO)}
-                    className={member.memberstate === '재학' ? 'manApply-btn-attend' : 'manApply-btn-timeOff'}>
-                  {`${member.memberstate}`}
+                    className={member.memState === 'active' ? 'manApply-btn-attend' : 'manApply-btn-timeOff'}>
+                  {member.memState}
                   </button>
                 <button
-                  onClick={() => handleToggleGraduation(member.id)}
-                  className={member.memberstate === '재학' ? 'manApply-btn-ungraduated' : 'manApply-btn-graduated'}>
-                  {`${member.memberstate}`}
+                  onClick={() => handleToggleGraduation(member.memNo)}
+                  className={member.memState === 'active' ? 'manApply-btn-ungraduated' : 'manApply-btn-graduated'}>
+                  {member.memState}
                 </button>
                   <button className='manApply-btn-withdraw' onClick={() => handleWithdrawal(member.memNO)}>탈퇴</button>
                 </li>

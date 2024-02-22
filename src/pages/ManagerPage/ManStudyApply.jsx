@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './ManStudyApply.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 
 function ManStudyApply() {
+     const navigate = useNavigate();
     const [studyTitle, setStudyTitle] = useState('');
     const [studyContent, setStudyContent] = useState('');
     const [referencesUrl, setReferencesUrl] = useState('');
@@ -27,18 +30,32 @@ function ManStudyApply() {
         setStudyPic(file);
     };
 
-    const handleStudyRegistration = () => {
-            // 스터디 등록 버튼 클릭 시 실행되는 함수
-            console.log('스터디 제목:', studyTitle);
-            console.log('스터디 내용:', studyContent);
-            console.log('교재 및 강의자료 URL:', referencesUrl);
-            console.log('노션 URL:', notionUrl);
-            console.log('시작 날짜:', startDate);
-            console.log('종료 날짜:', endDate);
-            console.log('활동 주차:', activityWeeks);
-            console.log('썸네일 사진:', thumbnailPic);
-            console.log('활동 사진:', studyPic);
+    const handleStudyRegistration = async () => {
+
+    try {
+                const response = await axios.post(`http://dmu-dasom.or.kr:8090/board/study`,{
+                        studyTitle,
+                        studyContent,
+                        referencesUrl,
+                        notionUrl,
+                        startDate,
+                        endDate
+                });
+                if (response.status === 201) {
+                    console.log("스터디 생성 성공")
+                    navigate('/ManStudy');
+                }
+            } catch (error) {
+                console.error(error)
+            }
         };
+            // 스터디 등록 버튼 클릭 시 실행되는 함수
+//             console.log('스터디 제목:', studyTitle);
+//             console.log('스터디 내용:', studyContent);
+//             console.log('교재 및 강의자료 URL:', referencesUrl);
+//             console.log('노션 URL:', notionUrl);
+//             console.log('시작 날짜:', startDate);
+//             console.log('종료 날짜:', endDate);
 
     return (
         <div className='ManStudyApply'>
