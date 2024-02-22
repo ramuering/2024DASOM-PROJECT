@@ -2,12 +2,28 @@ import React, { useState } from 'react';
 import './ManStudyApply.css';
 
 
+
 function ManProjectModify() {
+
+
         const [activityWeeks, setActivityWeeks] = useState(["1주차"]);
         const addWeek = () => {
         const newWeek = `${activityWeeks.length + 4}주차`;
                   setActivityWeeks([...activityWeeks, newWeek]);
                 };
+
+         const [thumbnailPic, setThumbnailPic] = useState(null);
+            const [studyPic, setStudyPic] = useState(null);
+
+            const handleThumbnailPicChange = (event) => {
+                const file = event.target.files[0];
+                setThumbnailPic(file);
+            };
+
+            const handleStudyPicChange = (event) => {
+                const file = event.target.files[0];
+                setStudyPic(file);
+            };
   return (
     <div className='ManStudyApply'>
     <div className='ManStudyApply-title'>프로젝트 수정</div>
@@ -59,9 +75,24 @@ function ManProjectModify() {
       <button className='plus' onClick={addWeek}>+</button>
 
       <div className='ManStudyApply-picture'>썸네일 사진</div>
-      <button className='ManStudyApply-select'>사진 선택</button>
-      <div className='ManStudyApply-activ'>활동 사진</div>
-      <button className='ManStudyApply-select'>사진 선택</button>
+                  <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleThumbnailPicChange}
+                      style={{ display: 'none' }}
+                      id="thumbnailPicInput"
+                  />
+                  <label htmlFor="thumbnailPicInput" className='ManStudyApply-select'>사진 선택</label>
+
+                  <div className='ManStudyApply-activ'>활동 사진</div>
+                  <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleStudyPicChange}
+                      style={{ display: 'none' }}
+                      id="studyPicInput"
+                  />
+                  <label htmlFor="studyPicInput" className='ManStudyApply-select'>사진 선택</label>
 
       <button className='ManStudyApply-button'>프로젝트 수정</button>
 </div>

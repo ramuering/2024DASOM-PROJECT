@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer'
 import styled from 'styled-components'
 import "./Study.css"
 import { Link } from 'react-router-dom'
+import axios from 'axios';
+
 
 const Study = ()=>  {
+
+
+
+
+
+
   return (
     <Container>
       <div className='study-title'>STUDY</div>
       <div className="study-list">
         <div className="study-box-container">
 
-        
+
         <div className="study-box">
           <div className="study-img"></div>
           <div className="study-content">

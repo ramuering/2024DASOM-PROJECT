@@ -4,10 +4,14 @@ import Header from '../../components/Header'
 import axios from 'axios';
 
 function ManApply() {
+
+
   const PAGE_SIZE = 10; // 페이지당 표시할 멤버 수
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지
   const [members, setMembers] = useState([]);
   const [search, setSearch] = useState("");
+
+
 
   // 페이징된 멤버 목록
   const paginatedMembers = members.slice(
@@ -38,7 +42,7 @@ function ManApply() {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await axios.get('http://dmu-dasom.or.kr:8090/members');
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/members');
         console.log(response)
         if (response.data.success) {
           setMembers(response.data.data);
@@ -50,21 +54,23 @@ function ManApply() {
 
     fetchMembers();
   }, []);
+
+
   // 재학, 휴학
 const handleToggleStatus = async (memberNo) => {
     try {
-      const memberToToggle = members.find((member) => member.memNo === memberNo);
-      if (!memberToToggle) {
-        console.error('Member not found');
-        return;
-      }
+      const memberToUpdate = members.find((member) => member.memNo === memberNo);
+          if (!memberToUpdate) {
+            console.error('Member not found');
+            return;
+          }
   
-      const newStatus = memberToToggle.memState=== 'active' ? 'inactive' : 'active';
-      const message = `${memberToToggle.memName}님을 ${newStatus} 처리 하시겠습니까?`;
+      const newStatus = memberToUpdate.memState=== 'active' ? 'inactive' : 'active';
+      const message = `${memberToUpdate.memName}님을 ${newStatus} 처리 하시겠습니까?`;
       const userResponse = window.confirm(message);
   
       if (userResponse) {
-        const response = await axios.put(`http://localhost:8090/members/${memberNo}`, {
+        const response = await axios.put(`https://dmu-dasom.or.kr:8090/members/${memberNo}`, {
           newStatus: newStatus,
         });
   
@@ -94,19 +100,25 @@ const handleToggleGraduation = async (memberNo) => {
       return;
     }
 
+<<<<<<< HEAD
     const newGraduation = memberToUpdate.memState === 'active' ? 'graduation' : 'active';
     const message = `${memberToUpdate.memName}님을 ${newGraduation} 처리 하시겠습니까?`;
+=======
+    const memState = memberToUpdate.memState=== 'active' ? 'inactive' : 'active';
+    const message = `${memberToUpdate.memName}님을 ${memState} 처리 하시겠습니까?`;
+>>>>>>> 36df3dc1d3fe86523eae116ab51c6bfa613ba740
     const userResponse = window.confirm(message);
 
     if (userResponse) {
-      const response = await axios.put(`http://localhost:8090/members/${memberNo}`, {
-        newGraduation: newGraduation,
+    console.log(memberNo)
+      const response = await axios.patch(`https://dmu-dasom.or.kr:8090/${memberNo}`, {
+        memState: memState,
       });
 
       if (response.data.success) {
         const updatedMembers = members.map((member) => {
           if (member.memNo === memberNo) {
-            return { ...member, memState: newGraduation };
+            return { ...member, memState: memState };
           }
           return member;
         });
@@ -129,7 +141,7 @@ const handleToggleGraduation = async (memberNo) => {
         const userResponse = window.confirm(message);
   
         if (userResponse) {
-          const response = await axios.delete(`http://localhost:8090/members/${memberNo}`);
+          const response = await axios.delete(`http://dmu-dasom.or.kr:8090/members/${memberNo}`);
   
           if (response.data.success) {
             setMembers((prevMembers) =>
@@ -177,7 +189,7 @@ const handleToggleGraduation = async (memberNo) => {
           </div>
           <ul>
             {paginatedMembers.map((member) => (
-               <li key={member.memNO}>
+               <li key={member.memNo}>
                   <div className='manApply-infogen'>{member.memNo}</div>
                   <div className='manApply-infodept'>{member.memDepartment}</div>
                   <div className='manApply-infoname'>{member.memName}</div>
