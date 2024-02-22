@@ -19,7 +19,7 @@ function ManProjectApply() {
         console.log('studyPic', studyPic)
 
         try {
-            const response = await axios.post(`http://dmu-dasom.or.kr:8090/board/project`,{
+            const response = await axios.post(`https://dmu-dasom.or.kr:8090/board/project`,{
                     projectTitle,
                     projectContent,
                     startDate,

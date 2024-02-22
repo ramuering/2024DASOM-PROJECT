@@ -58,31 +58,31 @@ function Notice() {
     window.scrollTo(0, 0);
   }, [])
 
-  const [boardList, setBoardList] = useState([]);
+  const [boardList, setboardList] = useState([]);
 
-  const getBoardList = async () => {
-    try {
-      const response = await axios.get('http://localhost:8090/notice')
-      setBoardList(response.data);
-      if (response.status === 200) {
-        console.log('공지사항 목록 조회 성공');
-      } 
-      else if (response.status === 404){
-        console.log('데이터 가져오기 실패');
-      }
-    } catch (error) {
-      console.error('에러 발생:', error);
-    }
-  };
+  useEffect(() => {
+      const fetchStudys = async () => {
+        try {
+          const response = await axios.get('https://dmu-dasom.or.kr:8090/board/notice');
+          if (response.data.success) {
+            setboardList(response.data.data);
+            console.log("지원자 받기 성공")
+            console.log(response)
+          }
+        } catch (error) {
+          console.error('Error fetching studys:', error);
+        }
+      };
 
-useEffect(() => {
-  getBoardList();
-}, []);
+      fetchStudys();
+    }, []);
+
 
 const [filteredResults, setfilteredResults] = useState([]);
 const [searchInput, setSearchInput] = useState('');
 
 const searchTitle = async (searchValue) =>{
+console.log("공지사항 가지고 오기 실행 ")
   try {
     const resp = await (await axios.get('http://localhost:8090/notice/title')).data;
     setSearchInput(searchValue)
@@ -123,17 +123,17 @@ const searchTitle = async (searchValue) =>{
   const renderPageButtons = () => {
     const visiblePageButtons = 5;
     const totalPageButtons = Math.min(visiblePageButtons, totalPages);
-  
+
     // Calculate the start and end page numbers
     let startPage = Math.max(currentPage - Math.floor(visiblePageButtons / 2), 1);
     let endPage = startPage + totalPageButtons - 1;
-  
+
     // Adjust the start and end page numbers if they go beyond the valid range
     if (endPage > totalPages) {
       endPage = totalPages;
       startPage = Math.max(endPage - visiblePageButtons + 1, 1);
     }
-  
+
     return Array.from({ length: totalPageButtons }, (_, index) => {
       const pageNumber = startPage + index;
       return (
@@ -157,26 +157,26 @@ const searchTitle = async (searchValue) =>{
       <div id="Null-box">
         <NotiNullBox></NotiNullBox>
         <p id="Noti-title">공지사항</p>
-        
+
         <div class="search-container">
             <input placeholder='검색어를 입력하세요' id="Nocr-inputs"></input>
             <div class="search-icon1" style={{ backgroundImage: "url('images/search-icon.png')" }}
             onChange={(e)=>searchTitle(e.target.value)}></div>
         </div>
 
-        <table id='Noti-table'>     
+        <table id='Noti-table'>
             <tr id ="tr-title">
               <td>번호</td>
               <td>제목</td>
               <td>작성자</td>
               <td>작성일</td>
             </tr>
-            {currentItems.map((item) => (
-              <tr id='tr-contents' key={item.id}>
-                <td class="Noti-s"><Link to={`/noticedetail/${item.id}`}>{item.id}</Link></td>
-                <td class="Noti-l"><Link to={`/noticedetail/${item.id}`}>{item.title}</Link></td>
-                <td class="Noti-s"><Link to={`/noticedetail/${item.id}`}>{item.name}</Link></td>
-                <td class="Noti-s"><Link to={`/noticedetail/${item.id}`}>{item.date}</Link></td>
+            {boardList.map((boardList) => (
+              <tr id='tr-contents' key={boardList.id}>
+                <td class="Noti-s"><Link to={`/noticedetail/${boardList.id}`}>{boardList.noticeNo}</Link></td>
+                <td class="Noti-l"><Link to={`/noticedetail/${boardList.id}`}>{boardList.noticeTitle}</Link></td>
+                <td class="Noti-s"><Link to={`/noticedetail/${boardList.id}`}>{boardList.memName}</Link></td>
+                <td class="Noti-s"><Link to={`/noticedetail/${boardList.id}`}>{boardList.noticeRegisterDate}</Link></td>
               </tr>
             ))}
         </table>

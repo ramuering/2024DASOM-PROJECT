@@ -16,8 +16,27 @@ function ManApplyMember() {
     secondAnnounce: '',
   });
 
+  const [recruitMember, setRecruitMember] = useState([]);
+
+  useEffect(() => {
+    const fetchStudys = async () => {
+      try {
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/recruit/32/applicants');
+        if (response.data.success) {
+          setRecruitMember(response.data.data);
+          console.log("지원자 받기 성공")
+          console.log(response)
+        }
+      } catch (error) {
+        console.error('Error fetching studys:', error);
+      }
+    };
+
+    fetchStudys();
+  }, []);
+
   const handleExportExcel = () => {
-    const ws = XLSX.utils.json_to_sheet(applyMembers);
+    const ws = XLSX.utils.json_to_sheet(recruitMember);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     XLSX.writeFile(wb, 'dasom_applicant_data.xlsx');
@@ -26,31 +45,9 @@ function ManApplyMember() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8090/32/applicants'); 
-        setApplyMembers(response.data);  
-        if (response.status === 200) {
-          console.log('지원자 목록 가져오기 성공');
-        } 
-      } catch (error) {
-        if (error.response && error.response.status === 404) {
-          console.error('Error fetching data:', error);
-          console.log('지원자 데이터가 없습니다.')
-        } else {
-          console.log('지원자 목록 가져오기 실패', error);
-        }
-      } finally {
-        console.log(applyMembers)
-      }
-    };
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8090/32'); 
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/32');
         setDates(response.data);
-        if (response.status === 200) {
+        if (response.data.success) {
           console.log('스케줄 가져오기 성공');
         }
       } catch (error) {
@@ -61,12 +58,11 @@ function ManApplyMember() {
           console.error('스케줄 가져오기 실패', error);
         }
       } finally {
-        console.log(dates)
+        console.log(dates);
       }
     };
     fetchData();
   }, []);
-
 
   const [editable, setEditable] = useState(false);
 
@@ -86,7 +82,7 @@ function ManApplyMember() {
         secondAnnounce,
       } = dates;
       // 서버로 선택된 날짜를 전송
-      const response = await axios.put('http://dmu-dasom.or.kr:8090/recruit/32', {
+      const response = await axios.put('https://dmu-dasom.or.kr:8090/recruit/32', {
         applyStart,
         applyEnd,
         firstAnnounce,
@@ -114,20 +110,20 @@ function ManApplyMember() {
   const { closeApplication, isApplicationOpen } = useAppContext();
 
   const handleButtonClick = (acStudentNo, acStatus) => {
-    const updatedApplyMembers = applyMembers.map((applyMember) => {
+    const updatedrecruitMember = recruitMember.map((applyMember) => {
       if (applyMember.acStudentNo === acStudentNo) {
         return { ...applyMember, acStatus: acStatus };
       }
       return applyMember;
     });
-    setApplyMembers(updatedApplyMembers);
+    setRecruitMember(updatedrecruitMember);
   };
 
   const handleSendPassMembersToBackend = async () => {
-    const passMembers = applyMembers.filter((applyMember) => applyMember.acStatus === 'pass');
-  
+    const passMembers = recruitMember.filter((applyMember) => applyMember.acStatus === 'pass');
+
     console.log('Pass Members:', passMembers);
-  
+
     try {
       const response = await axios.post('http://localhost:8090/recruit/32', passMembers, {
         headers: {
@@ -147,7 +143,6 @@ function ManApplyMember() {
     }
   };
 
-
   return (
     <div className='manAM'>
       <Header />
@@ -166,7 +161,7 @@ function ManApplyMember() {
           </div>
           <div className='manAM-date-row'>
             <p>서류 결과 발표</p>
-            <DateInput 
+            <DateInput
               value={dates.firstAnnounce}
               onChange={(value) => handleDateChange('firstAnnounce', value)}
               readOnly={!editable}
@@ -184,7 +179,7 @@ function ManApplyMember() {
           </div>
           <div className='manAM-date-row'>
             <p>최종 발표</p>
-            <DateInput 
+            <DateInput
               value={dates.secondAnnounce}
               onChange={(value) => handleDateChange('secondAnnounce', value)}
               readOnly={!editable}
@@ -200,33 +195,19 @@ function ManApplyMember() {
           <button className='manAM-magamBtn' onClick={closeApplication}>모집 마감</button>
         ) : (
           <button className='manAM-magamBtn' onClick={closeApplication}>모집 열기</button>)}
-        <p className='manAM-applyCount'>{`신청 인원 : ${applyMembers.length}`}</p>
+        <p className='manAM-applyCount'>{`신청 인원 : ${recruitMember.length}`}</p>
         <div className='manAM-list'>
           <div className='manAM-listTitle'>
             <p className='manAM-department'>학과</p>
             <p className='manAM-name'>이름</p>
             <p className='manAM-grade'>학년</p>
-            <p className='manAM-pass'>합격</p>
-            <p className='manAM-nonPass'>불합격</p>
           </div>
           <ul>
-            {applyMembers.map((applyMember) => (
-              <li key={applyMember.id}>
-                <div className='manAM-infodepartment'>{`${applyMember.acDepartment}`}</div>
-                <div className='manAM-infoname'>{`${applyMember.acName}`}</div>
-                <div className='manAM-infograde'>{`${applyMember.acGrade}`}</div>
-                <button
-                  className={`manAM-infopass ${applyMember.acStatus === 'pass' ? 'manAM-selected' : ''}`}
-                  onClick={() => handleButtonClick(applyMember.acStudentNo, 'pass')}
-                >
-                  합격
-                </button>
-                <button
-                  className={`manAM-infononPass ${applyMember.acStatus === 'nonPass' ? 'manAM-selected' : ''}`}
-                  onClick={() => handleButtonClick(applyMember.id, 'nonPass')}
-                >
-                  불합격
-                </button>
+            {recruitMember.map((recruitMember, index) => (
+              <li key={index}>
+                <div className='manAM-infodepartment'>{recruitMember.acDepartment}</div>
+                <div className='manAM-infoname'>{recruitMember.acName}</div>
+                <div className='manAM-infograde'>{recruitMember.acGrade}</div>
               </li>
             ))}
           </ul>
