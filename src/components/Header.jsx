@@ -19,7 +19,13 @@ const Header = () => {
         <img alt="Dasom Logo" src="/images/dasom-logo-header.png" />
       </Logo>
       <NavBar>
-        <NavItem to="/about">ABOUT</NavItem>
+      <NavItemWithDropdown>
+          <DropdownLabel>ABOUT</DropdownLabel>
+          <DropdownMenu>
+            <DropdownItem to="/about">ABOUT</DropdownItem>
+            <DropdownItem to="/makers">MAKERS</DropdownItem>
+          </DropdownMenu>
+        </NavItemWithDropdown>
         <NavItemWithDropdown>
           <DropdownLabel>ACTIVE</DropdownLabel>
           <DropdownMenu>

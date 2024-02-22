@@ -100,13 +100,8 @@ const handleToggleGraduation = async (memberNo) => {
       return;
     }
 
-<<<<<<< HEAD
-    const newGraduation = memberToUpdate.memState === 'active' ? 'graduation' : 'active';
-    const message = `${memberToUpdate.memName}님을 ${newGraduation} 처리 하시겠습니까?`;
-=======
     const memState = memberToUpdate.memState=== 'active' ? 'inactive' : 'active';
     const message = `${memberToUpdate.memName}님을 ${memState} 처리 하시겠습니까?`;
->>>>>>> 36df3dc1d3fe86523eae116ab51c6bfa613ba740
     const userResponse = window.confirm(message);
 
     if (userResponse) {
