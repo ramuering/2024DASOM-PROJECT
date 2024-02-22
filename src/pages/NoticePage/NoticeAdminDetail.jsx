@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import data from './data'; 
 import "./NoticeAdminDetail.css"
+import axios from 'axios';
 
 const NoticeAdminDetail = () => {
 
@@ -10,6 +11,15 @@ const NoticeAdminDetail = () => {
     // Scroll to the top when the component is mounted
     window.scrollTo(0, 0);
   }, [])
+
+const deleteNotice = async()=>{
+  if(window.confirm('게시글을 삭제하시겠습니까?')){
+    await axios.delete(`http://localhost:8090/notice/{noticeNo}`)
+    .then(()=>{
+      <Link to="/Notice"></Link>
+    })
+  }
+}
 
   const { id } = useParams();
 console.log(id);// 콘솔에 id 출력
@@ -32,7 +42,7 @@ console.log(id);// 콘솔에 id 출력
       <p id="NDs-name">{name}</p>
       <div id='ND-LinkBox'>
       <Link to="../noticeupdate" className="ND-linkButton">공지수항 수정</Link>
-      <Link to="../apply01" className="ND-linkButton1">공지사항 삭제</Link>
+      <div className="ND-linkButton1" onClick={deleteNotice}>공지사항 삭제</div>
       </div>
       </div>
       <p id="ND-contents">{contents}</p>
