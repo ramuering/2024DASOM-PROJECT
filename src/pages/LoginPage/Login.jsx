@@ -29,8 +29,8 @@ const firebaseConfig = {
   const Login = ()=>{
 
   const [username, setusername] = useState('');
-
    const [password, setpassword] = useState('');
+
   const navigate = useNavigate();
   const [, setCookie] = useCookies(['refreshToken']);
 
@@ -43,8 +43,7 @@ const firebaseConfig = {
 //   }
     const handleSubmit = async () => {
         try {
-          const response = await axios.post('http://dmu-dasom.or.kr:8090/login', {
-
+          const response = await axios.post('https://dmu-dasom.or.kr:8090/login', {
                 username : username ,
                 password : password
           });
@@ -80,15 +79,15 @@ const firebaseConfig = {
         type='email'
         className="login-id"
         placeholder='아이디'
-        //value={username}
-        //onChange={(e) => setusername(e.target.value)}
+        value={username}
+        onChange={(e) => setusername(e.target.value)}
         />
         <input
         type='password'
         className="login-password"
         placeholder='비밀번호'
-        //value={password}
-        //onChange={(e) => setpassword(e.target.value)}
+        value={password}
+        onChange={(e) => setpassword(e.target.value)}
         />
         <button className='login-complet' onClick={handleSubmit}>로그인 하기</button>
       </div>

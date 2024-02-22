@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer'
 import styled from "styled-components"
-// import Slide from "../../components/Slider"
+import Slide from "../../components/Slider"
 import CountUp from 'react-countup';
 import "./Main.css"
 import { Link } from 'react-router-dom'
-// import Slider from '../../components/Slider'
+import Slider from '../../components/Slider'
 
 
  
