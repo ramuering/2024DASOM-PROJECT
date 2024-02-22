@@ -41,6 +41,7 @@ const Layout = () => {
       <Header />
       <ScrollToTop />
       <Outlet />
+      <Main />
     </div>
   );
 };
@@ -76,7 +77,10 @@ function App() {
             <Route path="studyInfo" element={<StudyInfo />} />
             <Route path="projectInfo" element={<ProjectInfo />} />
             <Route path="/noticedetail/:id" element={<NoticeDetail />} />
-            <Route path="/noticeadmindetail/:id" element={<NoticeAdminDetail />} />
+            <Route
+              path="/noticeadmindetail/:id"
+              element={<NoticeAdminDetail />}
+            />
             <Route path="manmembermodify" element={<ManMemberModify />} />
             <Route path="manstudyapply" element={<ManStudyApply />} />
             <Route path="manstudymodify" element={<ManStudyModify />} />
@@ -90,7 +94,6 @@ function App() {
             <Route path="manstudy" element={<ManStudy />} />
             <Route path="manapply" element={<ManApply />} />
             <Route path="manproject" element={<ManProject />} />
-            
           </Route>
         </Routes>
       </AppProvider>
