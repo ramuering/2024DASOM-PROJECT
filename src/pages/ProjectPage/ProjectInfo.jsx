@@ -31,8 +31,7 @@ console.log("상세페이지 들어옴")
       {projectInfo ? (
         <>
           <div className="projectInfo-title">
-            생생한 동아리 소식을 빠르게 전해듣는<br />
-            학생 서비스 'DASOM'
+          {projectInfo.projectTitle}
           </div>
           <div className="projectInfo-box-info">
             <div className="projectInfo-info-title">프로젝트 설명</div>
