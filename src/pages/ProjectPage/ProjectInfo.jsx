@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import "./ProjectInfo.css"
 
 console.log("여기는 들어옴")
 const ProjectInfo = () => {

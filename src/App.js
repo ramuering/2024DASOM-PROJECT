@@ -41,7 +41,6 @@ const Layout = () => {
       <Header />
       <ScrollToTop />
       <Outlet />
-      <Main />
     </div>
   );
 };
@@ -75,7 +74,7 @@ function App() {
             <Route path="ManProjectApply" element={<ManProjectApply />} />
             <Route path="ManProjectModify" element={<ManProjectModify />} />
             <Route path="studyInfo" element={<StudyInfo />} />
-            <Route path="projectInfo" element={<ProjectInfo />} />
+            <Route path="projectinfo/:projectNo" element={<ProjectInfo />} />
             <Route path="/noticedetail/:id" element={<NoticeDetail />} />
             <Route
               path="/noticeadmindetail/:id"
@@ -86,8 +85,7 @@ function App() {
             <Route path="manstudymodify" element={<ManStudyModify />} />
             <Route path="manprojectapply" element={<ManProjectApply />} />
             <Route path="manprojectmodify" element={<ManProjectModify />} />
-            <Route path="studyinfo" element={<StudyInfo />} />
-            <Route path="projectinfo" element={<ProjectInfo />} />
+
             <Route path="noticedetail" element={<NoticeDetail />} />
             <Route path="makers" element={<Makers />} />
             <Route path="manapplymember" element={<ManApplyMember />} />
