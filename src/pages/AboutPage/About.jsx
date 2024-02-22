@@ -9,7 +9,7 @@ function About() {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await axios.get('http://dmu-dasom.or.kr:8090/members/index');
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/members/index');
         console.log(response);
         if (response.data.success) {
           setMembers(response.data.data);
