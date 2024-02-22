@@ -169,7 +169,7 @@ function NewMember() {
               지원하러 가기
             </Link>
           ) : (
-            <span id='NMB-center-button-closed'>지원 마감</span>
+            <span id='NMB-center-button-closed'>지원 기간이 아닙니다</span>
           )}
           </div>
       </div>
