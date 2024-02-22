@@ -21,7 +21,7 @@ function Makers() {
 
       <img src='./images/dasom-logo-header.png' className='makers-logo' />
       <div className='makers-dasom'>
-        <p>DASOM makers는</p> 
+        <p>DASOM makers는</p>
         <p>DASOM 구성원들이 가진 불편함을 제품을 통해 해결하여,</p>
         <p>구성원들에게 더 많은 가치를 연결하기 위해 신설된 특수 기구예요.</p>
       </div>

@@ -5,9 +5,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
-
 const SignUp2 = () => {
-  
+
+  const [memStudentNo, setMemStudentNo] = useState('');
+  const [memRecNo, setRecNo] = useState('');
   const [memEmail, setmemEmail] = useState('');
   const [memPassword, setmemPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -26,6 +27,7 @@ const SignUp2 = () => {
   const [showDivBox2, setShowDivBox2] = useState(false);
   const [showDivBox3, setShowDivBox3] = useState(false);
   const navigate = useNavigate();
+
 
   const handleAgreementChange = (checkboxId) => {
     if (checkboxId === 'agree1') {
@@ -53,13 +55,16 @@ const SignUp2 = () => {
       return;
     }
 
+
     try {
-      const response = await axios.post('http://localhost:8090/signup', {
+      const response = await axios.post(`http://dmu-dasom.or.kr:8090/signup`, {
         memEmail,
         memPassword,
         memName,
         memGrade,
-        memDepartment
+        memDepartment,
+        memStudentNo,
+        memRecNo
       });
       if (response.status === 201) {
         console.log(response.status)
@@ -108,6 +113,26 @@ const SignUp2 = () => {
           value={memName}
           onChange={(e) => setmemName(e.target.value)}
         ></input>
+
+        <input
+                  className={`SignUp2_input0 ${passwordMismatch ? 'invalid' : ''}`}
+                  type='text'
+                  name="memno"
+                  autoComplete='off'
+                  placeholder='학번을 입력하세요.'
+                      value={memStudentNo}
+                  onChange={(e) => setMemStudentNo(e.target.value)}
+                ></input>
+
+         <input
+            className={`SignUp2_input0 ${passwordMismatch ? 'invalid' : ''}`}
+            type='text'
+            name="memno"
+            autoComplete='off'
+            placeholder='기수를 입력하세요'
+            value={memRecNo}
+            onChange={(e) => setRecNo(e.target.value)}
+         ></input>
 
         <input
           className={`SignUp2_input1 ${passwordMismatch ? 'invalid' : ''}`}
