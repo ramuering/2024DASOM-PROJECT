@@ -67,6 +67,7 @@
 .makers-member {
   width: 1144px;
   height: 403.56px;
+  margin-left: -134px;
 }
 .makers-profileBox {
   width: 125px;
@@ -74,7 +75,8 @@
   float: left;
   flex-wrap: wrap;
   align-items: center;
-
+  margin-left: 134px;
+  margin-bottom: 30px;
 }
 
 .makers-profile {
@@ -99,7 +101,7 @@
 .makers-gi {
   margin-left: 48px;
   margin-top: 21px;
-  width: 30px;
+  width: 32px;
   height: 17px;
   font-size: 14px;
   font-weight: medium;
