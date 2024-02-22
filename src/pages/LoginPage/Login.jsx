@@ -29,9 +29,10 @@ const firebaseConfig = {
   const Login = ()=>{
 
   const [username, setusername] = useState('');
+
    const [password, setpassword] = useState('');
   const navigate = useNavigate();
-   const [, setCookie] = useCookies(['refreshToken']);
+  const [, setCookie] = useCookies(['refreshToken']);
 
 //   const onClick = async () => {
 //     const result = await Login(username, password);

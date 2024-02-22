@@ -199,7 +199,7 @@ function NewMember() {
 
           <div id="NMB-ques-footer">
               <p class="NMB-f-text" style={{ color: 'gray' }}>동아리 관련, 튜터링 등 언제든지 문의해 주세요.</p>
-              <p class="NMB-f-text" style={{fontWeight:'bold', cursor:'pointer'}}>문의하러 가기 &gt;</p>
+              <a href="https://www.instagram.com/dasom___official" target="_blank" style={{fontWeight: 'bold', cursor: 'pointer'}}>문의하러 가기 &gt;</a>
             </div>
           </div>
         </div>
