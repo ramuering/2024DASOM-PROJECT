@@ -94,7 +94,7 @@ const handleToggleGraduation = async (memberNo) => {
       return;
     }
 
-    const newGraduation = memberToUpdate.memState === '재학' ? '졸업' : '재학';
+    const newGraduation = memberToUpdate.memState === 'active' ? 'graduation' : 'active';
     const message = `${memberToUpdate.memName}님을 ${newGraduation} 처리 하시겠습니까?`;
     const userResponse = window.confirm(message);
 
