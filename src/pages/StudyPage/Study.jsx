@@ -31,7 +31,7 @@ const Study = () => {
       <div className="study-list">
         <div className="study-box-container">
           {studys.map((study, index) => (
-            <Link to={`/StudyInfo/${study.studyNo}`} key={index} className="study-link">
+            <Link to={`/studyInfo/${study.studyNo}`} key={index} className="study-link">
               <div className="study-box">
                 <div className="study-img"></div>
                 <div className="study-content">

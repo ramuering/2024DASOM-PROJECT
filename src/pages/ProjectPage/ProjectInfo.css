@@ -20,7 +20,9 @@
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  text-align: left;
+  text-align: left;    
+  word-wrap: break-word; /* 일정 수 이상이 되면 단어 단위로 줄바꿈 */
+
 }
 .projectInfo-info-title {
   font-size: 24px;
