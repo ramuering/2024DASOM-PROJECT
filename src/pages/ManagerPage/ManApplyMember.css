@@ -203,6 +203,28 @@
     color: #b6b6b6;
     border-color: #b6b6b6;
 }
+.manAM-status{
+    margin-left: 100px;
+}
+.true-button{
+    color:#54ECC4 ;
+    margin-left: 20px;
+    transition: background-color 0.3s;
+}
+
+.true-button:hover{
+    color:#131313 ;
+    background-color: #54ECC4;
+}
+.false-button{
+    margin-left: 10px;
+    color: #FA0000;
+    transition: background-color 0.3s;
+}
+.false-button:hover{
+    color:#131313 ;
+    background-color: #FA0000;
+}
 
 .manAM-excel {
     margin-bottom: 239px;
