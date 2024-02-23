@@ -13,6 +13,8 @@ function ManProjectApply() {
     const [endDate, setEndDate] = useState('');
     const [thumbnailPic, setThumbnailPic] = useState(null);
     const [studyPic, setStudyPic] = useState(null);
+    const [gitUrl, setgitUrl] = useState('');
+    const [notionUrl, setnotionUrl] = useState('');
 
     const handleProjectRegistration = async () => {
 
@@ -24,6 +26,9 @@ function ManProjectApply() {
                     projectContent,
                     startDate,
                     endDate,
+                    gitUrl,
+                    notionUrl
+
             });
             if (response.status === 201) {
                 console.log("프로젝트 생성 성공")
@@ -57,6 +62,28 @@ function ManProjectApply() {
                     placeholder='프로젝트 내용을 입력하세요 *'
                 />
             </div>
+
+            <div className='ManStudyApply-box'>
+                 <input
+                       className="ManStudyApply-book"
+                       type='text'
+                       value={notionUrl}
+                       onChange={(e) => setnotionUrl(e.target.value)}
+                       placeholder='노션 url을 입력하세요*'
+                      />
+                 </div>
+
+            <div className='ManStudyApply-box'>
+                             <input
+                                   className="ManStudyApply-book"
+                                   type='text'
+                                   value={gitUrl}
+                                   onChange={(e) => setgitUrl(e.target.value)}
+                                   placeholder='깃허브 url을 입력하세요*'
+                                  />
+                             </div>
+
+
 
             <div className='ManStudyApply-box'>
                 <input
