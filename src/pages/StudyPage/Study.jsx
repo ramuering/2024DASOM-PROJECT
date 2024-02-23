@@ -62,9 +62,6 @@ const Study = ()=>  {
           </div>
           </div>
       </div>
-      <Link to="/studyinfo" className="study-move-button">
-        <div className="study-move-font">더보기</div>
-      </Link>
       <div className="study-footer">
         <Footer/>
       </div>
