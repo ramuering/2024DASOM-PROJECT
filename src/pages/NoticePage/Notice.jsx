@@ -80,7 +80,6 @@ function Notice() {
 
 
   const [searchInput, setSearchInput] = useState('');
-
 const searchTitle = async (searchValue) =>{
   console.log("검색 실행 ")
 try {
@@ -162,7 +161,7 @@ try {
               <td>작성일</td>
             </tr>
             {boardList.map((boardList) => (
-              <tr id='tr-contents' key={boardList.id}>
+              <tr id='tr-contents' key={boardList.noticeNo}>
                 <td class="Noti-s"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.noticeNo}</Link></td>
                 <td class="Noti-l"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.noticeTitle}</Link></td>
                 <td class="Noti-s"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.memName}</Link></td>

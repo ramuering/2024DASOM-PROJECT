@@ -145,6 +145,7 @@ const [boardList, setboardList] = useState([]);
     console.error("에러 발생:", error);
   }
   }
+
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
