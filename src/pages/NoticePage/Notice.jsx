@@ -89,7 +89,7 @@ try {
     setboardList(response.data.data); // 검색 결과를 boardList에 저장합니다.
     console.log("검색성공");
   } 
-  else if (response.data.status === 404) {
+  else if (response.status === 404) {
     alert("일치하는 항목이 없습니다")
   }
   else {
