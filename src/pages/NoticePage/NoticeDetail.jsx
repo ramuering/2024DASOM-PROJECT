@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import data from './data'; 
 import "./NoticeDetail.css"
 import axios from 'axios';
 import styled from 'styled-components';

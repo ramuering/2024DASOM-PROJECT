@@ -73,7 +73,7 @@ function App() {
             <Route path="ManStudyModify" element={<ManStudyModify />} />
             <Route path="ManProjectApply" element={<ManProjectApply />} />
             <Route path="ManProjectModify" element={<ManProjectModify />} />
-            <Route path="studyInfo" element={<StudyInfo />} />
+            <Route path="studyInfo:studyNo" element={<StudyInfo />} />
             <Route path="projectinfo/:projectNo" element={<ProjectInfo />} />
             <Route path="/noticedetail/:noticeNo" element={<NoticeDetail />} />
             <Route
