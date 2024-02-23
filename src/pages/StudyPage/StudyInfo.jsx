@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'; // useParams 추가
+import axios from 'axios';
 import styled from 'styled-components';
-import "./StudyInfo.css";
 import Footer from '../../components/Footer';
 
+console.log("여기는 들어옴")
 const StudyInfo = () => {
-  
+  console.log("상세페이지 들어옴")
+  const { studyNo } = useParams(); // studyNo로 수정
+  const [studyInfo, setStudyInfo] = useState(null); // StudyInfo로 수정
+
+  useEffect(() => {
+    const fetchStudyInfo = async () => {
+      try {
+        const response = await axios.get(`https://dmu-dasom.or.kr:8090/board/study/${studyNo}`);
+        if (response.data.success) {
+          setStudyInfo(response.data.data);
+        }
+      } catch (error) {
+        console.error('스터디 정보를 가져오는 중 오류 발생:', error);
+      }
+    };
+
+    fetchStudyInfo();
+  }, [studyNo]);
+
   return (
     <Container>
       <div className="studyInfo-title-wrapper">
@@ -52,7 +72,6 @@ const StudyInfo = () => {
         <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
         <hr/>
         <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
-        
       </div>
       <div className="studyInfo-footer">
         <Footer/>
@@ -61,7 +80,7 @@ const StudyInfo = () => {
   )
 }
 
-export default StudyInfo
+export default StudyInfo;
 
 const Container = styled.main`
   position: relative;
