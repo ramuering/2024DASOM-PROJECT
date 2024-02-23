@@ -75,9 +75,9 @@ function App() {
             <Route path="ManProjectModify" element={<ManProjectModify />} />
             <Route path="studyInfo:studyNo" element={<StudyInfo />} />
             <Route path="projectinfo/:projectNo" element={<ProjectInfo />} />
-            <Route path="/noticedetail/:id" element={<NoticeDetail />} />
+            <Route path="/noticedetail/:noticeNo" element={<NoticeDetail />} />
             <Route
-              path="/noticeadmindetail/:id"
+              path="/noticeadmindetail/:noticeNo"
               element={<NoticeAdminDetail />}
             />
             <Route path="manmembermodify" element={<ManMemberModify />} />

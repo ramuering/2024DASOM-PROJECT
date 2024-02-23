@@ -3,16 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [showDropdown, setShowDropdown] = useState(false)
   
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  }
-  
-  //const token = '1234567abcd' //임시값
-
-
   return (
     <NavWrapper>
       <Logo to="/main">
@@ -37,42 +28,19 @@ const Header = () => {
         <NavItem to="/recruit">RECRUIT</NavItem>
         <NavItem to="/admin">ADMIN</NavItem>
         <NavItemWithDropdown>
-          <ProfileImageWrapper>
-          {isLoggedIn ? (
-      <>
-      <Link to="/mypage">
-        <ProfileImage
-          src="/images/myPage/profile.jpg"
-          onMouseEnter={() => setShowDropdown(true)}
-          onMouseLeave={() => setShowDropdown(false)}
-        />
-        </Link>
-        {showDropdown && (
-          <DropdownMenu>
-            {/* 로그인 상태일 때 나타날 드롭다운 메뉴 */}
-            <DropdownItem to="/mypage">MY PAGE</DropdownItem>
-            <DropdownItem onClick={handleLogout}>LOGOUT</DropdownItem>
-          </DropdownMenu>
-        )}
-      </>
-    ) : (
-      <>
-      <Link to="/mypage">
-        <ProfileImage
-          src="/images/myPage/profile.jpg"
-          onMouseEnter={() => setShowDropdown(true)}
-          onMouseLeave={() => setShowDropdown(false)}
-        />
-        </Link>
-        {showDropdown && (
-          <DropdownMenu>
-            {/* 로그인 상태가 아닐 때 나타날 드롭다운 메뉴 */}
+          <DropdownLabel>
+            <ProfileImageWrapper>
+              <ProfileImage
+                 src="/images/myPage/profile.jpg"
+              ></ProfileImage>
+            </ProfileImageWrapper>
+          </DropdownLabel>
+           <DropdownMenu>
             <DropdownItem to="/login">LOGIN</DropdownItem>
+            <DropdownItem to="/mypage">MYPAGE</DropdownItem>
+            <DropdownItem to="/main">LOGOUT</DropdownItem>
           </DropdownMenu>
-        )}
-      </>
-    )}
-          </ProfileImageWrapper>
+          
         </NavItemWithDropdown>
       </NavBar>
     </NavWrapper>
