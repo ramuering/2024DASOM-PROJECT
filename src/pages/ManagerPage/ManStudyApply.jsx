@@ -33,7 +33,7 @@ function ManStudyApply() {
     const handleStudyRegistration = async () => {
 
     try {
-                const response = await axios.post(`http://dmu-dasom.or.kr:8090/board/study`,{
+                const response = await axios.post(`https://dmu-dasom.or.kr:8090/board/study`,{
                         studyTitle,
                         studyContent,
                         referencesUrl,
@@ -49,13 +49,13 @@ function ManStudyApply() {
                 console.error(error)
             }
         };
-            // 스터디 등록 버튼 클릭 시 실행되는 함수
-//             console.log('스터디 제목:', studyTitle);
-//             console.log('스터디 내용:', studyContent);
-//             console.log('교재 및 강의자료 URL:', referencesUrl);
-//             console.log('노션 URL:', notionUrl);
-//             console.log('시작 날짜:', startDate);
-//             console.log('종료 날짜:', endDate);
+            // // 스터디 등록 버튼 클릭 시 실행되는 함수
+            //  console.log('스터디 제목:', studyTitle);
+            //  console.log('스터디 내용:', studyContent);
+            //  console.log('교재 및 강의자료 URL:', referencesUrl);
+            //  console.log('노션 URL:', notionUrl);
+            //  console.log('시작 날짜:', startDate);
+            //  console.log('종료 날짜:', endDate);
 
     return (
         <div className='ManStudyApply'>
@@ -116,7 +116,7 @@ function ManStudyApply() {
                     value={endDate}
                     onChange={(e) => setEndDate(e.target.value)}
                     type='text'
-                    placeholder='스터디 끝나는 날짜를 입력하세요.   ex) 2024-04-04 '
+                    placeholder='스터디 끝나는 날짜를 입력하세요.   ex) 2024-04-04'
                     autoFocus
                 />
             </div>
