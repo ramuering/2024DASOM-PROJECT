@@ -101,7 +101,7 @@ const Main = () => {
               <div className="main-text">STUDY</div>
             </div>
             <div className="content-box">
-            실력을 심도있게 다질 수 있는 스터디와 다양한 파트원들과 친목을 쌓을 수 있는 네트워킹이 열려요. 자율적으로 개설하고 참여할 수 있어요.            
+            실력을 심도있게 다질 수 있는 스터디와 다양한 동아리원들과 친목을 쌓을 수 있는 네트워킹이 열려요. 자율적으로 개설하고 참여할 수 있어요.            
             </div>
           </div>
           <div className="activity-box">
@@ -109,23 +109,23 @@ const Main = () => {
               <div className='main-pro-background-image'></div>
               <div className="main-text">PROJECT</div>
             </div>
-            <div className="content-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, laudantium. Impedit, maiores molestiae quis a mollitia accusamus veritatis molestias? Optio libero totam minima. Officiis ipsa deleniti architecto fugiat rem illo.</div>
+            <div className="content-box">여러가지 목적과 목표를 설정 후 주로 IT 기술을 배우고 활용하여 프로젝트를 수행하며, 동아리원들 간의 지식 공유와 협업을 통해 기술적 역량을 향상시키는 데 초점을 맞추고 있어요.
+
+</div>
           </div>
           <div className="activity-box">
             <div className="image-box">
             <div className='main-mt-background-image'></div>
               <div className="main-text">MT</div>
             </div>
-            <div className="content-box">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non nihil, et eligendi reiciendis vero id sit quidem cumque harum at sunt impedit voluptatem, voluptatibus consectetur culpa distinctio, expedita dolores sed.</div>
+            <div className="content-box">MT는 학기 중 1번 동아리 내의 친목과 소속감을 형성하고 동아리의 활동에 대한 이해도를 높이고, 동아리 내에서 보다 활발하고 즐겁게 활동할 수 있게 돼요.</div>
           </div>
           <div className="activity-box">
             <div className="image-box">
             <div className='main-tu-background-image'></div>
               <div className="main-text">TUTORING</div>
             </div>
-            <div className="content-box">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam mollitia libero ut quis iure necessitatibus, quae saepe! Vero quaerat voluptas incidunt odio commodi possimus, nostrum temporibus ex eligendi eius!</div>
+            <div className="content-box">튜터링은 학습자가 어려움을 겪는 학습 분야에서 개인이나 소규모 그룹에게 지원을 제공하는 교육적인 활동이에요. 주로 학업적인 지식이나 기술적인 기술에 대한 지원이 이루어지며, 일반적으로 선배 튜터가 후배 튜티에게 지식을 전달하고 도와줘요.</div>
           </div>
         </div>
       </div>
@@ -147,7 +147,9 @@ const Main = () => {
           </div>
           <div className="main-about-box">
             <div className="main-about-img"></div>
-            <div className="main-about-link">FAQ &gt;</div>
+            <Link to="/notice">
+              <div className="main-about-link">NOTICE &gt;</div>
+              </Link>
           </div>
           <div className="main-about-box">
             <div className="main-about-img"></div>

@@ -124,6 +124,28 @@ const [boardList, setboardList] = useState([]);
     });
   };
 
+
+  const [searchInput, setSearchInput] = useState('');
+
+  const searchTitle = async (searchValue) =>{
+    console.log("검색 실행 ")
+  try {
+    const response = await axios.post('https://dmu-dasom.or.kr:8090/board/notice/title',{noticeTitle : searchValue});
+    if (response.data.success) {
+      setboardList(response.data.data); // 검색 결과를 boardList에 저장합니다.
+      console.log("검색성공");
+    } 
+    else if (response.status === 404) {
+      alert("일치하는 항목이 없습니다")
+    }
+    else {
+      console.log("일치하는 항목 없음");
+    }
+  } catch (error) {
+    console.error("에러 발생:", error);
+  }
+  }
+
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -135,8 +157,9 @@ const [boardList, setboardList] = useState([]);
         <p id="Noti-title">공지사항</p>
         <div id="Nocr-div">
         <div class="search-container">
-            <input placeholder='검색어를 입력하세요' id="Nocr-inputs"></input>
-            <div class="search-icon" style={{ backgroundImage: "url('images/search-icon.png')" }}></div>
+            <input placeholder='검색어를 입력하세요' id="Nocr-inputs" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)}></input>
+            <div class="search-icon" style={{ backgroundImage: "url('images/search-icon.png')" }}
+            onClick={()=>searchTitle(searchInput)}></div>
         </div>
         <Link to="../noticecreate" className="Nocr-btn">공지사항 등록</Link>
         </div>

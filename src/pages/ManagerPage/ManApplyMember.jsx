@@ -111,29 +111,24 @@ function ManApplyMember() {
     }));
   };
 
+  const handleButtonClick = (index, isPass) => {
+    const updatedRecruitMember = [...recruitMember];
+    updatedRecruitMember[index].acStatus = isPass ? 'pass' : 'fail';
+    setRecruitMember(updatedRecruitMember);
+    if (isPass) {
+      const passMembers = updatedRecruitMember.filter((applyMember) => applyMember.acStatus === 'pass');
+      sendPassMembersToBackend(passMembers);
+    }
+  };
 
-  // const handleButtonClick = (acStudentNo, acStatus) => {
-  //   const updatedrecruitMember = recruitMember.map((applyMember) => {
-  //     if (applyMember.acStudentNo === acStudentNo) {
-  //       return { ...applyMember, acStatus: acStatus };
-  //     }
-  //     return applyMember;
-  //   });
-  //   setRecruitMember(updatedrecruitMember);
-  // };
-
-  const handleSendPassMembersToBackend = async () => {
-    const passMembers = recruitMember.filter((applyMember) => applyMember.acStatus === 'pass');
-
-    console.log('Pass Members:', passMembers);
-
+  const sendPassMembersToBackend = async (passMembers) => {
     try {
-      const response = await axios.post('http://localhost:8090/recruit/32', passMembers, {
+      const response = await axios.post('https://dmu-dasom.or.kr:8090/recruit/32/applicants/accept-proc', passMembers, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      if (response.acStatus === 200) {
+      if (response.status === 200) {
         alert('합격자 정보를 전송하였습니다!');
       } else {
         alert('합격자 정보 전송에 실패하였습니다.');
@@ -141,8 +136,6 @@ function ManApplyMember() {
     } catch (error) {
       console.error('Error sending data to the server:', error);
       console.log('합격자 전송 실패');
-    } finally {
-      console.log(passMembers);
     }
   };
 
@@ -204,6 +197,7 @@ function ManApplyMember() {
             <p className='manAM-department'>학과</p>
             <p className='manAM-name'>이름</p>
             <p className='manAM-grade'>학년</p>
+            <p className='manAM-status'>상태</p>
           </div>
           <ul>
             {recruitMember.map((recruitMember, index) => (
@@ -211,13 +205,14 @@ function ManApplyMember() {
                 <div className='manAM-infodepartment'>{recruitMember.acDepartment}</div>
                 <div className='manAM-infoname'>{recruitMember.acName}</div>
                 <div className='manAM-infograde'>{recruitMember.acGrade}</div>
+                <button className='true-button' onClick={() => handleButtonClick(index, true)}>합격</button>
+                <button className='false-button' onClick={() => handleButtonClick(index, false)}>불합격</button>
               </li>
             ))}
           </ul>
         </div>
         <div className='manAM-excelPassBtn'>
           <button className='manAM-excel' onClick={handleExportExcel}>엑셀 추출</button>
-          <button className='manAM-passMembersBtn' onClick={handleSendPassMembersToBackend}>합격자 전송</button>
         </div>
       </div>
     </div>

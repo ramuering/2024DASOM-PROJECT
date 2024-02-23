@@ -80,17 +80,19 @@ function Notice() {
 
 
   const [searchInput, setSearchInput] = useState('');
-
 const searchTitle = async (searchValue) =>{
-console.log("검색 실행 ")
+  console.log("검색 실행 ")
 try {
-  // 검색어를 이용하여 데이터베이스에서 필터링된 결과를 가져옵니다.
-  const response = await axios.get(`https://dmu-dasom.or.kr:8090/board/notice/title?noticeTitle=${searchValue}`);
+  const response = await axios.post('https://dmu-dasom.or.kr:8090/board/notice/title',{noticeTitle : searchValue});
   if (response.data.success) {
     setboardList(response.data.data); // 검색 결과를 boardList에 저장합니다.
     console.log("검색성공");
-  } else {
-    console.log("검색 실패");
+  } 
+  else if (response.status === 404) {
+    alert("일치하는 항목이 없습니다")
+  }
+  else {
+    console.log("일치하는 항목 없음");
   }
 } catch (error) {
   console.error("에러 발생:", error);
@@ -99,38 +101,30 @@ try {
 
   const itemsPerPage = 10; // 한 페이지에 표시할 아이템 개수
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 정보
-
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
-
   const totalPages = Math.ceil(data.length / itemsPerPage);
-
   const handlePrevClick = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
-
   const handleNextClick = () => {
     setCurrentPage((prevPage) => {
       const nextPage = prevPage + 1;
       return nextPage <= totalPages ? nextPage : totalPages;
     });
   };
-
   const renderPageButtons = () => {
     const visiblePageButtons = 5;
     const totalPageButtons = Math.min(visiblePageButtons, totalPages);
-
     // Calculate the start and end page numbers
     let startPage = Math.max(currentPage - Math.floor(visiblePageButtons / 2), 1);
     let endPage = startPage + totalPageButtons - 1;
-
     // Adjust the start and end page numbers if they go beyond the valid range
     if (endPage > totalPages) {
       endPage = totalPages;
       startPage = Math.max(endPage - visiblePageButtons + 1, 1);
     }
-
     return Array.from({ length: totalPageButtons }, (_, index) => {
       const pageNumber = startPage + index;
       return (
@@ -144,11 +138,9 @@ try {
       );
     });
   };
-
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
   return (
     <div id='Noti-main'>
       <div id="Null-box">
@@ -169,7 +161,7 @@ try {
               <td>작성일</td>
             </tr>
             {boardList.map((boardList) => (
-              <tr id='tr-contents' key={boardList.id}>
+              <tr id='tr-contents' key={boardList.noticeNo}>
                 <td class="Noti-s"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.noticeNo}</Link></td>
                 <td class="Noti-l"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.noticeTitle}</Link></td>
                 <td class="Noti-s"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.memName}</Link></td>
@@ -177,7 +169,6 @@ try {
               </tr>
             ))}
         </table>
-
         {/* 페이지 버튼 생성 */}
         <Pagination className="pagination">
           <PrevNextBtn onClick={handlePrevClick}>&lt;</PrevNextBtn>
@@ -185,11 +176,8 @@ try {
           <PrevNextBtn onClick={handleNextClick}>&gt;</PrevNextBtn>
         </Pagination>
       </div>
-
       <Footer></Footer>
     </div>
   );
 }
-
 export default Notice;
-

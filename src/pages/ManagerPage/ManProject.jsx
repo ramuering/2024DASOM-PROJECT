@@ -41,14 +41,20 @@ function ManProject() {
     );
   };
 
-  const handleWithdrawal = (projectId) => {
+  const handleWithdrawal = async (projectId) => {
     const confirmation = window.confirm('정말로 삭제하시겠습니까?');
     if (confirmation) {
-      setProjects((prevProjects) =>
-        prevProjects.filter((project) => project.projectNo !== projectId)
-      );
+      try {
+        await axios.delete(`https://dmu-dasom.or.kr:8090/board/project/${projectId}`);
+        setProjects((prevProjects) =>
+          prevProjects.filter((project) => project.projectNo !== projectId)
+        );
+      } catch (error) {
+        console.error('Error deleting project:', error);
+      }
     }
   };
+
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
