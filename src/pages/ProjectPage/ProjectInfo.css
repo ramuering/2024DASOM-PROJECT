@@ -64,6 +64,8 @@
 .projectInfo-sum-content {
   color: #b6b6b6;
   padding-left: 34px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .projectInfo-box-link {
@@ -179,4 +181,27 @@
 /* footer */
 .projectInfo-footer {
   margin-top: 3019px;
+}
+
+.projectInfo-start-date {
+  font-weight: medium;
+  color: white;
+  padding-top: 20px;
+  box-sizing: border-box;
+  padding-left: 71px;
+  padding-right: 150px;
+  margin-top: -43px;
+  margin-left: 120px;
+}
+
+.projectInfo-end-date {
+  font-weight: medium;
+  color: white;
+  padding-top: 20px;
+  box-sizing: border-box;
+  padding-left: 60px;
+  padding-right: 150px;
+  margin-left: 233px;
+  margin-top: -43px;
+
 }
