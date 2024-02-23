@@ -40,7 +40,11 @@ console.log("상세페이지 들어옴")
           <div className="projectInfo-box">
             <div className="projectInfo-box-sum">
               <div className="projectInfo-sum-title">프로젝트 요약</div>
-              <div className="projectInfo-sum-content">{projectInfo.projectSummary}</div>
+              <div className="projectInfo-sum-content">프로젝트 기간</div>
+              <div className="projectInfo-start-date">{projectInfo.startDate} ~ </div>
+              <div className="projectInfo-end-date">{projectInfo.endDate}</div>
+
+
             </div>
             <div className='projectInfo-box-link'>
             <div className='projectInfo-link-title'>프로젝트 링크</div>
