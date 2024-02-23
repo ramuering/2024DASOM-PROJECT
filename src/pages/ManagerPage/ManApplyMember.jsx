@@ -3,7 +3,6 @@ import * as XLSX from 'xlsx';
 import axios from 'axios';
 import './ManApplyMember.css';
 import Header from '../../components/Header';
-import { useAppContext } from '../../contexts/AppContext';
 
 function ManApplyMember() {
   const [applyMembers, setApplyMembers] = useState([]);
@@ -69,7 +68,12 @@ function ManApplyMember() {
   const handleEditClick = () => {
     setEditable(true);
   };
+  const [closeApplication, setCloseApplication ] = useState(localStorage.getItem('closeApplication') === 'true');
 
+  const handleApplicationClose = () => {
+    setCloseApplication((prevState) => !prevState);
+    localStorage.setItem('closeApplication', !closeApplication);
+  }
   const handleSaveClick = async () => {
     setEditable(false);
     try {
@@ -107,17 +111,16 @@ function ManApplyMember() {
     }));
   };
 
-  const { closeApplication, isApplicationOpen } = useAppContext();
 
-  const handleButtonClick = (acStudentNo, acStatus) => {
-    const updatedrecruitMember = recruitMember.map((applyMember) => {
-      if (applyMember.acStudentNo === acStudentNo) {
-        return { ...applyMember, acStatus: acStatus };
-      }
-      return applyMember;
-    });
-    setRecruitMember(updatedrecruitMember);
-  };
+  // const handleButtonClick = (acStudentNo, acStatus) => {
+  //   const updatedrecruitMember = recruitMember.map((applyMember) => {
+  //     if (applyMember.acStudentNo === acStudentNo) {
+  //       return { ...applyMember, acStatus: acStatus };
+  //     }
+  //     return applyMember;
+  //   });
+  //   setRecruitMember(updatedrecruitMember);
+  // };
 
   const handleSendPassMembersToBackend = async () => {
     const passMembers = recruitMember.filter((applyMember) => applyMember.acStatus === 'pass');
@@ -191,10 +194,10 @@ function ManApplyMember() {
         ) : (
           <button className='manAM-editBtn' onClick={handleEditClick}>모집 일정 변경</button>
         )}
-        {isApplicationOpen ? (
-          <button className='manAM-magamBtn' onClick={closeApplication}>모집 마감</button>
+        {closeApplication ? (
+          <button className='manAM-magamBtn' onClick={handleApplicationClose}>모집 마감</button>
         ) : (
-          <button className='manAM-magamBtn' onClick={closeApplication}>모집 열기</button>)}
+          <button className='manAM-magamBtn' onClick={handleApplicationClose}>모집 열기</button>)}
         <p className='manAM-applyCount'>{`신청 인원 : ${recruitMember.length}`}</p>
         <div className='manAM-list'>
           <div className='manAM-listTitle'>
