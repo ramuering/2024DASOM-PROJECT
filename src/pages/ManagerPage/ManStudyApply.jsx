@@ -125,7 +125,7 @@ function ManStudyApply() {
             <div className='ManStudyApply-box'>
                 <input
                     className="ManStudyApply-1weeks"
-
+                    
                     type='text'
                     placeholder='1주차'
                     autoFocus

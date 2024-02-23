@@ -147,7 +147,9 @@ const Main = () => {
           </div>
           <div className="main-about-box">
             <div className="main-about-img"></div>
-            <div className="main-about-link">FAQ &gt;</div>
+            <Link to="/notice">
+              <div className="main-about-link">NOTICE &gt;</div>
+              </Link>
           </div>
           <div className="main-about-box">
             <div className="main-about-img"></div>

@@ -80,12 +80,12 @@ function Notice() {
 
 
   const [searchInput, setSearchInput] = useState('');
-
 const searchTitle = async (searchValue) =>{
 console.log("검색 실행 ")
 try {
   // 검색어를 이용하여 데이터베이스에서 필터링된 결과를 가져옵니다.
-  const response = await axios.get(`https://dmu-dasom.or.kr:8090/board/notice/title?noticeTitle=${searchValue}`);
+  const encodeSearchValue=encodeURIComponent(searchValue)
+  const response = await axios.post(`https://dmu-dasom.or.kr:8090/board/notice/title?noticeTitle=${encodeSearchValue}`);
   if (response.data.success) {
     setboardList(response.data.data); // 검색 결과를 boardList에 저장합니다.
     console.log("검색성공");
@@ -169,7 +169,7 @@ try {
               <td>작성일</td>
             </tr>
             {boardList.map((boardList) => (
-              <tr id='tr-contents' key={boardList.id}>
+              <tr id='tr-contents' key={boardList.noticeNo}>
                 <td class="Noti-s"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.noticeNo}</Link></td>
                 <td class="Noti-l"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.noticeTitle}</Link></td>
                 <td class="Noti-s"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.memName}</Link></td>
