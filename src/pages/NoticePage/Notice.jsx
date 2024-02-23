@@ -61,12 +61,12 @@ function Notice() {
   const [boardList, setboardList] = useState([]);
 
   useEffect(() => {
-      const fetchStudys = async () => {
+      const fetchNotice = async () => {
         try {
           const response = await axios.get('https://dmu-dasom.or.kr:8090/board/notice');
           if (response.data.success) {
             setboardList(response.data.data);
-            console.log("지원자 받기 성공")
+            console.log("공지사항 불러오기")
             console.log(response)
           }
         } catch (error) {
@@ -74,30 +74,27 @@ function Notice() {
         }
       };
 
-      fetchStudys();
+      fetchNotice();
     }, []);
 
 
-const [filteredResults, setfilteredResults] = useState([]);
-const [searchInput, setSearchInput] = useState('');
+
+  const [searchInput, setSearchInput] = useState('');
 
 const searchTitle = async (searchValue) =>{
-console.log("공지사항 가지고 오기 실행 ")
-  try {
-    const resp = await (await axios.get('http://localhost:8090/notice/title')).data;
-    setSearchInput(searchValue)
-    const filteredData = resp.data.filter((item) =>{
-      return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase()) //검색어와 데이터 비교
-    })
-    if(resp.status === 200){
-        setfilteredResults(filteredData)
-        console.log('데이터 가져오기 성공');
-      }
-    else if(resp.status === 404){
-        console.log('데이터 가져오기 실패');
-      }}catch(error){
-    console.error('에러 발생:', error);
+console.log("검색 실행 ")
+try {
+  // 검색어를 이용하여 데이터베이스에서 필터링된 결과를 가져옵니다.
+  const response = await axios.get(`https://dmu-dasom.or.kr:8090/board/notice/title?noticeTitle=${searchValue}`);
+  if (response.data.success) {
+    setboardList(response.data.data); // 검색 결과를 boardList에 저장합니다.
+    console.log("검색성공");
+  } else {
+    console.log("검색 실패");
   }
+} catch (error) {
+  console.error("에러 발생:", error);
+}
 }
 
   const itemsPerPage = 10; // 한 페이지에 표시할 아이템 개수
@@ -159,9 +156,9 @@ console.log("공지사항 가지고 오기 실행 ")
         <p id="Noti-title">공지사항</p>
 
         <div class="search-container">
-            <input placeholder='검색어를 입력하세요' id="Nocr-inputs"></input>
-            <div class="search-icon1" style={{ backgroundImage: "url('images/search-icon.png')" }}
-            onChange={(e)=>searchTitle(e.target.value)}></div>
+            <input placeholder='검색어를 입력하세요' id="Nocr-inputs" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)}></input>
+          <div class="search-icon1" style={{ backgroundImage: "url('images/search-icon.png')" }}
+            onClick={()=>searchTitle(searchInput)}></div>
         </div>
 
         <table id='Noti-table'>
@@ -173,10 +170,10 @@ console.log("공지사항 가지고 오기 실행 ")
             </tr>
             {boardList.map((boardList) => (
               <tr id='tr-contents' key={boardList.id}>
-                <td class="Noti-s"><Link to={`/noticedetail/${boardList.id}`}>{boardList.noticeNo}</Link></td>
-                <td class="Noti-l"><Link to={`/noticedetail/${boardList.id}`}>{boardList.noticeTitle}</Link></td>
-                <td class="Noti-s"><Link to={`/noticedetail/${boardList.id}`}>{boardList.memName}</Link></td>
-                <td class="Noti-s"><Link to={`/noticedetail/${boardList.id}`}>{boardList.noticeRegisterDate}</Link></td>
+                <td class="Noti-s"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.noticeNo}</Link></td>
+                <td class="Noti-l"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.noticeTitle}</Link></td>
+                <td class="Noti-s"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.memName}</Link></td>
+                <td class="Noti-s"><Link to={`/noticedetail/${boardList.noticeNo}`}>{boardList.noticeRegisterDate.slice(0,10)}</Link></td>
               </tr>
             ))}
         </table>

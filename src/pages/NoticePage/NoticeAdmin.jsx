@@ -152,7 +152,7 @@ const [boardList, setboardList] = useState([]);
                 <td class="Noti-s"><Link to={`/noticeadmindetail/${boardList.id}`}>{boardList.noticeNo}</Link></td>
                 <td class="Noti-l"><Link to={`/noticeadmindetail/${boardList.id}`}>{boardList.noticeTitle}</Link></td>
                 <td class="Noti-s"><Link to={`/noticeadmindetail/${boardList.id}`}>{boardList.memName}</Link></td>
-                <td class="Noti-s"><Link to={`/noticeadmindetail/${boardList.id}`}>{boardList.noticeRegisterDate}</Link></td>
+                <td class="Noti-s"><Link to={`/noticeadmindetail/${boardList.id}`}>{boardList.noticeRegisterDate.slice(0,10)}</Link></td>
               </tr>
             ))}
         </table>

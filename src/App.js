@@ -50,7 +50,8 @@ function App() {
     <div className="app">
       <AppProvider>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Main />} />
             <Route path="login" element={<Login />} />
             <Route path="main" element={<Main />} />
             <Route path="about" element={<About />} />
@@ -73,16 +74,16 @@ function App() {
             <Route path="ManStudyModify" element={<ManStudyModify />} />
             <Route path="ManProjectApply" element={<ManProjectApply />} />
             <Route path="ManProjectModify" element={<ManProjectModify />} />
-            <Route path="studyInfo" element={<StudyInfo />} />
+            <Route path="studyInfo/:studyNo" element={<StudyInfo />} />
             <Route path="projectinfo/:projectNo" element={<ProjectInfo />} />
-            <Route path="/noticedetail/:id" element={<NoticeDetail />} />
+            <Route path="/noticedetail/:noticeNo" element={<NoticeDetail />} />
             <Route
-              path="/noticeadmindetail/:id"
+              path="/noticeadmindetail/:noticeNo"
               element={<NoticeAdminDetail />}
             />
             <Route path="manmembermodify" element={<ManMemberModify />} />
             <Route path="manstudyapply" element={<ManStudyApply />} />
-            <Route path="manstudymodify" element={<ManStudyModify />} />
+            <Route path="manstudymodify/:studyNo" element={<ManStudyModify />} />
             <Route path="manprojectapply" element={<ManProjectApply />} />
             <Route path="manprojectmodify" element={<ManProjectModify />} />
 

@@ -1,79 +1,57 @@
+import Footer from '../../components/Footer';
+import styled from 'styled-components';
+import "./Study.css";
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import Footer from '../../components/Footer'
-import styled from 'styled-components'
-import "./Study.css"
-import { Link } from 'react-router-dom'
 import axios from 'axios';
 
+const Study = () => {
+  const [studys, setStudys] = useState([]);
 
-const Study = ()=>  {
+  useEffect(() => {
+    const fetchStudys = async () => {
+      try {
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/board/study');
+        if (response.data.success) {
+          setStudys(response.data.data); // setStudys로 수정
+          console.log("회원이 보는 프로젝트 페이지 == > 스터디 리스트 받아오기 성공");
+          console.log(response);
+        }
+      } catch (error) {
+        console.error('Error fetching study:', error);
+      }
+    };
 
-
-
-
-
+    fetchStudys(); 
+  }, []);
 
   return (
     <Container>
-      <div className='study-title'>STUDY</div>
+      <div className='study-title'>study</div>
       <div className="study-list">
         <div className="study-box-container">
-
-
-        <div className="study-box">
-          <div className="study-img"></div>
-          <div className="study-content">
-          <div className="study-content-title-wrapper">
-                <div className="study-content-title">Spring</div>
-                <div className="study-content-gener">32기</div>
+          {studys.map((study, index) => (
+            <Link to={`/studyInfo/${study.studyNo}`} key={index} className="study-link">
+              <div className="study-box">
+                <div className="study-img"></div>
+                <div className="study-content">
+                  <div className="study-content-title-wrapper">
+                    <div className="study-content-title">{study.studyTitle}</div>
+                  </div>
+                </div>
               </div>
-            <div className="study-content-sub">Back-End 희망자를 위한 Spring 스터디</div>
-          </div>
+            </Link>
+          ))}
         </div>
-        <div className="study-box">
-          <div className="study-img"></div>
-          <div className="study-content">
-              <div className="study-content-title-wrapper">
-                <div className="study-content-title">Figma</div>
-                <div className="study-content-gener">32기</div>
-              </div>
-            <div className="study-content-sub">UI / UX 기초 디자인</div>
-          </div>
-        </div>
-        <div className="study-box">
-          <div className="study-img"></div>
-          <div className="study-content">
-          <div className="study-content-title-wrapper">
-                <div className="study-content-title">React</div>
-                <div className="study-content-gener">32기</div>
-              </div>
-            <div className="study-content-sub">Front-End 희망자를 위한 React 스터디</div>
-          </div>
-        </div>
-        <div className="study-box">
-          <div className="study-img"></div>
-          <div className="study-content">
-          <div className="study-content-title-wrapper">
-                <div className="study-content-title">Algorithm</div>
-                <div className="study-content-gener">32기</div>
-              </div>
-            <div className="study-content-sub">코딩테스트를 위한 Algorithm 스터디</div>
-          </div>
-          </div>
-          </div>
       </div>
-      <Link to="/studyinfo" className="study-move-button">
-        <div className="study-move-font">더보기</div>
-      </Link>
       <div className="study-footer">
-        <Footer/>
+        <Footer />
       </div>
     </Container>
-    
-  )
+  );
 }
 
-export default Study
+export default Study; 
 
 const Container = styled.main`
   position: relative;
