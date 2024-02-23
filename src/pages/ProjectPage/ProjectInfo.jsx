@@ -17,6 +17,7 @@ console.log("상세페이지 들어옴")
         const response = await axios.get(`https://dmu-dasom.or.kr:8090/board/project/${projectNo}`);
         if (response.data.success) {
           setProjectInfo(response.data.data);
+          console.log(response)
         }
       } catch (error) {
         console.error('프로젝트 정보를 가져오는 중 오류 발생:', error);

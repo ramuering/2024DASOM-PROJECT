@@ -55,7 +55,7 @@ const firebaseConfig = {
              setCookie("refreshToken", response.data.data.refreshToken)
              console.log(response.request.status)
              //axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-            //navigate('/main');
+            navigate('/main');
           }
         } catch (error) {
           if (error.response && error.response.status === 200) {
