@@ -27,12 +27,14 @@ const StudyInfo = () => {
   }, [studyNo]);
 
   return (
-    <Container>
-      <div className="studyInfo-title-wrapper">
-        <div className="studyInfo-title">{studyInfo.studyTitle}</div>
-        <div className="studyInfo-start-date">{studyInfo.startDate} ~ </div>
-        <div className="studyInfo-end-date">{studyInfo.endDate}</div>
-      </div>
+<Container>
+    {studyInfo && (
+      <>
+        <div className="studyInfo-title-wrapper">
+          <div className="studyInfo-title">{studyInfo.studyTitle}</div>
+          <div className="studyInfo-start-date">{studyInfo.startDate} ~ </div>
+          <div className="studyInfo-end-date">{studyInfo.endDate}</div>
+        </div>
       <div className="studyInfo-content-wrapper">
         <div className="studyInfo-content">{studyInfo.studyContent}</div>
         <div className='studyInfo-image' />
@@ -79,6 +81,8 @@ const StudyInfo = () => {
         <hr/>
         <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
       </div>
+      </>
+    )}
       <div className="studyInfo-footer">
         <Footer/>
       </div>
