@@ -50,7 +50,8 @@ function App() {
     <div className="app">
       <AppProvider>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Main />} />
             <Route path="login" element={<Login />} />
             <Route path="main" element={<Main />} />
             <Route path="about" element={<About />} />
@@ -73,7 +74,7 @@ function App() {
             <Route path="ManStudyModify" element={<ManStudyModify />} />
             <Route path="ManProjectApply" element={<ManProjectApply />} />
             <Route path="ManProjectModify" element={<ManProjectModify />} />
-            <Route path="studyInfo:studyNo" element={<StudyInfo />} />
+            <Route path="studyInfo/:studyNo" element={<StudyInfo />} />
             <Route path="projectinfo/:projectNo" element={<ProjectInfo />} />
             <Route path="/noticedetail/:noticeNo" element={<NoticeDetail />} />
             <Route

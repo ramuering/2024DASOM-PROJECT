@@ -4,6 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import Footer from '../../components/Footer';
 
+
 console.log("여기는 들어옴")
 const StudyInfo = () => {
   console.log("상세페이지 들어옴")
