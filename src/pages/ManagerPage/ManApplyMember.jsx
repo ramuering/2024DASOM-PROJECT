@@ -16,18 +16,20 @@ function ManApplyMember() {
   });
 
   const postPass = async () => {
-        try {
-          const response = await axios.post('https://dmu-dasom.or.kr:8090/recruit/32/applicants/accept-proc');
-          if (response.data.success) {
-            console.log("합격자 인증코드 api 성공")
-            console.log(response)
-          }
-        } catch (error) {
-          console.error('Error fetching studys:', error);
-        }
-      };
+    try {
+      const response = await axios.post('https://dmu-dasom.or.kr:8090/recruit/32/applicants/accept-proc');
+      if (response.data.success) {
+        console.log("합격자 인증코드 api 성공")
+        console.log(response)
+      }
+    } catch (error) {
+      console.error('Error fetching studys:', error);
+    }
+  };
 
   const [recruitMember, setRecruitMember] = useState([]);
+  const [isPassButtonClicked, setIsPassButtonClicked] = useState(false);
+  const [isFailButtonClicked, setIsFailButtonClicked] = useState(false);
 
   useEffect(() => {
     const fetchStudys = async () => {
@@ -136,10 +138,12 @@ function ManApplyMember() {
       // 합격인 경우
       updatedMember.isAccepted = true;
       sendMemberStatusToBackend(updatedMember);
+      setIsPassButtonClicked(true);
     } else {
       // 불합격인 경우
       updatedMember.isAccepted = false;
       sendMemberStatusToBackend(updatedMember);
+      setIsFailButtonClicked(true);
     }
   };
 
@@ -223,10 +227,30 @@ function ManApplyMember() {
             {recruitMember.map((recruit, index) => (
               <li key={index}>
                 <div className='manAM-infodepartment'>{recruit.acDepartment}</div>
-                <div className={`manAM-infoname ${recruit.acStatus === 'pass' ? 'green' : 'red'}`}>{recruit.acName}</div>
+                <div
+                  className={`manAM-infoname ${
+                    recruit.isAccepted ? 'green' : 'red'
+                  } ${
+                    isPassButtonClicked && recruit.isAccepted ? 'clicked' : ''
+                  } ${
+                    isFailButtonClicked && !recruit.isAccepted ? 'clicked' : ''
+                  }`}
+                >
+                  {recruit.acName}
+                </div>
                 <div className='manAM-infograde'>{recruit.acGrade}</div>
-                <button className='true-button' onClick={() => handleButtonClick(index, true)}>합격</button>
-                <button className='false-button' onClick={() => handleButtonClick(index, false)}>불합격</button>
+                <button
+                  className={`true-button ${isPassButtonClicked ? 'clicked' : ''}`}
+                  onClick={() => handleButtonClick(index, true)}
+                >
+                  합격
+                </button>
+                <button
+                  className={`false-button ${isFailButtonClicked ? 'clicked' : ''}`}
+                  onClick={() => handleButtonClick(index, false)}
+                >
+                  불합격
+                </button>
               </li>
             ))}
           </ul>
