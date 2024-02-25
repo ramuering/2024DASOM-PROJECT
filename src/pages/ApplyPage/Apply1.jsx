@@ -74,7 +74,7 @@ function Apply1() {
     }
 
     try {
-      const response = await axios.post('http://dmu-dasom.or.kr:8090/recruit/32/applicants', {
+      const response = await axios.post('https://dmu-dasom.or.kr:8090/recruit/32/applicants', {
         acStudentNo,
         acName,
         acContact,
