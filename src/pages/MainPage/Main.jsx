@@ -7,6 +7,31 @@ import "./Main.css"
 import { Link } from 'react-router-dom'
 import Slider from '../../components/Slider'
 
+const NMBVideoDiv = styled.div`
+  width:100vw;
+  height:100vh;
+  position: relative;
+`;
+
+const NMBVideoTag = styled.div`
+  width:100vw;
+  height:100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const NMBVideo = styled.video`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`;
+
+const NMBNullBox = styled.div`
+    width: 100%;
+    height: 700px;
+`;
 
  
 
@@ -30,8 +55,16 @@ const Main = () => {
 
   return (
     <Container>
-   
+      <NMBVideoDiv>
+              <NMBVideoTag>
+                <NMBVideo muted autoPlay loop>
+                  <source src={require("./Video/2024DASOM2.mp4")} type="video/mp4" />
+                </NMBVideo>
+              </NMBVideoTag>
+            </NMBVideoDiv>
+            <NMBNullBox></NMBNullBox>
       <div className='main-title'>컴퓨터소프트웨어공학과 전공동아리 DASOM</div>
+      
       <div className='main-title-info'>
         <div className='foundation'>
           <div className='main-title-info-title'>창립연도</div>
@@ -59,7 +92,7 @@ const Main = () => {
 
       <div className='part'>
         <div className='part-title'>DASOM은 총 4개의 파트로 나뉘어져 있어요</div>
-        <Link to='/apply01' className='go-recruit'>지원하러 가기</Link>
+        <Link to='/recruit' className='go-recruit'>지원하러 가기</Link>
 
         <div className='box-container'>
           <div className="box">
