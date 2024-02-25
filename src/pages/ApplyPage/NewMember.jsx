@@ -140,8 +140,13 @@ function NewMember() {
             <div class="NMB-align-box">
               <NMBNullBox2></NMBNullBox2>
               <NMBLeftBox>
+<<<<<<< HEAD
+                <p class="NMB-text-titles">서류접수</p>
+                <p class="NMB-sub-texts">2024.02.27(월) <br></br>~ 03.06(일) 23 : 59</p>
+=======
                 <p class="NMB-text-titles">서류 모집</p>
                 <p class="NMB-sub-texts">2024.02.27(화) <br></br>~ 03.06(일)</p>
+>>>>>>> 7aeee4c83134df051c7ecd796227bbe6bb454eb3
               </NMBLeftBox>
               <NMBLeftBox>
                 <p class="NMB-text-titles">서류 발표</p>

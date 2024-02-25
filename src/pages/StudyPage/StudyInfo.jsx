@@ -9,23 +9,24 @@ import "./StudyInfo.css"
 console.log("여기는 들어옴")
 const StudyInfo = () => {
   console.log("상세페이지 들어옴")
-  const { studyNo } = useParams(); // studyNo로 수정
-  const [studyInfo, setStudyInfo] = useState(null); // StudyInfo로 수정
+  const { studyNo } = useParams();
+    const [studyInfo, setstudyInfo] = useState(null);
 
-  useEffect(() => {
-    const fetchStudyInfo = async () => {
-      try {
-        const response = await axios.get(`https://dmu-dasom.or.kr:8090/board/study/${studyNo}`);
-        if (response.data.success) {
-          setStudyInfo(response.data.data);
+    useEffect(() => {
+      const fetchProjectInfo = async () => {
+        try {
+          const response = await axios.get(`https://dmu-dasom.or.kr:8090/board/study/${studyNo}`);
+          if (response.data.success) {
+            setstudyInfo(response.data.data);
+            console.log(response)
+          }
+        } catch (error) {
+          console.error('프로젝트 정보를 가져오는 중 오류 발생:', error);
         }
-      } catch (error) {
-        console.error('스터디 정보를 가져오는 중 오류 발생:', error);
-      }
-    };
+      };
 
-    fetchStudyInfo();
-  }, [studyNo]);
+      fetchProjectInfo();
+    }, [studyNo]);
 
   return (
 <Container>
@@ -69,19 +70,7 @@ const StudyInfo = () => {
           </tbody>
         </table>
       </div>
-      <div className="studyInfo-weekly">
-        <div className="studyInfo-weekly-title">주차 별 활동</div>
-        <hr/>
-        <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
-        <hr/>
-        <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
-        <hr/>
-        <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
-        <hr/>
-        <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
-        <hr/>
-        <div className="studyInfo-weekly-content">Lorem ipsum dolor sit amet, consectetur adipisicing </div>
-      </div>
+
       </>
     )}
       <div className="studyInfo-footer">

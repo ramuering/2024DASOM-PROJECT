@@ -1,8 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Header = () => {
+
+const [members, setMembers] = useState([]);
+
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/members/index');
+        console.log(response);
+        if (response.data.success) {
+          setMembers(response.data.data);
+        }
+      } catch (error) {
+        console.error('Error fetching members:', error);
+      }
+    };
+
+    fetchMembers();
+  }, []);
   
   return (
     <NavWrapper>
@@ -31,7 +50,7 @@ const Header = () => {
           <DropdownLabel>
             <ProfileImageWrapper>
               <ProfileImage
-                 src="/images/myPage/profile.jpg"
+                 src="/images/myPage/basicProfile.jpeg"
               ></ProfileImage>
             </ProfileImageWrapper>
           </DropdownLabel>
