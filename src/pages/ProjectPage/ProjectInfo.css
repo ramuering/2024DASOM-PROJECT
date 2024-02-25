@@ -38,6 +38,7 @@
   box-sizing: border-box;
   padding-left: 71px;
   padding-right: 150px;
+  font-size: 20px;
 }
 .projectInfo-box {
   position: relative;

@@ -311,7 +311,7 @@
 /* main-about */
 .main-about {
   position: relative;
-  top: 6300px;
+  top: 5000px;
   height: auto;
   text-align: center;
   display: flex;
@@ -377,5 +377,5 @@
 }
 /* footer */
 .main-footer {
-  margin-top: 7450px;
+  margin-top: 6500px;
 }
