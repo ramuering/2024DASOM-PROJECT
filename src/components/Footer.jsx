@@ -21,7 +21,7 @@ const Footer = () => {
       <div className='footer-info'>
         <div className='footer-icon-text-container'>
           <img className='footer-img-mail' src='./images/mail.PNG' alt='메일아이콘'></img>
-          <p className='footer-mail'>hosung60023@naver.com</p>
+          <p className='footer-mail'>dmu_dasom@naver.com</p>
         </div>
         <div className='footer-icon-text-container'>
           <img className='footer-img-human' src='./images/human.PNG' alt='사람아이콘'></img>

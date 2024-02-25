@@ -140,12 +140,12 @@ function NewMember() {
             <div class="NMB-align-box">
               <NMBNullBox2></NMBNullBox2>
               <NMBLeftBox>
-                <p class="NMB-text-titles">서류접수</p>
-                <p class="NMB-sub-texts">2023.09.25(월) <br></br>~ 10.01(일) 23 : 59</p>
+                <p class="NMB-text-titles">서류 모집</p>
+                <p class="NMB-sub-texts">2024.02.27(화) <br></br>~ 03.06(일)</p>
               </NMBLeftBox>
               <NMBLeftBox>
-                <p class="NMB-text-titles">대면면접</p>
-                <p class="NMB-sub-texts">2023.09.25(월) <br></br>~ 10.01(일) 23 : 59</p>
+                <p class="NMB-text-titles">서류 발표</p>
+                <p class="NMB-sub-texts">2024.03.08(월)</p>
               </NMBLeftBox>
             </div>
             <div class="NMB-align-box">
@@ -154,12 +154,12 @@ function NewMember() {
             <div class="NMB-align-box">
               <NMBNullBox3></NMBNullBox3>
               <NMBRightBox>
-                <p class="NMB-text-titles">서류 결과 발표</p>
-                <p class="NMB-sub-texts">2023.09.25(월) <br></br>~ 10.01(일) 23 : 59</p>
+                <p class="NMB-text-titles">대면 면접</p>
+                <p class="NMB-sub-texts">2024.03.11(월) <br></br>~ 03.13(수)</p>
                 </NMBRightBox>
               <NMBNullBox2>
-              <p class="NMB-text-titles">서류 결과 발표</p>
-                <p class="NMB-sub-texts">2023.09.25(월) <br></br>~ 10.01(일) 23 : 59</p>
+              <p class="NMB-text-titles">최종 발표</p>
+                <p class="NMB-sub-texts">2024.03.15(금)</p>
               </NMBNullBox2>
             </div>
           </div>
