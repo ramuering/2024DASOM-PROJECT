@@ -141,7 +141,7 @@ function NewMember() {
               <NMBNullBox2></NMBNullBox2>
               <NMBLeftBox>
                 <p class="NMB-text-titles">서류접수</p>
-                <p class="NMB-sub-texts">2023.09.25(월) <br></br>~ 10.01(일) 23 : 59</p>
+                <p class="NMB-sub-texts">2024.02.27(월) <br></br>~ 03.06(일) 23 : 59</p>
               </NMBLeftBox>
               <NMBLeftBox>
                 <p class="NMB-text-titles">대면면접</p>

@@ -56,14 +56,14 @@ function Makers() {
           <Member profile='./images/myPage/suhyunProfile.jpeg' name='김수현' gi='32기'></Member>
           <Member profile='./images/myPage/aramProfile.jpeg' name='김아람' gi='32기'></Member>
           <Member profile='./images/myPage/solmiProfile.webp' name='신솔미' gi='32기'></Member>
-          <Member profile='./images/myPage/yewonProfile2.jpg' name='이예원' gi='32기'></Member>
+          <Member profile='./images/myPage/yewonProfile2.JPG' name='이예원' gi='32기'></Member>
           <Member classNams='five' profile='./images/myPage/jeongminProfile.jpeg' name='유정민' gi='32기'></Member>
         </div>
 
         <div className='makers-position'>Design</div><div className='makers-line5'></div>
         <div className='makers-member'>
-          <Member profile='./images/myPage/hosungProfile.jpg' name='남호성' gi='29기'></Member>
-          <Member profile='./images/myPage/yewonProfile2.jpg' name='이예원' gi='32기'></Member>
+          <Member profile='./images/myPage/hosungProfile.JPG' name='남호성' gi='29기'></Member>
+          <Member profile='./images/myPage/yewonProfile2.JPG' name='이예원' gi='32기'></Member>
           <Member profile='./images/myPage/basicProfile.jpeg' name='우승원' gi='32기'></Member>
         </div>
       </div>

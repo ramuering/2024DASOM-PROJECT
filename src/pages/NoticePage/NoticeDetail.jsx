@@ -11,7 +11,7 @@ const NoticeDetail = () => {
   useEffect(() => {
     const getDetailInfor = async () => {
       try {
-        const response = await axios.get(`http://localhost:8090/notice/${noticeNo}`);
+        const response = await axios.get(`https://dmu-dasom.or.kr:8090/notice/${noticeNo}`);
         setNoticeDetail(response.data.data);
         if (response.status === 200) {
           console.log('공지사항 상세 정보 가져오기 성공');

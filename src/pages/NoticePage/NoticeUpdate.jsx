@@ -20,7 +20,7 @@ function NoticeUpdate(){
 
     const modifyNotice= async() =>{
         try {
-            const response = await axios.put('http://localhost:8090/notice',{
+            const response = await axios.put('https://dmu-dasom.or.kr:8090/notice',{
 
                 writerNo: writerNo ,
                 noticeTitle: noticeTitle,

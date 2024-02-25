@@ -40,8 +40,8 @@ function Apply1() {
     minute: '2-digit',
     second: '2-digit',
   });
-  const applyStart = "2024-01-08";
-  const applyEnd= "2024-01-16";
+  const applyStart = "2024-02-27";
+  const applyEnd= "2024-03-06";
   const firstAnnounce = "2024-01-17";
   const interviewStart= "2024-01-18";
   const interviewEnd = "2024-01-22";
