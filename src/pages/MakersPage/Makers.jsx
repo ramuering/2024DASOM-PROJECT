@@ -56,6 +56,7 @@ function Makers() {
           <Member profile='./images/myPage/suhyunProfile.jpeg' name='김수현' gi='32기'></Member>
           <Member profile='./images/myPage/aramProfile.jpeg' name='김아람' gi='32기'></Member>
           <Member profile='./images/myPage/solmiProfile.webp' name='신솔미' gi='32기'></Member>
+
           <Member profile='./images/myPage/yewonProfile2.JPG' name='이예원' gi='32기'></Member>
           <Member classNams='five' profile='./images/myPage/jeongminProfile.jpeg' name='유정민' gi='32기'></Member>
         </div>
