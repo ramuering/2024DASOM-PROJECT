@@ -82,7 +82,7 @@
 /* part */
 .part {
   position: relative;
-  top: 1761px;
+  top: 1300px;
   height: auto;
   text-align: center;
 }
@@ -303,7 +303,7 @@
 /* main-about */
 .main-about {
   position: relative;
-  top: 5000px;
+  top: 4600px;
   height: auto;
   text-align: center;
   display: flex;
@@ -331,9 +331,13 @@
 .main-about-img {
   width: 277px;
   height: 260px;
-  background-image: url("../../../public/images/study-sample.jpeg");
+  background-image: url("../../../public/images/github.png");
+  background-size: cover; /* 이미지를 요소에 맞게 크기 조정 */
+  background-repeat: no-repeat; /* 이미지 반복 없음 */
+  background-position: center; /* 이미지 중앙에 위치 */
   border-radius: 25px 25px 0 0;
 }
+
 .main-about-link {
   width: 277px;
   height: 95px;
