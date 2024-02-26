@@ -19,7 +19,7 @@
     }
 
     function MyPage() {
-        const [myPage, setMyPage] = useState();
+        const [myPage, setMyPage] = useState({});
 
         useEffect(() => {
             const fetchMyPageInfo = async () => {
@@ -46,6 +46,7 @@
         }, []);
 
       return (
+
         <div>
           <div className='mypage-content'>
             <Header />
