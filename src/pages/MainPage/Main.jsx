@@ -10,7 +10,7 @@ import Slider from '../../components/Slider'
 const NMBVideoDiv = styled.div`
   width:100vw;
   height:100vh;
-  position: relative;
+  position: absoute;
 `;
 
 const NMBVideoTag = styled.div`
@@ -196,7 +196,9 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   text-align: center;
+  height:100vh
 `;
+
 const SliderWrapper = styled.div`
   position: absolute;
   top: 100%;
