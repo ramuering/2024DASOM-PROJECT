@@ -58,7 +58,7 @@ const Main = () => {
       <NMBVideoDiv>
               <NMBVideoTag>
 
-                <NMBVideo muted autoPlay loop>
+                <NMBVideo muted autoPlay>
                   <source src={require("./Video/2024DASOM_Main.mp4")} type="video/mp4" />
 
                 </NMBVideo>

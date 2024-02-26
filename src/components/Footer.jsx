@@ -20,7 +20,7 @@ const Footer = () => {
 
       <div className='footer-info'>
         <div className='footer-icon-text-container'>
-          <img className='footer-img-mail' src='images/mail.PNG' alt='메일아이콘'></img>
+          <img className='footer-img-mail' src={`${process.env.PUBLIC_URL}/images/mail.PNG`} alt='메일아이콘'></img>
           <p className='footer-mail'>dmu_dasom@naver.com</p>
         </div>
         <div className='footer-icon-text-container'>
