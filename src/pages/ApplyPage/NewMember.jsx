@@ -114,7 +114,9 @@ function NewMember() {
 
           <div id="NMB-bgstyle">
             <p class="NMB-text-title">모집기간</p>
-            <p class="NMB-sub-text">다솜에서는 1년에 한 번, 열정을 가지고 함께 동아리를 꾸려갈 부원을 모집합니다. <br></br> 동아리 부원으로 다양한 프로젝트에 참여해 자신을 발전시켜 보세요. <br></br>학교 주변 맛집부터 시험 꿀팁까지! 선배와 동기들이 무엇이든 알려드립니다.</p>
+            <p class="NMB-sub-text">- 서류 모집: 2024.02.27 ~ 2024.03.06 <br></br> - 서류 발표: 2024.03.08
+            <br></br>- 대면 면접: 2024.03.11 ~ 2024.03.13
+            <br></br>- 최종 발표: 2024.03.15</p>
           </div>
 
           <div class="NMB-big-box">
@@ -126,7 +128,7 @@ function NewMember() {
             </div>
             <div class="NMB-small-box">
               <p class="NMB-text-title">지원 방법</p>
-              <p class="NMB-sub-text">1차 서류 - 신입부원 모집 지원서 작성<br></br> <br></br>2차 면접 - 대면 면접 이후 최종 합격</p>
+              <p class="NMB-sub-text">다솜 홈페이지 recruit 접속 후 지원서 작성</p>
             </div>
           </div>
         </div>
