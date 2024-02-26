@@ -16,7 +16,6 @@ function Apply2() {
   return (
     <div id="Ap2-main">
       <div id="Ap2-first-forms" class="form">
-
         <div>
         <p id="Ap2-form-title">DASOM <span class="Ap2-mini-text">33</span>nd</p>
         <Ap2NullBox></Ap2NullBox>
