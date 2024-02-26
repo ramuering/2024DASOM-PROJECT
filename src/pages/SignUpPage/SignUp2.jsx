@@ -26,6 +26,10 @@ const SignUp2 = () => {
   const [showDivBox1, setShowDivBox1] = useState(false);
   const [showDivBox2, setShowDivBox2] = useState(false);
   const [showDivBox3, setShowDivBox3] = useState(false);
+  const [showAgree1Content, setShowAgree1Content] = useState(false);
+  const [showAgree2Content, setShowAgree2Content] = useState(false);
+  const [showAgree3Content, setShowAgree3Content] = useState(false);
+  const [showAgree4Content, setShowAgree4Content] = useState(false);
   const navigate = useNavigate();
 
 
@@ -93,7 +97,20 @@ const SignUp2 = () => {
     setShowDivBox3(!showDivBox3);
   };
 
-  const handleClick = () => {
+  const toggleAgree1Content = () => {
+    setShowAgree1Content(!showAgree1Content);
+  };
+
+  const toggleAgree2Content = () => {
+    setShowAgree2Content(!showAgree2Content);
+  };
+
+  const toggleAgree3Content = () => {
+    setShowAgree3Content(!showAgree3Content);
+  };
+
+  const toggleAgree4Content = () => {
+    setShowAgree4Content(!showAgree4Content);
   };
 
   return (
@@ -115,24 +132,24 @@ const SignUp2 = () => {
         ></input>
 
         <input
-                  className={`SignUp2_input0 ${passwordMismatch ? 'invalid' : ''}`}
-                  type='text'
-                  name="memno"
-                  autoComplete='off'
-                  placeholder='학번을 입력하세요.'
-                      value={memStudentNo}
-                  onChange={(e) => setMemStudentNo(e.target.value)}
-                ></input>
+          className={`SignUp2_input0 ${passwordMismatch ? 'invalid' : ''}`}
+          type='text'
+          name="memno"
+          autoComplete='off'
+          placeholder='학번을 입력하세요.'
+          value={memStudentNo}
+          onChange={(e) => setMemStudentNo(e.target.value)}
+        ></input>
 
-         <input
-            className={`SignUp2_input0 ${passwordMismatch ? 'invalid' : ''}`}
-            type='text'
-            name="memno"
-            autoComplete='off'
-            placeholder='기수를 입력하세요'
-            value={memRecNo}
-            onChange={(e) => setRecNo(e.target.value)}
-         ></input>
+        <input
+          className={`SignUp2_input0 ${passwordMismatch ? 'invalid' : ''}`}
+          type='text'
+          name="memno"
+          autoComplete='off'
+          placeholder='기수를 입력하세요'
+          value={memRecNo}
+          onChange={(e) => setRecNo(e.target.value)}
+        ></input>
 
         <input
           className={`SignUp2_input1 ${passwordMismatch ? 'invalid' : ''}`}
@@ -153,12 +170,12 @@ const SignUp2 = () => {
           value={memPassword}
           onChange={(e) => setmemPassword(e.target.value)}
         ></input>
-            <button
-              className='SignUp2_toggle-password_1'
-              onClick={() => setShowPassword(!showPassword)} // 비밀번호 보이기/숨기기 토글
-            >
-              {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
-            </button>
+        <button
+          className='SignUp2_toggle-password_1'
+          onClick={() => setShowPassword(!showPassword)} // 비밀번호 보이기/숨기기 토글
+        >
+          {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
+        </button>
         <input
           className={`SignUp2_input3 ${passwordMismatch ? 'invalid' : ''}`}
           type={showPassword ? 'text' : 'password'} // 비밀번호 보이기/숨기기 상태에 따라 input type 변경
@@ -168,58 +185,56 @@ const SignUp2 = () => {
           value={confirmPassword}
           onChange={handleConfirmPasswordChange}
         />
-          <button
-            className='SignUp2_toggle-password_2'
-            onClick={() => setShowPassword(!showPassword)} // 비밀번호 보이기/숨기기 토글
-          >
-            {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
-          </button>
+        <button
+          className='SignUp2_toggle-password_2'
+          onClick={() => setShowPassword(!showPassword)} // 비밀번호 보이기/숨기기 토글
+        >
+          {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
+        </button>
         {passwordMismatch && <div className='SignUp2_error-message'>비밀번호가 일치하지 않습니다.</div>}
       </div>
-     {/*학년*/}
-     <fieldset id="grade_field" value={memGrade} onChange={(e) => setmemGrade(e.target.value)}>
-            <legend><p class="form_text">학년<span class="red_text">*</span></p></legend>
-            <div class ="div_box">
-              <div class="check_box">
-                <input type="radio" id="1grade" name="grade" value="1" required/>
-                <label for="1grade">1학년</label>
-              </div>
+      <fieldset id="grade_field" value={memGrade} onChange={(e) => setmemGrade(e.target.value)}>
+        <legend><p class="form_text">학년<span class="red_text">*</span></p></legend>
+        <div class="div_box">
+          <div class="check_box">
+            <input type="radio" id="1grade" name="grade" value="1" required />
+            <label for="1grade">1학년</label>
+          </div>
 
-              <div class="check_box">
-                <input type="radio" id="2grade" name="grade" value="2" required/>
-                <label for="2grade">2학년</label>
-              </div>
+          <div class="check_box">
+            <input type="radio" id="2grade" name="grade" value="2" required />
+            <label for="2grade">2학년</label>
+          </div>
 
-              <div class="check_box">
-                <input type="radio" id="3grade" name="grade" value="3" required/>
-                <label for="3grade">3학년</label>
-              </div>
-            </div>
+          <div class="check_box">
+            <input type="radio" id="3grade" name="grade" value="3" required />
+            <label for="3grade">3학년</label>
+          </div>
+        </div>
+      </fieldset>
 
-          </fieldset>
+      <fieldset id="major_field" value={memDepartment} onChange={(e) => setmemDepartment(e.target.value)}>
+        <legend><p class="form_text">학과<span class="red_text">*</span></p></legend>
+        <div class="div_box">
+          <div class="check_box">
+            <input type="radio" id="comso" name="major" value="컴소" />
+            <label for="comso">컴퓨터소프트웨어공학과</label>
+          </div>
 
-          <fieldset id="major_field" value={memDepartment} onChange={(e) => setmemDepartment(e.target.value)}>
-            <legend><p class="form_text">학과<span class="red_text">*</span></p></legend>
-            <div class ="div_box">
-              <div class="check_box">
-                <input type="radio" id="comso" name="major" value="컴소"/>
-                <label for="comso">컴퓨터소프트웨어공학과</label>
-              </div>
+          <div class="check_box">
+            <input type="radio" id="inso" name="major" value="인소" />
+            <label for="inso">인공지능소프트웨어공학과</label>
+          </div>
+        </div>
+        <div class="check_box">
+          <input type="radio" id="comim" name="major" value="컴정" />
+          <label for="comim">컴퓨터정보공학과</label>
+        </div>
+      </fieldset>
 
-              <div class="check_box">
-                <input type="radio" id="inso" name="major" value="인소" />
-                <label for="inso">인공지능소프트웨어공학과</label>
-              </div>
-            </div>
-            <div  class="check_box">
-                <input type="radio" id="comim" name="major" value="컴정" />
-                <label for="comim">컴퓨터정보공학과</label>
-            </div>
-          </fieldset>
-          
-          <fieldset id="Agree">
-            <legend><p class="form_text">약관동의 <span class="red_text">*</span></p></legend>
-            <div className="SignUp2_check_box">
+      <fieldset id="Agree">
+        <legend><p class="form_text">약관동의 <span class="red_text">*</span></p></legend>
+        <div className="SignUp2_check_box">
           <input
             type="checkbox"
             id="agree1"
@@ -227,8 +242,14 @@ const SignUp2 = () => {
             checked={agreement.agree1}
             onChange={() => handleAgreementChange('agree1')}
           />
-          <label htmlFor="agree1">전체 약관 동의</label>
+          <label htmlFor="agree1" onClick={toggleAgree1Content}>전체 약관 동의</label>
         </div>
+
+        {showAgree1Content && (
+          <div className="div-box agree1_content">
+            <p>전체 약관 동의 내용</p>
+          </div>
+        )}
 
         <div className="SignUp2_check_box">
           <input
@@ -238,14 +259,16 @@ const SignUp2 = () => {
             checked={agreement.agree2}
             onChange={() => handleAgreementChange('agree2')}
           />
-          <label htmlFor="agree2">[필수] 다솜 이용 약관에 동의</label>
+          <label htmlFor="agree2" onClick={toggleAgree2Content}>[필수] 다솜 이용 약관에 동의</label>
         </div>
-              <button className="agree_toggle1"
-              type="button"
-              onClick={toggleDivBox1}>
-            <img src="images/agree.png"/>
-             </button>        
-          <div className="SignUp2_check_box">
+
+        {showAgree2Content && (
+          <div className="div-box agree2_content">
+            <p>다솜 이용 약관 내용</p>
+          </div>
+        )}
+
+        <div className="SignUp2_check_box">
           <input
             type="checkbox"
             id="agree3"
@@ -253,13 +276,15 @@ const SignUp2 = () => {
             checked={agreement.agree3}
             onChange={() => handleAgreementChange('agree3')}
           />
-          <label htmlFor="agree3">[필수] 개인정보 수집 및 이용에 동의</label>
+          <label htmlFor="agree3" onClick={toggleAgree3Content}>[필수] 개인정보 수집 및 이용에 동의</label>
         </div>
-        <button className="agree_toggle2"
-              type="button"
-              onClick={toggleDivBox2}>
-            <img src="images/agree.png"/>
-             </button>   
+
+        {showAgree3Content && (
+          <div className="div-box agree3_content">
+            <p>개인정보 수집 및 이용 약관 내용</p>
+          </div>
+        )}
+
         <div className="SignUp2_check_box">
           <input
             type="checkbox"
@@ -268,34 +293,29 @@ const SignUp2 = () => {
             checked={agreement.agree4}
             onChange={() => handleAgreementChange('agree4')}
           />
-          <label htmlFor="agree4">[선택] 마켓팅 정보 수신 및 선택적 개인정보 제공</label>
+          <label htmlFor="agree4" onClick={toggleAgree4Content}>[선택] 마켓팅 정보 수신 및 선택적 개인정보 제공</label>
         </div>
-        <button className="agree_toggle3"
-              type="button"
-              onClick={toggleDivBox3}>
-            <img src="images/agree.png"/>
-             </button>   
-          </fieldset>
 
-          {/* Div Box 1 */}
-          <div className="div-box agree1_content" style={{ display: showDivBox1 ? 'block' : 'none' }}>
-            {/* 여기에 div 박스 내용을 추가하세요 */}
-            <p>Div Box 1의 내용</p>
+        {showAgree4Content && (
+          <div className="div-box agree4_content">
+            <p>마켓팅 정보 수신 및 선택적 개인정보 제공 약관 내용</p>
           </div>
+        )}
+      </fieldset>
 
-          {/* Div Box 2 */}
-          <div className="div-box agree2_content" style={{ display: showDivBox2 ? 'block' : 'none' }}>
-            {/* 여기에 div 박스 내용을 추가하세요 */}
-            <p>Div Box 2의 내용</p>
-          </div>
+      <div className="div-box agree1_content" style={{ display: showDivBox1 ? 'block' : 'none' }}>
+        <p>Div Box 1의 내용</p>
+      </div>
 
-          {/* Div Box 3 */}
-          <div className="div-box agree3_content" style={{ display: showDivBox3 ? 'block' : 'none' }}>
-            {/* 여기에 div 박스 내용을 추가하세요 */}
-            <p>Div Box 3의 내용</p>
-          </div>
+      <div className="div-box agree2_content" style={{ display: showDivBox2 ? 'block' : 'none' }}>
+        <p>Div Box 2의 내용</p>
+      </div>
 
-          <button className='SignUp02_final' onClick={handleSubmit}>다솜 가입 완료하기</button>
+      <div className="div-box agree3_content" style={{ display: showDivBox3 ? 'block' : 'none' }}>
+        <p>Div Box 3의 내용</p>
+      </div>
+
+      <button className='SignUp02_final' onClick={handleSubmit}>다솜 가입 완료하기</button>
     </div>
 
   );

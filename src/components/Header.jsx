@@ -1,65 +1,105 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'// useHistory 대신 Link를 사용
 import axios from 'axios';
 
 const Header = () => {
-
-const [members, setMembers] = useState([]);
+ const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState();
 
   useEffect(() => {
-    const fetchMembers = async () => {
-      try {
-        const response = await axios.get('https://dmu-dasom.or.kr:8090/members/index');
-        console.log(response);
-        if (response.data.success) {
-          setMembers(response.data.data);
-        }
-      } catch (error) {
-        console.error('Error fetching members:', error);
-      }
-    };
-
-    fetchMembers();
+    // 토큰 유무 확인하는 로직
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
   }, []);
-  
+
+  const handleLogout = async () => {
+    try {
+      // 로그아웃 요청
+      const response = await axios.post('https://dmu-dasom.or.kr:8090/logout');
+      if (response.status === 401) {
+      console.log(response.status)
+        localStorage.removeItem('accessToken'); // 로컬스토리지에서 토큰 제거
+        setIsLoggedIn(false);
+        alert('로그아웃 되었습니다.');
+      }
+    } catch (error) {
+            localStorage.removeItem('accessToken'); // 로컬스토리지에서 토큰 제거
+            setIsLoggedIn(false);
+            alert('로그아웃 되었습니다.');
+            navigate('/Main');
+      console.error('Error logging out:', error);
+    }
+  };
+
+
+    const final = () => {
+        if (!isLoggedIn) {
+        navigate('/login');
+        }else{
+        handleLogout();
+        }
+      };
+
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
+  const handleMyPageClick = () => {
+    if (!isLoggedIn) {
+      // 로그인이 되어 있지 않은 경우 알림 메시지 표시
+      alert('로그인을 먼저 해주세요.');
+    } else {
+      // 로그인되어 있는 경우 마이페이지로 이동
+      // 이 부분에서 Link 컴포넌트를 사용하여 페이지 이동을 구현합니다.
+      // to 속성에는 이동하고자 하는 경로를 지정합니다.
+    }
+  };
+
   return (
     <NavWrapper>
       <Logo to="/main">
         <img alt="Dasom Logo" src="/images/dasom-logo-header.png" />
       </Logo>
       <NavBar>
-      <NavItemWithDropdown>
+        {/* 각각의 Link 컴포넌트를 사용하여 페이지 이동을 구현합니다. */}
+        <NavItemWithDropdown>
           <DropdownLabel>ABOUT</DropdownLabel>
           <DropdownMenu>
-            <DropdownItem to="/about">ABOUT</DropdownItem>
-            <DropdownItem to="/makers">MAKERS</DropdownItem>
+            <DropdownItem as={Link} to="/about">ABOUT</DropdownItem>
+            <DropdownItem as={Link} to="/makers">MAKERS</DropdownItem>
           </DropdownMenu>
         </NavItemWithDropdown>
         <NavItemWithDropdown>
           <DropdownLabel>ACTIVE</DropdownLabel>
           <DropdownMenu>
-            <DropdownItem to="/study">STUDY</DropdownItem>
-            <DropdownItem to="/notice">공지사항</DropdownItem>
-            <DropdownItem to="/project">PROJECT</DropdownItem>
+            <DropdownItem as={Link} to="/study">STUDY</DropdownItem>
+            <DropdownItem as={Link} to="/notice">공지사항</DropdownItem>
+            <DropdownItem as={Link} to="/project">PROJECT</DropdownItem>
           </DropdownMenu>
         </NavItemWithDropdown>
-        <NavItem to="/recruit">RECRUIT</NavItem>
-        <NavItem to="/admin">ADMIN</NavItem>
+        <NavItem as={Link} to="/recruit">RECRUIT</NavItem>
+        <NavItem as={Link} to="/admin">ADMIN</NavItem>
         <NavItemWithDropdown>
           <DropdownLabel>
             <ProfileImageWrapper>
               <ProfileImage
-                 src="/images/myPage/basicProfile.jpeg"
+                src="/images/myPage/basicProfile.jpeg"
+                onClick={handleMyPageClick} // 마이페이지 버튼 클릭 시 핸들러
               ></ProfileImage>
             </ProfileImageWrapper>
           </DropdownLabel>
-           <DropdownMenu>
-            <DropdownItem to="/login">LOGIN</DropdownItem>
-            <DropdownItem to="/mypage">MYPAGE</DropdownItem>
-            <DropdownItem to="/main">LOGOUT</DropdownItem>
+          <DropdownMenu>
+            <DropdownItem onClick={final}>
+              {isLoggedIn ? 'LOGOUT' : 'LOGIN'}
+            </DropdownItem>
+            <DropdownItem as={Link} to="/mypage">MYPAGE</DropdownItem>
           </DropdownMenu>
-          
         </NavItemWithDropdown>
       </NavBar>
     </NavWrapper>
@@ -111,13 +151,13 @@ const NavItem = styled(Link)`
 
   &:hover {
     color: #54ecc4;
-    transition: color .4s ease-in-out;
+    transition: color 0.4s ease-in-out;
   }
 `;
 
 const NavItemWithDropdown = styled.div`
   position: relative;
-  margin: 0 30px; 
+  margin: 0 30px;
 `;
 
 const DropdownLabel = styled.div`
@@ -125,7 +165,7 @@ const DropdownLabel = styled.div`
   color: #ffffff;
   &:hover {
     color: #54ecc4;
-    transition: color .4s ease-in-out;
+    transition: color 0.4s ease-in-out;
   }
 `;
 
@@ -154,15 +194,17 @@ const DropdownMenu = styled.div`
   }
 `;
 
-const DropdownItem = styled(Link)`
+const DropdownItem = styled.div`
   display: block;
   color: #ffffff;
   text-decoration: none;
   padding: 10px 0;
   margin: 0 auto;
+  cursor: pointer;
+
   &:hover {
     color: #54ecc4;
-    transition: color .4s ease-in-out;
+    transition: color 0.4s ease-in-out;
   }
 `;
 
