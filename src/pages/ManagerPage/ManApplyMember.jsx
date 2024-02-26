@@ -4,6 +4,18 @@ import axios from 'axios';
 import './ManApplyMember.css';
 import Header from '../../components/Header';
 
+function getCookie(name) {
+        const cookieString = document.cookie;
+        const cookies = cookieString.split('; ');
+        for (let cookie of cookies) {
+            const [cookieName, cookieValue] = cookie.split('=');
+            if (cookieName === name) {
+                return cookieValue;
+            }
+        }
+        return null;
+    }
+
 function ManApplyMember() {
   const [applyMembers, setApplyMembers] = useState([]);
   const [dates, setDates] = useState({
@@ -34,7 +46,14 @@ function ManApplyMember() {
   useEffect(() => {
     const fetchStudys = async () => {
       try {
-        const response = await axios.get('https://dmu-dasom.or.kr:8090/recruit/32/applicants');
+      const accessToken = localStorage.getItem('accessToken');
+      const refreshToken = getCookie('refreshToken');
+       const response = await axios.get('https://dmu-dasom.or.kr:8090/recruit/33/applicants', {
+                               headers: {
+                                   Authorization: ` ${accessToken}`,
+                                   Cookie: `${refreshToken}`
+                               }
+                           });
         if (response.data.success) {
           setRecruitMember(response.data.data);
           console.log("지원자 받기 성공")
@@ -58,7 +77,7 @@ function ManApplyMember() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://dmu-dasom.or.kr:8090/32');
+        const response = await axios.get('https://dmu-dasom.or.kr:8090/33');
         setDates(response.data);
         if (response.data.success) {
           console.log('스케줄 가져오기 성공');
@@ -102,7 +121,7 @@ function ManApplyMember() {
         secondAnnounce,
       } = dates;
       // 서버로 선택된 날짜를 전송
-      const response = await axios.put('https://dmu-dasom.or.kr:8090/recruit/32', {
+      const response = await axios.put('https://dmu-dasom.or.kr:8090/recruit/33', {
         applyStart,
         applyEnd,
         firstAnnounce,
@@ -149,7 +168,13 @@ function ManApplyMember() {
 
   const sendMemberStatusToBackend = async (updatedMember) => {
     try {
-      const response = await axios.patch(`https://dmu-dasom.or.kr:8090/recruit/32/applicants/${updatedMember.acStudentNo}`, {
+    const accessToken = localStorage.getItem('accessToken');
+                        const refreshToken = getCookie('refreshToken');
+      const response = await axios.patch(`https://dmu-dasom.or.kr:8090/recruit/33/applicants/${updatedMember.acStudentNo}`, {
+        headers: {
+            Authorization: ` ${accessToken}`,
+            Cookie: `${refreshToken}`
+        },
         isAccepted: updatedMember.isAccepted
       });
       if (response.status === 200) {
