@@ -6,7 +6,7 @@ const Footer = () => {
     <div>
       <div className='footer'>
       <div className='footer-logo-container'>
-        <img className='footer-img-logo' src='./images/dasom-logo-noname.PNG' alt='다솜로고'></img>
+        <img className='footer-img-logo' src='./dasom-logo-noname.PNG' alt='다솜로고'></img>
         <p className='footer-logo-text'>DASOM</p>
       </div>
 

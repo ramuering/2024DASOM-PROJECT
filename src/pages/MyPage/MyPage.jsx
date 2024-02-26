@@ -5,33 +5,45 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "./MyPage.css"
 
+// 쿠키에서 이름에 해당하는 값을 가져오는 함수
+function getCookie(name) {
+    const cookieString = document.cookie;
+    const cookies = cookieString.split('; ');
+    for (let cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split('=');
+        if (cookieName === name) {
+            return cookieValue;
+        }
+    }
+    return null;
+}
 
 function MyPage() {
-    const [data, setData] = useState([])
+    const [myPage, setMyPage] = useState();
 
-    /*useEffect(() => {
-        axios.get('/api/hello') //백엔드에서 받아온 주소
-        .then(response => setData(response.data))
-        .catch(error => console.log(error))
+    useEffect(() => {
+        const fetchMyPageInfo = async () => {
+            try {
+                const accessToken = localStorage.getItem('accessToken'); // 로컬스토리지에서 엑세스 토큰 가져오기
+                const refreshToken = getCookie('refreshToken'); // 쿠키에서 리프레시 토큰 가져오기
+
+                const response = await axios.get('https://dmu-dasom.or.kr:8090/members/my-page', {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`,
+                        Cookie: `refreshToken=${refreshToken}`
+                    }
+                });
+
+                if (response.data.success) {
+                    setMyPage(response.data.data);
+                    console.log(response)
+                }
+            } catch (error) {
+                console.error('마이페이지 회원 정보 갖고오기 오류 :', error);
+            }
+        };
+        fetchMyPageInfo();
     }, []);
-
-    const Data= ()=>{
-
-      var myData;
-      return (
-        <div>
-          {data.map((item)=>{
-            <div key={item.id}>{item[myData]}</div>
-          })}
-        </div>
-      )
-    }
-    <Data className='mypage-myProfile' myData='profileImg'></Data>
-    <td className='mypage-myData'><Data className='myHakgoa' myData='hakgoa'></Data></td>
-    <td className='mypage-myData'><Data className='myGi' myData='gi'></Data></td>
-    <td className='mypage-myData'><Data className='myName' myData='name'></Data></td>
-    <td className='mypage-myData'><Data className='myGithub' myData='github'></Data></td>
-    */
 
   return (
     <div>
