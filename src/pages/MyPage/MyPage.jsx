@@ -34,8 +34,6 @@
                             Cookie: `${refreshToken}`
                         }
                     });
-
-
                     if (response.data.success) {
                         setMyPage(response.data.data);
                         console.log(response)
@@ -53,24 +51,24 @@
             <Header />
             <div className='mypage-title'>MY PAGE</div>
 
-          <img className='mypage-myProfile' src='./images/myPage/profile.jpg'></img>
+          <img className='mypage-myProfile' style={{ backgroundImage: `url(${myPage.memProfilePic})` }}></img>
 
           <table className='mypage-table'>
             <tr>
               <td className='mypage-dataHead'>학과</td>
-              <td className='mypage-myData'>컴퓨터소프트웨어공학과</td>
+              <td className='mypage-myData'>{myPage.memDepartment}</td>
             </tr>
             <tr>
               <td className='mypage-dataHead'>기수</td>
-              <td className='mypage-myData'>21기</td>
+              <td className='mypage-myData'>{myPage.memRecNo}기</td>
             </tr>
             <tr>
               <td className='mypage-dataHead'>이름</td>
-              <td className='mypage-myData'>홍길동</td>
+              <td className='mypage-myData'>{myPage.memName}</td>
             </tr>
             <tr>
               <td className='mypage-dataHead'>깃허브</td>
-              <td className='mypage-myData'>test</td>
+              <td className='mypage-myData'></td>
             </tr>
           </table>
             <div className='fixMyDataBorder'>

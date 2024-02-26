@@ -1,3 +1,4 @@
+@media only screen and (min-width: 768px) {
 .studyInfo-title-wrapper {
   position: relative;
   top: 232px;
@@ -103,4 +104,5 @@ td {
 /* footer */
 .studyInfo-footer {
   margin-top: 3319px;
+}
 }

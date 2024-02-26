@@ -1,4 +1,4 @@
-
+@media only screen and (min-width: 768px) {
 #Ap2-main{
     width: 100vw;
     height: 100vh;
@@ -15,6 +15,7 @@
     align-items: center; /* 세로 방향에서 중앙 정렬 */
     text-align: center;
     height: 100vh;
+}
 }
 
 #Ap2-form-title{
