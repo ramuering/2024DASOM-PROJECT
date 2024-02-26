@@ -33,6 +33,7 @@ const Header = () => {
     fetchMembers();
   }, []);
 
+
    const handleLogout = async () => {
       try {
         // 로그아웃 요청
