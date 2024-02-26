@@ -61,7 +61,7 @@ const SignUp2 = () => {
 
 
     try {
-      const response = await axios.post(`http://dmu-dasom.or.kr:8090/signup`, {
+      const response = await axios.post(`https://dmu-dasom.or.kr:8090/signup`, {
         memEmail,
         memPassword,
         memName,
