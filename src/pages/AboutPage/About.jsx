@@ -108,7 +108,7 @@ function About() {
               <p>다솜 활동 멤버</p>
               <Menu currentPage={currentPage} onPageChange={handlePageChange} />
               {currentPage === 'Lead' && <Lead members={members.filter(member => member.memRole === 'ROLE_PRESIDENT')} />}
-              {currentPage === 'CoreMember' && <CoreMember members={members.filter(member => member.memRole === 'ROLE_ADMIN')} />}
+              {currentPage === 'CoreMember' && <CoreMember members={members.filter(member => member.memRole === 'ROLE_MANAGER')} />}
               {currentPage === 'Member' && <Member members={members.filter(member => member.memRole === 'ROLE_MEMBER')} />}
             </div>
           </div>
