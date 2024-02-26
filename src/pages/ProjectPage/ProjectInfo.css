@@ -7,14 +7,14 @@
 
 .projectInfo-video-wrapper {
   position: relative;
-  top: 538px;
+  top: 6px;
 }
 
 .projectInfo-box-info {
   border: 1px solid #b6b6b6;
   border-radius: 30px;
   position: relative;
-  top: 1200px;
+  top: 1300px;
   width: 1200px;
   height: 468px;
   margin: 0 auto;
@@ -42,7 +42,7 @@
 }
 .projectInfo-box {
   position: relative;
-  top: 1250px;
+  top: 1350px;
   display: flex;
   margin: 0 auto;
 }
