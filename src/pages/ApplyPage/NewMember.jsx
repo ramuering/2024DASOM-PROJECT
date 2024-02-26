@@ -102,7 +102,7 @@ function NewMember() {
       <NMBVideoDiv>
         <NMBVideoTag>
           <NMBVideo muted autoPlay>
-            <source src={require("./Video/recuritfinal.mp4")} type="video/mp4" />
+            <source src={require("./Video/2024_Dasom_Apply.mp4")} type="video/mp4" />
           </NMBVideo>
         </NMBVideoTag>
       </NMBVideoDiv>
