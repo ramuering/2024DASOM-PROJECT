@@ -45,9 +45,7 @@ const Main = () => {
               setIsVisible(true);
           }
       };
-
       window.addEventListener('scroll', handleScroll);
-
       return () => {
           window.removeEventListener('scroll', handleScroll);
       };

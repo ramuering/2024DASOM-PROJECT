@@ -49,12 +49,8 @@ const firebaseConfig = {
           });
 
           if (response.request.status === 200 ) {
-          console.log(response.status)
-            console.log('로그인 성공');
              localStorage.setItem("accessToken", response.data.data.accessToken);
              setCookie("refreshToken", response.data.data.refreshToken)
-             console.log(response.request.status)
-             //axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
             navigate('/main');
           }
         } catch (error) {

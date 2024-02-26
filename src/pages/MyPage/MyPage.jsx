@@ -24,10 +24,8 @@
         useEffect(() => {
             const fetchMyPageInfo = async () => {
                 try {
-                    const accessToken = localStorage.getItem('accessToken'); // 로컬스토리지에서 엑세스 토큰 가져오기
-                    const refreshToken = getCookie('refreshToken'); // 쿠키에서 리프레시 토큰 가져오기
-                    console.log("엑세스: " + accessToken)
-                    console.log("리프레쉬:" +  refreshToken)
+                    const accessToken = localStorage.getItem('accessToken');
+                    const refreshToken = getCookie('refreshToken');
                     const response = await axios.get('https://dmu-dasom.or.kr:8090/members/my-page', {
                         headers: {
                             Authorization: ` ${accessToken}`,
