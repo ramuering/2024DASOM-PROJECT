@@ -49,13 +49,13 @@ const ProjectInfo = () => {
             <div className='projectInfo-box-link'>
             <div className='projectInfo-link-title'>프로젝트 링크</div>
             <a href={projectInfo.gitUrl} onClick={() => console.log('Clicked GitHub link:', projectInfo.gitUrl)}>
-                <img className='projectInfo-link-content1' src='../../images/github.PNG' alt='깃허브로고' />
+                <img className='projectInfo-link-content1' src='../../images/myPage/github.png' alt='깃허브로고' />
             </a>
             <a href='https://instagram.com/dasom___official'>{() => console.log('Clicked Instagram link:', projectInfo.instagramUrl)}
-                <img className='projectInfo-link-content2' src='../../images/instagram.PNG' alt='인스타로고' />
+                <img className='projectInfo-link-content2' src='../../images/myPage/instagram.png' alt='인스타로고' />
             </a>
             <a href={projectInfo.notionUrl} onClick={() => console.log('Clicked Notion link:', projectInfo.notionUrl)}>
-                <img className='projectInfo-link-content3' src='../../images/notion2.PNG' alt='노션링크로고' />
+                <img className='projectInfo-link-content3' src='../../images/myPage/notion2.png' alt='노션링크로고' />
             </a>
         </div>
 
