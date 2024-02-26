@@ -35,6 +35,8 @@ console.log("상세페이지 들어옴")
           {projectInfo.projectTitle}
           </div>
           <div className="projectInfo-box-info">
+          <div className='projectInfo-image' style={{ backgroundImage: `url(${projectInfo.thumbnailPic})` }}/>
+
             <div className="projectInfo-info-title">프로젝트 설명</div>
             <div className="projectInfo-info-content">{projectInfo.projectContent}</div>
           </div>

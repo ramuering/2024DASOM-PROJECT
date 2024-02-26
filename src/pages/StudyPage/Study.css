@@ -31,11 +31,11 @@
 }
 .study-img {
   position: inherit;
-  background-image: url("../../../public/images/study-sample.jpeg");
   width: 539.695px;
   height: 204.007px;
   border-radius: 16px;
   margin-right: 10px;
+  background-position: center; /* 배경 이미지를 가운데로 정렬합니다. */
 }
 .study-content {
   position: inherit;

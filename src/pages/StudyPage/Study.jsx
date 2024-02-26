@@ -33,7 +33,7 @@ const Study = () => {
           {studys.map((study, index) => (
             <Link to={`/studyInfo/${study.studyNo}`} key={index} className="study-link">
               <div className="study-box">
-                <div className="study-img"></div>
+                 <div className="study-img" style={{ backgroundImage: `url(${study.thumbnailPic})` }}></div>
                 <div className="study-content">
                   <div className="study-content-title-wrapper">
                     <div className="study-content-title">{study.studyTitle}</div>

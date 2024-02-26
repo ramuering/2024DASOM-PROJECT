@@ -39,7 +39,7 @@ const StudyInfo = () => {
         </div>
       <div className="studyInfo-content-wrapper">
         <div className="studyInfo-content">{studyInfo.studyContent}</div>
-        <div className='studyInfo-image' />
+        <div className='studyInfo-image' style={{ backgroundImage: `url(${studyInfo.studyPic})` }}/>
       </div>
       <div className="studyInfo-refer">
         <div className="studyInfo-refer-title">기타 자료</div>

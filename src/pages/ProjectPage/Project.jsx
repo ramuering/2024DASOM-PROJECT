@@ -34,7 +34,7 @@ const Project = ()=>  {
           {projects.map((project, index) => (
             <Link to={`/ProjectInfo/${project.projectNo}`} key={index} className="project-link">
               <div className="project-box">
-                <div className="project-img"></div>
+                <div className="project-img" style={{ backgroundImage: `url(${project.thumbnailPic})` }}></div>
                 <div className="project-content">
                   <div className="project-content-title-wrapper">
                     <div className="project-content-title">{project.projectTitle}</div>
