@@ -11,7 +11,7 @@ export default function SignUp1() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post(':8090/signup/verify', {
+      const response = await axios.post('https://dmu-dasom.or.kr:8090/signup/verify', {
          uniqueCode : uniqueCode,
       });
       if (response.status === 200) {
