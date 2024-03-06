@@ -23,6 +23,15 @@
     margin: 0 auto;
     padding-top: 15vh;
   }
+
+  #NMB-text-box2{
+      width: 850px;
+      height: 700px;
+      margin: 0 auto;
+      padding-top: 15vh;
+    }
+
+
 .NMB-big-box{
     width: 850px;
     height: 300px;
@@ -37,6 +46,7 @@
     margin-top: 20px;
     background-color: #323232;
 }
+
 
   .NMB-small-box{
     width: 410px;
@@ -105,6 +115,15 @@
     font-size: 16px;
     margin: 0;
   }
+
+  .NMB-sub-texts-text{
+      line-height: 30px;
+      vertical-align: middle;
+      text-align: left;
+      font-size: 16px;
+      color : red;
+      margin: 0;
+    }
 
   #NMB-center-button {
     display: flex;
