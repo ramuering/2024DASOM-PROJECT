@@ -114,7 +114,7 @@ function NewMember() {
 
           <div id="NMB-bgstyle">
             <p class="NMB-text-title">모집기간</p>
-            <p class="NMB-sub-text">- 서류 모집: 2024.02.27 ~ 2024.03.06 <br></br> - 서류 발표: 2024.03.08
+            <p class="NMB-sub-text">- 서류 모집: 2024.02.27 ~ 2024.03.10 <br></br> - 서류 발표: 2024.03.08 - 추가모집 서류 발표: 2024.03.10
             <br></br>- 대면 면접: 2024.03.11 ~ 2024.03.13
             <br></br>- 최종 발표: 2024.03.15</p>
           </div>
@@ -143,7 +143,7 @@ function NewMember() {
               <NMBNullBox2></NMBNullBox2>
               <NMBLeftBox>
                 <p class="NMB-text-titles">서류 모집</p>
-                <p class="NMB-sub-texts">2024.02.27(화) <br></br>~ 03.10(금)</p>
+                <p class="NMB-sub-texts">2024.02.27(화) <br></br>~ 03.08(금)</p>
               </NMBLeftBox>
               <NMBLeftBox>
                 <p class="NMB-text-titles">대면 면접</p>
@@ -158,6 +158,8 @@ function NewMember() {
               <NMBRightBox>
                 <p class="NMB-text-titles">서류 발표</p>
                 <p class="NMB-sub-texts">2024.03.08(금)</p>
+                <p class="NMB-text-titles">추가모집 서류 발표 </p>
+                <p class="NMB-sub-texts">2024.03.10(일)</p>
                 </NMBRightBox>
               <NMBNullBox2>
               <p class="NMB-text-titles">최종 발표</p>
