@@ -170,8 +170,8 @@ function NewMember() {
           </div>
           <div id="NMB-center-button">
 
-            <Link to="../apply01" className="NMB-linkButton">
-                          지원하러 가기
+            <Link  className="NMB-linkButton">
+                          지금은 지원기간이 아닙니다
                         </Link>
 
           </div>
